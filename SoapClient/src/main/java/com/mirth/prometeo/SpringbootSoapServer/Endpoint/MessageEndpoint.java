@@ -11,6 +11,7 @@ import ca.uhn.hl7v2.model.v25.message.ACK;
 import ca.uhn.hl7v2.model.v25.message.OML_O21;
 import ca.uhn.hl7v2.model.v25.message.ORL_O22;
 import ca.uhn.hl7v2.model.v25.message.ORM_O01;
+import ca.uhn.hl7v2.model.v25.segment.*;
 import ca.uhn.hl7v2.parser.PipeParser;
 import com.mirth.prometeo.Entity.MessageEvent;
 import com.mirth.prometeo.Repository.MessageEventRepository;
@@ -118,8 +119,8 @@ public class MessageEndpoint {
     }
 
     private static String extractCdataContent(String cdataMessage) throws Exception {
-        int start = cdataMessage.indexOf("<![CDATA[") + "<![CDATA[".length();
-        int end = cdataMessage.indexOf("x");
+        int start = cdataMessage.indexOf("<![CDATA[") + "<![CDATA[".length()+1;
+        int end = cdataMessage.indexOf(">");
 
         if (start < 0 || end < 0) {
             throw new Exception("Invalid CDATA section");
@@ -148,12 +149,23 @@ public class MessageEndpoint {
 
         if (matcher.find()) {
             String tagName = matcher.group(2);
+            String uri = matcher.group(3);
+            System.out.println("tag "+tagName);
+            System.out.println("urinal "+uri);
             if (!tagName.equals(msg3Value)) {
                 String newTag = (matcher.group(1) != null ? matcher.group(1) : "") + msg3Value;
-                String updatedMessage = matcher.replaceFirst("<" + newTag + (matcher.group(3) != null ? matcher.group(3) : "") + ">");
-                updatedMessage = updatedMessage.replaceAll("</" + tagName + ">", "</" + newTag + ">");
 
-                return updatedMessage;
+                if(uri != null && uri.equals(" xmlns=\"urn:hl7-org:v2xml\"")) {
+                    String updatedMessage = matcher.replaceFirst("<" + newTag + (matcher.group(3) != null ? matcher.group(3) : "") + ">");
+                    updatedMessage = updatedMessage.replaceAll("</" + tagName + ">", "</" + newTag + ">");
+                    return updatedMessage;
+                } else if (uri != null && !uri.equals(" xmlns=\"urn:hl7-org:v2xml\"")) {
+                     uri = " xmlns=\"urn:hl7-org:v2xml\"";
+                } else if (uri == null) {
+                    String updatedMessage = matcher.replaceFirst("<" + newTag + (matcher.group(3) != null ? matcher.group(3) : "") + " xmlns='urn:hl7-org:v2xml'" + ">");
+                    updatedMessage = updatedMessage.replaceAll("</" + tagName + ">", "</" + newTag + ">");
+                    return updatedMessage;
+                }
             }
         }
 
