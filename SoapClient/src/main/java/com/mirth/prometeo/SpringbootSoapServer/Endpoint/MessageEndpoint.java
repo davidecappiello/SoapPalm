@@ -150,8 +150,6 @@ public class MessageEndpoint {
         if (matcher.find()) {
             String tagName = matcher.group(2);
             String uri = matcher.group(3);
-            System.out.println("tag "+tagName);
-            System.out.println("urinal "+uri);
             if (!tagName.equals(msg3Value)) {
                 String newTag = (matcher.group(1) != null ? matcher.group(1) : "") + msg3Value;
 
