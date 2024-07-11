@@ -1,6 +1,5 @@
 package com.mirth.prometeo.ServiceORLO22.Event;
 
-import Prometeo.HL7Palm.Message.ORLO22;
 import ca.uhn.hl7v2.model.DataTypeException;
 import ca.uhn.hl7v2.model.v25.message.OML_O21;
 import ca.uhn.hl7v2.model.v25.message.ORL_O22;

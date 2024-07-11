@@ -15,7 +15,7 @@ public class MessageSegment {
     @Column(name = "code", nullable = false)
     private String code;
 
-    @Column(name = "body", nullable = false)
+    @Column(name = "body", nullable = false, columnDefinition = "TEXT")
     private String body;
 
     @Column(name = "placer_group_number", nullable = true)

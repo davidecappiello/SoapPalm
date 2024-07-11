@@ -1,0 +1,80 @@
+<configuration>
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <!-- encoders are assigned the type
+             ch.qos.logback.classic.encoder.PatternLayoutEncoder by default -->
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>logger.log</file>
+
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+
+            <fileNamePattern>logs/application.%d{yyyy-MM-dd}.log</fileNamePattern>
+
+            <maxHistory>7</maxHistory>
+        </rollingPolicy>
+
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <root level="error">
+        <appender-ref ref="FILE" />
+    </root>
+
+<!--    <root level="debug">-->
+<!--        <appender-ref ref="STDOUT" />-->
+<!--    </root>-->
+<!--    <root level="INFO">-->
+<!--        <appender-ref ref="STDOUT" />-->
+<!--    </root>-->
+<!--    <root level="WARN">-->
+<!--        <appender-ref ref="STDOUT" />-->
+<!--    </root>-->
+</configuration>
+
+        <!--<configuration>-->
+        <!--    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">-->
+        <!--        <encoder>-->
+        <!--            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>-->
+        <!--        </encoder>-->
+        <!--    </appender>-->
+
+        <!--    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">-->
+        <!--        <file>logger.log</file>-->
+        <!--        <encoder>-->
+        <!--            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{35} - %msg%n</pattern>-->
+        <!--        </encoder>-->
+        <!--    </appender>-->
+        <!--    -->
+        <!--    <property name="FILE" value="logger" />-->
+        <!--    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">-->
+        <!--        <file>${LOG_FILE}.log</file>-->
+        <!--        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">-->
+        <!--            &lt;!&ndash; daily rollover &ndash;&gt;-->
+        <!--            <fileNamePattern>${LOG_FILE}.%d{yyyy-MM-dd}.gz</fileNamePattern>-->
+
+        <!--            &lt;!&ndash; keep 30 days' worth of history capped at 3GB total size &ndash;&gt;-->
+        <!--            <maxHistory>30</maxHistory>-->
+        <!--            <totalSizeCap>3GB</totalSizeCap>-->
+        <!--        </rollingPolicy>-->
+        <!--        <encoder>-->
+        <!--            <pattern>%-4relative [%thread] %-5level %logger{35} - %msg%n</pattern>-->
+        <!--        </encoder>-->
+        <!--    </appender>-->
+
+
+        <!--    <logger name="com.baeldung.logback" level="INFO" />-->
+        <!--    <logger name="com.baeldung.logback.logger" level="error" additivity="false">-->
+        <!--        <appender-ref ref="FILE" />-->
+        <!--    </logger>-->
+
+        <!--    <root level="debug">-->
+        <!--        <appender-ref ref="STDOUT" />-->
+        <!--    </root>-->
+        <!--</configuration>-->
