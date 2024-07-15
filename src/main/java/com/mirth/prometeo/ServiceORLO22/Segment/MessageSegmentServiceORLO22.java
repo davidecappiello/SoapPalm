@@ -2,7 +2,6 @@ package com.mirth.prometeo.ServiceORLO22.Segment;
 
 import ca.uhn.hl7v2.HL7Exception;
 import ca.uhn.hl7v2.model.v25.message.ORL_O22;
-import ca.uhn.hl7v2.model.v25.message.ORM_O01;
 import ca.uhn.hl7v2.parser.Parser;
 import ca.uhn.hl7v2.parser.PipeParser;
 import com.mirth.prometeo.Entity.MessageEvent;
@@ -10,18 +9,16 @@ import com.mirth.prometeo.Entity.MessageSegment;
 import com.mirth.prometeo.Repository.MessageEventRepository;
 import com.mirth.prometeo.Repository.MessageSegmentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 import java.util.Optional;
 
-@Service
 public class MessageSegmentServiceORLO22 {
 
     @Autowired
-    private MessageEventRepository messageEventRepository;
+    private static MessageEventRepository messageEventRepository;
     @Autowired
-    private MessageSegmentRepository messageSegmentRepository;
+    private static MessageSegmentRepository messageSegmentRepository;
 
-    public void saveMSHMessageSegmentORLO22(ORL_O22 orlO22, MessageEvent messageEvent) throws HL7Exception {
+    public static void saveMSHMessageSegmentORLO22(ORL_O22 orlO22, MessageEvent messageEvent) throws HL7Exception {
         Optional<MessageEvent> messageEventOptional = messageEventRepository.findById(messageEvent.getId());
         if(messageEventOptional.isPresent()) {
             Parser parser = new PipeParser();
@@ -31,8 +28,6 @@ public class MessageSegmentServiceORLO22 {
             String serializedSegment = serializedMessage.split("\r")[0];
             if (serializedSegment != null) {
                 messageSegment.setBody(serializedSegment);
-                String placerGroupNumber = orlO22.getRESPONSE().getPATIENT().getORDER().getORC().getPlacerGroupNumber().getEntityIdentifier().getValue();
-                messageSegment.setPlacerGroupNumber(placerGroupNumber);
                 messageSegment.setMessageEventId(messageEventOptional.get());
                 messageSegmentRepository.save(messageSegment);
             } else {
@@ -43,7 +38,7 @@ public class MessageSegmentServiceORLO22 {
         }
     }
 
-    public void saveMSAMessageSegmentORLO22(ORL_O22 orlO22, MessageEvent messageEvent) throws HL7Exception {
+    public static void saveMSAMessageSegmentORLO22(ORL_O22 orlO22, MessageEvent messageEvent) throws HL7Exception {
         Optional<MessageEvent> messageEventOptional = messageEventRepository.findById(messageEvent.getId());
         if(messageEventOptional.isPresent()) {
             Parser parser = new PipeParser();
@@ -59,8 +54,6 @@ public class MessageSegmentServiceORLO22 {
             }
             if (serializedSegment != null) {
                 messageSegment.setBody(serializedSegment);
-                String placerGroupNumber = orlO22.getRESPONSE().getPATIENT().getORDER().getORC().getPlacerGroupNumber().getEntityIdentifier().getValue();
-                messageSegment.setPlacerGroupNumber(placerGroupNumber);
                 messageSegment.setMessageEventId(messageEventOptional.get());
                 messageSegmentRepository.save(messageSegment);
             } else {
@@ -71,7 +64,7 @@ public class MessageSegmentServiceORLO22 {
         }
     }
 
-    public void saveORDERBLOCKMessageORLO22(ORL_O22 orlO22, MessageEvent messageEvent) throws HL7Exception {
+    public static void saveORDERBLOCKMessageORLO22(ORL_O22 orlO22, MessageEvent messageEvent) throws HL7Exception {
         Optional<MessageEvent> messageEventOptional = messageEventRepository.findById(messageEvent.getId());
 
         if (messageEventOptional.isPresent()) {
@@ -84,16 +77,12 @@ public class MessageSegmentServiceORLO22 {
                     MessageSegment messageSegment = new MessageSegment();
                     messageSegment.setCode("ORC");
                     messageSegment.setBody(segment);
-                    String placerGroupNumber = orlO22.getRESPONSE().getPATIENT().getORDER().getORC().getPlacerGroupNumber().getEntityIdentifier().getValue();
-                    messageSegment.setPlacerGroupNumber(placerGroupNumber);
                     messageSegment.setMessageEventId(messageEventOptional.get());
                     messageSegmentRepository.save(messageSegment);
                 } else if (segment.startsWith("OBR")) {
                     MessageSegment messageSegment = new MessageSegment();
                     messageSegment.setCode("OBR");
                     messageSegment.setBody(segment);
-                    String placerGroupNumber = orlO22.getRESPONSE().getPATIENT().getORDER().getORC().getPlacerGroupNumber().getEntityIdentifier().getValue();
-                    messageSegment.setPlacerGroupNumber(placerGroupNumber);
                     messageSegment.setMessageEventId(messageEventOptional.get());
                     messageSegmentRepository.save(messageSegment);
                 }

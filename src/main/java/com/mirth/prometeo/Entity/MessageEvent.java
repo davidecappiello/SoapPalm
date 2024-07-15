@@ -6,7 +6,7 @@ import java.util.List;
 
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
-@Table(name = "message_event")
+@Table(name = "PRO_MESSAGE_EVENT")
 public class MessageEvent extends BaseObject {
 
     private static final long serialVersionUID = 1L;
@@ -17,12 +17,11 @@ public class MessageEvent extends BaseObject {
     @Column(name = "source", nullable = false)
     private String source;
 
+    @Column(name = "placer_group_number", nullable = true)
+    private String placerGroupNumber;
+
     @OneToMany(mappedBy = "messageEventId", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<MessageSegment> messageSegments = new ArrayList<>();
-
-    @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
-    @JoinColumn(name = "event_timeline_id", referencedColumnName = "id")
-    private EventTimeline eventTimeline;
 
     public String getCode() {
         return code;
@@ -63,11 +62,12 @@ public class MessageEvent extends BaseObject {
         messageSegment.setMessageEventId(null);
     }
 
-    public EventTimeline getEventTimeline() {
-        return eventTimeline;
+    public String getPlacerGroupNumber() {
+        return placerGroupNumber;
     }
 
-    public void setEventTimeline(EventTimeline eventTimeline) {
-        this.eventTimeline = eventTimeline;
+    public void setPlacerGroupNumber(String placerGroupNumber) {
+        this.placerGroupNumber = placerGroupNumber;
     }
+
 }

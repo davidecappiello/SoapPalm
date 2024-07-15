@@ -14,15 +14,14 @@ import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 
-@Service
 public class MessageSegmentServiceORMOO1 {
 
     @Autowired
-    private MessageEventRepository messageEventRepository;
+    private static MessageEventRepository messageEventRepository;
     @Autowired
-    private MessageSegmentRepository messageSegmentRepository;
+    private static MessageSegmentRepository messageSegmentRepository;
 
-    public void saveMSHMessageSegmentORMOO1(ORM_O01 ormO01, MessageEvent messageEvent) throws HL7Exception {
+    public static void saveMSHMessageSegmentORMOO1(ORM_O01 ormO01, MessageEvent messageEvent) throws HL7Exception {
         Optional<MessageEvent> messageEventOptional = messageEventRepository.findById(messageEvent.getId());
         if(messageEventOptional.isPresent()) {
             Parser parser = new PipeParser();
@@ -32,8 +31,6 @@ public class MessageSegmentServiceORMOO1 {
             String serializedSegment = serializedMessage.split("\r")[0];
             if (serializedSegment != null) {
                 messageSegment.setBody(serializedSegment);
-                String placerGroupNumber = ormO01.getORDER().getORC().getPlacerGroupNumber().getEntityIdentifier().getValue();
-                messageSegment.setPlacerGroupNumber(placerGroupNumber);
                 messageSegment.setMessageEventId(messageEventOptional.get());
                 messageSegmentRepository.save(messageSegment);
             } else {
@@ -44,7 +41,7 @@ public class MessageSegmentServiceORMOO1 {
         }
     }
 
-    public void savePIDMessageSegmentORMOO1(ORM_O01 ormO01, MessageEvent messageEvent) throws HL7Exception {
+    public static void savePIDMessageSegmentORMOO1(ORM_O01 ormO01, MessageEvent messageEvent) throws HL7Exception {
         Optional<MessageEvent> messageEventOptional = messageEventRepository.findById(messageEvent.getId());
         if(messageEventOptional.isPresent()) {
             Parser parser = new PipeParser();
@@ -60,8 +57,6 @@ public class MessageSegmentServiceORMOO1 {
             }
             if (serializedSegment != null) {
                 messageSegment.setBody(serializedSegment);
-                String placerGroupNumber = ormO01.getORDER().getORC().getPlacerGroupNumber().getEntityIdentifier().getValue();
-                messageSegment.setPlacerGroupNumber(placerGroupNumber);
                 messageSegment.setMessageEventId(messageEventOptional.get());
                 messageSegmentRepository.save(messageSegment);
             } else {
@@ -72,7 +67,7 @@ public class MessageSegmentServiceORMOO1 {
         }
     }
 
-    public void savePV1MessageSegmentORMOO1(ORM_O01 ormO01, MessageEvent messageEvent) throws HL7Exception {
+    public static void savePV1MessageSegmentORMOO1(ORM_O01 ormO01, MessageEvent messageEvent) throws HL7Exception {
         Optional<MessageEvent> messageEventOptional = messageEventRepository.findById(messageEvent.getId());
         if(messageEventOptional.isPresent()) {
             Parser parser = new PipeParser();
@@ -88,8 +83,6 @@ public class MessageSegmentServiceORMOO1 {
             }
             if (serializedSegment != null) {
                 messageSegment.setBody(serializedSegment);
-                String placerGroupNumber = ormO01.getORDER().getORC().getPlacerGroupNumber().getEntityIdentifier().getValue();
-                messageSegment.setPlacerGroupNumber(placerGroupNumber);
                 messageSegment.setMessageEventId(messageEventOptional.get());
                 messageSegmentRepository.save(messageSegment);
             } else {
@@ -100,7 +93,7 @@ public class MessageSegmentServiceORMOO1 {
         }
     }
 
-    public void saveORDERBLOCKMessageORMOO1(ORM_O01 ormO01, MessageEvent messageEvent) throws HL7Exception {
+    public static void saveORDERBLOCKMessageORMOO1(ORM_O01 ormO01, MessageEvent messageEvent) throws HL7Exception {
         Optional<MessageEvent> messageEventOptional = messageEventRepository.findById(messageEvent.getId());
 
         if (messageEventOptional.isPresent()) {
@@ -113,24 +106,18 @@ public class MessageSegmentServiceORMOO1 {
                     MessageSegment messageSegment = new MessageSegment();
                     messageSegment.setCode("ORC");
                     messageSegment.setBody(segment);
-                    String placerGroupNumber = ormO01.getORDER().getORC().getPlacerGroupNumber().getEntityIdentifier().getValue();
-                    messageSegment.setPlacerGroupNumber(placerGroupNumber);
                     messageSegment.setMessageEventId(messageEventOptional.get());
                     messageSegmentRepository.save(messageSegment);
                 } else if (segment.startsWith("OBR")) {
                     MessageSegment messageSegment = new MessageSegment();
                     messageSegment.setCode("OBR");
                     messageSegment.setBody(segment);
-                    String placerGroupNumber = ormO01.getORDER().getORC().getPlacerGroupNumber().getEntityIdentifier().getValue();
-                    messageSegment.setPlacerGroupNumber(placerGroupNumber);
                     messageSegment.setMessageEventId(messageEventOptional.get());
                     messageSegmentRepository.save(messageSegment);
                 } else if (segment.startsWith("OBX")) {
                     MessageSegment messageSegment = new MessageSegment();
                     messageSegment.setCode("OBX");
                     messageSegment.setBody(segment);
-                    String placerGroupNumber = ormO01.getORDER().getORC().getPlacerGroupNumber().getEntityIdentifier().getValue();
-                    messageSegment.setPlacerGroupNumber(placerGroupNumber);
                     messageSegment.setMessageEventId(messageEventOptional.get());
                     messageSegmentRepository.save(messageSegment);
                 }

@@ -12,15 +12,14 @@ import java.util.Optional;
 import com.mirth.prometeo.Entity.MessageEvent;
 import com.mirth.prometeo.Entity.MessageSegment;
 
-@Service
 public class MessageSegmentServiceOMLO21 {
 
     @Autowired
-    private MessageEventRepository messageEventRepository;
+    private static MessageEventRepository messageEventRepository;
     @Autowired
-    private MessageSegmentRepository messageSegmentRepository;
+    private static MessageSegmentRepository messageSegmentRepository;
 
-    public void saveMSHMessageSegmentOMLO21(OML_O21 omlO21, MessageEvent messageEvent) throws HL7Exception {
+    public static void saveMSHMessageSegmentOMLO21(OML_O21 omlO21, MessageEvent messageEvent) throws HL7Exception {
         Optional<MessageEvent> messageEventOptional = messageEventRepository.findById(messageEvent.getId());
         MessageSegment messageSegment = new MessageSegment();
         if(messageEventOptional.isPresent()) {
@@ -30,8 +29,6 @@ public class MessageSegmentServiceOMLO21 {
             String serializedSegment = serializedMessage.split("\r")[0];
             if (serializedSegment != null) {
                 messageSegment.setBody(serializedSegment);
-                String placerGroupNumber = omlO21.getORDER().getORC().getPlacerGroupNumber().getEntityIdentifier().getValue();
-                messageSegment.setPlacerGroupNumber(placerGroupNumber);
                 messageSegment.setMessageEventId(messageEventOptional.get());
                 messageSegmentRepository.save(messageSegment);
             } else {
@@ -42,7 +39,7 @@ public class MessageSegmentServiceOMLO21 {
         }
     }
 
-    public void savePIDMessageSegmentOMLO21(OML_O21 omlO21, MessageEvent messageEvent) throws HL7Exception {
+    public static void savePIDMessageSegmentOMLO21(OML_O21 omlO21, MessageEvent messageEvent) throws HL7Exception {
         Optional<MessageEvent> messageEventOptional = messageEventRepository.findById(messageEvent.getId());
         MessageSegment messageSegment = new MessageSegment();
         if(messageEventOptional.isPresent()) {
@@ -57,8 +54,6 @@ public class MessageSegmentServiceOMLO21 {
             }
             if (serializedSegment != null) {
                 messageSegment.setBody(serializedSegment);
-                String placerGroupNumber = omlO21.getORDER().getORC().getPlacerGroupNumber().getEntityIdentifier().getValue();
-                messageSegment.setPlacerGroupNumber(placerGroupNumber);
                 messageSegment.setMessageEventId(messageEventOptional.get());
                 messageSegmentRepository.save(messageSegment);
             } else {
@@ -69,7 +64,7 @@ public class MessageSegmentServiceOMLO21 {
         }
     }
 
-    public void savePD1MessageSegmentOMLO21(OML_O21 omlO21, MessageEvent messageEvent) throws HL7Exception {
+    public static void savePD1MessageSegmentOMLO21(OML_O21 omlO21, MessageEvent messageEvent) throws HL7Exception {
         Optional<MessageEvent> messageEventOptional = messageEventRepository.findById(messageEvent.getId());
         MessageSegment messageSegment = new MessageSegment();
         if(messageEventOptional.isPresent()) {
@@ -85,8 +80,6 @@ public class MessageSegmentServiceOMLO21 {
             }
             if (serializedSegment != null) {
                 messageSegment.setBody(serializedSegment);
-                String placerGroupNumber = omlO21.getORDER().getORC().getPlacerGroupNumber().getEntityIdentifier().getValue();
-                messageSegment.setPlacerGroupNumber(placerGroupNumber);
                 messageSegment.setMessageEventId(messageEventOptional.get());
                 messageSegmentRepository.save(messageSegment);
             } else {
@@ -97,7 +90,7 @@ public class MessageSegmentServiceOMLO21 {
         }
     }
 
-    public void savePV1MessageSegmentOMLO21(OML_O21 omlO21, MessageEvent messageEvent) throws HL7Exception {
+    public static void savePV1MessageSegmentOMLO21(OML_O21 omlO21, MessageEvent messageEvent) throws HL7Exception {
         Optional<MessageEvent> messageEventOptional = messageEventRepository.findById(messageEvent.getId());
         MessageSegment messageSegment = new MessageSegment();
         if(messageEventOptional.isPresent()) {
@@ -113,8 +106,6 @@ public class MessageSegmentServiceOMLO21 {
             }
             if (serializedSegment != null) {
                 messageSegment.setBody(serializedSegment);
-                String placerGroupNumber = omlO21.getORDER().getORC().getPlacerGroupNumber().getEntityIdentifier().getValue();
-                messageSegment.setPlacerGroupNumber(placerGroupNumber);
                 messageSegment.setMessageEventId(messageEventOptional.get());
                 messageSegmentRepository.save(messageSegment);
             } else {
@@ -125,7 +116,7 @@ public class MessageSegmentServiceOMLO21 {
         }
     }
 
-    public void saveTQ1MessageSegmentOMLO21(OML_O21 omlO21, MessageEvent messageEvent) throws HL7Exception {
+    public static void saveTQ1MessageSegmentOMLO21(OML_O21 omlO21, MessageEvent messageEvent) throws HL7Exception {
         Optional<MessageEvent> messageEventOptional = messageEventRepository.findById(messageEvent.getId());
         MessageSegment messageSegment = new MessageSegment();
         if(messageEventOptional.isPresent()) {
@@ -141,8 +132,6 @@ public class MessageSegmentServiceOMLO21 {
             }
             if (serializedSegment != null) {
                 messageSegment.setBody(serializedSegment);
-                String placerGroupNumber = omlO21.getORDER().getORC().getPlacerGroupNumber().getEntityIdentifier().getValue();
-                messageSegment.setPlacerGroupNumber(placerGroupNumber);
                 messageSegment.setMessageEventId(messageEventOptional.get());
                 messageSegmentRepository.save(messageSegment);
             } else {
@@ -153,7 +142,7 @@ public class MessageSegmentServiceOMLO21 {
         }
     }
 
-    public void saveORDERBLOCKMessageOMLO21(OML_O21 omlO21, MessageEvent messageEvent) throws HL7Exception {
+    public static void saveORDERBLOCKMessageOMLO21(OML_O21 omlO21, MessageEvent messageEvent) throws HL7Exception {
         Optional<MessageEvent> messageEventOptional = messageEventRepository.findById(messageEvent.getId());
 
         if (messageEventOptional.isPresent()) {
@@ -166,24 +155,18 @@ public class MessageSegmentServiceOMLO21 {
                     MessageSegment messageSegment = new MessageSegment();
                     messageSegment.setCode("ORC");
                     messageSegment.setBody(segment);
-                    String placerGroupNumber = omlO21.getORDER().getORC().getPlacerGroupNumber().getEntityIdentifier().getValue();
-                    messageSegment.setPlacerGroupNumber(placerGroupNumber);
                     messageSegment.setMessageEventId(messageEventOptional.get());
                     messageSegmentRepository.save(messageSegment);
                 } else if (segment.startsWith("OBR")) {
                     MessageSegment messageSegment = new MessageSegment();
                     messageSegment.setCode("OBR");
                     messageSegment.setBody(segment);
-                    String placerGroupNumber = omlO21.getORDER().getORC().getPlacerGroupNumber().getEntityIdentifier().getValue();
-                    messageSegment.setPlacerGroupNumber(placerGroupNumber);
                     messageSegment.setMessageEventId(messageEventOptional.get());
                     messageSegmentRepository.save(messageSegment);
                 } else if (segment.startsWith("OBX")) {
                     MessageSegment messageSegment = new MessageSegment();
                     messageSegment.setCode("OBX");
                     messageSegment.setBody(segment);
-                    String placerGroupNumber = omlO21.getORDER().getORC().getPlacerGroupNumber().getEntityIdentifier().getValue();
-                    messageSegment.setPlacerGroupNumber(placerGroupNumber);
                     messageSegment.setMessageEventId(messageEventOptional.get());
                     messageSegmentRepository.save(messageSegment);
                 }
