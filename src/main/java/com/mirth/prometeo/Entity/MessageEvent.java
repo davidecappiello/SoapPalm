@@ -1,6 +1,8 @@
 package com.mirth.prometeo.Entity;
 
 import jakarta.persistence.*;
+
+import java.io.Serial;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,6 +11,7 @@ import java.util.List;
 @Table(name = "PRO_MESSAGE_EVENT")
 public class MessageEvent extends BaseObject {
 
+    @Serial
     private static final long serialVersionUID = 1L;
 
     @Column(name = "code", nullable = false)
@@ -16,9 +19,6 @@ public class MessageEvent extends BaseObject {
 
     @Column(name = "source", nullable = false)
     private String source;
-
-    @Column(name = "placer_group_number", nullable = true)
-    private String placerGroupNumber;
 
     @OneToMany(mappedBy = "messageEventId", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<MessageSegment> messageSegments = new ArrayList<>();
@@ -60,14 +60,6 @@ public class MessageEvent extends BaseObject {
     public void removeMessageSegment(MessageSegment messageSegment) {
         messageSegments.remove(messageSegment);
         messageSegment.setMessageEventId(null);
-    }
-
-    public String getPlacerGroupNumber() {
-        return placerGroupNumber;
-    }
-
-    public void setPlacerGroupNumber(String placerGroupNumber) {
-        this.placerGroupNumber = placerGroupNumber;
     }
 
 }

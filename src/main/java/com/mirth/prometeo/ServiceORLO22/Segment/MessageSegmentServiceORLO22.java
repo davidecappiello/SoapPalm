@@ -9,16 +9,18 @@ import com.mirth.prometeo.Entity.MessageSegment;
 import com.mirth.prometeo.Repository.MessageEventRepository;
 import com.mirth.prometeo.Repository.MessageSegmentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import java.util.Optional;
 
+@Service
 public class MessageSegmentServiceORLO22 {
 
     @Autowired
-    private static MessageEventRepository messageEventRepository;
+    private MessageEventRepository messageEventRepository;
     @Autowired
-    private static MessageSegmentRepository messageSegmentRepository;
+    private MessageSegmentRepository messageSegmentRepository;
 
-    public static void saveMSHMessageSegmentORLO22(ORL_O22 orlO22, MessageEvent messageEvent) throws HL7Exception {
+    public void saveMSHMessageSegmentORLO22(ORL_O22 orlO22, MessageEvent messageEvent) throws HL7Exception {
         Optional<MessageEvent> messageEventOptional = messageEventRepository.findById(messageEvent.getId());
         if(messageEventOptional.isPresent()) {
             Parser parser = new PipeParser();
@@ -38,7 +40,7 @@ public class MessageSegmentServiceORLO22 {
         }
     }
 
-    public static void saveMSAMessageSegmentORLO22(ORL_O22 orlO22, MessageEvent messageEvent) throws HL7Exception {
+    public void saveMSAMessageSegmentORLO22(ORL_O22 orlO22, MessageEvent messageEvent) throws HL7Exception {
         Optional<MessageEvent> messageEventOptional = messageEventRepository.findById(messageEvent.getId());
         if(messageEventOptional.isPresent()) {
             Parser parser = new PipeParser();
@@ -64,7 +66,7 @@ public class MessageSegmentServiceORLO22 {
         }
     }
 
-    public static void saveORDERBLOCKMessageORLO22(ORL_O22 orlO22, MessageEvent messageEvent) throws HL7Exception {
+    public void saveORDERBLOCKMessageORLO22(ORL_O22 orlO22, MessageEvent messageEvent) throws HL7Exception {
         Optional<MessageEvent> messageEventOptional = messageEventRepository.findById(messageEvent.getId());
 
         if (messageEventOptional.isPresent()) {

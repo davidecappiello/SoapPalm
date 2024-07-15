@@ -12,14 +12,13 @@ import org.springframework.stereotype.Service;
 public class MessageEventServiceOMLO21 {
 
     @Autowired
-    private static MessageEventRepository messageEventRepository;
+    private MessageEventRepository messageEventRepository;
 
     @Transactional
-    public static MessageEvent saveOMLO21Message(String oml, OML_O21 omlO21) throws DataTypeException {
+    public MessageEvent saveOMLO21Message(String oml, OML_O21 omlO21) throws DataTypeException {
         MessageEvent messageEvent = new MessageEvent();
         messageEvent.setCode("OML_O21");
         messageEvent.setSource("Pronto Soccorso");
-        messageEvent.setPlacerGroupNumber(omlO21.getORDER().getORC().getPlacerGroupNumber().getEntityIdentifier().getValue());
         return messageEventRepository.save(messageEvent);
     }
 }

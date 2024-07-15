@@ -11,7 +11,7 @@ import ca.uhn.hl7v2.model.v25.message.ACK;
 import ca.uhn.hl7v2.model.v25.message.OML_O21;
 import ca.uhn.hl7v2.model.v25.message.ORL_O22;
 import ca.uhn.hl7v2.model.v25.message.ORM_O01;
-import ca.uhn.hl7v2.parser.PipeParser;
+import ca.uhn.hl7v2.parser.*;
 import com.mirth.prometeo.Entity.MessageEvent;
 import com.mirth.prometeo.ServiceOMLO21.Event.MessageEventServiceOMLO21;
 import com.mirth.prometeo.ServiceOMLO21.Segment.MessageSegmentServiceOMLO21;
@@ -23,6 +23,7 @@ import com.mirth.prometeo.Socket.Service.HL7SocketClientService;
 import com.mirth.connect.connectors.ws.AcceptMessage;
 import com.mirth.connect.connectors.ws.AcceptMessageResponse;
 import com.mirth.connect.connectors.ws.ObjectFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ws.server.endpoint.annotation.Endpoint;
 import org.springframework.ws.server.endpoint.annotation.PayloadRoot;
 import org.springframework.ws.server.endpoint.annotation.RequestPayload;
@@ -38,12 +39,25 @@ import java.util.regex.Pattern;
 public class MessageEndpoint {
 
     private final PipeParser pipeParser = new PipeParser();
+    private final XMLParser xmlParser = new DefaultXMLParser(new CanonicalModelClassFactory("2.5"));
     private static final String NAMESPACE_URI = "http://ws.connectors.connect.mirth.com/";
     private final ObjectFactory factory;
-
     public MessageEndpoint() {
         factory = new ObjectFactory();
     }
+
+    @Autowired
+    private MessageEventServiceOMLO21 messageEventServiceOMLO21;
+    @Autowired
+    private MessageEventServiceORMOO1 messageEventServiceORMOO1;
+    @Autowired
+    private MessageEventServiceORLO22 messageEventServiceORLO22;
+    @Autowired
+    private MessageSegmentServiceOMLO21 messageSegmentServiceOMLO21;
+    @Autowired
+    private MessageSegmentServiceORMOO1 messageSegmentServiceORMOO1;
+    @Autowired
+    private MessageSegmentServiceORLO22 messageSegmentServiceORLO22;
 
     @PayloadRoot(namespace = NAMESPACE_URI,
             localPart = "acceptMessage")
@@ -65,7 +79,7 @@ public class MessageEndpoint {
             try {
                 String hl7Response = HL7SocketClientService.sendHL7Message(finalMessagePIPE);
                 Message genericMessage = pipeParser.parse(hl7Response);
-                OML_O21 omlMessage = (OML_O21) pipeParser.parse(finalMessage);
+                OML_O21 omlMessage = (OML_O21) xmlParser.parse(updatedMessage);
                 ACKResponse object = new ACKResponse();
                 ACK ackMessage = object.generateACKResponseORLO22(genericMessage, omlMessage);
                 ORLO22 object2 = new ORLO22();
@@ -139,20 +153,20 @@ public class MessageEndpoint {
         ORM_O01 ormCreated = null;
         try {
             OML_O21 omlO21 = OMLDecoding.decodeOML_XML(finalMessage);
-            MessageEvent messageEvent = MessageEventServiceOMLO21.saveOMLO21Message(finalMessage, omlO21);
-            MessageSegmentServiceOMLO21.saveMSHMessageSegmentOMLO21(omlO21, messageEvent);
-            MessageSegmentServiceOMLO21.savePIDMessageSegmentOMLO21(omlO21, messageEvent);
-            MessageSegmentServiceOMLO21.savePD1MessageSegmentOMLO21(omlO21, messageEvent);
-            MessageSegmentServiceOMLO21.savePV1MessageSegmentOMLO21(omlO21, messageEvent);
-            MessageSegmentServiceOMLO21.saveORDERBLOCKMessageOMLO21(omlO21, messageEvent);
-            MessageSegmentServiceOMLO21.saveTQ1MessageSegmentOMLO21(omlO21, messageEvent);
+            MessageEvent messageEvent = messageEventServiceOMLO21.saveOMLO21Message(finalMessage, omlO21);
+            messageSegmentServiceOMLO21.saveMSHMessageSegmentOMLO21(omlO21, messageEvent);
+            messageSegmentServiceOMLO21.savePIDMessageSegmentOMLO21(omlO21, messageEvent);
+            messageSegmentServiceOMLO21.savePD1MessageSegmentOMLO21(omlO21, messageEvent);
+            messageSegmentServiceOMLO21.savePV1MessageSegmentOMLO21(omlO21, messageEvent);
+            messageSegmentServiceOMLO21.saveORDERBLOCKMessageOMLO21(omlO21, messageEvent);
+            messageSegmentServiceOMLO21.saveTQ1MessageSegmentOMLO21(omlO21, messageEvent);
 
             ormCreated = ormoo1.generateORM_OO1(omlO21);
-            MessageEvent messageEvent2 = MessageEventServiceORMOO1.saveORMOO1Message(ormCreated, omlO21);
-            MessageSegmentServiceORMOO1.saveMSHMessageSegmentORMOO1(ormCreated, messageEvent2);
-            MessageSegmentServiceORMOO1.savePIDMessageSegmentORMOO1(ormCreated, messageEvent2);
-            MessageSegmentServiceORMOO1.savePV1MessageSegmentORMOO1(ormCreated, messageEvent2);
-            MessageSegmentServiceORMOO1.saveORDERBLOCKMessageORMOO1(ormCreated, messageEvent2);
+            MessageEvent messageEvent2 = messageEventServiceORMOO1.saveORMOO1Message(ormCreated, omlO21);
+            messageSegmentServiceORMOO1.saveMSHMessageSegmentORMOO1(ormCreated, messageEvent2);
+            messageSegmentServiceORMOO1.savePIDMessageSegmentORMOO1(ormCreated, messageEvent2);
+            messageSegmentServiceORMOO1.savePV1MessageSegmentORMOO1(ormCreated, messageEvent2);
+            messageSegmentServiceORMOO1.saveORDERBLOCKMessageORMOO1(ormCreated, messageEvent2);
 
         } catch (HL7Exception | IOException | ParserConfigurationException | SAXException e) {
             e.printStackTrace();
@@ -164,9 +178,9 @@ public class MessageEndpoint {
 
         ORL_O22 orlO22 = ORLDecoding.decodeORL_XML(finalResponseToPS);
 
-        MessageEvent messageEvent = MessageEventServiceORLO22.saveORLO22Message(orlO22, omlO21);
-        MessageSegmentServiceORLO22.saveMSHMessageSegmentORLO22(orlO22, messageEvent);
-        MessageSegmentServiceORLO22.saveMSAMessageSegmentORLO22(orlO22, messageEvent);
-        MessageSegmentServiceORLO22.saveORDERBLOCKMessageORLO22(orlO22, messageEvent);
+        MessageEvent messageEvent = messageEventServiceORLO22.saveORLO22Message(orlO22, omlO21);
+        messageSegmentServiceORLO22.saveMSHMessageSegmentORLO22(orlO22, messageEvent);
+        messageSegmentServiceORLO22.saveMSAMessageSegmentORLO22(orlO22, messageEvent);
+        messageSegmentServiceORLO22.saveORDERBLOCKMessageORLO22(orlO22, messageEvent);
     }
 }

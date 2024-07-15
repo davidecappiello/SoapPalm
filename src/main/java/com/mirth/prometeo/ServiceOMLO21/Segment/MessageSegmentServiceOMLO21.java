@@ -12,14 +12,15 @@ import java.util.Optional;
 import com.mirth.prometeo.Entity.MessageEvent;
 import com.mirth.prometeo.Entity.MessageSegment;
 
+@Service
 public class MessageSegmentServiceOMLO21 {
 
     @Autowired
-    private static MessageEventRepository messageEventRepository;
+    private MessageEventRepository messageEventRepository;
     @Autowired
-    private static MessageSegmentRepository messageSegmentRepository;
+    private MessageSegmentRepository messageSegmentRepository;
 
-    public static void saveMSHMessageSegmentOMLO21(OML_O21 omlO21, MessageEvent messageEvent) throws HL7Exception {
+    public void saveMSHMessageSegmentOMLO21(OML_O21 omlO21, MessageEvent messageEvent) throws HL7Exception {
         Optional<MessageEvent> messageEventOptional = messageEventRepository.findById(messageEvent.getId());
         MessageSegment messageSegment = new MessageSegment();
         if(messageEventOptional.isPresent()) {
@@ -39,7 +40,7 @@ public class MessageSegmentServiceOMLO21 {
         }
     }
 
-    public static void savePIDMessageSegmentOMLO21(OML_O21 omlO21, MessageEvent messageEvent) throws HL7Exception {
+    public void savePIDMessageSegmentOMLO21(OML_O21 omlO21, MessageEvent messageEvent) throws HL7Exception {
         Optional<MessageEvent> messageEventOptional = messageEventRepository.findById(messageEvent.getId());
         MessageSegment messageSegment = new MessageSegment();
         if(messageEventOptional.isPresent()) {
@@ -64,7 +65,7 @@ public class MessageSegmentServiceOMLO21 {
         }
     }
 
-    public static void savePD1MessageSegmentOMLO21(OML_O21 omlO21, MessageEvent messageEvent) throws HL7Exception {
+    public void savePD1MessageSegmentOMLO21(OML_O21 omlO21, MessageEvent messageEvent) throws HL7Exception {
         Optional<MessageEvent> messageEventOptional = messageEventRepository.findById(messageEvent.getId());
         MessageSegment messageSegment = new MessageSegment();
         if(messageEventOptional.isPresent()) {
@@ -90,7 +91,7 @@ public class MessageSegmentServiceOMLO21 {
         }
     }
 
-    public static void savePV1MessageSegmentOMLO21(OML_O21 omlO21, MessageEvent messageEvent) throws HL7Exception {
+    public void savePV1MessageSegmentOMLO21(OML_O21 omlO21, MessageEvent messageEvent) throws HL7Exception {
         Optional<MessageEvent> messageEventOptional = messageEventRepository.findById(messageEvent.getId());
         MessageSegment messageSegment = new MessageSegment();
         if(messageEventOptional.isPresent()) {
@@ -116,7 +117,7 @@ public class MessageSegmentServiceOMLO21 {
         }
     }
 
-    public static void saveTQ1MessageSegmentOMLO21(OML_O21 omlO21, MessageEvent messageEvent) throws HL7Exception {
+    public void saveTQ1MessageSegmentOMLO21(OML_O21 omlO21, MessageEvent messageEvent) throws HL7Exception {
         Optional<MessageEvent> messageEventOptional = messageEventRepository.findById(messageEvent.getId());
         MessageSegment messageSegment = new MessageSegment();
         if(messageEventOptional.isPresent()) {
@@ -142,7 +143,7 @@ public class MessageSegmentServiceOMLO21 {
         }
     }
 
-    public static void saveORDERBLOCKMessageOMLO21(OML_O21 omlO21, MessageEvent messageEvent) throws HL7Exception {
+    public void saveORDERBLOCKMessageOMLO21(OML_O21 omlO21, MessageEvent messageEvent) throws HL7Exception {
         Optional<MessageEvent> messageEventOptional = messageEventRepository.findById(messageEvent.getId());
 
         if (messageEventOptional.isPresent()) {

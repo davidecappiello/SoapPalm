@@ -9,17 +9,17 @@ import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+@Service
 public class MessageEventServiceORLO22 {
 
     @Autowired
-    private static MessageEventRepository messageEventRepository;
+    private MessageEventRepository messageEventRepository;
 
     @Transactional
-    public static MessageEvent saveORLO22Message(ORL_O22 orlo22, OML_O21 omlO21) throws DataTypeException {
+    public MessageEvent saveORLO22Message(ORL_O22 orlo22, OML_O21 omlO21) throws DataTypeException {
         MessageEvent messageEvent = new MessageEvent();
         messageEvent.setCode("ORL_O22");
         messageEvent.setSource("Middleware");
-        messageEvent.setPlacerGroupNumber(omlO21.getORDER().getORC().getPlacerGroupNumber().getEntityIdentifier().getValue());
         return messageEventRepository.save(messageEvent);
     }
 }
