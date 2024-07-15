@@ -1,18 +1,20 @@
 package com.mirth.prometeo.SpringbootSoapServer.Endpoint;
 
+import Prometeo.HL7Palm.Decoding.OMLDecoding;
+import Prometeo.HL7Palm.Decoding.ORLDecoding;
+import Prometeo.HL7Palm.Decoding.QBPDecoding;
+import Prometeo.HL7Palm.Message.ACKResponse;
+import Prometeo.HL7Palm.Message.Custom.RSP_K11;
+import Prometeo.HL7Palm.Message.ORLO22;
+import Prometeo.HL7Palm.Message.ORMOO1;
+import Prometeo.HL7Palm.Message.RSPK11;
 import ca.uhn.hl7v2.HL7Exception;
 import ca.uhn.hl7v2.model.Message;
-import ca.uhn.hl7v2.model.v25.message.ACK;
-import ca.uhn.hl7v2.model.v25.message.OML_O21;
-import ca.uhn.hl7v2.model.v25.message.ORL_O22;
-import ca.uhn.hl7v2.model.v25.message.ORM_O01;
+import ca.uhn.hl7v2.model.v25.message.*;
+import ca.uhn.hl7v2.parser.DefaultXMLParser;
 import ca.uhn.hl7v2.parser.PipeParser;
+import ca.uhn.hl7v2.parser.XMLParser;
 import com.mirth.prometeo.Entity.MessageEvent;
-import com.mirth.prometeo.HL7Palm.Decoding.OMLDecoding;
-import com.mirth.prometeo.HL7Palm.Decoding.ORLDecoding;
-import com.mirth.prometeo.HL7Palm.Message.ACKResponse;
-import com.mirth.prometeo.HL7Palm.Message.ORLO22;
-import com.mirth.prometeo.HL7Palm.Message.ORMOO1;
 import com.mirth.prometeo.Repository.MessageEventRepository;
 import com.mirth.prometeo.Repository.MessageEventTimelineRepository;
 import com.mirth.prometeo.Repository.MessageSegmentRepository;
@@ -48,6 +50,8 @@ import java.util.regex.Pattern;
 public class MessageEndpoint {
 
     private final PipeParser pipeParser = new PipeParser();
+
+    private final XMLParser xmlParser = new DefaultXMLParser();
     private static final String NAMESPACE_URI = "http://ws.connectors.connect.mirth.com/";
 
     @Autowired
@@ -95,29 +99,57 @@ public class MessageEndpoint {
         try {
             System.out.println("Controllo i tag esterni al messaggio per capire se sono uguali al MessageTypeStructure del messaggio HL7");
             String updatedMessage = checkAndUpdateMessageType(finalMessage);
+            String msg3Value = extractMsg3Value(finalMessage);
+
 
             if (acceptMessage.getValue() != null && acceptMessage.getValue().getArg0() != null) {
 
-                System.out.println("Salvo l'OML_O21 inviato dal PS e l'ORM_O01 generato da noi sul database locale");
-                ORM_O01 ormCreated = saveOMLO21AndORMOO1OnDatabase(updatedMessage, ormO01);
-                String finalMessagePIPE = ormO01.convertXMLToPipeFormat(ormCreated);
+
 
                 try {
-                    System.out.println("Invio via socket il messaggio a TD");
-                    String hl7Response = HL7SocketClientService.sendHL7Message(finalMessagePIPE);
-                    Message genericMessage = pipeParser.parse(hl7Response);
-                    OML_O21 omlMessage = (OML_O21) pipeParser.parse(finalMessagePIPE);
-                    ACKResponse object = new ACKResponse();
-                    System.out.println("Genero la risposta ACK inviata da TD");
-                    ACK ackMessage = object.generateACKResponseORLO22(genericMessage, omlMessage);
-                    ORLO22 object2 = new ORLO22();
-                    String finalResponseToPSPIPE = String.valueOf(object2.generateORL_O22(ackMessage, genericMessage, ormCreated));
-                    String finalResponseToPSXML = String.valueOf(object2.stringMessageToXML(finalResponseToPSPIPE));
-                    System.out.println("Salvo l'ORL_O22 generato sul database locale");
-                    saveORLO22OnDatabase(finalResponseToPSPIPE);
-                    System.out.println("Setto il return");
-                    response.set_Return(finalResponseToPSXML);
-                    System.out.println(finalResponseToPSXML);
+                    if (msg3Value.equals("OML_O21")) {
+                        System.out.println("Salvo l'OML_O21 inviato dal PS e l'ORM_O01 generato da noi sul database locale");
+                        ORM_O01 ormCreated = saveOMLO21AndORMOO1OnDatabase(updatedMessage, ormO01);
+                        String finalMessagePIPE = ormO01.convertXMLToPipeFormat(ormCreated);
+
+
+                        System.out.println("Invio via socket il messaggio a TD");
+                        String hl7Response = HL7SocketClientService.sendHL7Message(finalMessagePIPE);
+                        Message genericMessage = pipeParser.parse(hl7Response);
+                        System.out.println(updatedMessage);
+                        OML_O21 omlMessage = (OML_O21) xmlParser.parse(updatedMessage);
+                        ACKResponse object = new ACKResponse();
+                        System.out.println("Genero la risposta ACK inviata da TD");
+                        ACK ackMessage = object.generateACKResponseORLO22(genericMessage, omlMessage);
+                        ORLO22 object2 = new ORLO22();
+                        String finalResponseToPSPIPE = String.valueOf(object2.generateORL_O22(ackMessage, genericMessage, ormCreated));
+                        String finalResponseToPSXML = String.valueOf(object2.stringMessageToXML(finalResponseToPSPIPE));
+                        System.out.println("Salvo l'ORL_O22 generato sul database locale");
+                        saveORLO22OnDatabase(finalResponseToPSPIPE);
+                        System.out.println("Setto il return");
+                        response.set_Return(finalResponseToPSXML);
+                        System.out.println(finalResponseToPSXML);
+                    } else if(msg3Value.equals("QBP_Q11")){
+
+
+
+                        System.out.println("Creazione del RSP_K11 di prova per lo ZET");
+//                        QBPQ11 qbpQ11 = new QBPQ11();
+                        QBP_Q11 qbp = QBPDecoding.decodeQBP_XML(updatedMessage);
+//                        QBP_Q11 qbp = qbpQ11.crateQBP();
+                        //String qbpXMl = qbpQ11.XmlEncodind(qbp);
+//                        QBPDecoding qbpInput = new QBPDecoding();
+//                        QBP_Q11 qbpQ11 = qbpInput.decodeQBP_XML(updatedMessage);
+
+                        System.out.println(qbp);
+
+                        String msg2QBP = extractMsg2Value(updatedMessage);
+                        RSPK11 rspk11 = new RSPK11();
+                        RSP_K11 rsp = rspk11.createEncodedMessage(msg2QBP, qbp);
+                        String rspXMl = rspk11.XmlEncodind(rsp);
+                        System.out.println(rspXMl);
+
+                    }
                 } catch (Exception e) {
                     e.printStackTrace(pw);
                     logger.error(sw.toString());
@@ -187,6 +219,22 @@ public class MessageEndpoint {
             logger.error(sw.toString());
             System.out.println("sw: "+sw.toString());
             throw new Exception("MSG.3 value not found in MSH");
+        }
+    }
+
+    private static String extractMsg2Value(String message) throws Exception {
+        Pattern pattern = Pattern.compile("<MSG.2>(.*)</MSG.2>");
+        Matcher matcher = pattern.matcher(message);
+
+        if (matcher.find()) {
+            System.out.println(matcher.group(1));
+            return matcher.group(1);
+        } else {
+            Exception e = new Exception("MSG.2 value not found in MSH");
+            e.printStackTrace(pw);
+            logger.error(sw.toString());
+            System.out.println("sw: "+sw.toString());
+            throw new Exception("MSG.2 value not found in MSH");
         }
     }
 
