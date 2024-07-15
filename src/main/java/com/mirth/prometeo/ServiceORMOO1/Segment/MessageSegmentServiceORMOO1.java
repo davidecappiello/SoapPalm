@@ -1,3 +1,4 @@
+
 package com.mirth.prometeo.ServiceORMOO1.Segment;
 
 import ca.uhn.hl7v2.HL7Exception;
@@ -32,8 +33,6 @@ public class MessageSegmentServiceORMOO1 {
             String serializedSegment = serializedMessage.split("\r")[0];
             if (serializedSegment != null) {
                 messageSegment.setBody(serializedSegment);
-                String placerGroupNumber = ormO01.getORDER().getORC().getPlacerGroupNumber().getEntityIdentifier().getValue();
-                messageSegment.setPlacerGroupNumber(placerGroupNumber);
                 messageSegment.setMessageEventId(messageEventOptional.get());
                 messageSegmentRepository.save(messageSegment);
             } else {
@@ -60,8 +59,6 @@ public class MessageSegmentServiceORMOO1 {
             }
             if (serializedSegment != null) {
                 messageSegment.setBody(serializedSegment);
-                String placerGroupNumber = ormO01.getORDER().getORC().getPlacerGroupNumber().getEntityIdentifier().getValue();
-                messageSegment.setPlacerGroupNumber(placerGroupNumber);
                 messageSegment.setMessageEventId(messageEventOptional.get());
                 messageSegmentRepository.save(messageSegment);
             } else {
@@ -88,8 +85,6 @@ public class MessageSegmentServiceORMOO1 {
             }
             if (serializedSegment != null) {
                 messageSegment.setBody(serializedSegment);
-                String placerGroupNumber = ormO01.getORDER().getORC().getPlacerGroupNumber().getEntityIdentifier().getValue();
-                messageSegment.setPlacerGroupNumber(placerGroupNumber);
                 messageSegment.setMessageEventId(messageEventOptional.get());
                 messageSegmentRepository.save(messageSegment);
             } else {
@@ -113,24 +108,18 @@ public class MessageSegmentServiceORMOO1 {
                     MessageSegment messageSegment = new MessageSegment();
                     messageSegment.setCode("ORC");
                     messageSegment.setBody(segment);
-                    String placerGroupNumber = ormO01.getORDER().getORC().getPlacerGroupNumber().getEntityIdentifier().getValue();
-                    messageSegment.setPlacerGroupNumber(placerGroupNumber);
                     messageSegment.setMessageEventId(messageEventOptional.get());
                     messageSegmentRepository.save(messageSegment);
                 } else if (segment.startsWith("OBR")) {
                     MessageSegment messageSegment = new MessageSegment();
                     messageSegment.setCode("OBR");
                     messageSegment.setBody(segment);
-                    String placerGroupNumber = ormO01.getORDER().getORC().getPlacerGroupNumber().getEntityIdentifier().getValue();
-                    messageSegment.setPlacerGroupNumber(placerGroupNumber);
                     messageSegment.setMessageEventId(messageEventOptional.get());
                     messageSegmentRepository.save(messageSegment);
                 } else if (segment.startsWith("OBX")) {
                     MessageSegment messageSegment = new MessageSegment();
                     messageSegment.setCode("OBX");
                     messageSegment.setBody(segment);
-                    String placerGroupNumber = ormO01.getORDER().getORC().getPlacerGroupNumber().getEntityIdentifier().getValue();
-                    messageSegment.setPlacerGroupNumber(placerGroupNumber);
                     messageSegment.setMessageEventId(messageEventOptional.get());
                     messageSegmentRepository.save(messageSegment);
                 }

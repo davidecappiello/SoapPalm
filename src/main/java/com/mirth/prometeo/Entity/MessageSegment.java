@@ -3,9 +3,11 @@ package com.mirth.prometeo.Entity;
 import jakarta.persistence.*;
 import com.mirth.prometeo.Entity.MessageEvent;
 
+import javax.validation.constraints.Size;
+
 @Entity
 @Inheritance
-@Table(name = "message_segment")
+@Table(name = "PRO_MESSAGE_SEGMENT")
 public class MessageSegment {
 
     @Id
@@ -17,9 +19,6 @@ public class MessageSegment {
 
     @Column(name = "body", nullable = false, columnDefinition = "TEXT")
     private String body;
-
-    @Column(name = "placer_group_number", nullable = true)
-    private String placerGroupNumber;
 
     @ManyToOne
     @JoinColumn(name = "message_event_id", nullable = false)
@@ -47,14 +46,6 @@ public class MessageSegment {
 
     public void setBody(String body) {
         this.body = body;
-    }
-
-    public String getPlacerGroupNumber() {
-        return placerGroupNumber;
-    }
-
-    public void setPlacerGroupNumber(String placerGroupNumber) {
-        this.placerGroupNumber = placerGroupNumber;
     }
 
     public MessageEvent getMessageEventId() {

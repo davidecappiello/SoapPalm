@@ -1,14 +1,17 @@
 package com.mirth.prometeo.Entity;
 
 import jakarta.persistence.*;
+
+import java.io.Serial;
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
-@Table(name = "message_event")
+@Table(name = "PRO_MESSAGE_EVENT")
 public class MessageEvent extends BaseObject {
 
+    @Serial
     private static final long serialVersionUID = 1L;
 
     @Column(name = "code", nullable = false)
@@ -19,10 +22,6 @@ public class MessageEvent extends BaseObject {
 
     @OneToMany(mappedBy = "messageEventId", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<MessageSegment> messageSegments = new ArrayList<>();
-
-    @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
-    @JoinColumn(name = "event_timeline_id", referencedColumnName = "id")
-    private EventTimeline eventTimeline;
 
     public String getCode() {
         return code;
@@ -63,11 +62,4 @@ public class MessageEvent extends BaseObject {
         messageSegment.setMessageEventId(null);
     }
 
-    public EventTimeline getEventTimeline() {
-        return eventTimeline;
-    }
-
-    public void setEventTimeline(EventTimeline eventTimeline) {
-        this.eventTimeline = eventTimeline;
-    }
 }

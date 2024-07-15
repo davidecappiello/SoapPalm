@@ -30,8 +30,6 @@ public class MessageSegmentServiceOMLO21 {
             String serializedSegment = serializedMessage.split("\r")[0];
             if (serializedSegment != null) {
                 messageSegment.setBody(serializedSegment);
-                String placerGroupNumber = omlO21.getORDER().getORC().getPlacerGroupNumber().getEntityIdentifier().getValue();
-                messageSegment.setPlacerGroupNumber(placerGroupNumber);
                 messageSegment.setMessageEventId(messageEventOptional.get());
                 messageSegmentRepository.save(messageSegment);
             } else {
@@ -53,13 +51,10 @@ public class MessageSegmentServiceOMLO21 {
             for (String segment : serializedMessage.split("\r")) {
                 if (segment.startsWith("PID")) {
                     serializedSegment = segment;
-                    break;
                 }
             }
             if (serializedSegment != null) {
                 messageSegment.setBody(serializedSegment);
-                String placerGroupNumber = omlO21.getORDER().getORC().getPlacerGroupNumber().getEntityIdentifier().getValue();
-                messageSegment.setPlacerGroupNumber(placerGroupNumber);
                 messageSegment.setMessageEventId(messageEventOptional.get());
                 messageSegmentRepository.save(messageSegment);
             } else {
@@ -86,8 +81,6 @@ public class MessageSegmentServiceOMLO21 {
             }
             if (serializedSegment != null) {
                 messageSegment.setBody(serializedSegment);
-                String placerGroupNumber = omlO21.getORDER().getORC().getPlacerGroupNumber().getEntityIdentifier().getValue();
-                messageSegment.setPlacerGroupNumber(placerGroupNumber);
                 messageSegment.setMessageEventId(messageEventOptional.get());
                 messageSegmentRepository.save(messageSegment);
             } else {
@@ -114,8 +107,6 @@ public class MessageSegmentServiceOMLO21 {
             }
             if (serializedSegment != null) {
                 messageSegment.setBody(serializedSegment);
-                String placerGroupNumber = omlO21.getORDER().getORC().getPlacerGroupNumber().getEntityIdentifier().getValue();
-                messageSegment.setPlacerGroupNumber(placerGroupNumber);
                 messageSegment.setMessageEventId(messageEventOptional.get());
                 messageSegmentRepository.save(messageSegment);
             } else {
@@ -142,8 +133,6 @@ public class MessageSegmentServiceOMLO21 {
             }
             if (serializedSegment != null) {
                 messageSegment.setBody(serializedSegment);
-                String placerGroupNumber = omlO21.getORDER().getORC().getPlacerGroupNumber().getEntityIdentifier().getValue();
-                messageSegment.setPlacerGroupNumber(placerGroupNumber);
                 messageSegment.setMessageEventId(messageEventOptional.get());
                 messageSegmentRepository.save(messageSegment);
             } else {
@@ -167,24 +156,18 @@ public class MessageSegmentServiceOMLO21 {
                     MessageSegment messageSegment = new MessageSegment();
                     messageSegment.setCode("ORC");
                     messageSegment.setBody(segment);
-                    String placerGroupNumber = omlO21.getORDER().getORC().getPlacerGroupNumber().getEntityIdentifier().getValue();
-                    messageSegment.setPlacerGroupNumber(placerGroupNumber);
                     messageSegment.setMessageEventId(messageEventOptional.get());
                     messageSegmentRepository.save(messageSegment);
                 } else if (segment.startsWith("OBR")) {
                     MessageSegment messageSegment = new MessageSegment();
                     messageSegment.setCode("OBR");
                     messageSegment.setBody(segment);
-                    String placerGroupNumber = omlO21.getORDER().getORC().getPlacerGroupNumber().getEntityIdentifier().getValue();
-                    messageSegment.setPlacerGroupNumber(placerGroupNumber);
                     messageSegment.setMessageEventId(messageEventOptional.get());
                     messageSegmentRepository.save(messageSegment);
                 } else if (segment.startsWith("OBX")) {
                     MessageSegment messageSegment = new MessageSegment();
                     messageSegment.setCode("OBX");
                     messageSegment.setBody(segment);
-                    String placerGroupNumber = omlO21.getORDER().getORC().getPlacerGroupNumber().getEntityIdentifier().getValue();
-                    messageSegment.setPlacerGroupNumber(placerGroupNumber);
                     messageSegment.setMessageEventId(messageEventOptional.get());
                     messageSegmentRepository.save(messageSegment);
                 }

@@ -1,5 +1,6 @@
 package com.mirth.prometeo.SpringbootSoapServer.Endpoint;
 
+
 import Prometeo.HL7Palm.Decoding.OMLDecoding;
 import Prometeo.HL7Palm.Decoding.ORLDecoding;
 import Prometeo.HL7Palm.Decoding.QBPDecoding;
@@ -15,13 +16,9 @@ import ca.uhn.hl7v2.parser.DefaultXMLParser;
 import ca.uhn.hl7v2.parser.PipeParser;
 import ca.uhn.hl7v2.parser.XMLParser;
 import com.mirth.prometeo.Entity.MessageEvent;
-import com.mirth.prometeo.Repository.MessageEventRepository;
-import com.mirth.prometeo.Repository.MessageEventTimelineRepository;
-import com.mirth.prometeo.Repository.MessageSegmentRepository;
 import com.mirth.prometeo.ServiceOMLO21.Event.MessageEventServiceOMLO21;
 import com.mirth.prometeo.ServiceOMLO21.Segment.MessageSegmentServiceOMLO21;
 import com.mirth.prometeo.ServiceORLO22.Event.MessageEventServiceORLO22;
-import com.mirth.prometeo.ServiceORLO22.MessageEventTimelineORLO22;
 import com.mirth.prometeo.ServiceORLO22.Segment.MessageSegmentServiceORLO22;
 import com.mirth.prometeo.ServiceORMOO1.Event.MessageEventServiceORMOO1;
 import com.mirth.prometeo.ServiceORMOO1.Segment.MessageSegmentServiceORMOO1;
@@ -57,23 +54,15 @@ public class MessageEndpoint {
     @Autowired
     private MessageEventServiceOMLO21 messageEventServiceOMLO21;
     @Autowired
-    private MessageSegmentServiceOMLO21 messageSegmentServiceOMLO21;
-    @Autowired
     private MessageEventServiceORMOO1 messageEventServiceORMOO1;
-    @Autowired
-    private MessageSegmentServiceORMOO1 messageSegmentServiceORMOO1;
     @Autowired
     private MessageEventServiceORLO22 messageEventServiceORLO22;
     @Autowired
+    private MessageSegmentServiceOMLO21 messageSegmentServiceOMLO21;
+    @Autowired
+    private MessageSegmentServiceORMOO1 messageSegmentServiceORMOO1;
+    @Autowired
     private MessageSegmentServiceORLO22 messageSegmentServiceORLO22;
-    @Autowired
-    private MessageSegmentRepository messageSegmentRepository;
-    @Autowired
-    private MessageEventTimelineRepository messageEventTimelineRepository;
-    @Autowired
-    private MessageEventRepository messageEventRepository;
-    @Autowired
-    private MessageEventTimelineORLO22 messageEventTimelineORLO22;
 
     private final ObjectFactory factory;
 
@@ -125,7 +114,7 @@ public class MessageEndpoint {
                         String finalResponseToPSPIPE = String.valueOf(object2.generateORL_O22(ackMessage, genericMessage, ormCreated));
                         String finalResponseToPSXML = String.valueOf(object2.stringMessageToXML(finalResponseToPSPIPE));
                         System.out.println("Salvo l'ORL_O22 generato sul database locale");
-                        saveORLO22OnDatabase(finalResponseToPSPIPE);
+                        saveORLO22OnDatabase(finalResponseToPSPIPE, omlMessage);
                         System.out.println("Setto il return");
                         response.set_Return(finalResponseToPSXML);
                         System.out.println(finalResponseToPSXML);
@@ -282,11 +271,10 @@ public class MessageEndpoint {
 
     }
 
-    public ORM_O01 saveOMLO21AndORMOO1OnDatabase(String finalMessage, ORMOO1 ormoo1) throws Exception {
+    public ORM_O01 saveOMLO21AndORMOO1OnDatabase(String finalMessage, ORMOO1 ormoo1) {
         ORM_O01 ormCreated = null;
         try {
             OML_O21 omlO21 = OMLDecoding.decodeOML_XML(finalMessage);
-            System.out.println(omlO21);
             MessageEvent messageEvent = messageEventServiceOMLO21.saveOMLO21Message(finalMessage, omlO21);
             messageSegmentServiceOMLO21.saveMSHMessageSegmentOMLO21(omlO21, messageEvent);
             messageSegmentServiceOMLO21.savePIDMessageSegmentOMLO21(omlO21, messageEvent);
@@ -303,26 +291,18 @@ public class MessageEndpoint {
             messageSegmentServiceORMOO1.saveORDERBLOCKMessageORMOO1(ormCreated, messageEvent2);
 
         } catch (HL7Exception | IOException | ParserConfigurationException | SAXException e) {
-            e.printStackTrace(pw);
-            logger.error(sw.toString());
-            System.out.println("sw: "+sw.toString());
-            throw new Exception();
+            e.printStackTrace();
         }
         return ormCreated;
     }
 
-    public void saveORLO22OnDatabase(String finalResponseToPS)  {
-        try {
-            ORL_O22 orlO22 = ORLDecoding.decodeORL_XML(finalResponseToPS);
-            MessageEvent messageEvent = messageEventServiceORLO22.saveORLO22Message(orlO22);
-            messageSegmentServiceORLO22.saveMSHMessageSegmentORLO22(orlO22, messageEvent);
-            messageSegmentServiceORLO22.saveMSAMessageSegmentORLO22(orlO22, messageEvent);
-            messageSegmentServiceORLO22.saveORDERBLOCKMessageORLO22(orlO22, messageEvent);
-            messageEventTimelineORLO22.updateEventTimeLineORLO22(orlO22, messageEvent);
-        } catch (HL7Exception e) {
-            e.printStackTrace(pw);
-            logger.error(sw.toString());
-            System.out.println("sw: "+sw.toString());
-        }
+    public void saveORLO22OnDatabase(String finalResponseToPS, OML_O21 omlO21) throws HL7Exception, IOException, ParserConfigurationException, SAXException {
+
+        ORL_O22 orlO22 = ORLDecoding.decodeORL_XML(finalResponseToPS);
+
+        MessageEvent messageEvent = messageEventServiceORLO22.saveORLO22Message(orlO22, omlO21);
+        messageSegmentServiceORLO22.saveMSHMessageSegmentORLO22(orlO22, messageEvent);
+        messageSegmentServiceORLO22.saveMSAMessageSegmentORLO22(orlO22, messageEvent);
+        messageSegmentServiceORLO22.saveORDERBLOCKMessageORLO22(orlO22, messageEvent);
     }
 }
