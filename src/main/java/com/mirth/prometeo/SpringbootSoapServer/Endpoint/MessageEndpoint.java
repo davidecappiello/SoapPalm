@@ -11,6 +11,7 @@ import ca.uhn.hl7v2.model.v25.message.*;
 import ca.uhn.hl7v2.parser.DefaultXMLParser;
 import ca.uhn.hl7v2.parser.PipeParser;
 import ca.uhn.hl7v2.parser.XMLParser;
+import com.mirth.SoapClientApplication;
 import com.mirth.prometeo.Entity.MessageEvent;
 import com.mirth.prometeo.ServiceOMLO21.Event.MessageEventServiceOMLO21;
 import com.mirth.prometeo.ServiceOMLO21.Segment.MessageSegmentServiceOMLO21;
@@ -23,6 +24,8 @@ import com.mirth.connect.connectors.ws.AcceptMessage;
 import com.mirth.connect.connectors.ws.AcceptMessageResponse;
 import com.mirth.connect.connectors.ws.ObjectFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.stereotype.Component;
 import org.springframework.ws.server.endpoint.annotation.Endpoint;
 import org.springframework.ws.server.endpoint.annotation.PayloadRoot;
 import org.springframework.ws.server.endpoint.annotation.RequestPayload;
@@ -40,7 +43,9 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 @Endpoint
-public class MessageEndpoint {
+public class MessageEndpoint implements CommandLineRunner {
+
+    private String param;
 
     private final PipeParser pipeParser = new PipeParser();
 
@@ -79,7 +84,7 @@ public class MessageEndpoint {
         String finalMessage = acceptMessage.getValue().getArg0();
         System.out.println("Ricevo il messaggio HL7 dal pronto soccorso");
         System.out.println(finalMessage);
-//        ORMOO1 ormO01 = new ORMOO1();
+        ORMOO1 ormO01 = new ORMOO1();
         OMLO21 oml_o21 = new OMLO21();
 
         try {
@@ -95,28 +100,51 @@ public class MessageEndpoint {
                 try {
                     if (msg3Value.equals("OML_O21")) {
                         System.out.println("Salvo l'OML_O21 inviato dal PS e l'ORM_O01 generato da noi sul database locale");
-//                        ORM_O01 ormCreated = saveOMLO21AndORMOO1OnDatabase(updatedMessage, ormO01);
-//                        String finalMessagePIPE = ormO01.convertXMLToPipeFormat(ormCreated);
-                        saveOMLO21Database(updatedMessage);
-                        OML_O21 omlCreated = OMLDecoding.decodeOML_XML(updatedMessage);
-                        String finalMessagePIPE = oml_o21.convertXMLToPipeFormat(omlCreated);
+                        String hl7Response = null;
+                        OML_O21 omlCreated = null;
+                        if (param.equals("orm")) {
+                            System.out.println("Parametro ricevuto: " + param);
+                            ORM_O01 ormCreated = saveOMLO21AndORMOO1OnDatabase(updatedMessage, ormO01);
+                            String finalMessagePIPE = ormO01.convertXMLToPipeFormat(ormCreated);
+                            System.out.println("Invio via socket il messaggio a TD");
+                            hl7Response = HL7SocketClientService.sendHL7Message(finalMessagePIPE);
+                            Message genericMessage = pipeParser.parse(hl7Response);
+                            System.out.println(updatedMessage);
+                            OML_O21 omlMessage = (OML_O21) xmlParser.parse(updatedMessage);
+                            ACKResponse object = new ACKResponse();
+                            System.out.println("Genero la risposta ACK inviata da TD");
+                            ACK ackMessage = object.generateACKResponseORLO22(genericMessage, omlMessage);
+                            ORLO22 object2 = new ORLO22();
+                            String finalResponseToPSPIPE = String.valueOf(object2.generateORL_O22FromORM(ackMessage, genericMessage, ormCreated));
+                            String finalResponseToPSXML = String.valueOf(object2.stringMessageToXML(finalResponseToPSPIPE));
+                            System.out.println("Salvo l'ORL_O22 generato sul database locale");
+                            saveORLO22OnDatabase(finalResponseToPSPIPE, omlMessage);
+                            System.out.println("Setto il return");
+                            response.setReturn(finalResponseToPSXML);
+                            System.out.println(finalResponseToPSXML);
+                        } else if (param.equals("oml")) {
+                            System.out.println("Parametro ricevuto: " + param);
+                            saveOMLO21Database(updatedMessage);
+                            omlCreated = OMLDecoding.decodeOML_XML(updatedMessage);
+                            String finalMessagePIPE = oml_o21.convertXMLToPipeFormat(omlCreated);
+                            System.out.println("Invio via socket il messaggio a TD");
+                            hl7Response = HL7SocketClientService.sendHL7Message(finalMessagePIPE);
+                            Message genericMessage = pipeParser.parse(hl7Response);
+                            System.out.println(updatedMessage);
+                            OML_O21 omlMessage = (OML_O21) xmlParser.parse(updatedMessage);
+                            ACKResponse object = new ACKResponse();
+                            System.out.println("Genero la risposta ACK inviata da TD");
+                            ACK ackMessage = object.generateACKResponseORLO22(genericMessage, omlMessage);
+                            ORLO22 object2 = new ORLO22();
+                            String finalResponseToPSPIPE = String.valueOf(object2.generateORL_O22FromOML(ackMessage, genericMessage, omlCreated));
+                            String finalResponseToPSXML = String.valueOf(object2.stringMessageToXML(finalResponseToPSPIPE));
+                            System.out.println("Salvo l'ORL_O22 generato sul database locale");
+                            saveORLO22OnDatabase(finalResponseToPSPIPE, omlMessage);
+                            System.out.println("Setto il return");
+                            response.setReturn(finalResponseToPSXML);
+                            System.out.println(finalResponseToPSXML);
+                        }
 
-                        System.out.println("Invio via socket il messaggio a TD");
-                        String hl7Response = HL7SocketClientService.sendHL7Message(finalMessagePIPE);
-                        Message genericMessage = pipeParser.parse(hl7Response);
-                        System.out.println(updatedMessage);
-                        OML_O21 omlMessage = (OML_O21) xmlParser.parse(updatedMessage);
-                        ACKResponse object = new ACKResponse();
-                        System.out.println("Genero la risposta ACK inviata da TD");
-                        ACK ackMessage = object.generateACKResponseORLO22(genericMessage, omlMessage);
-                        ORLO22 object2 = new ORLO22();
-                        String finalResponseToPSPIPE = String.valueOf(object2.generateORL_O22(ackMessage, genericMessage, omlCreated));
-                        String finalResponseToPSXML = String.valueOf(object2.stringMessageToXML(finalResponseToPSPIPE));
-                        System.out.println("Salvo l'ORL_O22 generato sul database locale");
-                        saveORLO22OnDatabase(finalResponseToPSPIPE, omlMessage);
-                        System.out.println("Setto il return");
-                        response.set_Return(finalResponseToPSXML);
-                        System.out.println(finalResponseToPSXML);
                     } else if(msg3Value.equals("QBP_Q11")){
 
                         System.out.println("Creazione del RSP_K11 di prova per lo ZET");
@@ -130,7 +158,7 @@ public class MessageEndpoint {
                         RSP_K11 rsp = rspk11.createEncodedMessage(msg2QBP, qbp);
                         String rspXMl = rspk11.XmlEncodind(rsp);
                         System.out.println(rspXMl);
-                        response.set_Return(rspXMl);
+                        response.setReturn(rspXMl);
 
 
                     }
@@ -139,11 +167,11 @@ public class MessageEndpoint {
                     logger.error(sw.toString());
                     System.out.println("sw: "+sw.toString());
 
-                    response.set_Return("Message processed but failed to send via socket: " + e.getMessage());
+                    response.setReturn("Message processed but failed to send via socket: " + e.getMessage());
                 }
 
             } else {
-                response.set_Return("Received acceptMessage is null or its value is null.");
+                response.setReturn("Received acceptMessage is null or its value is null.");
             }
 
 
@@ -318,5 +346,17 @@ public class MessageEndpoint {
         messageSegmentServiceORLO22.saveMSHMessageSegmentORLO22(orlO22, messageEvent);
         messageSegmentServiceORLO22.saveMSAMessageSegmentORLO22(orlO22, messageEvent);
         messageSegmentServiceORLO22.saveORDERBLOCKMessageORLO22(orlO22, messageEvent);
+    }
+
+    @Override
+    public void run(String... args) throws Exception {
+        if (args.length > 0) {
+            String console = args[0];
+
+            param = console;
+
+        } else {
+            System.out.println("Nessun parametro fornito");
+        }
     }
 }

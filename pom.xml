@@ -189,6 +189,20 @@
 			<artifactId>logback-classic</artifactId>
 		</dependency>
 
+<!--		<dependency>-->
+<!--			<groupId>Prometeo</groupId>-->
+<!--			<artifactId>HL7Palm</artifactId>-->
+<!--			<version>0.0.1-SNAPSHOT</version>-->
+<!--			<scope>system</scope>-->
+<!--			<systemPath>C:/Prometeo/HL7Palm/HL7Palm/target/HL7Palm-0.0.1-SNAPSHOT.jar</systemPath>-->
+<!--		</dependency>-->
+
+		<dependency>
+			<groupId>com.prometeo</groupId>
+			<artifactId>hl7palm</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+
 	</dependencies>
 
 	<build>
