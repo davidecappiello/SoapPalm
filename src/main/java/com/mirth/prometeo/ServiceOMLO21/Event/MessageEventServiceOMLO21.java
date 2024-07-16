@@ -15,7 +15,7 @@ public class MessageEventServiceOMLO21 {
     private MessageEventRepository messageEventRepository;
 
     @Transactional
-    public MessageEvent saveOMLO21Message(String oml, OML_O21 omlO21) throws DataTypeException {
+    public MessageEvent saveOMLO21Message(OML_O21 omlO21) throws DataTypeException {
         MessageEvent messageEvent = new MessageEvent();
         messageEvent.setCode("OML_O21");
         messageEvent.setSource("Pronto Soccorso");

@@ -1,7 +1,7 @@
 <component name="libraryTable">
   <library name="HL7Palm-0.0.1-SNAPSHOT">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/../../HL7Palm/HL7Palm/target/HL7Palm-0.0.1-SNAPSHOT.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../HL7Palm/HL7Palm/target/HL7Palm-0.0.1-SNAPSHOT.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

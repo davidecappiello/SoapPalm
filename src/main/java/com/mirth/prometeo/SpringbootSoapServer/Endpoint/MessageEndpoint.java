@@ -1,14 +1,10 @@
 package com.mirth.prometeo.SpringbootSoapServer.Endpoint;
 
-
 import Prometeo.HL7Palm.Decoding.OMLDecoding;
 import Prometeo.HL7Palm.Decoding.ORLDecoding;
 import Prometeo.HL7Palm.Decoding.QBPDecoding;
-import Prometeo.HL7Palm.Message.ACKResponse;
+import Prometeo.HL7Palm.Message.*;
 import Prometeo.HL7Palm.Message.Custom.RSP_K11;
-import Prometeo.HL7Palm.Message.ORLO22;
-import Prometeo.HL7Palm.Message.ORMOO1;
-import Prometeo.HL7Palm.Message.RSPK11;
 import ca.uhn.hl7v2.HL7Exception;
 import ca.uhn.hl7v2.model.Message;
 import ca.uhn.hl7v2.model.v25.message.*;
@@ -83,7 +79,8 @@ public class MessageEndpoint {
         String finalMessage = acceptMessage.getValue().getArg0();
         System.out.println("Ricevo il messaggio HL7 dal pronto soccorso");
         System.out.println(finalMessage);
-        ORMOO1 ormO01 = new ORMOO1();
+//        ORMOO1 ormO01 = new ORMOO1();
+        OMLO21 oml_o21 = new OMLO21();
 
         try {
             System.out.println("Controllo i tag esterni al messaggio per capire se sono uguali al MessageTypeStructure del messaggio HL7");
@@ -98,9 +95,11 @@ public class MessageEndpoint {
                 try {
                     if (msg3Value.equals("OML_O21")) {
                         System.out.println("Salvo l'OML_O21 inviato dal PS e l'ORM_O01 generato da noi sul database locale");
-                        ORM_O01 ormCreated = saveOMLO21AndORMOO1OnDatabase(updatedMessage, ormO01);
-                        String finalMessagePIPE = ormO01.convertXMLToPipeFormat(ormCreated);
-
+//                        ORM_O01 ormCreated = saveOMLO21AndORMOO1OnDatabase(updatedMessage, ormO01);
+//                        String finalMessagePIPE = ormO01.convertXMLToPipeFormat(ormCreated);
+                        saveOMLO21Database(updatedMessage);
+                        OML_O21 omlCreated = OMLDecoding.decodeOML_XML(updatedMessage);
+                        String finalMessagePIPE = oml_o21.convertXMLToPipeFormat(omlCreated);
 
                         System.out.println("Invio via socket il messaggio a TD");
                         String hl7Response = HL7SocketClientService.sendHL7Message(finalMessagePIPE);
@@ -111,7 +110,7 @@ public class MessageEndpoint {
                         System.out.println("Genero la risposta ACK inviata da TD");
                         ACK ackMessage = object.generateACKResponseORLO22(genericMessage, omlMessage);
                         ORLO22 object2 = new ORLO22();
-                        String finalResponseToPSPIPE = String.valueOf(object2.generateORL_O22(ackMessage, genericMessage, ormCreated));
+                        String finalResponseToPSPIPE = String.valueOf(object2.generateORL_O22(ackMessage, genericMessage, omlCreated));
                         String finalResponseToPSXML = String.valueOf(object2.stringMessageToXML(finalResponseToPSPIPE));
                         System.out.println("Salvo l'ORL_O22 generato sul database locale");
                         saveORLO22OnDatabase(finalResponseToPSPIPE, omlMessage);
@@ -120,15 +119,9 @@ public class MessageEndpoint {
                         System.out.println(finalResponseToPSXML);
                     } else if(msg3Value.equals("QBP_Q11")){
 
-
-
                         System.out.println("Creazione del RSP_K11 di prova per lo ZET");
-//                        QBPQ11 qbpQ11 = new QBPQ11();
+
                         QBP_Q11 qbp = QBPDecoding.decodeQBP_XML(updatedMessage);
-//                        QBP_Q11 qbp = qbpQ11.crateQBP();
-                        //String qbpXMl = qbpQ11.XmlEncodind(qbp);
-//                        QBPDecoding qbpInput = new QBPDecoding();
-//                        QBP_Q11 qbpQ11 = qbpInput.decodeQBP_XML(updatedMessage);
 
                         System.out.println(qbp);
 
@@ -137,6 +130,8 @@ public class MessageEndpoint {
                         RSP_K11 rsp = rspk11.createEncodedMessage(msg2QBP, qbp);
                         String rspXMl = rspk11.XmlEncodind(rsp);
                         System.out.println(rspXMl);
+                        response.set_Return(rspXMl);
+
 
                     }
                 } catch (Exception e) {
@@ -275,7 +270,7 @@ public class MessageEndpoint {
         ORM_O01 ormCreated = null;
         try {
             OML_O21 omlO21 = OMLDecoding.decodeOML_XML(finalMessage);
-            MessageEvent messageEvent = messageEventServiceOMLO21.saveOMLO21Message(finalMessage, omlO21);
+            MessageEvent messageEvent = messageEventServiceOMLO21.saveOMLO21Message(omlO21);
             messageSegmentServiceOMLO21.saveMSHMessageSegmentOMLO21(omlO21, messageEvent);
             messageSegmentServiceOMLO21.savePIDMessageSegmentOMLO21(omlO21, messageEvent);
             messageSegmentServiceOMLO21.savePD1MessageSegmentOMLO21(omlO21, messageEvent);
@@ -295,6 +290,25 @@ public class MessageEndpoint {
         }
         return ormCreated;
     }
+
+    public void saveOMLO21Database(String finalMessage) {
+        try {
+            OML_O21 omlO21 = OMLDecoding.decodeOML_XML(finalMessage);
+            MessageEvent messageEvent = messageEventServiceOMLO21.saveOMLO21Message(omlO21);
+            messageSegmentServiceOMLO21.saveMSHMessageSegmentOMLO21(omlO21, messageEvent);
+            messageSegmentServiceOMLO21.savePIDMessageSegmentOMLO21(omlO21, messageEvent);
+            messageSegmentServiceOMLO21.savePD1MessageSegmentOMLO21(omlO21, messageEvent);
+            messageSegmentServiceOMLO21.savePV1MessageSegmentOMLO21(omlO21, messageEvent);
+            messageSegmentServiceOMLO21.saveORDERBLOCKMessageOMLO21(omlO21, messageEvent);
+            messageSegmentServiceOMLO21.saveTQ1MessageSegmentOMLO21(omlO21, messageEvent);
+
+        } catch (HL7Exception e) {
+            e.printStackTrace();
+        } catch (IOException | SAXException | ParserConfigurationException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
 
     public void saveORLO22OnDatabase(String finalResponseToPS, OML_O21 omlO21) throws HL7Exception, IOException, ParserConfigurationException, SAXException {
 
