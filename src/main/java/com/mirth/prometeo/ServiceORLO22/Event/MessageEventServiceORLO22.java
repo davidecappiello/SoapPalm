@@ -20,6 +20,7 @@ public class MessageEventServiceORLO22 {
         MessageEvent messageEvent = new MessageEvent();
         messageEvent.setCode("ORL_O22");
         messageEvent.setSource("Middleware");
+        messageEvent.setPlacerGroupNumber(orlo22.getRESPONSE().getPATIENT().getORDER().getORC().getPlacerGroupNumber().getEntityIdentifier().getValue());
         return messageEventRepository.save(messageEvent);
     }
 }

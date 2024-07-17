@@ -20,6 +20,15 @@ public class MessageEvent extends BaseObject {
     @Column(name = "source", nullable = false)
     private String source;
 
+    @Column(name = "placer_group_number", nullable = false)
+    private String placerGroupNumber;
+
+    @Column(name = "filler_order_number", nullable = true)
+    private String fillerOrderNumber;
+
+    @Column(name = "status", nullable = true)
+    private String status;
+
     @OneToMany(mappedBy = "messageEventId", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<MessageSegment> messageSegments = new ArrayList<>();
 
@@ -37,6 +46,30 @@ public class MessageEvent extends BaseObject {
 
     public void setSource(String source) {
         this.source = source;
+    }
+
+    public String getPlacerGroupNumber() {
+        return placerGroupNumber;
+    }
+
+    public void setPlacerGroupNumber(String placerGroupNumber) {
+        this.placerGroupNumber = placerGroupNumber;
+    }
+
+    public String getFillerOrderNumber() {
+        return fillerOrderNumber;
+    }
+
+    public void setFillerOrderNumber(String fillerOrderNumber) {
+        this.fillerOrderNumber = fillerOrderNumber;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     public List<MessageSegment> getMessageSegments() {

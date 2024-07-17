@@ -19,6 +19,7 @@ public class MessageEventServiceOMLO21 {
         MessageEvent messageEvent = new MessageEvent();
         messageEvent.setCode("OML_O21");
         messageEvent.setSource("Pronto Soccorso");
+        messageEvent.setPlacerGroupNumber(omlO21.getORDER().getORC().getPlacerGroupNumber().getEntityIdentifier().getValue());
         return messageEventRepository.save(messageEvent);
     }
 }

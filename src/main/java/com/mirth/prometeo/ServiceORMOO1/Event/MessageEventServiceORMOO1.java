@@ -20,6 +20,7 @@ public class MessageEventServiceORMOO1 {
         MessageEvent messageEvent = new MessageEvent();
         messageEvent.setCode("ORM_OO1");
         messageEvent.setSource("Middleware");
+        messageEvent.setPlacerGroupNumber(orm.getORDER().getORC().getPlacerGroupNumber().getEntityIdentifier().getValue());
         return messageEventRepository.save(messageEvent);
     }
 }
