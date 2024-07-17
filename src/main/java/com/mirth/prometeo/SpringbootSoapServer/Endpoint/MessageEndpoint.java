@@ -104,9 +104,9 @@ public class MessageEndpoint implements CommandLineRunner {
                         String date = modifyPid7Format(finalMessage);
                         System.out.println(date);
                         if (param.equals("orm")) {
-                            handleORM(updatedMessage, ormO01, hl7Response, response);
+                            handleORM(updatedMessage, ormO01, hl7Response, response, date);
                         } else if (param.equals("oml")) {
-                            handleOML(updatedMessage, omlCreated, oml_o21, hl7Response, response);
+                            handleOML(updatedMessage, omlCreated, oml_o21, hl7Response, response, date);
                         }
                     } else if(msg3Value.equals("QBP_Q11")){
                         handleQBP(updatedMessage, response);
@@ -297,10 +297,10 @@ public class MessageEndpoint implements CommandLineRunner {
         messageSegmentServiceORLO22.saveORDERBLOCKMessageORLO22(orlO22, messageEvent);
     }
 
-    public void handleORM(String updatedMessage, ORMOO1 ormO01, String hl7Response, AcceptMessageResponse response) throws Exception {
+    public void handleORM(String updatedMessage, ORMOO1 ormO01, String hl7Response, AcceptMessageResponse response, String date) throws Exception {
 
         System.out.println("Parametro ricevuto: " + param);
-        ORM_O01 ormCreated = saveOMLO21AndORMOO1OnDatabase(updatedMessage, ormO01);
+        ORM_O01 ormCreated = saveOMLO21AndORMOO1OnDatabase(updatedMessage, ormO01, date);
         String finalMessagePIPE = ormO01.convertXMLToPipeFormat(ormCreated);
         System.out.println("Invio via socket il messaggio a TD");
         System.out.println(finalMessagePIPE);
@@ -321,12 +321,13 @@ public class MessageEndpoint implements CommandLineRunner {
         System.out.println(finalResponseToPSXML);
     }
 
-    public void handleOML(String updatedMessage, OML_O21 omlCreated, OMLO21 oml_o21, String hl7Response, AcceptMessageResponse response) throws Exception {
+    public void handleOML(String updatedMessage, OML_O21 omlCreated, OMLO21 oml_o21, String hl7Response, AcceptMessageResponse response, String date) throws Exception {
 
         System.out.println("Parametro ricevuto: " + param);
         saveOMLO21Database(updatedMessage);
         omlCreated = OMLDecoding.decodeOML_XML(updatedMessage);
-        String finalMessagePIPE = oml_o21.convertXMLToPipeFormat(omlCreated);
+        OML_O21 omlForTD = OMLO21.generateOML_021ForTD(omlCreated, date);
+        String finalMessagePIPE = oml_o21.convertXMLToPipeFormat(omlForTD);
         System.out.println("Invio via socket il messaggio a TD");
         hl7Response = HL7SocketClientService.sendHL7Message(finalMessagePIPE);
         Message genericMessage = pipeParser.parse(hl7Response);
