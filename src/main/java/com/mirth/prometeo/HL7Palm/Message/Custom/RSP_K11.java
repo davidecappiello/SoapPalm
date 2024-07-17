@@ -1,11 +1,12 @@
-package Prometeo.HL7Palm.Message.Custom;
+package com.mirth.prometeo.HL7Palm.Message.Custom;
 
 
-import Prometeo.HL7Palm.Segment.ZET;
+
 import ca.uhn.hl7v2.HL7Exception;
 import ca.uhn.hl7v2.model.v25.segment.*;
 import ca.uhn.hl7v2.parser.DefaultModelClassFactory;
 import ca.uhn.hl7v2.parser.ModelClassFactory;
+import com.mirth.prometeo.HL7Palm.Segment.ZET;
 
 
 public class RSP_K11 extends ca.uhn.hl7v2.model.v25.message.RSP_K11 {

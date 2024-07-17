@@ -1,7 +1,6 @@
-package Prometeo.HL7Palm.Message;
+package com.mirth.prometeo.HL7Palm.Message;
 
-import Prometeo.HL7Palm.Decoding.ORMDecoding;
-import Prometeo.HL7Palm.SegmentFactory.SegmentFactoryORMOO1;
+
 import ca.uhn.hl7v2.HL7Exception;
 import ca.uhn.hl7v2.model.v25.group.ORM_O01_ORDER;
 import ca.uhn.hl7v2.model.v25.message.OML_O21;
@@ -11,7 +10,10 @@ import ca.uhn.hl7v2.parser.DefaultXMLParser;
 import ca.uhn.hl7v2.parser.Parser;
 import ca.uhn.hl7v2.parser.PipeParser;
 import ca.uhn.hl7v2.parser.XMLParser;
+import com.mirth.prometeo.HL7Palm.Decoding.ORMDecoding;
+import com.mirth.prometeo.HL7Palm.SegmentFactory.SegmentFactoryORMOO1;
 import org.xml.sax.SAXException;
+
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
 
@@ -20,7 +22,7 @@ public class ORMOO1 {
     private final XMLParser xmlParser = new DefaultXMLParser();
     private final Parser pipeParser = new PipeParser();
 
-    public ORM_O01 generateORM_OO1(OML_O21 omlMessage) throws HL7Exception, IOException {
+    public ORM_O01 generateORM_OO1(OML_O21 omlMessage, String date) throws HL7Exception, IOException {
 
         ORM_O01 orm = new ORM_O01();
 
@@ -28,7 +30,7 @@ public class ORMOO1 {
         SegmentFactoryORMOO1.createMSHSegmentIntegrateORMOO1(mshSegmentIntegrate, omlMessage);
 
         PID pidSegmentIntegrate = orm.getPATIENT().getPID();
-        SegmentFactoryORMOO1.createPIDSegmentIntegrateORMOO1(pidSegmentIntegrate, omlMessage);
+        SegmentFactoryORMOO1.createPIDSegmentIntegrateORMOO1(pidSegmentIntegrate, omlMessage, date);
 
         PV1 pv1SegmentIntegrate = orm.getPATIENT().getPATIENT_VISIT().getPV1();
         SegmentFactoryORMOO1.createPV1SegmentIntegrateORMOO1(pv1SegmentIntegrate, omlMessage);

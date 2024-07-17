@@ -1,14 +1,14 @@
-package Prometeo.HL7Palm.Message;
+package com.mirth.prometeo.HL7Palm.Message;
 
-import Prometeo.HL7Palm.Message.Custom.RSP_K11;
-import Prometeo.HL7Palm.Segment.ZET;
-import Prometeo.HL7Palm.SegmentFactory.SegmentFactoryRSPK11;
 import ca.uhn.hl7v2.HL7Exception;
 import ca.uhn.hl7v2.model.v25.message.QBP_Q11;
 import ca.uhn.hl7v2.model.v25.segment.*;
 import ca.uhn.hl7v2.parser.CanonicalModelClassFactory;
 import ca.uhn.hl7v2.parser.DefaultXMLParser;
 import ca.uhn.hl7v2.parser.XMLParser;
+import com.mirth.prometeo.HL7Palm.Message.Custom.RSP_K11;
+import com.mirth.prometeo.HL7Palm.Segment.ZET;
+import com.mirth.prometeo.HL7Palm.SegmentFactory.SegmentFactoryRSPK11;
 
 import java.io.IOException;
 

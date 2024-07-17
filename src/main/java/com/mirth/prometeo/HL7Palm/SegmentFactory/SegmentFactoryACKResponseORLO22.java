@@ -1,4 +1,4 @@
-package Prometeo.HL7Palm.SegmentFactory;
+package com.mirth.prometeo.HL7Palm.SegmentFactory;
 
 import ca.uhn.hl7v2.HL7Exception;
 import ca.uhn.hl7v2.model.Message;

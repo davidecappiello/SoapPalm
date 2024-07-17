@@ -1,4 +1,4 @@
-package Prometeo.HL7Palm.Decoding;
+package com.mirth.prometeo.HL7Palm.Decoding;
 
 import ca.uhn.hl7v2.DefaultHapiContext;
 import ca.uhn.hl7v2.HL7Exception;

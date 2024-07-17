@@ -1,12 +1,13 @@
-package Prometeo.HL7Palm.Message;
+package com.mirth.prometeo.HL7Palm.Message;
 
-import Prometeo.HL7Palm.SegmentFactory.SegmentFactoryACKResponseORLO22;
+
 import ca.uhn.hl7v2.HL7Exception;
 import ca.uhn.hl7v2.model.Message;
 import ca.uhn.hl7v2.model.v25.message.ACK;
 import ca.uhn.hl7v2.model.v25.message.OML_O21;
 import ca.uhn.hl7v2.model.v25.segment.MSA;
 import ca.uhn.hl7v2.model.v25.segment.MSH;
+import com.mirth.prometeo.HL7Palm.SegmentFactory.SegmentFactoryACKResponseORLO22;
 
 public class ACKResponse {
 

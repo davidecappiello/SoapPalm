@@ -1,13 +1,13 @@
-package Prometeo.HL7Palm.SegmentFactory;
+package com.mirth.prometeo.HL7Palm.SegmentFactory;
 
-import Prometeo.HL7Palm.Message.Custom.RSP_K11;
-import Prometeo.HL7Palm.Segment.ZET;
 import ca.uhn.hl7v2.HL7Exception;
 import ca.uhn.hl7v2.model.DataTypeException;
 import ca.uhn.hl7v2.model.Message;
 import ca.uhn.hl7v2.model.v25.datatype.CE;
 import ca.uhn.hl7v2.model.v25.message.QBP_Q11;
 import ca.uhn.hl7v2.model.v25.segment.*;
+import com.mirth.prometeo.HL7Palm.Message.Custom.RSP_K11;
+import com.mirth.prometeo.HL7Palm.Segment.ZET;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;

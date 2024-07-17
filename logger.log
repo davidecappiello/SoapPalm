@@ -145,7 +145,7 @@ Caused by: java.lang.NullPointerException: Cannot invoke "com.mirth.prometeo.Soc
 	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:219)
 	... 21 common frames omitted
 2024-07-17 16:29:08 [restartedMain] ERROR o.s.boot.SpringApplication - Application run failed
-java.lang.IllegalStateException: java.lang.IllegalStateException: Logback configuration error detected: 
+java.lang.IllegalStateException: java.lang.IllegalStateException: Logback configuration error detected:
 ERROR in ch.qos.logback.core.rolling.RollingFileAppender[ROLLING_FILE] - 'FileNamePattern' option has the same value "logger.%d{yyyy-MM-dd}.log" as that given for appender [ROLLING_FILE] defined earlier.
 ERROR in ch.qos.logback.core.rolling.RollingFileAppender[ROLLING_FILE] - Collisions detected with FileAppender/RollingAppender instances defined earlier. Aborting.
 ERROR in ch.qos.logback.core.rolling.RollingFileAppender[ROLLING_FILE] - For more information, please visit http://logback.qos.ch/codes.html#earlier_fa_collision
@@ -172,7 +172,7 @@ ERROR in ch.qos.logback.core.rolling.RollingFileAppender[ROLLING_FILE] - For mor
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
-Caused by: java.lang.IllegalStateException: Logback configuration error detected: 
+Caused by: java.lang.IllegalStateException: Logback configuration error detected:
 ERROR in ch.qos.logback.core.rolling.RollingFileAppender[ROLLING_FILE] - 'FileNamePattern' option has the same value "logger.%d{yyyy-MM-dd}.log" as that given for appender [ROLLING_FILE] defined earlier.
 ERROR in ch.qos.logback.core.rolling.RollingFileAppender[ROLLING_FILE] - Collisions detected with FileAppender/RollingAppender instances defined earlier. Aborting.
 ERROR in ch.qos.logback.core.rolling.RollingFileAppender[ROLLING_FILE] - For more information, please visit http://logback.qos.ch/codes.html#earlier_fa_collision
@@ -280,7 +280,7 @@ Caused by: java.lang.NullPointerException: Cannot invoke "com.mirth.prometeo.Soc
 	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeInitMethods(InitDestroyAnnotationBeanPostProcessor.java:401)
 	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:219)
 	... 21 common frames omitted
-2024-07-17 16:31:16 [restartedMain] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+2024-07-17 16:31:16 [restartedMain] ERROR o.s.b.d.LoggingFailureAnalysisReporter -
 
 ***************************
 APPLICATION FAILED TO START
@@ -299,7 +299,7 @@ Action:
 
 Relying upon circular references is discouraged and they are prohibited by default. Update your application to remove the dependency cycle between beans. As a last resort, it may be possible to break the cycle automatically by setting spring.main.allow-circular-references to true.
 
-2024-07-17 16:38:36 [restartedMain] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+2024-07-17 16:38:36 [restartedMain] ERROR o.s.b.d.LoggingFailureAnalysisReporter -
 
 ***************************
 APPLICATION FAILED TO START

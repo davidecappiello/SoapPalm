@@ -197,11 +197,17 @@
 <!--			<systemPath>C:/Prometeo/HL7Palm/HL7Palm/target/HL7Palm-0.0.1-SNAPSHOT.jar</systemPath>-->
 <!--		</dependency>-->
 
-		<!--<dependency>
-			<groupId>com.prometeo</groupId>
-			<artifactId>hl7palm</artifactId>
-			<version>1.0.0</version>
-		</dependency>-->
+        <!--		<dependency>-->
+        <!--			<groupId>com.prometeo</groupId>-->
+        <!--			<artifactId>hl7palm</artifactId>-->
+        <!--			<version>1.0.0</version>-->
+        <!--		</dependency>-->
+
+        <dependency>
+            <groupId>com.oracle.database.jdbc</groupId>
+            <artifactId>ojdbc8</artifactId>
+            <version>19.8.0.0</version>
+        </dependency>
 
 	</dependencies>
 

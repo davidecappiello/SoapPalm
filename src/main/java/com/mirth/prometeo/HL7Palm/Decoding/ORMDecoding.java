@@ -1,9 +1,10 @@
-package Prometeo.HL7Palm.Decoding;
+package com.mirth.prometeo.HL7Palm.Decoding;
 
 import ca.uhn.hl7v2.HL7Exception;
 import ca.uhn.hl7v2.model.v25.message.ORM_O01;
 import ca.uhn.hl7v2.parser.*;
 import org.xml.sax.SAXException;
+
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
 

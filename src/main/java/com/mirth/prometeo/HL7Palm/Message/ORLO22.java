@@ -1,7 +1,6 @@
-package Prometeo.HL7Palm.Message;
+package com.mirth.prometeo.HL7Palm.Message;
 
-import Prometeo.HL7Palm.SegmentFactory.SegmentFactoryORLO22;
-import Prometeo.HL7Palm.Decoding.ORLDecoding;
+
 import ca.uhn.hl7v2.HL7Exception;
 import ca.uhn.hl7v2.model.Message;
 import ca.uhn.hl7v2.model.v25.group.ORL_O22_ORDER;
@@ -9,12 +8,18 @@ import ca.uhn.hl7v2.model.v25.message.ACK;
 import ca.uhn.hl7v2.model.v25.message.OML_O21;
 import ca.uhn.hl7v2.model.v25.message.ORL_O22;
 import ca.uhn.hl7v2.model.v25.message.ORM_O01;
-import ca.uhn.hl7v2.model.v25.segment.*;
+import ca.uhn.hl7v2.model.v25.segment.MSA;
+import ca.uhn.hl7v2.model.v25.segment.MSH;
+import ca.uhn.hl7v2.model.v25.segment.OBR;
+import ca.uhn.hl7v2.model.v25.segment.ORC;
 import ca.uhn.hl7v2.parser.CanonicalModelClassFactory;
 import ca.uhn.hl7v2.parser.DefaultXMLParser;
 import ca.uhn.hl7v2.parser.PipeParser;
 import ca.uhn.hl7v2.parser.XMLParser;
+import com.mirth.prometeo.HL7Palm.Decoding.ORLDecoding;
+import com.mirth.prometeo.HL7Palm.SegmentFactory.SegmentFactoryORLO22;
 import org.xml.sax.SAXException;
+
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
 

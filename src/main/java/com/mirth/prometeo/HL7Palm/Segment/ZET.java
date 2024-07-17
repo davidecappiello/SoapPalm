@@ -1,4 +1,4 @@
-package Prometeo.HL7Palm.Segment;
+package com.mirth.prometeo.HL7Palm.Segment;
 
 
 import ca.uhn.hl7v2.HL7Exception;

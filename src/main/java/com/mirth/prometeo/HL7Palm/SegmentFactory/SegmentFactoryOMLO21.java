@@ -1,4 +1,4 @@
-package Prometeo.HL7Palm.SegmentFactory;
+package com.mirth.prometeo.HL7Palm.SegmentFactory;
 
 import ca.uhn.hl7v2.HL7Exception;
 import ca.uhn.hl7v2.model.v25.datatype.CE;
@@ -42,7 +42,7 @@ public class SegmentFactoryOMLO21 {
             mshSegmentIntegrate.getVersionID().getVersionID().setValue(mshSource.getVersionID().getVersionID().getValue());
     }
 
-    public static void createPIDSegmentIntegrateOMLO21(PID pidSegmentIntegrate, OML_O21 omlMessage) throws HL7Exception {
+    public static void createPIDSegmentIntegrateOMLO21(PID pidSegmentIntegrate, OML_O21 omlMessage, String date) throws HL7Exception {
 
         PID pidSource = omlMessage.getPATIENT().getPID();
 
@@ -62,7 +62,7 @@ public class SegmentFactoryOMLO21 {
         if(pidSource.getPatientName(0).getGivenName().getValue() != null)
             pidSegmentIntegrate.getPatientName(0).getGivenName().setValue(pidSource.getPatientName(0).getGivenName().getValue());
         if(pidSource.getDateTimeOfBirth().getTime().getValue() != null)
-            pidSegmentIntegrate.getDateTimeOfBirth().getTime().setValue(pidSource.getDateTimeOfBirth().getTime().getValue());
+            pidSegmentIntegrate.getDateTimeOfBirth().getTime().setValue(date);
         if(pidSource.getAdministrativeSex().getValue() != null)
             pidSegmentIntegrate.getAdministrativeSex().setValue(pidSource.getAdministrativeSex().getValue());
 

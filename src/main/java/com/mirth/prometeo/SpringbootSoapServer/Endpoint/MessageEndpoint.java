@@ -1,10 +1,5 @@
 package com.mirth.prometeo.SpringbootSoapServer.Endpoint;
 
-import Prometeo.HL7Palm.Decoding.OMLDecoding;
-import Prometeo.HL7Palm.Decoding.ORLDecoding;
-import Prometeo.HL7Palm.Decoding.QBPDecoding;
-import Prometeo.HL7Palm.Message.*;
-import Prometeo.HL7Palm.Message.Custom.RSP_K11;
 import ca.uhn.hl7v2.HL7Exception;
 import ca.uhn.hl7v2.model.Message;
 import ca.uhn.hl7v2.model.v25.message.*;
@@ -12,6 +7,11 @@ import ca.uhn.hl7v2.parser.DefaultXMLParser;
 import ca.uhn.hl7v2.parser.PipeParser;
 import ca.uhn.hl7v2.parser.XMLParser;
 import com.mirth.prometeo.Entity.MessageEvent;
+import com.mirth.prometeo.HL7Palm.Decoding.OMLDecoding;
+import com.mirth.prometeo.HL7Palm.Decoding.ORLDecoding;
+import com.mirth.prometeo.HL7Palm.Decoding.QBPDecoding;
+import com.mirth.prometeo.HL7Palm.Message.*;
+import com.mirth.prometeo.HL7Palm.Message.Custom.RSP_K11;
 import com.mirth.prometeo.ServiceOMLO21.Event.MessageEventServiceOMLO21;
 import com.mirth.prometeo.ServiceOMLO21.Segment.MessageSegmentServiceOMLO21;
 import com.mirth.prometeo.ServiceORLO22.Event.MessageEventServiceORLO22;
@@ -30,10 +30,12 @@ import org.springframework.ws.server.endpoint.annotation.RequestPayload;
 import org.springframework.ws.server.endpoint.annotation.ResponsePayload;
 import jakarta.xml.bind.JAXBElement;
 import org.xml.sax.SAXException;
+
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
 import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.util.regex.Matcher;
@@ -43,7 +45,9 @@ import java.util.regex.Pattern;
 public class MessageEndpoint implements CommandLineRunner {
 
     private String param;
+
     private final PipeParser pipeParser = new PipeParser();
+
     private final XMLParser xmlParser = new DefaultXMLParser();
     private static final String NAMESPACE_URI = "http://ws.connectors.connect.mirth.com/";
 
@@ -90,11 +94,15 @@ public class MessageEndpoint implements CommandLineRunner {
 
             if (acceptMessage.getValue() != null && acceptMessage.getValue().getArg0() != null) {
 
+
+
                 try {
                     if (msg3Value.equals("OML_O21")) {
                         System.out.println("Salvo l'OML_O21 inviato dal PS e l'ORM_O01 generato da noi sul database locale");
                         String hl7Response = null;
                         OML_O21 omlCreated = null;
+                        String date = modifyPid7Format(finalMessage);
+                        System.out.println(date);
                         if (param.equals("orm")) {
                             handleORM(updatedMessage, ormO01, hl7Response, response);
                         } else if (param.equals("oml")) {
@@ -114,6 +122,8 @@ public class MessageEndpoint implements CommandLineRunner {
             } else {
                 response.setReturn("Received acceptMessage is null or its value is null.");
             }
+
+
             System.out.println("Creo un oggetto acceptMessageResponse e rispondo al PS");
             return factory.createAcceptMessageResponse(response);
 
@@ -123,6 +133,7 @@ public class MessageEndpoint implements CommandLineRunner {
             System.out.println("sw: "+sw.toString());
             throw new RuntimeException(e);
         }
+
     }
 
     public static String checkAndUpdateMessageType(String finalMessage) {
@@ -232,7 +243,7 @@ public class MessageEndpoint implements CommandLineRunner {
 
     }
 
-    public ORM_O01 saveOMLO21AndORMOO1OnDatabase(String finalMessage, ORMOO1 ormoo1) {
+    public ORM_O01 saveOMLO21AndORMOO1OnDatabase(String finalMessage, ORMOO1 ormoo1, String date) {
         ORM_O01 ormCreated = null;
         try {
             OML_O21 omlO21 = OMLDecoding.decodeOML_XML(finalMessage);
@@ -244,7 +255,7 @@ public class MessageEndpoint implements CommandLineRunner {
             messageSegmentServiceOMLO21.saveORDERBLOCKMessageOMLO21(omlO21, messageEvent);
             messageSegmentServiceOMLO21.saveTQ1MessageSegmentOMLO21(omlO21, messageEvent);
 
-            ormCreated = ormoo1.generateORM_OO1(omlO21);
+            ormCreated = ormoo1.generateORM_OO1(omlO21, date);
             MessageEvent messageEvent2 = messageEventServiceORMOO1.saveORMOO1Message(ormCreated, omlO21);
             messageSegmentServiceORMOO1.saveMSHMessageSegmentORMOO1(ormCreated, messageEvent2);
             messageSegmentServiceORMOO1.savePIDMessageSegmentORMOO1(ormCreated, messageEvent2);
@@ -356,6 +367,26 @@ public class MessageEndpoint implements CommandLineRunner {
 
         } else {
             System.out.println("Nessun parametro fornito");
+        }
+    }
+
+    private static String modifyPid7Format(String xmlMessage) throws Exception {
+        Pattern pattern = Pattern.compile("        <PID.7>\n" +
+                                                "            <TS.1>(.*)</TS.1>\n" +
+                                                "        </PID.7>");
+        Matcher matcher = pattern.matcher(xmlMessage);
+
+        if (matcher.find()) {
+            System.out.println(matcher.group(1));
+            String dateOfBirth = matcher.group(1).substring(0, 8);
+            System.out.println(dateOfBirth);
+            return dateOfBirth;
+        } else {
+            Exception e = new Exception("TS.1 Null");
+            e.printStackTrace(pw);
+            logger.error(sw.toString());
+            System.out.println("sw: "+sw.toString());
+            throw new Exception("TS.1 Null");
         }
     }
 }
