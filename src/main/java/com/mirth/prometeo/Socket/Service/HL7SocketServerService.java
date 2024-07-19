@@ -1,7 +1,10 @@
 package com.mirth.prometeo.Socket.Service;
 
 import Prometeo.HL7Palm.Message.ORUR01;
+import Prometeo.HL7Palm.Message.ACKResponse;
 import ca.uhn.hl7v2.HL7Exception;
+import ca.uhn.hl7v2.model.Message;
+import ca.uhn.hl7v2.model.v25.message.ACK;
 import ca.uhn.hl7v2.model.v25.message.OML_O21;
 import ca.uhn.hl7v2.model.v25.message.ORU_R01;
 import ca.uhn.hl7v2.parser.Parser;
@@ -20,6 +23,8 @@ import java.net.Socket;
 
 @Service
 public class HL7SocketServerService {
+
+    private static final Parser parser = new PipeParser();
 
     @Autowired
     private MessageEventServiceORUR01 messageEventServiceORUR01;
@@ -45,6 +50,22 @@ public class HL7SocketServerService {
 
                     String hl7Message = readMessage(in);
                     System.out.println("Ricevuto: " + hl7Message);
+                    Message genericMessage = null;
+                    try {
+                        genericMessage = parser.parse(hl7Message);
+                    } catch (HL7Exception e) {
+                        ACKResponse ackObject = new ACKResponse();
+                        ACK ackResponse = ackObject.generateACKResponseORUR01(hl7Message);
+
+                        writeMessage(out, String.valueOf(ackResponse));
+                    }
+                    ORU_R01 oruR01 = (ORU_R01) parser.parse(hl7Message);
+                    ACK ackPositiveResponse = (ACK) oruR01.generateACK();
+                    try {
+                        writeMessage(out, String.valueOf(ackPositiveResponse));
+                    } catch (Error e) {
+                        e.printStackTrace();
+                    }
                     System.out.println("Salvo sul db locale il messaggio ORU");
                     saveORUR01Database(hl7Message);
                     System.out.println("Utilizzo i dati contenuti nell'ORU per generare un OML_O21");
@@ -56,8 +77,7 @@ public class HL7SocketServerService {
                     String omlFinal = String.valueOf(pipeParser.parse(String.valueOf(omlO21)));
                     String omlXML = object.convertPIPEToXML(omlO21);
                     String responseMessage = processHL7Message(omlFinal);
-                    soapClient.sendAcceptMessage(omlXML);
-                    writeMessage(out, responseMessage);
+                    //soapClient.sendAcceptMessage(omlXML);
                 } catch (Exception e) {
                     System.err.println("Errore di comunicazione: " + e.getMessage());
                 }

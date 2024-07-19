@@ -1,6 +1,5 @@
 package com.mirth.prometeo.Entity;
 
-import oracle.sql.DATE;
 import org.springframework.data.annotation.Id;
 
 import java.util.Date;

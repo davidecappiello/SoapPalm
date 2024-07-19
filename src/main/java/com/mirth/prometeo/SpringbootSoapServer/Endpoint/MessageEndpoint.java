@@ -245,7 +245,6 @@ public class MessageEndpoint implements CommandLineRunner {
             MessageEvent messageEvent = messageEventServiceOMLO21.saveOMLO21Message(omlO21);
             messageSegmentServiceOMLO21.saveMSHMessageSegmentOMLO21(omlO21, messageEvent);
             messageSegmentServiceOMLO21.savePIDMessageSegmentOMLO21(omlO21, messageEvent);
-            messageSegmentServiceOMLO21.savePD1MessageSegmentOMLO21(omlO21, messageEvent);
             messageSegmentServiceOMLO21.savePV1MessageSegmentOMLO21(omlO21, messageEvent);
             messageSegmentServiceOMLO21.saveORDERBLOCKMessageOMLO21(omlO21, messageEvent);
             messageSegmentServiceOMLO21.saveTQ1MessageSegmentOMLO21(omlO21, messageEvent);
@@ -269,7 +268,6 @@ public class MessageEndpoint implements CommandLineRunner {
             MessageEvent messageEvent = messageEventServiceOMLO21.saveOMLO21Message(omlO21);
             messageSegmentServiceOMLO21.saveMSHMessageSegmentOMLO21(omlO21, messageEvent);
             messageSegmentServiceOMLO21.savePIDMessageSegmentOMLO21(omlO21, messageEvent);
-            messageSegmentServiceOMLO21.savePD1MessageSegmentOMLO21(omlO21, messageEvent);
             messageSegmentServiceOMLO21.savePV1MessageSegmentOMLO21(omlO21, messageEvent);
             messageSegmentServiceOMLO21.saveORDERBLOCKMessageOMLO21(omlO21, messageEvent);
             messageSegmentServiceOMLO21.saveTQ1MessageSegmentOMLO21(omlO21, messageEvent);
