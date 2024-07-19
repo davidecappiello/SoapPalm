@@ -12,8 +12,6 @@ import org.springframework.ws.wsdl.wsdl11.DefaultWsdl11Definition;
 import org.springframework.xml.xsd.SimpleXsdSchema;
 import org.springframework.xml.xsd.XsdSchema;
 
-import java.util.Collections;
-
 @EnableWs
 @Configuration
 public class SoapWebServiceConfig extends WsConfigurerAdapter {
@@ -26,9 +24,8 @@ public class SoapWebServiceConfig extends WsConfigurerAdapter {
         return new ServletRegistrationBean(servlet, "/soapWS/*");
     }
 
-
     @Bean
-    public XsdSchema userSchema() {
+    public XsdSchema messageSchema() {
         return new SimpleXsdSchema(new ClassPathResource("message.xsd"));
     }
 

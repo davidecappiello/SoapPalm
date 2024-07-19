@@ -20,7 +20,7 @@ public class MessageEvent extends BaseObject {
     @Column(name = "source", nullable = false)
     private String source;
 
-    @Column(name = "placer_group_number", nullable = false)
+    @Column(name = "placer_group_number", nullable = true)
     private String placerGroupNumber;
 
     @Column(name = "filler_order_number", nullable = true)

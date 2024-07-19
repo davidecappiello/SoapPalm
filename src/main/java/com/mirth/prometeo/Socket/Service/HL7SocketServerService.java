@@ -1,16 +1,36 @@
 package com.mirth.prometeo.Socket.Service;
 
+import Prometeo.HL7Palm.Message.ORUR01;
+import ca.uhn.hl7v2.HL7Exception;
+import ca.uhn.hl7v2.model.v25.message.OML_O21;
+import ca.uhn.hl7v2.model.v25.message.ORU_R01;
+import ca.uhn.hl7v2.parser.Parser;
+import ca.uhn.hl7v2.parser.PipeParser;
+import com.mirth.prometeo.Entity.MessageEvent;
+import com.mirth.prometeo.ServiceOMLO21.Event.MessageEventServiceOMLO21;
+import com.mirth.prometeo.ServiceOMLO21.Segment.MessageSegmentServiceOMLO21;
+import com.mirth.prometeo.ServiceORUR01.Event.MessageEventServiceORUR01;
+import com.mirth.prometeo.ServiceORUR01.Segment.MessageSegmentServiceORUR01;
+import com.mirth.prometeo.SpringbootSoapClient.SoapClient;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
-import java.io.PrintWriter;
+import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
 
 @Service
 public class HL7SocketServerService {
+
+    @Autowired
+    private MessageEventServiceORUR01 messageEventServiceORUR01;
+    @Autowired
+    private MessageSegmentServiceORUR01 messageSegmentServiceORUR01;
+    @Autowired
+    private MessageEventServiceOMLO21 messageEventServiceOMLO21;
+    @Autowired
+    private MessageSegmentServiceOMLO21 messageSegmentServiceOMLO21;
+    @Autowired
+    private SoapClient soapClient;
 
     public void startServer(int port) {
         try (ServerSocket serverSocket = new ServerSocket(port)) {
@@ -25,9 +45,18 @@ public class HL7SocketServerService {
 
                     String hl7Message = readMessage(in);
                     System.out.println("Ricevuto: " + hl7Message);
-
-                    String responseMessage = processHL7Message(hl7Message);
-
+                    System.out.println("Salvo sul db locale il messaggio ORU");
+                    saveORUR01Database(hl7Message);
+                    System.out.println("Utilizzo i dati contenuti nell'ORU per generare un OML_O21");
+                    ORUR01 object = new ORUR01();
+                    OML_O21 omlO21 = object.generateOMLO21FromORUR01TD(hl7Message);
+                    System.out.println("Salvo sul db locale l'OML_O21 generato, prima di inviarlo al PS");
+                    saveOMLO21Database(omlO21);
+                    PipeParser pipeParser = new PipeParser();
+                    String omlFinal = String.valueOf(pipeParser.parse(String.valueOf(omlO21)));
+                    String omlXML = object.convertPIPEToXML(omlO21);
+                    String responseMessage = processHL7Message(omlFinal);
+                    soapClient.sendAcceptMessage(omlXML);
                     writeMessage(out, responseMessage);
                 } catch (Exception e) {
                     System.err.println("Errore di comunicazione: " + e.getMessage());
@@ -72,6 +101,32 @@ public class HL7SocketServerService {
         String messageWithDelimiters = '\u000b' + hl7Message + '\u001c' + '\r';
         out.print(messageWithDelimiters);
         out.flush();
+    }
+
+    public void saveORUR01Database(String hl7Message) {
+        try {
+            Parser parser = new PipeParser();
+            ORU_R01 oruR01 = (ORU_R01) parser.parse(hl7Message);
+            MessageEvent messageEvent = messageEventServiceORUR01.saveORUR01Message(oruR01);
+            messageSegmentServiceORUR01.saveMSHMessageSegmentORUR01(oruR01, messageEvent);
+            messageSegmentServiceORUR01.savePIDMessageSegmentORUR01(oruR01, messageEvent);
+            messageSegmentServiceORUR01.savePV1MessageSegmentORUR01(oruR01, messageEvent);
+            messageSegmentServiceORUR01.saveORDERBLOCKMessageORUR01(oruR01, messageEvent);
+        } catch (HL7Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void saveOMLO21Database(OML_O21 omlO21) {
+        try {
+            MessageEvent messageEvent = messageEventServiceOMLO21.saveOMLO21MessageCheckStatus(omlO21);
+            messageSegmentServiceOMLO21.saveMSHMessageSegmentOMLO21(omlO21, messageEvent);
+            messageSegmentServiceOMLO21.savePIDMessageSegmentOMLO21(omlO21, messageEvent);
+            messageSegmentServiceOMLO21.savePV1MessageSegmentOMLO21(omlO21, messageEvent);
+            messageSegmentServiceOMLO21.saveORDERBLOCKMessageOMLO21(omlO21, messageEvent);
+        } catch (HL7Exception e) {
+            e.printStackTrace();
+        }
     }
 
 }

@@ -1,6 +1,9 @@
 package com.mirth;
 
 import com.mirth.prometeo.Socket.Service.HL7SocketServerService;
+import com.mirth.prometeo.SpringbootSoapClient.SoapClient;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
@@ -13,10 +16,12 @@ import org.springframework.ws.transport.http.MessageDispatcherServlet;
 
 @EnableWs
 @SpringBootApplication
-public class SoapClientApplication {
+public class SoapClientApplication  {
 
 	public static void main(String[] args) {
 		SpringApplication.run(SoapClientApplication.class, args);
 	}
+
+
 
 }

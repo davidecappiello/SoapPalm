@@ -22,4 +22,16 @@ public class MessageEventServiceOMLO21 {
         messageEvent.setPlacerGroupNumber(omlO21.getORDER().getORC().getPlacerGroupNumber().getEntityIdentifier().getValue());
         return messageEventRepository.save(messageEvent);
     }
+
+    @Transactional
+    public MessageEvent saveOMLO21MessageCheckStatus(OML_O21 omlO21) throws DataTypeException {
+        MessageEvent messageEvent = new MessageEvent();
+        messageEvent.setCode("OML_O21");
+        messageEvent.setSource("LIS/Middleware");
+        if(omlO21.getORDER().getORC().getPlacerGroupNumber().getEntityIdentifier().getValue() != null)
+            messageEvent.setPlacerGroupNumber(omlO21.getORDER().getORC().getPlacerGroupNumber().getEntityIdentifier().getValue());
+        return messageEventRepository.save(messageEvent);
+    }
+
+
 }

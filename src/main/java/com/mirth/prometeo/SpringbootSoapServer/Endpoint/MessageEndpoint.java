@@ -1,5 +1,14 @@
 package com.mirth.prometeo.SpringbootSoapServer.Endpoint;
 
+import Prometeo.HL7Palm.Decoding.OMLDecoding;
+import Prometeo.HL7Palm.Decoding.ORLDecoding;
+import Prometeo.HL7Palm.Message.ACKResponse;
+import Prometeo.HL7Palm.Message.Custom.RSP_K11;
+import Prometeo.HL7Palm.Message.OMLO21;
+import Prometeo.HL7Palm.Message.ORLO22;
+import Prometeo.HL7Palm.Message.ORMOO1;
+import Prometeo.HL7Palm.Decoding.QBPDecoding;
+import Prometeo.HL7Palm.Message.RSPK11;
 import ca.uhn.hl7v2.HL7Exception;
 import ca.uhn.hl7v2.model.Message;
 import ca.uhn.hl7v2.model.v25.message.*;
@@ -7,11 +16,6 @@ import ca.uhn.hl7v2.parser.DefaultXMLParser;
 import ca.uhn.hl7v2.parser.PipeParser;
 import ca.uhn.hl7v2.parser.XMLParser;
 import com.mirth.prometeo.Entity.MessageEvent;
-import com.mirth.prometeo.HL7Palm.Decoding.OMLDecoding;
-import com.mirth.prometeo.HL7Palm.Decoding.ORLDecoding;
-import com.mirth.prometeo.HL7Palm.Decoding.QBPDecoding;
-import com.mirth.prometeo.HL7Palm.Message.*;
-import com.mirth.prometeo.HL7Palm.Message.Custom.RSP_K11;
 import com.mirth.prometeo.ServiceOMLO21.Event.MessageEventServiceOMLO21;
 import com.mirth.prometeo.ServiceOMLO21.Segment.MessageSegmentServiceOMLO21;
 import com.mirth.prometeo.ServiceORLO22.Event.MessageEventServiceORLO22;
@@ -30,12 +34,10 @@ import org.springframework.ws.server.endpoint.annotation.RequestPayload;
 import org.springframework.ws.server.endpoint.annotation.ResponsePayload;
 import jakarta.xml.bind.JAXBElement;
 import org.xml.sax.SAXException;
-
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
 import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.util.regex.Matcher;
@@ -45,7 +47,6 @@ import java.util.regex.Pattern;
 public class MessageEndpoint implements CommandLineRunner {
 
     private String param;
-
     private final PipeParser pipeParser = new PipeParser();
 
     private final XMLParser xmlParser = new DefaultXMLParser();
@@ -93,8 +94,6 @@ public class MessageEndpoint implements CommandLineRunner {
 
 
             if (acceptMessage.getValue() != null && acceptMessage.getValue().getArg0() != null) {
-
-
 
                 try {
                     if (msg3Value.equals("OML_O21")) {
@@ -326,19 +325,20 @@ public class MessageEndpoint implements CommandLineRunner {
         System.out.println("Parametro ricevuto: " + param);
         saveOMLO21Database(updatedMessage);
         omlCreated = OMLDecoding.decodeOML_XML(updatedMessage);
-        OML_O21 omlForTD = OMLO21.generateOML_021ForTD(omlCreated, date);
+        OMLO21 object = new OMLO21();
+        OML_O21 omlForTD = object.generateOML_021ForTD(omlCreated, date);
         String finalMessagePIPE = oml_o21.convertXMLToPipeFormat(omlForTD);
         System.out.println("Invio via socket il messaggio a TD");
         hl7Response = HL7SocketClientService.sendHL7Message(finalMessagePIPE);
         Message genericMessage = pipeParser.parse(hl7Response);
         System.out.println(updatedMessage);
         OML_O21 omlMessage = (OML_O21) xmlParser.parse(updatedMessage);
-        ACKResponse object = new ACKResponse();
+        ACKResponse object2 = new ACKResponse();
         System.out.println("Genero la risposta ACK inviata da TD");
-        ACK ackMessage = object.generateACKResponseORLO22(genericMessage, omlMessage);
-        ORLO22 object2 = new ORLO22();
-        String finalResponseToPSPIPE = String.valueOf(object2.generateORL_O22FromOML(ackMessage, genericMessage, omlCreated));
-        String finalResponseToPSXML = String.valueOf(object2.stringMessageToXML(finalResponseToPSPIPE));
+        ACK ackMessage = object2.generateACKResponseORLO22(genericMessage, omlMessage);
+        ORLO22 object3 = new ORLO22();
+        String finalResponseToPSPIPE = String.valueOf(object3.generateORL_O22FromOML(ackMessage, genericMessage, omlCreated));
+        String finalResponseToPSXML = String.valueOf(object3.stringMessageToXML(finalResponseToPSPIPE));
         System.out.println("Salvo l'ORL_O22 generato sul database locale");
         saveORLO22OnDatabase(finalResponseToPSPIPE, omlMessage);
         System.out.println("Setto il return");
