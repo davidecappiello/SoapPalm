@@ -1,5 +1,6 @@
 package com.mirth.prometeo.Socket.Service;
 
+import ca.uhn.hl7v2.model.Message;
 import ca.uhn.hl7v2.model.v25.message.ACK;
 import ca.uhn.hl7v2.model.v25.segment.MSH;
 import ca.uhn.hl7v2.parser.DefaultXMLParser;
@@ -59,6 +60,13 @@ public class HL7SocketServerService {
                     ORU_R01 parsedORU = null;
                     try {
                         parsedORU = (ORU_R01) pipeParser.parse(hl7Message);
+                        ACK ackPositiveResponse = (ACK) parsedORU.generateACK();
+                        try {
+                            writeMessage(out, String.valueOf(ackPositiveResponse));
+                        } catch (Error e) {
+                            e.printStackTrace();
+                        }
+
                         OML_O21 omlO21 = object.generateOMLO21FromORUR01TD(parsedORU);
                         System.out.println("Salvo sul db locale l'OML_O21 generato, prima di inviarlo al PS");
                         saveOMLO21Database(omlO21);
@@ -71,7 +79,7 @@ public class HL7SocketServerService {
                     } catch (Exception e) {
                         ACKResponse ackResponse = new ACKResponse();
                         System.out.println("Genero la risposta ACK inviata da TD");
-                        ACK ackMessage = ackResponse.generateACKResponseORU(hl7Message);
+                        ACK ackMessage = ackResponse.generateACKResponseORUError(hl7Message);
                         System.out.println(xmlParser.encode(ackMessage));
                         //hl7SocketClientService.sendHL7Message(pipeParser.encode(ackMessage));
                         System.err.println("Errore di comunicazione: " + e.getMessage());

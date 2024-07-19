@@ -26,7 +26,10 @@ public class ACKResponse {
         return ack;
     }
 
-    public ACK generateACKResponseORU(String hl7Message) throws HL7Exception {
+
+
+
+    public ACK generateACKResponseORUError(String hl7Message) throws HL7Exception {
 
         MSH mshSegmentIntegrate = ack.getMSH();
         SegmentFactoryACKResponseORU.createMSHSegmentIntegrateACKResponse(mshSegmentIntegrate, hl7Message);
