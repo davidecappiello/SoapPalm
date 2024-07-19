@@ -15,7 +15,7 @@ public class Hl7ServerConfig {
 
     @PostConstruct
     public void init() {
-        Thread socketServerThread = new Thread(() -> hl7SocketServerService.startServer(35689));
+        Thread socketServerThread = new Thread(() -> hl7SocketServerService.startServer(32010));
         socketServerThread.start();
     }
 

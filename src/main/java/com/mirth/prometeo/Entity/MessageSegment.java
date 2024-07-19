@@ -17,7 +17,8 @@ public class MessageSegment {
     @Column(name = "code", nullable = false)
     private String code;
 
-    @Column(name = "body", nullable = false, columnDefinition = "TEXT")
+    @Lob
+    @Column(name = "body", nullable = false, columnDefinition = "CLOB")
     private String body;
 
     @ManyToOne

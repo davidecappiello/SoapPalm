@@ -4,7 +4,7 @@
         <file>logger.log</file>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
 
-            <fileNamePattern>logger.%d{yyyy-MM-dd}.log</fileNamePattern>
+            <fileNamePattern>logger.log</fileNamePattern>
             <maxHistory>7</maxHistory>
 
         </rollingPolicy>
