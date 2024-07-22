@@ -100,7 +100,7 @@ public class MessageEndpoint implements CommandLineRunner {
                         System.out.println(date);
                         if (param.equals("orm")) {
                             handleORM(updatedMessage, ormO01, hl7Response, response, date);
-                        } else if (param.equals("oml")) {
+                        } else if (param.equals("oml") || param.isEmpty()) {
                             handleOML(updatedMessage, omlCreated, oml_o21, hl7Response, response, date);
                         }
                     } else if(msg3Value.equals("QBP_Q11")){
