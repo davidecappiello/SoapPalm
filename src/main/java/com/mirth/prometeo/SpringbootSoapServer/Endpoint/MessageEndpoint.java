@@ -1,6 +1,7 @@
 package com.mirth.prometeo.SpringbootSoapServer.Endpoint;
 
 import ca.uhn.hl7v2.HL7Exception;
+import ca.uhn.hl7v2.model.GenericMessage;
 import ca.uhn.hl7v2.model.Message;
 import ca.uhn.hl7v2.model.v25.message.*;
 import ca.uhn.hl7v2.parser.DefaultXMLParser;
@@ -324,15 +325,33 @@ public class MessageEndpoint implements CommandLineRunner {
         String finalMessagePIPE = oml_o21.convertXMLToPipeFormat(omlForTD);
         System.out.println("Invio via socket il messaggio a TD");
         hl7Response = HL7SocketClientService.sendHL7Message(finalMessagePIPE);
-        Message genericMessage = pipeParser.parse(hl7Response);
-        System.out.println(updatedMessage);
-        OML_O21 omlMessage = (OML_O21) xmlParser.parse(updatedMessage);
-        ACKResponse object2 = new ACKResponse();
-        System.out.println("Genero la risposta ACK inviata da TD");
-        ACK ackMessage = object2.generateACKResponseORLO22(genericMessage, omlMessage);
-        ORLO22 object3 = new ORLO22();
-        String finalResponseToPSPIPE = String.valueOf(object3.generateORL_O22FromOML(ackMessage, genericMessage, omlCreated));
-        String finalResponseToPSXML = String.valueOf(object3.stringMessageToXML(finalResponseToPSPIPE));
+        System.out.println(hl7Response);
+
+        String finalResponseToPSPIPE = null;
+        String finalResponseToPSXML = null;
+        OML_O21 omlMessage = null;
+
+        if (controllMSA(hl7Response) == true) {
+            ORL_O22 orlFormTD = (ORL_O22) pipeParser.parse(hl7Response);
+            System.out.println(updatedMessage);
+            omlMessage = (OML_O21) xmlParser.parse(updatedMessage);
+            System.out.println("Genero la risposta ACK inviata da TD");
+            ORLO22 object3 = new ORLO22();
+            finalResponseToPSPIPE = String.valueOf(object3.generateORL_O22FromORL(orlFormTD));
+            finalResponseToPSXML = String.valueOf(object3.stringMessageToXML(finalResponseToPSPIPE));
+        } else {
+            Message genericMessage = pipeParser.parse(hl7Response);
+            System.out.println(updatedMessage);
+            omlMessage = (OML_O21) xmlParser.parse(updatedMessage);
+            ACKResponse object2 = new ACKResponse();
+            System.out.println("Genero la risposta ACK inviata da TD");
+            ACK ackMessage = object2.generateACKResponseORLO22(genericMessage, omlMessage);
+            ORLO22 object3 = new ORLO22();
+            finalResponseToPSPIPE = String.valueOf(object3.generateORL_O22FromOML(ackMessage, genericMessage, omlCreated));
+            finalResponseToPSXML = String.valueOf(object3.stringMessageToXML(finalResponseToPSPIPE));
+        }
+
+
         System.out.println("Salvo l'ORL_O22 generato sul database locale");
         saveORLO22OnDatabase(finalResponseToPSPIPE, omlMessage);
         System.out.println("Setto il return");
@@ -383,5 +402,42 @@ public class MessageEndpoint implements CommandLineRunner {
             System.out.println("sw: "+sw.toString());
             throw new Exception("TS.1 Null");
         }
+    }
+
+    public static boolean controllMSA(String hl7Message) throws HL7Exception {
+        boolean flag = false;
+
+        String[] segments = hl7Message.split("\r");
+        String mshSegment = null;
+
+        for (String segment : segments) {
+            if (segment.startsWith("MSA")) {
+                mshSegment = segment;
+                break;
+            }
+        }
+
+        if (mshSegment == null) {
+            throw new HL7Exception("MSH segment not found in the HL7 message");
+        }
+
+        String[] fields = mshSegment.split("\\|");
+
+            for(int i = 0; i < fields.length; i++)
+            {
+                System.out.println(i + " "+ fields[i]);
+            }
+
+        if (fields.length < 3) {
+            throw new HL7Exception("Invalid MSH segment: missing required fields");
+        }
+
+        if(fields[1].equals("AA")){
+            flag = true;
+        } else if(fields[1].equals("AE") || fields[1].equals("AR")){
+            flag = false;
+        }
+
+        return flag;
     }
 }

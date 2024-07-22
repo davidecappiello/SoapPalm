@@ -90,6 +90,38 @@ public class ORLO22 {
         return orl;
     }
 
+    public ORL_O22 generateORL_O22FromORL(ORL_O22 orlFromTD) throws HL7Exception, IOException {
+
+        MSH mshSegmentIntegrate = orl.getMSH();
+        SegmentFactoryORLO22.createMSHSegmentIntegrateORLO22FromORL(mshSegmentIntegrate, orlFromTD);
+
+        MSA msaSegmentIntegrate = orl.getMSA();
+        SegmentFactoryORLO22.createMSASegmentIntegrateORLO22FromORL(msaSegmentIntegrate, orlFromTD);
+
+        int orderReps = orlFromTD.getRESPONSE().getPATIENT().getORDERReps();
+
+        for (int i = 0; i < orderReps; i++) {
+            ORC orcOld = orlFromTD.getRESPONSE().getPATIENT().getORDER(i).getORC();
+            ORL_O22_ORDER orlOrder = orl.getRESPONSE().getPATIENT().getORDER(i);
+
+            ORC orcSegmentIntegrate = orlOrder.getORC();
+            SegmentFactoryORLO22.createORCSegmentIntegrateORLO22(orcSegmentIntegrate, orcOld, i);
+
+            int orderDetailReps = orlFromTD.getRESPONSE().getPATIENT().getORDER().getOBSERVATION_REQUEST().currentReps("OBR");
+
+
+            for (int j = 0; j < orderDetailReps; j++) {
+                OBR obrOld = orlFromTD.getRESPONSE().getPATIENT().getORDER().getOBSERVATION_REQUEST().getOBR();
+                if (obrOld != null) {
+                    OBR obrSegmentIntegrate = orlOrder.getOBSERVATION_REQUEST().getOBR();
+                    SegmentFactoryORLO22.createOBRSegmentIntegrateORLO22FromORL(obrSegmentIntegrate, orlFromTD, j);
+                }
+            }
+        }
+
+        return orl;
+    }
+
     public ORL_O22 decodeMessage(ORL_O22 orl) throws HL7Exception, IOException, ParserConfigurationException, SAXException {
         return ORLDecoding.decodeORL_XML(xmlParser.encode(orl));
     }

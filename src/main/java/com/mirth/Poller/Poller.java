@@ -12,9 +12,7 @@ import javax.sql.DataSource;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 @Service
 public class Poller {
@@ -31,33 +29,45 @@ public class Poller {
 
 
 
+// parametro in secondi ma che va messo nell'.app
+    @Scheduled(fixedRate = 60000)
+    public void pollDatabase() {
 
-//    @Scheduled(fixedRate = 5000)
-//    public void pollDatabase() {
-//
-//        List<PRO_TDQ2HL7> entities = jdbcTemplate.query(QUERY_TO_CHECK_CHANGES, new RowMapper<PRO_TDQ2HL7>() {
-//            @Override
-//            public PRO_TDQ2HL7 mapRow(ResultSet rs, int rowNum) throws SQLException {
-//                PRO_TDQ2HL7 result = new PRO_TDQ2HL7(
-//                       rs.getString("ACCESSNUMBER"),
-//                       rs.getString("TUBENUMBER"),
-//                       rs.getInt("STATO"),
-//                       rs.getInt("FLAG_INOLTRATO"),
-//                       rs.getString("LOGUSERID"),
-//                       rs.getString("HOSTORDERNUMBER"),
-//                       rs.getString("REPARTO"),
-//                       rs.getDate("DATE_CHK")
-//                );
-//                System.out.println(result.getACCESSNUMBER());
-//                System.out.println(result.getTUBENUMBER());
-//                System.out.println(result.getSTATO());
-//                System.out.println(result.getFLAG_INOLTRATO());
-//                System.out.println(result.getLOGUSERID());
-//                System.out.println(result.getHOSTORDERNUMBER());
-//                System.out.println(result.getREPARTO());
-//                System.out.println(result.getDATE_CHK());
-//                return result;
-//            }
-//        });
-//    }
+        Formatter format = new Formatter();
+        Calendar gfg_calender = Calendar.getInstance();
+        format.format("\n%tl:%tM", gfg_calender, gfg_calender);
+        List<PRO_TDQ2HL7> entities = jdbcTemplate.query(QUERY_TO_CHECK_CHANGES, new RowMapper<PRO_TDQ2HL7>() {
+
+
+            @Override
+            public PRO_TDQ2HL7 mapRow(ResultSet rs, int rowNum) throws SQLException {
+
+
+
+
+                System.out.println(format);
+
+                PRO_TDQ2HL7 result = new PRO_TDQ2HL7(
+                       rs.getString("ACCESSNUMBER"),
+                       rs.getString("TUBENUMBER"),
+                       rs.getInt("STATO"),
+                       rs.getInt("FLAG_INOLTRATO"),
+                       rs.getString("LOGUSERID"),
+                       rs.getString("HOSTORDERNUMBER"),
+                       rs.getString("REPARTO"),
+                       rs.getDate("DATE_CHK")
+                );
+                System.out.println("\n");
+                System.out.println(result.getACCESSNUMBER());
+                System.out.println(result.getTUBENUMBER());
+                System.out.println(result.getSTATO());
+                System.out.println(result.getFLAG_INOLTRATO());
+                System.out.println(result.getLOGUSERID());
+                System.out.println(result.getHOSTORDERNUMBER());
+                System.out.println(result.getREPARTO());
+                System.out.println(result.getDATE_CHK());
+                return result;
+            }
+        });
+    }
 }

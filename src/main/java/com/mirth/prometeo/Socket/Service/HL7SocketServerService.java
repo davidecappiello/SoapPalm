@@ -83,6 +83,7 @@ public class HL7SocketServerService {
                         System.out.println(xmlParser.encode(ackMessage));
                         //hl7SocketClientService.sendHL7Message(pipeParser.encode(ackMessage));
                         System.err.println("Errore di comunicazione: " + e.getMessage());
+                        writeMessage(out, pipeParser.encode(ackMessage));
                     }
                 } catch (Exception e) {
                     System.err.println("Errore di comunicazione: " + e.getMessage());
