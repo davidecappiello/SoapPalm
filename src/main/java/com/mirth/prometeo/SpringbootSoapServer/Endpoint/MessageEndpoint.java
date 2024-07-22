@@ -101,7 +101,7 @@ public class MessageEndpoint implements CommandLineRunner {
                         System.out.println(date);
                         if (param.equals("orm")) {
                             handleORM(updatedMessage, ormO01, hl7Response, response, date);
-                        } else if (param.equals("oml") || param.isEmpty()) {
+                        } else if (param.equals("oml")) {
                             handleOML(updatedMessage, omlCreated, oml_o21, hl7Response, response, date);
                         }
                     } else if(msg3Value.equals("QBP_Q11")){
@@ -289,6 +289,7 @@ public class MessageEndpoint implements CommandLineRunner {
         messageSegmentServiceORLO22.saveMSHMessageSegmentORLO22(orlO22, messageEvent);
         messageSegmentServiceORLO22.saveMSAMessageSegmentORLO22(orlO22, messageEvent);
         messageSegmentServiceORLO22.saveORDERBLOCKMessageORLO22(orlO22, messageEvent);
+        messageSegmentServiceORLO22.saveSPMMessageSegmentORLO22(orlO22, messageEvent);
     }
 
     public void handleORM(String updatedMessage, ORMOO1 ormO01, String hl7Response, AcceptMessageResponse response, String date) throws Exception {
@@ -332,12 +333,13 @@ public class MessageEndpoint implements CommandLineRunner {
         OML_O21 omlMessage = null;
 
         if (controllMSA(hl7Response) == true) {
-            ORL_O22 orlFormTD = (ORL_O22) pipeParser.parse(hl7Response);
+            ORL_O22 orlFromTD = (ORL_O22) pipeParser.parse(hl7Response);
+            saveORLO22OnDatabase(hl7Response, omlCreated);
             System.out.println(updatedMessage);
             omlMessage = (OML_O21) xmlParser.parse(updatedMessage);
             System.out.println("Genero la risposta ACK inviata da TD");
             ORLO22 object3 = new ORLO22();
-            finalResponseToPSPIPE = String.valueOf(object3.generateORL_O22FromORL(orlFormTD));
+            finalResponseToPSPIPE = String.valueOf(object3.generateORL_O22FromORL(orlFromTD));
             finalResponseToPSXML = String.valueOf(object3.stringMessageToXML(finalResponseToPSPIPE));
         } else {
             Message genericMessage = pipeParser.parse(hl7Response);
@@ -350,10 +352,6 @@ public class MessageEndpoint implements CommandLineRunner {
             finalResponseToPSPIPE = String.valueOf(object3.generateORL_O22FromOML(ackMessage, genericMessage, omlCreated));
             finalResponseToPSXML = String.valueOf(object3.stringMessageToXML(finalResponseToPSPIPE));
         }
-
-
-        System.out.println("Salvo l'ORL_O22 generato sul database locale");
-        saveORLO22OnDatabase(finalResponseToPSPIPE, omlMessage);
         System.out.println("Setto il return");
         response.setReturn(finalResponseToPSXML);
         System.out.println(finalResponseToPSXML);

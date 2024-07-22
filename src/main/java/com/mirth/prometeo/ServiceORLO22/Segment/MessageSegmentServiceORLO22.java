@@ -94,4 +94,30 @@ public class MessageSegmentServiceORLO22 {
         }
     }
 
+    public void saveSPMMessageSegmentORLO22(ORL_O22 orlO22, MessageEvent messageEvent) throws HL7Exception {
+        Optional<MessageEvent> messageEventOptional = messageEventRepository.findById(messageEvent.getId());
+        if(messageEventOptional.isPresent()) {
+            Parser parser = new PipeParser();
+            MessageSegment messageSegment = new MessageSegment();
+            messageSegment.setCode("SPM");
+            String serializedMessage = parser.encode(orlO22);
+            String serializedSegment = null;
+            for (String segment : serializedMessage.split("\r")) {
+                if (segment.startsWith("SPM")) {
+                    serializedSegment = segment;
+                    break;
+                }
+            }
+            if (serializedSegment != null) {
+                messageSegment.setBody(serializedSegment);
+                messageSegment.setMessageEventId(messageEventOptional.get());
+                messageSegmentRepository.save(messageSegment);
+            } else {
+                throw new IllegalArgumentException("SPM segment not found in the message");
+            }
+        } else {
+            throw new IllegalArgumentException("MessageEvent with ID " +messageEvent.getId()+ " not found");
+        }
+    }
+
 }

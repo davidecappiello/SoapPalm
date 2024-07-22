@@ -30,7 +30,7 @@ public class Poller {
 
 
 // parametro in secondi ma che va messo nell'.app
-    @Scheduled(fixedRate = 60000)
+    /*@Scheduled(fixedRate = 60000)
     public void pollDatabase() {
 
         Formatter format = new Formatter();
@@ -69,5 +69,5 @@ public class Poller {
                 return result;
             }
         });
-    }
+    }*/
 }
