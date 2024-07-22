@@ -1,10 +1,12 @@
 package com.mirth.prometeo.Socket.Service;
 
-import Prometeo.HL7Palm.Message.ORUR01;
-import Prometeo.HL7Palm.Message.ACKResponse;
-import ca.uhn.hl7v2.HL7Exception;
-import ca.uhn.hl7v2.model.Message;
 import ca.uhn.hl7v2.model.v25.message.ACK;
+import ca.uhn.hl7v2.model.v25.segment.MSH;
+import ca.uhn.hl7v2.parser.DefaultXMLParser;
+import ca.uhn.hl7v2.parser.XMLParser;
+import com.mirth.prometeo.HL7Palm.Message.ACKResponse;
+import com.mirth.prometeo.HL7Palm.Message.ORUR01;
+import ca.uhn.hl7v2.HL7Exception;
 import ca.uhn.hl7v2.model.v25.message.OML_O21;
 import ca.uhn.hl7v2.model.v25.message.ORU_R01;
 import ca.uhn.hl7v2.parser.Parser;
@@ -23,8 +25,8 @@ import java.net.Socket;
 
 @Service
 public class HL7SocketServerService {
-
-    private static final Parser parser = new PipeParser();
+    private final Parser pipeParser = new PipeParser();
+    private final XMLParser xmlParser = new DefaultXMLParser();
 
     @Autowired
     private MessageEventServiceORUR01 messageEventServiceORUR01;
@@ -50,34 +52,30 @@ public class HL7SocketServerService {
 
                     String hl7Message = readMessage(in);
                     System.out.println("Ricevuto: " + hl7Message);
-                    Message genericMessage = null;
-                    try {
-                        genericMessage = parser.parse(hl7Message);
-                    } catch (HL7Exception e) {
-                        ACKResponse ackObject = new ACKResponse();
-                        ACK ackResponse = ackObject.generateACKResponseORUR01(hl7Message);
-
-                        writeMessage(out, String.valueOf(ackResponse));
-                    }
-                    ORU_R01 oruR01 = (ORU_R01) parser.parse(hl7Message);
-                    ACK ackPositiveResponse = (ACK) oruR01.generateACK();
-                    try {
-                        writeMessage(out, String.valueOf(ackPositiveResponse));
-                    } catch (Error e) {
-                        e.printStackTrace();
-                    }
                     System.out.println("Salvo sul db locale il messaggio ORU");
                     saveORUR01Database(hl7Message);
                     System.out.println("Utilizzo i dati contenuti nell'ORU per generare un OML_O21");
                     ORUR01 object = new ORUR01();
-                    OML_O21 omlO21 = object.generateOMLO21FromORUR01TD(hl7Message);
-                    System.out.println("Salvo sul db locale l'OML_O21 generato, prima di inviarlo al PS");
-                    saveOMLO21Database(omlO21);
-                    PipeParser pipeParser = new PipeParser();
-                    String omlFinal = String.valueOf(pipeParser.parse(String.valueOf(omlO21)));
-                    String omlXML = object.convertPIPEToXML(omlO21);
-                    String responseMessage = processHL7Message(omlFinal);
-                    //soapClient.sendAcceptMessage(omlXML);
+                    ORU_R01 parsedORU = null;
+                    try {
+                        parsedORU = (ORU_R01) pipeParser.parse(hl7Message);
+                        OML_O21 omlO21 = object.generateOMLO21FromORUR01TD(parsedORU);
+                        System.out.println("Salvo sul db locale l'OML_O21 generato, prima di inviarlo al PS");
+                        saveOMLO21Database(omlO21);
+                        PipeParser pipeParser = new PipeParser();
+                        String omlFinal = String.valueOf(pipeParser.parse(String.valueOf(omlO21)));
+                        String omlXML = object.convertPIPEToXML(omlO21);
+                        String responseMessage = processHL7Message(omlFinal);
+                        soapClient.sendAcceptMessage(omlXML);
+                        writeMessage(out, responseMessage);
+                    } catch (Exception e) {
+                        ACKResponse ackResponse = new ACKResponse();
+                        System.out.println("Genero la risposta ACK inviata da TD");
+                        ACK ackMessage = ackResponse.generateACKResponseORU(hl7Message);
+                        System.out.println(xmlParser.encode(ackMessage));
+                        //hl7SocketClientService.sendHL7Message(pipeParser.encode(ackMessage));
+                        System.err.println("Errore di comunicazione: " + e.getMessage());
+                    }
                 } catch (Exception e) {
                     System.err.println("Errore di comunicazione: " + e.getMessage());
                 }

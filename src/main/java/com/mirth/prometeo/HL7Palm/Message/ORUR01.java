@@ -19,31 +19,31 @@ public class ORUR01 {
 
     private final ORU_R01 oru = new ORU_R01();
     private final XMLParser xmlParser = new DefaultXMLParser();
-    private final Parser pipeParser = new PipeParser();
 
-    public OML_O21 generateOMLO21FromORUR01TD(String oruMessage) throws HL7Exception {
 
-        ORU_R01 parsedORU = (ORU_R01) pipeParser.parse(oruMessage);
+    public OML_O21 generateOMLO21FromORUR01TD(ORU_R01 oruMessage) throws HL7Exception {
+
+
 
         OML_O21 oml = new OML_O21();
 
-        MSH mshSource = parsedORU.getMSH();
+        MSH mshSource = oruMessage.getMSH();
         MSH mshSegmentIntegrate = oml.getMSH();
         SegmentFactoryOMLO21FromORUR01.createMSHSegmentIntegrateOMLO21FromORUR01(mshSegmentIntegrate, mshSource);
 
-        PID pidSource = parsedORU.getPATIENT_RESULT().getPATIENT().getPID();
+        PID pidSource = oruMessage.getPATIENT_RESULT().getPATIENT().getPID();
         PID pidSegmentIntegrate = oml.getPATIENT().getPID();
         SegmentFactoryOMLO21FromORUR01.createPIDSegmentIntegrateOMLO21FromORUR01(pidSegmentIntegrate, pidSource);
 
-        PV1 pv1Source = parsedORU.getPATIENT_RESULT().getPATIENT().getVISIT().getPV1();
+        PV1 pv1Source = oruMessage.getPATIENT_RESULT().getPATIENT().getVISIT().getPV1();
         PV1 pv1SegmentIntegrate = oml.getPATIENT().getPATIENT_VISIT().getPV1();
         SegmentFactoryOMLO21FromORUR01.createPV1SegmentIntegrateOMLO21FromORUR01(pv1SegmentIntegrate, pv1Source);
 
-        int orderReps = parsedORU.getPATIENT_RESULT().getORDER_OBSERVATIONReps();
+        int orderReps = oruMessage.getPATIENT_RESULT().getORDER_OBSERVATIONReps();
 
         for (int orderIndex = 0; orderIndex < orderReps; ++orderIndex) {
 
-            ORU_R01_ORDER_OBSERVATION oruOrder = parsedORU.getPATIENT_RESULT().getORDER_OBSERVATION(orderIndex);
+            ORU_R01_ORDER_OBSERVATION oruOrder = oruMessage.getPATIENT_RESULT().getORDER_OBSERVATION(orderIndex);
 
             ORC orcSource = oruOrder.getORC();
             ORC orcSegmentIntegrate = oml.getORDER().getORC();
