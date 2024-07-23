@@ -22,7 +22,7 @@ public class PRO_TDQ2HL7_Dao {
 
         try (Connection con = dataSource.getConnection()) {
             PreparedStatement statement = con.prepareStatement("UPDATE PRO_TDQ2HL7 " +
-                    "SET FLAG_INOLTRATO = 510 " +
+                    "SET FLAG_INOLTRATO = 210 " +
                     "WHERE ACCESSNUMBER = ? ");
             statement.setString(1, proTdq2HL7.getACCESSNUMBER());
             statement.executeUpdate();
