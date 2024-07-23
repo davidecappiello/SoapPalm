@@ -17,12 +17,12 @@ public class MessageSegment {
     @Column(name = "code", nullable = false)
     private String code;
 
-    /*@Lob
+    @Lob
     @Column(name = "body", nullable = false, columnDefinition = "CLOB")
-    private String body;*/
-
-    @Column(name = "body", nullable = false, columnDefinition = "TEXT")
     private String body;
+
+//    @Column(name = "body", nullable = false, columnDefinition = "TEXT")
+//    private String body;
 
     @ManyToOne
     @JoinColumn(name = "message_event_id", nullable = false)

@@ -50,7 +50,7 @@ public class SegmentFactoryORMOO1 {
             mshSegmentIntegrate.getVersionID().getVersionID().setValue(mshSource.getVersionID().getVersionID().getValue());
     }
 
-    public static void createPIDSegmentIntegrateORMOO1(PID pidSegmentIntegrate, OML_O21 omlMessage, String date) throws HL7Exception {
+    public static void createPIDSegmentIntegrateORMOO1(PID pidSegmentIntegrate, OML_O21 omlMessage) throws HL7Exception {
 
         PID pidSource = omlMessage.getPATIENT().getPID();
         ST targetIdentifierIDNumber = pidSegmentIntegrate.getPatientIdentifierList(0).getIDNumber();
@@ -71,8 +71,11 @@ public class SegmentFactoryORMOO1 {
             pidSegmentIntegrate.getPatientName(0).getFamilyName().getSurname().setValue(pidSource.getPatientName(0).getFamilyName().getSurname().getValue());
         if(pidSource.getPatientName(0).getGivenName().getValue() != null)
             pidSegmentIntegrate.getPatientName(0).getGivenName().setValue(pidSource.getPatientName(0).getGivenName().getValue());
-        if(pidSource.getDateTimeOfBirth().getTime().getValue() != null)
+        if(pidSource.getDateTimeOfBirth().getTime().getValue() != null){
+            String date = pidSource.getDateTimeOfBirth().getTime().getValue().substring(0, 8);
             pidSegmentIntegrate.getDateTimeOfBirth().getTime().setValue(date);
+        }
+
         if(pidSource.getAdministrativeSex().getValue() != null)
             pidSegmentIntegrate.getAdministrativeSex().setValue(pidSource.getAdministrativeSex().getValue());
 

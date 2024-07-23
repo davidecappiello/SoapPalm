@@ -17,17 +17,18 @@ import java.io.IOException;
 
 public class OMLO21 {
 
-    private final OML_O21 oml = new OML_O21();
+
     private final XMLParser xmlParser = new DefaultXMLParser();
     private final Parser pipeParser = new PipeParser();
 
-    public OML_O21 generateOML_021(OML_O21 omlMessage, String date) throws HL7Exception, IOException {
+    public OML_O21 generateOML_021(OML_O21 omlMessage) throws HL7Exception, IOException {
+        OML_O21 oml = new OML_O21();
 
         MSH mshSegmentIntegrate = oml.getMSH();
         SegmentFactoryOMLO21.createMSHSegmentIntegrateOMLO21(mshSegmentIntegrate, omlMessage);
 
         PID pidSegmentIntegrate = oml.getPATIENT().getPID();
-        SegmentFactoryOMLO21.createPIDSegmentIntegrateOMLO21(pidSegmentIntegrate, omlMessage, date);
+        SegmentFactoryOMLO21.createPIDSegmentIntegrateOMLO21(pidSegmentIntegrate, omlMessage);
 
         PV1 pv1SegmentIntegrate = oml.getPATIENT().getPATIENT_VISIT().getPV1();
         SegmentFactoryOMLO21.createPV1SegmentIntegrateOMLO21(pv1SegmentIntegrate, omlMessage);
@@ -59,13 +60,14 @@ public class OMLO21 {
         return oml;
     }
 
-    public OML_O21 generateOML_021ForTD(OML_O21 omlMessage, String date) throws HL7Exception, IOException {
+    public OML_O21 generateOML_021ForTD(OML_O21 omlMessage) throws HL7Exception, IOException {
+        OML_O21 oml = new OML_O21();
 
         MSH mshSegmentIntegrate = oml.getMSH();
         SegmentFactoryOMLO21.createMSHSegmentIntegrateOMLO21(mshSegmentIntegrate, omlMessage);
 
         PID pidSegmentIntegrate = oml.getPATIENT().getPID();
-        SegmentFactoryOMLO21.createPIDSegmentIntegrateOMLO21(pidSegmentIntegrate, omlMessage, date);
+        SegmentFactoryOMLO21.createPIDSegmentIntegrateOMLO21(pidSegmentIntegrate, omlMessage);
 
         PV1 pv1SegmentIntegrate = oml.getPATIENT().getPATIENT_VISIT().getPV1();
         SegmentFactoryOMLO21.createPV1SegmentIntegrateOMLO21(pv1SegmentIntegrate, omlMessage);
@@ -90,6 +92,44 @@ public class OMLO21 {
                 SegmentFactoryOMLO21.createOBXSegmentIntegrateOMLO21(obxSegmentIntegrate, omlMessage, orderIndex, observationIndex);
             }
         }
+        return oml;
+    }
+
+    public OML_O21 generateOML_021CheckIn(OML_O21 omlMessage) throws HL7Exception, IOException {
+        OML_O21 oml = new OML_O21();
+
+        MSH mshSegmentIntegrate = oml.getMSH();
+        SegmentFactoryOMLO21.createMSHSegmentIntegrateOMLO21CheckIn(mshSegmentIntegrate, omlMessage);
+
+        PID pidSegmentIntegrate = oml.getPATIENT().getPID();
+        SegmentFactoryOMLO21.createPIDSegmentIntegrateOMLO21CheckIn(pidSegmentIntegrate, omlMessage);
+
+        PV1 pv1SegmentIntegrate = oml.getPATIENT().getPATIENT_VISIT().getPV1();
+        SegmentFactoryOMLO21.createPV1SegmentIntegrateOMLO21CheckIn(pv1SegmentIntegrate, omlMessage);
+
+        TQ1 tq1SegmentIntegrate = oml.getORDER().getTIMING().getTQ1();
+        SegmentFactoryOMLO21.createTQ1SegmentIntegrateOMLO21CheckIn(tq1SegmentIntegrate, omlMessage);
+
+        int orderReps = omlMessage.getORDERReps();
+
+        for (int orderIndex = 0; orderIndex < orderReps; ++orderIndex) {
+
+            OML_O21_ORDER omlOrder = oml.getORDER(orderIndex);
+
+            ORC orc = omlOrder.getORC();
+            SegmentFactoryOMLO21.createORCSegmentIntegrateOMLO21CheckIn(orc, omlMessage, orderIndex);
+
+            OBR obr = oml.getORDER().getOBSERVATION_REQUEST().getOBR();
+            SegmentFactoryOMLO21.createOBRSegmentIntegrateOMLO21CheckIn(obr, omlMessage, orderIndex);
+
+            int observationReps = omlMessage.getORDER(orderIndex).getOBSERVATION_REQUEST().getOBSERVATIONReps();
+
+            for (int observationIndex = 0; observationIndex < observationReps; ++observationIndex) {
+                OBX obxSegmentIntegrate = oml.getORDER().getOBSERVATION_REQUEST().getOBSERVATION(observationIndex).getOBX();
+                SegmentFactoryOMLO21.createOBXSegmentIntegrateOMLO21CheckIn(obxSegmentIntegrate, omlMessage, orderIndex, observationIndex);
+            }
+        }
+
         return oml;
     }
 

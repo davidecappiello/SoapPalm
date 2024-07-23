@@ -21,7 +21,7 @@ public class ORMOO1 {
     private final XMLParser xmlParser = new DefaultXMLParser();
     private final Parser pipeParser = new PipeParser();
 
-    public ORM_O01 generateORM_OO1(OML_O21 omlMessage, String date) throws HL7Exception, IOException {
+    public ORM_O01 generateORM_OO1(OML_O21 omlMessage) throws HL7Exception, IOException {
 
         ORM_O01 orm = new ORM_O01();
 
@@ -29,7 +29,7 @@ public class ORMOO1 {
         SegmentFactoryORMOO1.createMSHSegmentIntegrateORMOO1(mshSegmentIntegrate, omlMessage);
 
         PID pidSegmentIntegrate = orm.getPATIENT().getPID();
-        SegmentFactoryORMOO1.createPIDSegmentIntegrateORMOO1(pidSegmentIntegrate, omlMessage, date);
+        SegmentFactoryORMOO1.createPIDSegmentIntegrateORMOO1(pidSegmentIntegrate, omlMessage);
 
         PV1 pv1SegmentIntegrate = orm.getPATIENT().getPATIENT_VISIT().getPV1();
         SegmentFactoryORMOO1.createPV1SegmentIntegrateORMOO1(pv1SegmentIntegrate, omlMessage);

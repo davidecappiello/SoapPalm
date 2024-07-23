@@ -50,7 +50,7 @@ public class RSPK11 {
             SegmentFactoryRSPK11.createQAKSegmentIntegrateRSPK11ToQBP(qakSegmentIntegrate, qbpDecoded);
 
             ZET zetSegmentIntegrate = rspK11Custom.getZET();
-            SegmentFactoryRSPK11.createSegmentZET(zetSegmentIntegrate);
+            SegmentFactoryRSPK11.createSegmentZET(zetSegmentIntegrate, qbpDecoded);
 
 
         } else if (triggerEvent.equals("SC")) {
