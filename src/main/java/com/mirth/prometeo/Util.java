@@ -169,7 +169,7 @@ public class Util {
                           MessageSegmentServiceORLO22 messageSegmentServiceORLO22) throws Exception {
 
         insertLogRow("Parametro ricevuto: " + param);
-        ORM_O01 ormCreated = saveOMLO21AndORMOO1OnDatabase(updatedMessage, ormO01, date, messageEventServiceOMLO21,  messageEventServiceORMOO1, messageSegmentServiceOMLO21, messageSegmentServiceORMOO1);
+        ORM_O01 ormCreated = saveOMLO21AndORMOO1OnDatabase(updatedMessage, ormO01, messageEventServiceOMLO21,  messageEventServiceORMOO1, messageSegmentServiceOMLO21, messageSegmentServiceORMOO1);
         String finalMessagePIPE = ormO01.convertXMLToPipeFormat(ormCreated);
         insertLogRow("Invio via socket il messaggio a TD");
         insertLogRow(finalMessagePIPE);
@@ -188,7 +188,7 @@ public class Util {
         insertLogRow(finalResponseToPSXML);
     }
 
-    public void handleOML(String updatedMessage, OML_O21 omlCreated, OMLO21 oml_o21, String hl7Response, AcceptMessageResponse response, String date, String param,
+    public void handleOML(String updatedMessage, OML_O21 omlCreated, OMLO21 oml_o21, String hl7Response, AcceptMessageResponse response, String param,
                           MessageEventServiceOMLO21 messageEventServiceOMLO21, MessageSegmentServiceOMLO21 messageSegmentServiceOMLO21,
                           MessageEventServiceORLO22 messageEventServiceORLO22, MessageSegmentServiceORLO22 messageSegmentServiceORLO22,
                           MessageEventRepository messageEventRepository) throws Exception {
@@ -196,7 +196,7 @@ public class Util {
         insertLogRow("Parametro ricevuto: " + param);
         saveOMLO21Database(updatedMessage, messageEventServiceOMLO21, messageSegmentServiceOMLO21);
         omlCreated = OMLDecoding.decodeOML_XML(updatedMessage);
-        OML_O21 omlForTD = omlObject.generateOML_021ForTD(omlCreated, date);
+        OML_O21 omlForTD = omlObject.generateOML_021ForTD(omlCreated);
         String finalMessagePIPE = oml_o21.convertXMLToPipeFormat(omlForTD);
         insertLogRow("Invio via socket il messaggio a TD");
         hl7Response = HL7SocketClientService.sendHL7Message(finalMessagePIPE);
@@ -237,7 +237,7 @@ public class Util {
         response.setReturn(rspXMl);
     }
 
-    public ORM_O01 saveOMLO21AndORMOO1OnDatabase(String finalMessage, ORMOO1 ormoo1, String date, MessageEventServiceOMLO21 messageEventServiceOMLO21,
+    public ORM_O01 saveOMLO21AndORMOO1OnDatabase(String finalMessage, ORMOO1 ormoo1, MessageEventServiceOMLO21 messageEventServiceOMLO21,
                                                  MessageEventServiceORMOO1 messageEventServiceORMOO1, MessageSegmentServiceOMLO21 messageSegmentServiceOMLO21,
                                                  MessageSegmentServiceORMOO1 messageSegmentServiceORMOO1) {
         try {
@@ -249,7 +249,7 @@ public class Util {
             messageSegmentServiceOMLO21.saveORDERBLOCKMessageOMLO21(omlO21, messageEvent);
             messageSegmentServiceOMLO21.saveTQ1MessageSegmentOMLO21(omlO21, messageEvent);
 
-            ormCreated = ormoo1.generateORM_OO1(omlO21, date);
+            ormCreated = ormoo1.generateORM_OO1(omlO21);
             MessageEvent messageEvent2 = messageEventServiceORMOO1.saveORMOO1Message(ormCreated, omlO21);
             messageSegmentServiceORMOO1.saveMSHMessageSegmentORMOO1(ormCreated, messageEvent2);
             messageSegmentServiceORMOO1.savePIDMessageSegmentORMOO1(ormCreated, messageEvent2);

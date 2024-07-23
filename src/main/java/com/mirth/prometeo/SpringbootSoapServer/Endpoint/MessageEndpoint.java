@@ -81,7 +81,7 @@ public class MessageEndpoint implements CommandLineRunner {
                         if (param.equals("orm")) {
                             util.handleORM(updatedMessage, ormO01, hl7Response, response, date, param, messageEventServiceOMLO21,  messageSegmentServiceOMLO21, messageEventServiceORMOO1, messageSegmentServiceORMOO1, messageEventServiceORLO22, messageSegmentServiceORLO22);
                         } else if (param.equals("oml")) {
-                            util.handleOML(updatedMessage, omlCreated, oml_o21, hl7Response, response, date, param, messageEventServiceOMLO21, messageSegmentServiceOMLO21, messageEventServiceORLO22, messageSegmentServiceORLO22, messageEventRepository);
+                            util.handleOML(updatedMessage, omlCreated, oml_o21, hl7Response, response, param, messageEventServiceOMLO21, messageSegmentServiceOMLO21, messageEventServiceORLO22, messageSegmentServiceORLO22, messageEventRepository);
                         }
                     } else if(msg3Value.equals("QBP_Q11")){
                         util.handleQBP(updatedMessage, response);

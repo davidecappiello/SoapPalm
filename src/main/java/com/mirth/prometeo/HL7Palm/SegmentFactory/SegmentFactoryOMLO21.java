@@ -323,9 +323,8 @@ public class SegmentFactoryOMLO21 {
     public static void createMSHSegmentIntegrateOMLO21CheckIn(MSH mshSegmentIntegrate, OML_O21 omlMessage) throws HL7Exception {
 
         MSH mshSource = omlMessage.getMSH();
-
-        mshSegmentIntegrate.getFieldSeparator().setValue(separator);
-        mshSegmentIntegrate.getEncodingCharacters().setValue(encodingCharacters);
+        mshSegmentIntegrate.getFieldSeparator().setValue(hl7Config.getSeparator());
+        mshSegmentIntegrate.getEncodingCharacters().setValue(hl7Config.getEncodingCharacters());
         if(mshSource.getSendingApplication().getNamespaceID().getValue() != null)
             mshSegmentIntegrate.getSendingApplication().getNamespaceID().setValue(mshSource.getSendingApplication().getNamespaceID().getValue());
         if(mshSource.getSendingFacility().getNamespaceID().getValue() != null)
