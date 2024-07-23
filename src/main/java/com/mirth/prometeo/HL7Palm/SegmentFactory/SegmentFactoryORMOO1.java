@@ -6,21 +6,26 @@ import ca.uhn.hl7v2.model.v25.group.OML_O21_OBSERVATION;
 import ca.uhn.hl7v2.model.v25.group.OML_O21_ORDER;
 import ca.uhn.hl7v2.model.v25.message.OML_O21;
 import ca.uhn.hl7v2.model.v25.segment.*;
+import com.mirth.prometeo.HL7Config;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+@Component
 public class SegmentFactoryORMOO1 {
 
-    private static final String separator = "|";
-    private static final String encodingCharacters = "^~\\&";
-    private static final String messageCode = "ORM";
-    private static final String triggerEvent = "O01";
-    private static final String messageStructure = "ORM_O01";
+    private static HL7Config hl7Config = null;
+
+    @Autowired
+    public SegmentFactoryORMOO1(HL7Config hl7Config) {
+        SegmentFactoryORMOO1.hl7Config = hl7Config;
+    }
 
     public static void createMSHSegmentIntegrateORMOO1(MSH mshSegmentIntegrate, OML_O21 omlMessage) throws HL7Exception {
 
         MSH mshSource = omlMessage.getMSH();
 
-        mshSegmentIntegrate.getFieldSeparator().setValue(separator);
-        mshSegmentIntegrate.getEncodingCharacters().setValue(encodingCharacters);
+        mshSegmentIntegrate.getFieldSeparator().setValue(hl7Config.getSeparator());
+        mshSegmentIntegrate.getEncodingCharacters().setValue(hl7Config.getEncodingCharacters());
         if(mshSource.getSendingApplication().getNamespaceID().getValue() != null)
             mshSegmentIntegrate.getSendingApplication().getNamespaceID().setValue(mshSource.getSendingApplication().getNamespaceID().getValue());
         if(mshSource.getSendingFacility().getNamespaceID().getValue() != null)
@@ -32,11 +37,11 @@ public class SegmentFactoryORMOO1 {
         if(mshSource.getDateTimeOfMessage().getTime().getValue() != null)
             mshSegmentIntegrate.getDateTimeOfMessage().getTime().setValue(mshSource.getDateTimeOfMessage().getTime().getValue());
         if(mshSource.getMessageType().getMessageCode().getValue() != null)
-            mshSegmentIntegrate.getMessageType().getMessageCode().setValue(messageCode);
+            mshSegmentIntegrate.getMessageType().getMessageCode().setValue(hl7Config.getMessageCodeOrm());
         if(mshSource.getMessageType().getTriggerEvent().getValue() != null)
-            mshSegmentIntegrate.getMessageType().getTriggerEvent().setValue(triggerEvent);
+            mshSegmentIntegrate.getMessageType().getTriggerEvent().setValue(hl7Config.getTriggerEventO01());
         if(mshSource.getMessageType().getMessageStructure().getValue() != null)
-            mshSegmentIntegrate.getMessageType().getMessageStructure().setValue(messageStructure);
+            mshSegmentIntegrate.getMessageType().getMessageStructure().setValue(hl7Config.getMessageStructureORMO01());
         if(mshSource.getMessageControlID().getValue() != null)
             mshSegmentIntegrate.getMessageControlID().setValue(mshSource.getMessageControlID().getValue());
         if(mshSource.getProcessingID().getProcessingID().getValue() != null)

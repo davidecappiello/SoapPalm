@@ -11,23 +11,26 @@ import ca.uhn.hl7v2.model.v25.message.OML_O21;
 import ca.uhn.hl7v2.model.v25.message.ORL_O22;
 import ca.uhn.hl7v2.model.v25.message.ORM_O01;
 import ca.uhn.hl7v2.model.v25.segment.*;
+import com.mirth.prometeo.HL7Config;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+@Component
 public class SegmentFactoryORLO22 {
 
-    private static final String separator = "|";
-    private static final String encodingCharacters = "^~\\&";
-    private static final String messageCode = "ORL";
-    private static final String triggerEvent = "O22";
-    private static final String messageStructure = "ORL_O22";
-    private static final String applicationError = "AE";
-    private static final String applicationRejected = "AR";
+    private static HL7Config hl7Config = null;
+
+    @Autowired
+    public SegmentFactoryORLO22(HL7Config hl7Config) {
+        SegmentFactoryORLO22.hl7Config = hl7Config;
+    }
 
     public static void createMSHSegmentIntegrateORLO22FromOML(MSH mshSegmentIntegrate, OML_O21 oml, ACK ackMessage) throws HL7Exception {
 
         MSH mshSource = oml.getMSH();
 
-        mshSegmentIntegrate.getFieldSeparator().setValue(separator);
-        mshSegmentIntegrate.getEncodingCharacters().setValue(encodingCharacters);
+        mshSegmentIntegrate.getFieldSeparator().setValue(hl7Config.getSeparator());
+        mshSegmentIntegrate.getEncodingCharacters().setValue(hl7Config.getEncodingCharacters());
         if(mshSource.getReceivingApplication().getNamespaceID().getValue() != null)
             mshSegmentIntegrate.getSendingApplication().getNamespaceID().setValue(mshSource.getReceivingApplication().getNamespaceID().getValue());
         if(mshSource.getReceivingFacility().getNamespaceID().getValue() != null)
@@ -39,11 +42,11 @@ public class SegmentFactoryORLO22 {
         if(mshSource.getDateTimeOfMessage().getTime().getValue() != null)
             mshSegmentIntegrate.getDateTimeOfMessage().getTime().setValue(mshSource.getDateTimeOfMessage().getTime().getValue());
         if(mshSource.getMessageType().getMessageCode().getValue() != null)
-            mshSegmentIntegrate.getMessageType().getMessageCode().setValue(messageCode);
+            mshSegmentIntegrate.getMessageType().getMessageCode().setValue(hl7Config.getMessageCodeOrl());
         if(mshSource.getMessageType().getTriggerEvent().getValue() != null)
-            mshSegmentIntegrate.getMessageType().getTriggerEvent().setValue(triggerEvent);
+            mshSegmentIntegrate.getMessageType().getTriggerEvent().setValue(hl7Config.getTriggerEventO22());
         if(mshSource.getMessageType().getMessageStructure().getValue() != null)
-            mshSegmentIntegrate.getMessageType().getMessageStructure().setValue(messageStructure);
+            mshSegmentIntegrate.getMessageType().getMessageStructure().setValue(hl7Config.getMessageStructureORLO22());
         if(mshSource.getMessageControlID().getValue() != null)
             mshSegmentIntegrate.getMessageControlID().setValue(mshSource.getMessageControlID().getValue());
         if(mshSource.getProcessingID().getProcessingID().getValue() != null)
@@ -56,8 +59,8 @@ public class SegmentFactoryORLO22 {
 
         MSH mshSource = ormMessage.getMSH();
 
-        mshSegmentIntegrate.getFieldSeparator().setValue(separator);
-        mshSegmentIntegrate.getEncodingCharacters().setValue(encodingCharacters);
+        mshSegmentIntegrate.getFieldSeparator().setValue(hl7Config.getSeparator());
+        mshSegmentIntegrate.getEncodingCharacters().setValue(hl7Config.getEncodingCharacters());
         if(mshSource.getReceivingApplication().getNamespaceID().getValue() != null)
             mshSegmentIntegrate.getSendingApplication().getNamespaceID().setValue(mshSource.getReceivingApplication().getNamespaceID().getValue());
         if(mshSource.getReceivingFacility().getNamespaceID().getValue() != null)
@@ -69,11 +72,11 @@ public class SegmentFactoryORLO22 {
         if(mshSource.getDateTimeOfMessage().getTime().getValue() != null)
             mshSegmentIntegrate.getDateTimeOfMessage().getTime().setValue(mshSource.getDateTimeOfMessage().getTime().getValue());
         if(mshSource.getMessageType().getMessageCode().getValue() != null)
-            mshSegmentIntegrate.getMessageType().getMessageCode().setValue(messageCode);
+            mshSegmentIntegrate.getMessageType().getMessageCode().setValue(hl7Config.getMessageCodeOrl());
         if(mshSource.getMessageType().getTriggerEvent().getValue() != null)
-            mshSegmentIntegrate.getMessageType().getTriggerEvent().setValue(triggerEvent);
+            mshSegmentIntegrate.getMessageType().getTriggerEvent().setValue(hl7Config.getTriggerEventO22());
         if(mshSource.getMessageType().getMessageStructure().getValue() != null)
-            mshSegmentIntegrate.getMessageType().getMessageStructure().setValue(messageStructure);
+            mshSegmentIntegrate.getMessageType().getMessageStructure().setValue(hl7Config.getMessageStructureORLO22());
         if(mshSource.getMessageControlID().getValue() != null)
             mshSegmentIntegrate.getMessageControlID().setValue(mshSource.getMessageControlID().getValue());
         if(mshSource.getProcessingID().getProcessingID().getValue() != null)
@@ -91,7 +94,7 @@ public class SegmentFactoryORLO22 {
             msaSegmentIntegrate.getAcknowledgmentCode().setValue(oldMSA.getAcknowledgmentCode().getValue());
         if(oldMSH.getMessageControlID().getValue() != null)
             msaSegmentIntegrate.getMessageControlID().setValue(oldMSH.getMessageControlID().getValue());
-        if(msaSegmentIntegrate.getAcknowledgmentCode().getValue().equals(applicationError) || (msaSegmentIntegrate.getAcknowledgmentCode().getValue().equals(applicationRejected))) {
+        if(msaSegmentIntegrate.getAcknowledgmentCode().getValue().equals(hl7Config.getApplicationError()) || (msaSegmentIntegrate.getAcknowledgmentCode().getValue().equals(hl7Config.getApplicationRejected()))) {
             ERR oldERR = (ERR) genericMessage.get("ERR");
             msaSegmentIntegrate.getTextMessage().setValue(oldERR.getHL7ErrorCode().getText().getValue());
         }
@@ -248,8 +251,8 @@ public class SegmentFactoryORLO22 {
 
         MSH mshSource = orlFromTD.getMSH();
 
-        mshSegmentIntegrate.getFieldSeparator().setValue(separator);
-        mshSegmentIntegrate.getEncodingCharacters().setValue(encodingCharacters);
+        mshSegmentIntegrate.getFieldSeparator().setValue(hl7Config.getSeparator());
+        mshSegmentIntegrate.getEncodingCharacters().setValue(hl7Config.getEncodingCharacters());
         if(mshSource.getReceivingApplication().getNamespaceID().getValue() != null)
             mshSegmentIntegrate.getSendingApplication().getNamespaceID().setValue(mshSource.getReceivingApplication().getNamespaceID().getValue());
         if(mshSource.getReceivingFacility().getNamespaceID().getValue() != null)
@@ -261,11 +264,11 @@ public class SegmentFactoryORLO22 {
         if(mshSource.getDateTimeOfMessage().getTime().getValue() != null)
             mshSegmentIntegrate.getDateTimeOfMessage().getTime().setValue(mshSource.getDateTimeOfMessage().getTime().getValue());
         if(mshSource.getMessageType().getMessageCode().getValue() != null)
-            mshSegmentIntegrate.getMessageType().getMessageCode().setValue(messageCode);
+            mshSegmentIntegrate.getMessageType().getMessageCode().setValue(hl7Config.getMessageCodeOml());
         if(mshSource.getMessageType().getTriggerEvent().getValue() != null)
-            mshSegmentIntegrate.getMessageType().getTriggerEvent().setValue(triggerEvent);
+            mshSegmentIntegrate.getMessageType().getTriggerEvent().setValue(hl7Config.getTriggerEventO22());
         if(mshSource.getMessageType().getMessageStructure().getValue() != null)
-            mshSegmentIntegrate.getMessageType().getMessageStructure().setValue(messageStructure);
+            mshSegmentIntegrate.getMessageType().getMessageStructure().setValue(hl7Config.getMessageStructureORLO22());
         if(mshSource.getMessageControlID().getValue() != null)
             mshSegmentIntegrate.getMessageControlID().setValue(mshSource.getMessageControlID().getValue());
         if(mshSource.getProcessingID().getProcessingID().getValue() != null)
@@ -283,7 +286,7 @@ public class SegmentFactoryORLO22 {
             msaSegmentIntegrate.getAcknowledgmentCode().setValue(oldMSA.getAcknowledgmentCode().getValue());
         if(oldMSH.getMessageControlID().getValue() != null)
             msaSegmentIntegrate.getMessageControlID().setValue(oldMSH.getMessageControlID().getValue());
-        if(msaSegmentIntegrate.getAcknowledgmentCode().getValue().equals(applicationError) || (msaSegmentIntegrate.getAcknowledgmentCode().getValue().equals(applicationRejected))) {
+        if(msaSegmentIntegrate.getAcknowledgmentCode().getValue().equals(hl7Config.getApplicationError()) || (msaSegmentIntegrate.getAcknowledgmentCode().getValue().equals(hl7Config.getApplicationRejected()))) {
             ERR oldERR = orlFromTD.getERR();
             msaSegmentIntegrate.getTextMessage().setValue(oldERR.getHL7ErrorCode().getText().getValue());
         }

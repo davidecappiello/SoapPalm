@@ -4,8 +4,10 @@ import ca.uhn.hl7v2.HL7Exception;
 import ca.uhn.hl7v2.model.v25.message.OML_O21;
 import ca.uhn.hl7v2.parser.Parser;
 import ca.uhn.hl7v2.parser.PipeParser;
+import com.mirth.prometeo.HL7Config;
 import com.mirth.prometeo.Repository.MessageEventRepository;
 import com.mirth.prometeo.Repository.MessageSegmentRepository;
+import com.mirth.prometeo.ServiceOMLO21.Event.MessageEventServiceOMLO21;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.Optional;
@@ -15,6 +17,12 @@ import com.mirth.prometeo.Entity.MessageSegment;
 @Service
 public class MessageSegmentServiceOMLO21 {
 
+    private static HL7Config hl7Config = null;
+
+    @Autowired
+    public MessageSegmentServiceOMLO21(HL7Config hl7Config) {
+        MessageSegmentServiceOMLO21.hl7Config = hl7Config;
+    }
     @Autowired
     private MessageEventRepository messageEventRepository;
     @Autowired
@@ -25,7 +33,7 @@ public class MessageSegmentServiceOMLO21 {
         MessageSegment messageSegment = new MessageSegment();
         if(messageEventOptional.isPresent()) {
             Parser parser = new PipeParser();
-            messageSegment.setCode("MSH");
+            messageSegment.setCode(hl7Config.getSegmentMsh());
             String serializedMessage = parser.encode(omlO21);
             String serializedSegment = serializedMessage.split("\r")[0];
             if (serializedSegment != null) {
@@ -45,11 +53,11 @@ public class MessageSegmentServiceOMLO21 {
         MessageSegment messageSegment = new MessageSegment();
         if(messageEventOptional.isPresent()) {
             Parser parser = new PipeParser();
-            messageSegment.setCode("PID");
+            messageSegment.setCode(hl7Config.getSegmentPid());
             String serializedMessage = parser.encode(omlO21);
             String serializedSegment = null;
             for (String segment : serializedMessage.split("\r")) {
-                if (segment.startsWith("PID")) {
+                if (segment.startsWith(hl7Config.getSegmentPid())) {
                     serializedSegment = segment;
                 }
             }
@@ -70,11 +78,11 @@ public class MessageSegmentServiceOMLO21 {
         MessageSegment messageSegment = new MessageSegment();
         if(messageEventOptional.isPresent()) {
             Parser parser = new PipeParser();
-            messageSegment.setCode("PD1");
+            messageSegment.setCode(hl7Config.getSegmentPd1());
             String serializedMessage = parser.encode(omlO21);
             String serializedSegment = null;
             for (String segment : serializedMessage.split("\r")) {
-                if (segment.startsWith("PD1")) {
+                if (segment.startsWith(hl7Config.getSegmentPd1())) {
                     serializedSegment = segment;
                     break;
                 }
@@ -96,11 +104,11 @@ public class MessageSegmentServiceOMLO21 {
         MessageSegment messageSegment = new MessageSegment();
         if(messageEventOptional.isPresent()) {
             Parser parser = new PipeParser();
-            messageSegment.setCode("PV1");
+            messageSegment.setCode(hl7Config.getSegmentPv1());
             String serializedMessage = parser.encode(omlO21);
             String serializedSegment = null;
             for (String segment : serializedMessage.split("\r")) {
-                if (segment.startsWith("PV1")) {
+                if (segment.startsWith(hl7Config.getSegmentPv1())) {
                     serializedSegment = segment;
                     break;
                 }
@@ -122,11 +130,11 @@ public class MessageSegmentServiceOMLO21 {
         MessageSegment messageSegment = new MessageSegment();
         if(messageEventOptional.isPresent()) {
             Parser parser = new PipeParser();
-            messageSegment.setCode("TQ1");
+            messageSegment.setCode(hl7Config.getSegmentTq1());
             String serializedMessage = parser.encode(omlO21);
             String serializedSegment = null;
             for (String segment : serializedMessage.split("\r")) {
-                if (segment.startsWith("TQ1")) {
+                if (segment.startsWith(hl7Config.getSegmentTq1())) {
                     serializedSegment = segment;
                     break;
                 }
@@ -152,21 +160,21 @@ public class MessageSegmentServiceOMLO21 {
             String[] segments = serializedMessage.split("\r");
 
             for (String segment : segments) {
-                if (segment.startsWith("ORC")) {
+                if (segment.startsWith(hl7Config.getSegmentOrc())) {
                     MessageSegment messageSegment = new MessageSegment();
-                    messageSegment.setCode("ORC");
+                    messageSegment.setCode(hl7Config.getSegmentOrc());
                     messageSegment.setBody(segment);
                     messageSegment.setMessageEventId(messageEventOptional.get());
                     messageSegmentRepository.save(messageSegment);
-                } else if (segment.startsWith("OBR")) {
+                } else if (segment.startsWith(hl7Config.getSegmentObr())) {
                     MessageSegment messageSegment = new MessageSegment();
-                    messageSegment.setCode("OBR");
+                    messageSegment.setCode(hl7Config.getSegmentObr());
                     messageSegment.setBody(segment);
                     messageSegment.setMessageEventId(messageEventOptional.get());
                     messageSegmentRepository.save(messageSegment);
-                } else if (segment.startsWith("OBX")) {
+                } else if (segment.startsWith(hl7Config.getSegmentObx())) {
                     MessageSegment messageSegment = new MessageSegment();
-                    messageSegment.setCode("OBX");
+                    messageSegment.setCode(hl7Config.getSegmentObx());
                     messageSegment.setBody(segment);
                     messageSegment.setMessageEventId(messageEventOptional.get());
                     messageSegmentRepository.save(messageSegment);

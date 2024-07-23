@@ -1,6 +1,12 @@
 package com.mirth.prometeo.Socket.Service;
 
 import ca.uhn.hl7v2.model.v25.message.ACK;
+import com.mirth.prometeo.HL7Config;
+import com.mirth.prometeo.ServiceORUR01.Event.MessageEventServiceORUR01;
+import com.mirth.prometeo.Util;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -9,11 +15,20 @@ import java.io.PrintWriter;
 import java.net.Socket;
 import java.net.SocketTimeoutException;
 
+@Service
 public class HL7SocketClientService {
 
+    private static HL7Config hl7Config = null;
+    private static final Util util = new Util();
+
+    @Autowired
+    public HL7SocketClientService(HL7Config hl7Config) {
+        HL7SocketClientService.hl7Config = hl7Config;
+    }
+
     public static String sendHL7Message(String hl7Message) throws Exception {
-        try (Socket socket = new Socket("localhost", 32000)) {
-            socket.setSoTimeout(10000);
+        try (Socket socket = new Socket(hl7Config.getSocketClientHost(), Integer.parseInt(hl7Config.getSocketClientPort()))) {
+            socket.setSoTimeout(hl7Config.getSocketClientTimeout());
 
             try (PrintWriter out = new PrintWriter(new OutputStreamWriter(socket.getOutputStream()), true);
                  BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()))) {
@@ -23,7 +38,7 @@ public class HL7SocketClientService {
                 return readMessage(in);
             }
         } catch (SocketTimeoutException e) {
-            System.out.println("Read timeout occurred.");
+            util.insertLogRow("Read timeout occurred.");
             throw e;
         } catch (Exception e) {
             e.printStackTrace();
@@ -53,7 +68,7 @@ public class HL7SocketClientService {
         } while (!endOfMessage && character != -1);
 
         if (character == -1) {
-            System.out.println("End of stream reached.");
+            util.insertLogRow("End of stream reached.");
         }
 
         String response = responseBuilder.toString();

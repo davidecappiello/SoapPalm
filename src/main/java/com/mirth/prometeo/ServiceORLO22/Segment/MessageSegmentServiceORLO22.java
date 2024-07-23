@@ -6,8 +6,10 @@ import ca.uhn.hl7v2.parser.Parser;
 import ca.uhn.hl7v2.parser.PipeParser;
 import com.mirth.prometeo.Entity.MessageEvent;
 import com.mirth.prometeo.Entity.MessageSegment;
+import com.mirth.prometeo.HL7Config;
 import com.mirth.prometeo.Repository.MessageEventRepository;
 import com.mirth.prometeo.Repository.MessageSegmentRepository;
+import com.mirth.prometeo.ServiceORLO22.Event.MessageEventServiceORLO22;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.Optional;
@@ -15,6 +17,12 @@ import java.util.Optional;
 @Service
 public class MessageSegmentServiceORLO22 {
 
+    private static HL7Config hl7Config = null;
+
+    @Autowired
+    public MessageSegmentServiceORLO22(HL7Config hl7Config) {
+        MessageSegmentServiceORLO22.hl7Config = hl7Config;
+    }
     @Autowired
     private MessageEventRepository messageEventRepository;
     @Autowired
@@ -25,7 +33,7 @@ public class MessageSegmentServiceORLO22 {
         if(messageEventOptional.isPresent()) {
             Parser parser = new PipeParser();
             MessageSegment messageSegment = new MessageSegment();
-            messageSegment.setCode("MSH");
+            messageSegment.setCode(hl7Config.getSegmentMsh());
             String serializedMessage = parser.encode(orlO22);
             String serializedSegment = serializedMessage.split("\r")[0];
             if (serializedSegment != null) {
@@ -45,11 +53,11 @@ public class MessageSegmentServiceORLO22 {
         if(messageEventOptional.isPresent()) {
             Parser parser = new PipeParser();
             MessageSegment messageSegment = new MessageSegment();
-            messageSegment.setCode("MSA");
+            messageSegment.setCode(hl7Config.getSegmentMsa());
             String serializedMessage = parser.encode(orlO22);
             String serializedSegment = null;
             for (String segment : serializedMessage.split("\r")) {
-                if (segment.startsWith("MSA")) {
+                if (segment.startsWith(hl7Config.getSegmentMsa())) {
                     serializedSegment = segment;
                     break;
                 }
@@ -59,7 +67,7 @@ public class MessageSegmentServiceORLO22 {
                 messageSegment.setMessageEventId(messageEventOptional.get());
                 messageSegmentRepository.save(messageSegment);
             } else {
-                throw new IllegalArgumentException("PID segment not found in the message");
+                throw new IllegalArgumentException("MSA segment not found in the message");
             }
         } else {
             throw new IllegalArgumentException("MessageEvent with ID " +messageEvent.getId()+ " not found");
@@ -75,15 +83,15 @@ public class MessageSegmentServiceORLO22 {
             String[] segments = serializedMessage.split("\r");
 
             for (String segment : segments) {
-                if (segment.startsWith("ORC")) {
+                if (segment.startsWith(hl7Config.getSegmentOrc())) {
                     MessageSegment messageSegment = new MessageSegment();
-                    messageSegment.setCode("ORC");
+                    messageSegment.setCode(hl7Config.getSegmentOrc());
                     messageSegment.setBody(segment);
                     messageSegment.setMessageEventId(messageEventOptional.get());
                     messageSegmentRepository.save(messageSegment);
-                } else if (segment.startsWith("OBR")) {
+                } else if (segment.startsWith(hl7Config.getSegmentObr())) {
                     MessageSegment messageSegment = new MessageSegment();
-                    messageSegment.setCode("OBR");
+                    messageSegment.setCode(hl7Config.getSegmentObr());
                     messageSegment.setBody(segment);
                     messageSegment.setMessageEventId(messageEventOptional.get());
                     messageSegmentRepository.save(messageSegment);
@@ -99,11 +107,11 @@ public class MessageSegmentServiceORLO22 {
         if(messageEventOptional.isPresent()) {
             Parser parser = new PipeParser();
             MessageSegment messageSegment = new MessageSegment();
-            messageSegment.setCode("SPM");
+            messageSegment.setCode(hl7Config.getSegmentSpm());
             String serializedMessage = parser.encode(orlO22);
             String serializedSegment = null;
             for (String segment : serializedMessage.split("\r")) {
-                if (segment.startsWith("SPM")) {
+                if (segment.startsWith(hl7Config.getSegmentSpm())) {
                     serializedSegment = segment;
                     break;
                 }

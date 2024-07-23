@@ -6,18 +6,26 @@ import ca.uhn.hl7v2.model.v25.group.OML_O21_OBSERVATION;
 import ca.uhn.hl7v2.model.v25.group.OML_O21_ORDER;
 import ca.uhn.hl7v2.model.v25.message.OML_O21;
 import ca.uhn.hl7v2.model.v25.segment.*;
+import com.mirth.prometeo.HL7Config;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+@Component
 public class SegmentFactoryOMLO21 {
 
-    private static final String separator = "|";
-    private static final String encodingCharacters = "^~\\&";
+    private static HL7Config hl7Config = null;
+
+    @Autowired
+    public SegmentFactoryOMLO21(HL7Config hl7Config) {
+        SegmentFactoryOMLO21.hl7Config = hl7Config;
+    }
 
     public static void createMSHSegmentIntegrateOMLO21(MSH mshSegmentIntegrate, OML_O21 omlMessage) throws HL7Exception {
 
         MSH mshSource = omlMessage.getMSH();
 
-        mshSegmentIntegrate.getFieldSeparator().setValue(separator);
-        mshSegmentIntegrate.getEncodingCharacters().setValue(encodingCharacters);
+        mshSegmentIntegrate.getFieldSeparator().setValue(hl7Config.getSeparator());
+        mshSegmentIntegrate.getEncodingCharacters().setValue(hl7Config.getEncodingCharacters());
         if(mshSource.getSendingApplication().getNamespaceID().getValue() != null)
             mshSegmentIntegrate.getSendingApplication().getNamespaceID().setValue(mshSource.getSendingApplication().getNamespaceID().getValue());
         if(mshSource.getSendingFacility().getNamespaceID().getValue() != null)

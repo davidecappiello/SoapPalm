@@ -7,26 +7,33 @@ import ca.uhn.hl7v2.model.Message;
 import ca.uhn.hl7v2.model.v25.datatype.CE;
 import ca.uhn.hl7v2.model.v25.message.QBP_Q11;
 import ca.uhn.hl7v2.model.v25.segment.*;
+import com.mirth.prometeo.HL7Config;
 import com.mirth.prometeo.HL7Palm.Message.Custom.RSP_K11;
 import com.mirth.prometeo.HL7Palm.Segment.ZET;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
+@Component
 public class SegmentFactoryRSPK11 {
 
-    private static final String separator = "|";
-    private static final String encodingCharacters = "^~\\&";
-    private static final String applicationError = "AE";
-    private static final String applicationRejected = "AR";
+    private static HL7Config hl7Config = null;
+
+    @Autowired
+    public SegmentFactoryRSPK11(HL7Config hl7Config) {
+        SegmentFactoryRSPK11.hl7Config = hl7Config;
+    }
+
     public static void createMSHSegmentIntegrateRSPK11ToQBP(MSH mshSegmentIntegrate, String triggerEvent, MSH mshQBP) throws HL7Exception {
 
         Calendar dateTimeOfMessage = Calendar.getInstance();
         SimpleDateFormat hl7DateFormat = new SimpleDateFormat("yyyyMMddHHmmss");
         String formattedDateTime = hl7DateFormat.format(dateTimeOfMessage.getTime());
 
-        mshSegmentIntegrate.getFieldSeparator().setValue(separator);
-        mshSegmentIntegrate.getEncodingCharacters().setValue(encodingCharacters);
+        mshSegmentIntegrate.getFieldSeparator().setValue(hl7Config.getSeparator());
+        mshSegmentIntegrate.getEncodingCharacters().setValue(hl7Config.getEncodingCharacters());
         mshSegmentIntegrate.getSendingApplication().getNamespaceID().setValue(mshQBP.getReceivingApplication().getNamespaceID().getValue());
         mshSegmentIntegrate.getSendingFacility().getNamespaceID().setValue(mshQBP.getReceivingFacility().getNamespaceID().getValue());
         mshSegmentIntegrate.getReceivingApplication().getNamespaceID().setValue(mshQBP.getSendingApplication().getNamespaceID().getValue());
@@ -49,7 +56,7 @@ public class SegmentFactoryRSPK11 {
 
         msaSegmentIntegrate.getAcknowledgmentCode().setValue(oldMSA.getAcknowledgmentCode().getValue());
         msaSegmentIntegrate.getMessageControlID().setValue(oldMSH.getMessageControlID().getValue());
-        if(msaSegmentIntegrate.getAcknowledgmentCode().getValue().equals(applicationError) || (msaSegmentIntegrate.getAcknowledgmentCode().getValue().equals(applicationRejected))) {
+        if(msaSegmentIntegrate.getAcknowledgmentCode().getValue().equals(hl7Config.getApplicationError()) || (msaSegmentIntegrate.getAcknowledgmentCode().getValue().equals(hl7Config.getApplicationRejected()))) {
             ERR oldERR = (ERR) genericMessage.get("ERR");
             msaSegmentIntegrate.getTextMessage().setValue(oldERR.getHL7ErrorCode().getText().getValue());
         }

@@ -1,45 +1,43 @@
 package com.mirth.prometeo.HL7Palm.SegmentFactory;
 
 import ca.uhn.hl7v2.HL7Exception;
-import ca.uhn.hl7v2.model.v25.datatype.CE;
-import ca.uhn.hl7v2.model.v25.datatype.CX;
-import ca.uhn.hl7v2.model.v25.datatype.XAD;
+import ca.uhn.hl7v2.model.Type;
+import ca.uhn.hl7v2.model.Varies;
+import ca.uhn.hl7v2.model.v25.datatype.*;
 import ca.uhn.hl7v2.model.v25.segment.*;
+import com.mirth.prometeo.HL7Config;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+@Component
 public class SegmentFactoryOMLO21FromORUR01 {
 
-    private static final String separator = "|";
-    private static final String encodingCharacters = "^~\\&";
-    private static final String receivingFacility = "Middleware Prometeo";
-    private static final String messageType = "OML";
-    private static final String triggerEvent = "O21";
-    private static final String messageStructure = "OML_O21";
-    private static final String progress = "SC";
+    private static HL7Config hl7Config = null;
+
+    @Autowired
+    public SegmentFactoryOMLO21FromORUR01(HL7Config hl7Config) {
+        SegmentFactoryOMLO21FromORUR01.hl7Config = hl7Config;
+    }
 
     public static void createMSHSegmentIntegrateOMLO21FromORUR01(MSH mshSegmentIntegrate, MSH mshSource) throws HL7Exception {
 
-        mshSegmentIntegrate.getFieldSeparator().setValue(separator);
-        mshSegmentIntegrate.getEncodingCharacters().setValue(encodingCharacters);
+        mshSegmentIntegrate.getFieldSeparator().setValue(hl7Config.getSeparator());
+        mshSegmentIntegrate.getEncodingCharacters().setValue(hl7Config.getEncodingCharacters());
         if(mshSource.getSendingApplication().getNamespaceID().getValue() != null)
-            mshSegmentIntegrate.getSendingApplication().getNamespaceID().setValue(mshSource.getSendingApplication().getNamespaceID().getValue());
+            mshSegmentIntegrate.getSendingApplication().getNamespaceID().setValue(hl7Config.getSendingApplication());
         if(mshSource.getSendingFacility().getNamespaceID().getValue() != null)
-            mshSegmentIntegrate.getSendingFacility().getNamespaceID().setValue(mshSource.getSendingFacility().getNamespaceID().getValue());
-        if(mshSource.getSendingFacility().getUniversalID().getValue() != null)
-            mshSegmentIntegrate.getSendingFacility().getUniversalID().setValue(mshSource.getSendingFacility().getUniversalID().getValue());
-        if(mshSource.getSendingFacility().getUniversalIDType().getValue() != null)
-            mshSegmentIntegrate.getSendingFacility().getUniversalIDType().setValue(mshSource.getSendingFacility().getUniversalIDType().getValue());
+            mshSegmentIntegrate.getSendingFacility().getNamespaceID().setValue(hl7Config.getSendingFacility());
         if(mshSource.getReceivingApplication().getNamespaceID().getValue() != null)
-            mshSegmentIntegrate.getReceivingApplication().getNamespaceID().setValue(mshSource.getReceivingApplication().getNamespaceID().getValue());
-        if(mshSource.getReceivingFacility().getNamespaceID().getValue() != null)
-            mshSegmentIntegrate.getReceivingFacility().getNamespaceID().setValue(receivingFacility);
+            mshSegmentIntegrate.getReceivingApplication().getNamespaceID().setValue(hl7Config.getReceivingApplication());
+        mshSegmentIntegrate.getReceivingFacility().getNamespaceID().setValue(hl7Config.getReceivingFacility());
         if(mshSource.getDateTimeOfMessage().getTime().getValue() != null)
             mshSegmentIntegrate.getDateTimeOfMessage().getTime().setValue(mshSource.getDateTimeOfMessage().getTime().getValue());
         if(mshSource.getMessageType().getMessageCode().getValue() != null)
-            mshSegmentIntegrate.getMessageType().getMessageCode().setValue(messageType);
+            mshSegmentIntegrate.getMessageType().getMessageCode().setValue(hl7Config.getMessageCodeOml());
         if(mshSource.getMessageType().getTriggerEvent().getValue() != null)
-            mshSegmentIntegrate.getMessageType().getTriggerEvent().setValue(triggerEvent);
+            mshSegmentIntegrate.getMessageType().getTriggerEvent().setValue(hl7Config.getTriggerEventO21());
         if(mshSource.getMessageType().getMessageStructure().getValue() != null)
-            mshSegmentIntegrate.getMessageType().getMessageStructure().setValue(messageStructure);
+            mshSegmentIntegrate.getMessageType().getMessageStructure().setValue(hl7Config.getMessageStructureOMLO21());
         if(mshSource.getMessageControlID().getValue() != null)
             mshSegmentIntegrate.getMessageControlID().setValue(mshSource.getMessageControlID().getValue());
         if(mshSource.getProcessingID().getProcessingID().getValue() != null)
@@ -50,13 +48,17 @@ public class SegmentFactoryOMLO21FromORUR01 {
 
     public static void createPIDSegmentIntegrateOMLO21FromORUR01(PID pidSegmentIntegrate, PID pidSource) throws HL7Exception {
 
+        ST targetIdentifierIDNumber = pidSegmentIntegrate.getPatientIdentifierList(0).getIDNumber();
+        HD targetIdentifierAssigningAuthority = pidSegmentIntegrate.getPatientIdentifierList(0).getAssigningAuthority();
+        ID targetIdentifierIdentifierTypeCode = pidSegmentIntegrate.getPatientIdentifierList(0).getIdentifierTypeCode();
+
         for (int i = 0; i < pidSource.getPatientIdentifierListReps(); i++) {
             CX sourceIdentifier = pidSource.getPatientIdentifierList(i);
-            CX targetIdentifier = pidSegmentIntegrate.getPatientIdentifierList(i);
 
-            if(sourceIdentifier.getIDNumber().getValue() != null && sourceIdentifier.getIdentifierTypeCode().getValue() != null) {
-                targetIdentifier.getIDNumber().setValue(sourceIdentifier.getIDNumber().getValue());
-                targetIdentifier.getIdentifierTypeCode().setValue(sourceIdentifier.getIdentifierTypeCode().getValue());
+            if(targetIdentifierIDNumber.getValue() == null && targetIdentifierAssigningAuthority.getNamespaceID().getValue() == null && targetIdentifierIdentifierTypeCode.getValue() == null) {
+                targetIdentifierIDNumber.setValue(sourceIdentifier.getIDNumber().getValue());
+                targetIdentifierAssigningAuthority.getNamespaceID().setValue(sourceIdentifier.getAssigningAuthority().getNamespaceID().getValue());
+                targetIdentifierIdentifierTypeCode.setValue(sourceIdentifier.getIdentifierTypeCode().getValue());
             }
         }
 
@@ -64,8 +66,6 @@ public class SegmentFactoryOMLO21FromORUR01 {
             pidSegmentIntegrate.getPatientName(0).getFamilyName().getSurname().setValue(pidSource.getPatientName(0).getFamilyName().getSurname().getValue());
         if(pidSource.getPatientName(0).getGivenName().getValue() != null)
             pidSegmentIntegrate.getPatientName(0).getGivenName().setValue(pidSource.getPatientName(0).getGivenName().getValue());
-        if(pidSource.getPatientName(0).getNameTypeCode().getValue() != null)
-            pidSegmentIntegrate.getPatientName(0).getNameTypeCode().setValue(pidSource.getPatientName(0).getNameTypeCode().getValue());
         if(pidSource.getDateTimeOfBirth().getTime().getValue() != null)
             pidSegmentIntegrate.getDateTimeOfBirth().getTime().setValue(pidSource.getDateTimeOfBirth().getTime().getValue());
         if(pidSource.getAdministrativeSex().getValue() != null)
@@ -90,18 +90,15 @@ public class SegmentFactoryOMLO21FromORUR01 {
         }
 
         for (int i = 0; i < pidSource.getPhoneNumberHomeReps(); i++) {
-            if(pidSource.getPhoneNumberHome(i).getTelecommunicationUseCode().getValue() != null) {
-                if(pidSource.getPhoneNumberHome(i).getTelecommunicationUseCode().getValue() != null)
-                    pidSegmentIntegrate.getPhoneNumberHome(i).getTelecommunicationUseCode().setValue(pidSource.getPhoneNumberHome(i).getTelecommunicationUseCode().getValue());
-                if(pidSource.getPhoneNumberHome(i).getTelecommunicationEquipmentType().getValue() != null)
-                    pidSegmentIntegrate.getPhoneNumberHome(i).getTelecommunicationEquipmentType().setValue(pidSource.getPhoneNumberHome(i).getTelecommunicationEquipmentType().getValue());
-                if(pidSource.getPhoneNumberHome(i).getEmailAddress().getValue() != null)
-                    pidSegmentIntegrate.getPhoneNumberHome(i).getEmailAddress().setValue(pidSource.getPhoneNumberHome(i).getEmailAddress().getValue());
-            } else {
-                if(pidSource.getPhoneNumberHome(i).getTelecommunicationEquipmentType().getValue() != null)
-                    pidSegmentIntegrate.getPhoneNumberHome(i).getTelecommunicationEquipmentType().setValue(pidSource.getPhoneNumberHome(i).getTelecommunicationEquipmentType().getValue());
+            ST emailAddress = pidSource.getPhoneNumberHome(i).getEmailAddress();
+            if(pidSource.getPhoneNumberHome(i).getUnformattedTelephoneNumber().getValue() != null) {
+                pidSegmentIntegrate.getPhoneNumberHome(i).getTelecommunicationUseCode().setValue(pidSource.getPhoneNumberHome(i).getTelecommunicationUseCode().getValue());
                 if(pidSource.getPhoneNumberHome(i).getUnformattedTelephoneNumber().getValue() != null)
                     pidSegmentIntegrate.getPhoneNumberHome(i).getUnformattedTelephoneNumber().setValue(pidSource.getPhoneNumberHome(i).getUnformattedTelephoneNumber().getValue());
+            } else if(!emailAddress.getValue().isEmpty()) {
+                pidSegmentIntegrate.getPhoneNumberHome(i).getTelecommunicationUseCode().setValue(pidSource.getPhoneNumberHome(i).getTelecommunicationUseCode().getValue());
+                pidSegmentIntegrate.getPhoneNumberHome(i).getTelecommunicationEquipmentType().setValue(pidSource.getPhoneNumberHome(i).getTelecommunicationEquipmentType().getValue());
+                pidSegmentIntegrate.getPhoneNumberHome(i).getEmailAddress().setValue(pidSource.getPhoneNumberHome(i).getEmailAddress().getValue());
             }
         }
 
@@ -137,7 +134,7 @@ public class SegmentFactoryOMLO21FromORUR01 {
     public static void createORCSegmentIntegrateOMLO21FromORUR01(ORC orcSegmentIntegrate, ORC orcSource, int index) throws HL7Exception {
 
         if(orcSource.getOrderControl().getValue() != null)
-            orcSegmentIntegrate.getOrderControl().setValue(progress);
+            orcSegmentIntegrate.getOrderControl().setValue(hl7Config.getCheckIn());
         if(orcSource.getOrderStatus().getValue() != null)
             orcSegmentIntegrate.getOrderStatus().setValue(orcSource.getOrderStatus().getValue());
         if(orcSource.getPlacerOrderNumber().getEntityIdentifier().getValue() != null)
@@ -218,6 +215,8 @@ public class SegmentFactoryOMLO21FromORUR01 {
 
     public static void createOBXSegmentIntegrateOMLO21FromORUR01(OBX obxSegmentIntegrate, OBX obxSource) throws HL7Exception {
 
+        Type data = obxSource.getObservationValue(0).getData();
+
             if(obxSource.getSetIDOBX().getValue() != null)
                 obxSegmentIntegrate.getSetIDOBX().parse(obxSource.getSetIDOBX().getValue());
             if(obxSource.getValueType().getValue() != null)
@@ -226,8 +225,8 @@ public class SegmentFactoryOMLO21FromORUR01 {
                 obxSegmentIntegrate.getObservationIdentifier().getIdentifier().setValue(obxSource.getObservationIdentifier().getIdentifier().getValue());
             if(obxSource.getObservationIdentifier().getText().getValue() != null)
                 obxSegmentIntegrate.getObservationIdentifier().getText().setValue(obxSource.getObservationIdentifier().getText().getValue());
-            /*if(obxSource.getObservationValue(0).getData() != null)
-                obxSegmentIntegrate.getObservationValue(0).parse(String.valueOf(obxSource.getObservationValue(0).getData()));*/
+            if(obxSource.getObservationValue(0).getData() != null)
+                obxSegmentIntegrate.getObservationValue(0).setData(data);
             if(obxSource.getObservationResultStatus().getValue() != null)
                 obxSegmentIntegrate.getObservationResultStatus().setValue(obxSource.getObservationResultStatus().getValue());
     }

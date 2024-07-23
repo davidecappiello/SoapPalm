@@ -1,0 +1,1975 @@
+2024-07-22 17:49:07 [restartedMain] INFO  com.mirth.SoapClientApplication - Starting SoapClientApplication using Java 21.0.3 with PID 15972 (C:\Users\davide.cappiello\Desktop\SoapPalm\target\classes started by davide.cappiello in C:\Users\davide.cappiello\Desktop\SoapPalm)
+2024-07-22 17:49:07 [restartedMain] INFO  com.mirth.SoapClientApplication - No active profile set, falling back to 1 default profile: "default"
+2024-07-22 17:49:07 [restartedMain] INFO  o.s.b.d.restart.ChangeableUrls - The Class-Path manifest attribute in C:\Users\davide.cappiello\.m2\repository\com\sun\xml\ws\jaxws-rt\3.0.2\jaxws-rt-3.0.2.jar referenced one or more files that do not exist: file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/jakarta.annotation-api.jar,file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/jakarta.activation.jar,file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/jakarta.mail.jar,file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/jakarta.jws-api.jar,file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/jakarta.xml.bind-api.jar,file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/jakarta.xml.ws-api.jar,file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/jakarta.xml.soap-api.jar,file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/FastInfoset.jar,file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/gmbal-api-only.jar,file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/ha-api.jar,file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/jaxb-core.jar,file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/jaxb-impl.jar,file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/management-api.jar,file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/mimepull.jar,file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/saaj-impl.jar,file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/stax-ex.jar,file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/stax2-api.jar,file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/streambuffer.jar,file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/woodstox-core.jar
+2024-07-22 17:49:07 [restartedMain] INFO  o.s.b.d.restart.ChangeableUrls - The Class-Path manifest attribute in C:\Users\davide.cappiello\.m2\repository\org\glassfish\ha\ha-api\3.1.13\ha-api-3.1.13.jar referenced one or more files that do not exist: file:/C:/Users/davide.cappiello/.m2/repository/org/glassfish/ha/ha-api/3.1.13/hk2.jar,file:/C:/Users/davide.cappiello/.m2/repository/org/glassfish/ha/ha-api/3.1.13/hk2-core.jar,file:/C:/Users/davide.cappiello/.m2/repository/org/glassfish/ha/ha-api/3.1.13/class-model.jar,file:/C:/Users/davide.cappiello/.m2/repository/org/glassfish/ha/ha-api/3.1.13/config-api.jar,file:/C:/Users/davide.cappiello/.m2/repository/org/glassfish/ha/ha-api/3.1.13/tiger-types.jar,file:/C:/Users/davide.cappiello/.m2/repository/org/glassfish/ha/ha-api/3.1.13/bean-validator.jar,file:/C:/Users/davide.cappiello/.m2/repository/org/glassfish/ha/ha-api/3.1.13/jtype.jar,file:/C:/Users/davide.cappiello/.m2/repository/org/glassfish/ha/ha-api/3.1.13/auto-depends.jar,file:/C:/Users/davide.cappiello/.m2/repository/org/glassfish/ha/ha-api/3.1.13/jakarta.inject-api.jar,file:/C:/Users/davide.cappiello/.m2/repository/org/glassfish/ha/ha-api/3.1.13/asm-all-repackaged.jar,file:/C:/Users/davide.cappiello/.m2/repository/org/glassfish/ha/ha-api/3.1.13/hk2-api.jar,file:/C:/Users/davide.cappiello/.m2/repository/org/glassfish/ha/ha-api/3.1.13/osgi-resource-locator.jar
+2024-07-22 17:49:07 [restartedMain] INFO  o.s.b.d.restart.ChangeableUrls - The Class-Path manifest attribute in C:\Users\davide.cappiello\.m2\repository\com\sun\xml\bind\jaxb-core\2.3.0.1\jaxb-core-2.3.0.1.jar referenced one or more files that do not exist: file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/bind/jaxb-core/2.3.0.1/jaxb-api.jar
+2024-07-22 17:49:07 [restartedMain] INFO  o.s.b.d.restart.ChangeableUrls - The Class-Path manifest attribute in C:\Users\davide.cappiello\.m2\repository\com\oracle\database\jdbc\ojdbc8\19.8.0.0\ojdbc8-19.8.0.0.jar referenced one or more files that do not exist: file:/C:/Users/davide.cappiello/.m2/repository/com/oracle/database/jdbc/ojdbc8/19.8.0.0/oraclepki.jar
+2024-07-22 17:49:07 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-07-22 17:49:07 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-07-22 17:49:09 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-07-22 17:49:09 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2024-07-22 17:49:09 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.mirth.prometeo.Repository.MessageEventRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-07-22 17:49:09 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.mirth.prometeo.Repository.MessageSegmentRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-07-22 17:49:09 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 121 ms. Found 0 JDBC repository interfaces.
+2024-07-22 17:49:09 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-07-22 17:49:09 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-07-22 17:49:09 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 96 ms. Found 2 JPA repository interfaces.
+2024-07-22 17:49:10 [restartedMain] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'soapWebServiceConfig' of type [com.mirth.prometeo.SpringbootSoapServer.Config.SoapWebServiceConfig$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [annotationActionEndpointMapping]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2024-07-22 17:49:10 [restartedMain] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [annotationActionEndpointMapping] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2024-07-22 17:49:10 [restartedMain] INFO  o.s.w.s.a.s.AnnotationActionEndpointMapping - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2024-07-22 17:49:11 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8091 (http)
+2024-07-22 17:49:12 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8091"]
+2024-07-22 17:49:12 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-07-22 17:49:12 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.24]
+2024-07-22 17:49:12 [restartedMain] INFO  o.a.c.c.C.[.[localhost].[/hl7palm] - Initializing Spring embedded WebApplicationContext
+2024-07-22 17:49:12 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 4736 ms
+2024-07-22 17:49:12 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-07-22 17:49:12 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-07-22 17:49:13 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-07-22 17:49:13 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-07-22 17:49:13 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-07-22 17:49:14 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection ConnectionID:1 ClientConnectionId: c65319a5-1f1d-4d08-9fa3-43864a04d615
+2024-07-22 17:49:14 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-07-22 17:49:16 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-07-22 17:49:22 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-07-22 17:49:22 [restartedMain] INFO  ca.uhn.hl7v2.util.Home - hapi.home is set to C:\Users\davide.cappiello\Desktop\SoapPalm\.
+2024-07-22 17:49:22 [restartedMain] INFO  ca.uhn.hl7v2.VersionLogger - HAPI version is: 2.5.1
+2024-07-22 17:49:22 [restartedMain] INFO  ca.uhn.hl7v2.VersionLogger - Default Structure libraries found for HL7 versions 2.4, 2.5, 
+2024-07-22 17:49:23 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-07-22 17:49:23 [restartedMain] WARN  o.s.data.convert.CustomConversions - Registering converter from class microsoft.sql.DateTimeOffset to class java.time.OffsetDateTime as reading converter although it doesn't convert from a store-supported type; You might want to check your annotation setup at the converter implementation
+2024-07-22 17:49:24 [restartedMain] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 2b7d751c-5592-4958-a355-8f465dc9f96a
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2024-07-22 17:49:24 [restartedMain] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2024-07-22 17:49:24 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@1ff46dbf, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@36da5991, org.springframework.security.web.context.SecurityContextHolderFilter@61a55a9d, org.springframework.security.web.header.HeaderWriterFilter@209b35a, org.springframework.web.filter.CorsFilter@76ebddd5, org.springframework.security.web.csrf.CsrfFilter@2cf7ba9e, org.springframework.security.web.authentication.logout.LogoutFilter@60863f49, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@7a5f514d, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@4a8600c8, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@77d0d9be, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@c04b060, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3cdb1e9c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@51389c95, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4bf5db6e, org.springframework.security.web.access.ExceptionTranslationFilter@3287276d, org.springframework.security.web.access.intercept.AuthorizationFilter@4a53de7f]
+2024-07-22 17:49:24 [restartedMain] WARN  o.s.s.c.a.web.builders.WebSecurity - You are asking Spring Security to ignore Ant [pattern='/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-07-22 17:49:24 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will not secure Ant [pattern='/**']
+2024-07-22 17:49:24 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2024-07-22 17:49:24 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8091"]
+2024-07-22 17:49:24 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8091 (http) with context path '/hl7palm'
+2024-07-22 17:49:24 [restartedMain] INFO  com.mirth.SoapClientApplication - Started SoapClientApplication in 18.301 seconds (process running for 20.538)
+2024-07-22 17:49:36 [http-nio-8091-exec-2] INFO  o.a.c.c.C.[.[localhost].[/hl7palm] - Initializing Spring MessageDispatcherServlet 'messageDispatcherServlet'
+2024-07-22 17:49:36 [http-nio-8091-exec-2] INFO  o.s.w.t.h.MessageDispatcherServlet - Initializing Servlet 'messageDispatcherServlet'
+2024-07-22 17:49:36 [http-nio-8091-exec-2] INFO  o.s.w.s.saaj.SaajSoapMessageFactory - Creating SAAJ 1.3 MessageFactory with SOAP 1.1 Protocol
+2024-07-22 17:49:36 [http-nio-8091-exec-2] INFO  o.s.w.t.h.MessageDispatcherServlet - Completed initialization in 61 ms
+2024-07-22 17:49:37 [http-nio-8091-exec-2] INFO  c.m.p.S.Endpoint.MessageEndpoint - Ricevo il messaggio HL7 dal pronto soccorso
+2024-07-22 17:49:37 [http-nio-8091-exec-2] INFO  c.m.p.S.Endpoint.MessageEndpoint - 
+               <OML_O21
+    xmlns="urn:hl7-org:v2xml">
+<MSH>
+<MSH.1>|</MSH.1>
+<MSH.2>^~\&amp;</MSH.2>
+<MSH.3>
+<HD.1>NGH</HD.1>
+</MSH.3>
+<MSH.4>
+<HD.1>GPI</HD.1>
+</MSH.4>
+<MSH.5>
+<HD.1>LIS</HD.1>
+</MSH.5>
+<MSH.6>
+<HD.1>SIEMENS</HD.1>
+</MSH.6>
+<MSH.7>
+<TS.1>20240705103420</TS.1>
+</MSH.7>
+<MSH.9>
+<MSG.1>OML</MSG.1>
+<MSG.2>O21</MSG.2>
+<MSG.3>OML_O21</MSG.3>
+</MSH.9>
+<MSH.10>ffaf3ca2-ab41-459e-87c8-32b493b5b892</MSH.10>
+<MSH.11>
+<PT.1>P</PT.1>
+</MSH.11>
+<MSH.12>
+<VID.1>2.5</VID.1>
+</MSH.12>
+</MSH>
+<OML_O21.PATIENT>
+<PID>
+<PID.3>
+<CX.1>BSUSML77M10A390M</CX.1>
+<CX.4>
+<HD.1>Ministero Finanze</HD.1>
+</CX.4>
+<CX.5>NNITA</CX.5>
+</PID.3>
+<PID.5>
+<XPN.1>
+<FN.1>TEST</FN.1>
+</XPN.1>
+<XPN.2>PROVA</XPN.2>
+</PID.5>
+            <PID.7>
+                <TS.1>19931210000000</TS.1>
+            </PID.7>
+<PID.8>M</PID.8>
+<PID.11>
+<XAD.3/>
+<XAD.4/>
+<XAD.7>BR</XAD.7>
+<XAD.9>054013</XAD.9>
+</PID.11>
+<PID.11>
+<XAD.1>
+<SAD.2>VIA DELLO SPORT 27</SAD.2>
+</XAD.1>
+<XAD.2/>
+<XAD.3/>
+<XAD.4/>
+<XAD.5>06010</XAD.5>
+<XAD.7>L</XAD.7>
+<XAD.9>054011</XAD.9>
+</PID.11>
+</PID>
+<PD1>
+<PD1.12>N</PD1.12>
+</PD1>
+<OML_O21.PATIENT_VISIT>
+<PV1>
+<PV1.2>PS</PV1.2>
+<PV1.3>
+<PL.1>SN_PS</PL.1>
+<PL.8/>
+<PL.9>PRONTO SOCCORSO LE SCOTTE</PL.9>
+</PV1.3>
+<PV1.19>
+<CX.1>2024000722</CX.1>
+<CX.5>PS</CX.5>
+</PV1.19>
+</PV1>
+</OML_O21.PATIENT_VISIT>
+</OML_O21.PATIENT>
+<OML_O21.ORDER>
+<ORC>
+<ORC.1>NW</ORC.1>
+<ORC.2>
+<EI.1>OS2024000349_1419</EI.1>
+</ORC.2>
+<ORC.3>
+<EI.1>OS2024000349_1419</EI.1>
+</ORC.3>
+<ORC.4>
+<EI.1>OS2024000349</EI.1>
+</ORC.4>
+<ORC.5>SC</ORC.5>
+<ORC.7>
+<TQ.4>
+<TS.1>20240628124511</TS.1>
+</TQ.4>
+</ORC.7>
+<ORC.9>
+<TS.1/>
+</ORC.9>
+<ORC.12>
+<XCN.1>BSUSML77M10A390M</XCN.1>
+<XCN.2>
+<FN.1>TEST</FN.1>
+</XCN.2>
+<XCN.3>PROVA</XCN.3>
+</ORC.12>
+<ORC.21>
+<XON.10/>
+</ORC.21>
+<ORC.28>
+<CWE.1>N</CWE.1>
+<CWE.2>TEST</CWE.2>
+</ORC.28>
+</ORC>
+<OML_O21.TIMING>
+<TQ1>
+<TQ1.9>
+<CWE.1>R</CWE.1>
+</TQ1.9>
+</TQ1>
+</OML_O21.TIMING>
+<OML_O21.OBSERVATION_REQUEST>
+<OBR>
+<OBR.1>1</OBR.1>
+<OBR.2>
+<EI.1>OS2024000349_1419</EI.1>
+</OBR.2>
+<OBR.3>
+<EI.1>OS2024000349_1419</EI.1>
+</OBR.3>
+<OBR.4>
+<CE.1>5577</CE.1>
+<CE.2>EMOCROMO PIU' FORMULA</CE.2>
+<CE.3>CODCATALOGO_1</CE.3>
+</OBR.4>
+<OBR.7>
+<TS.1>20240628124511</TS.1>
+</OBR.7>
+<OBR.13>prova lis</OBR.13>
+<OBR.16>
+<XCN.1/>
+<XCN.2/>
+<XCN.3/>
+</OBR.16>
+<OBR.19/>
+<OBR.22>
+<TS.1>20240628124511</TS.1>
+</OBR.22>
+<OBR.24>LAB</OBR.24>
+<OBR.28/>
+<OBR.46>
+<CE.1>DataPresc</CE.1>
+<CE.2>20240628</CE.2>
+</OBR.46>
+</OBR>
+</OML_O21.OBSERVATION_REQUEST>
+</OML_O21.ORDER>
+</OML_O21>
+
+
+2024-07-22 17:49:38 [http-nio-8091-exec-2] INFO  ca.uhn.hl7v2.parser.XMLParser - XML-Encoding a GenericMessage is not covered by the specification. 
+2024-07-22 20:59:19 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-07-22 20:59:19 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-07-22 20:59:19 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-07-22 20:59:31 [restartedMain] INFO  com.mirth.SoapClientApplication - Starting SoapClientApplication using Java 21.0.3 with PID 14812 (C:\Users\davide.cappiello\Desktop\SoapPalm\target\classes started by davide.cappiello in C:\Users\davide.cappiello\Desktop\SoapPalm)
+2024-07-22 20:59:31 [restartedMain] INFO  com.mirth.SoapClientApplication - No active profile set, falling back to 1 default profile: "default"
+2024-07-22 20:59:31 [restartedMain] INFO  o.s.b.d.restart.ChangeableUrls - The Class-Path manifest attribute in C:\Users\davide.cappiello\.m2\repository\com\sun\xml\ws\jaxws-rt\3.0.2\jaxws-rt-3.0.2.jar referenced one or more files that do not exist: file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/jakarta.annotation-api.jar,file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/jakarta.activation.jar,file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/jakarta.mail.jar,file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/jakarta.jws-api.jar,file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/jakarta.xml.bind-api.jar,file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/jakarta.xml.ws-api.jar,file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/jakarta.xml.soap-api.jar,file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/FastInfoset.jar,file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/gmbal-api-only.jar,file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/ha-api.jar,file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/jaxb-core.jar,file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/jaxb-impl.jar,file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/management-api.jar,file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/mimepull.jar,file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/saaj-impl.jar,file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/stax-ex.jar,file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/stax2-api.jar,file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/streambuffer.jar,file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/woodstox-core.jar
+2024-07-22 20:59:31 [restartedMain] INFO  o.s.b.d.restart.ChangeableUrls - The Class-Path manifest attribute in C:\Users\davide.cappiello\.m2\repository\org\glassfish\ha\ha-api\3.1.13\ha-api-3.1.13.jar referenced one or more files that do not exist: file:/C:/Users/davide.cappiello/.m2/repository/org/glassfish/ha/ha-api/3.1.13/hk2.jar,file:/C:/Users/davide.cappiello/.m2/repository/org/glassfish/ha/ha-api/3.1.13/hk2-core.jar,file:/C:/Users/davide.cappiello/.m2/repository/org/glassfish/ha/ha-api/3.1.13/class-model.jar,file:/C:/Users/davide.cappiello/.m2/repository/org/glassfish/ha/ha-api/3.1.13/config-api.jar,file:/C:/Users/davide.cappiello/.m2/repository/org/glassfish/ha/ha-api/3.1.13/tiger-types.jar,file:/C:/Users/davide.cappiello/.m2/repository/org/glassfish/ha/ha-api/3.1.13/bean-validator.jar,file:/C:/Users/davide.cappiello/.m2/repository/org/glassfish/ha/ha-api/3.1.13/jtype.jar,file:/C:/Users/davide.cappiello/.m2/repository/org/glassfish/ha/ha-api/3.1.13/auto-depends.jar,file:/C:/Users/davide.cappiello/.m2/repository/org/glassfish/ha/ha-api/3.1.13/jakarta.inject-api.jar,file:/C:/Users/davide.cappiello/.m2/repository/org/glassfish/ha/ha-api/3.1.13/asm-all-repackaged.jar,file:/C:/Users/davide.cappiello/.m2/repository/org/glassfish/ha/ha-api/3.1.13/hk2-api.jar,file:/C:/Users/davide.cappiello/.m2/repository/org/glassfish/ha/ha-api/3.1.13/osgi-resource-locator.jar
+2024-07-22 20:59:31 [restartedMain] INFO  o.s.b.d.restart.ChangeableUrls - The Class-Path manifest attribute in C:\Users\davide.cappiello\.m2\repository\com\sun\xml\bind\jaxb-core\2.3.0.1\jaxb-core-2.3.0.1.jar referenced one or more files that do not exist: file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/bind/jaxb-core/2.3.0.1/jaxb-api.jar
+2024-07-22 20:59:31 [restartedMain] INFO  o.s.b.d.restart.ChangeableUrls - The Class-Path manifest attribute in C:\Users\davide.cappiello\.m2\repository\com\oracle\database\jdbc\ojdbc8\19.8.0.0\ojdbc8-19.8.0.0.jar referenced one or more files that do not exist: file:/C:/Users/davide.cappiello/.m2/repository/com/oracle/database/jdbc/ojdbc8/19.8.0.0/oraclepki.jar
+2024-07-22 20:59:31 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-07-22 20:59:31 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-07-22 20:59:33 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-07-22 20:59:33 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2024-07-22 20:59:34 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.mirth.prometeo.Repository.MessageEventRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-07-22 20:59:34 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.mirth.prometeo.Repository.MessageSegmentRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-07-22 20:59:34 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 142 ms. Found 0 JDBC repository interfaces.
+2024-07-22 20:59:34 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-07-22 20:59:34 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-07-22 20:59:34 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 105 ms. Found 2 JPA repository interfaces.
+2024-07-22 20:59:35 [restartedMain] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'soapWebServiceConfig' of type [com.mirth.prometeo.SpringbootSoapServer.Config.SoapWebServiceConfig$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [annotationActionEndpointMapping]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2024-07-22 20:59:35 [restartedMain] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [annotationActionEndpointMapping] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2024-07-22 20:59:35 [restartedMain] INFO  o.s.w.s.a.s.AnnotationActionEndpointMapping - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2024-07-22 20:59:36 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8091 (http)
+2024-07-22 20:59:36 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8091"]
+2024-07-22 20:59:36 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-07-22 20:59:36 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.24]
+2024-07-22 20:59:36 [restartedMain] INFO  o.a.c.c.C.[.[localhost].[/hl7palm] - Initializing Spring embedded WebApplicationContext
+2024-07-22 20:59:36 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 4984 ms
+2024-07-22 20:59:37 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-07-22 20:59:37 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-07-22 20:59:37 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-07-22 20:59:38 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-07-22 20:59:38 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-07-22 20:59:39 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection ConnectionID:1 ClientConnectionId: 88b0216f-dd92-4e21-b4d5-c1faa539e955
+2024-07-22 20:59:39 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-07-22 20:59:41 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-07-22 20:59:49 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-07-22 20:59:50 [restartedMain] INFO  ca.uhn.hl7v2.util.Home - hapi.home is set to C:\Users\davide.cappiello\Desktop\SoapPalm\.
+2024-07-22 20:59:50 [restartedMain] INFO  ca.uhn.hl7v2.VersionLogger - HAPI version is: 2.5.1
+2024-07-22 20:59:50 [restartedMain] INFO  ca.uhn.hl7v2.VersionLogger - Default Structure libraries found for HL7 versions 2.4, 2.5, 
+2024-07-22 20:59:50 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-07-22 20:59:51 [restartedMain] WARN  o.s.data.convert.CustomConversions - Registering converter from class microsoft.sql.DateTimeOffset to class java.time.OffsetDateTime as reading converter although it doesn't convert from a store-supported type; You might want to check your annotation setup at the converter implementation
+2024-07-22 20:59:51 [restartedMain] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: c19f5f48-0abd-49fe-9131-0506078b900e
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2024-07-22 20:59:51 [restartedMain] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2024-07-22 20:59:51 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@469037ad, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5fcb2773, org.springframework.security.web.context.SecurityContextHolderFilter@22533a5f, org.springframework.security.web.header.HeaderWriterFilter@51bfe6f6, org.springframework.web.filter.CorsFilter@60f14879, org.springframework.security.web.csrf.CsrfFilter@1e25a79c, org.springframework.security.web.authentication.logout.LogoutFilter@513367a6, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@e3cc9de, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@1ef8931d, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@46282e5b, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@1a907a46, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5dd08e0d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4c36fe6d, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@142546c, org.springframework.security.web.access.ExceptionTranslationFilter@4adeaf31, org.springframework.security.web.access.intercept.AuthorizationFilter@6a8e7d57]
+2024-07-22 20:59:51 [restartedMain] WARN  o.s.s.c.a.web.builders.WebSecurity - You are asking Spring Security to ignore Ant [pattern='/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-07-22 20:59:51 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will not secure Ant [pattern='/**']
+2024-07-22 20:59:51 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2024-07-22 20:59:51 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8091"]
+2024-07-22 20:59:51 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8091 (http) with context path '/hl7palm'
+2024-07-22 20:59:51 [restartedMain] INFO  com.mirth.SoapClientApplication - Started SoapClientApplication in 21.583 seconds (process running for 23.576)
+2024-07-22 20:59:56 [http-nio-8091-exec-2] INFO  o.a.c.c.C.[.[localhost].[/hl7palm] - Initializing Spring MessageDispatcherServlet 'messageDispatcherServlet'
+2024-07-22 20:59:56 [http-nio-8091-exec-2] INFO  o.s.w.t.h.MessageDispatcherServlet - Initializing Servlet 'messageDispatcherServlet'
+2024-07-22 20:59:56 [http-nio-8091-exec-2] INFO  o.s.w.s.saaj.SaajSoapMessageFactory - Creating SAAJ 1.3 MessageFactory with SOAP 1.1 Protocol
+2024-07-22 20:59:56 [http-nio-8091-exec-2] INFO  o.s.w.t.h.MessageDispatcherServlet - Completed initialization in 56 ms
+2024-07-22 20:59:56 [http-nio-8091-exec-2] INFO  com.mirth.prometeo.Util - Ricevo il messaggio OML_O21 dal PS
+2024-07-22 20:59:56 [http-nio-8091-exec-2] INFO  com.mirth.prometeo.Util - 
+               <OML_O21
+    xmlns="urn:hl7-org:v2xml">
+<MSH>
+<MSH.1>|</MSH.1>
+<MSH.2>^~\&amp;</MSH.2>
+<MSH.3>
+<HD.1>NGH</HD.1>
+</MSH.3>
+<MSH.4>
+<HD.1>GPI</HD.1>
+</MSH.4>
+<MSH.5>
+<HD.1>LIS</HD.1>
+</MSH.5>
+<MSH.6>
+<HD.1>SIEMENS</HD.1>
+</MSH.6>
+<MSH.7>
+<TS.1>20240705103420</TS.1>
+</MSH.7>
+<MSH.9>
+<MSG.1>OML</MSG.1>
+<MSG.2>O21</MSG.2>
+<MSG.3>OML_O21</MSG.3>
+</MSH.9>
+<MSH.10>ffaf3ca2-ab41-459e-87c8-32b493b5b892</MSH.10>
+<MSH.11>
+<PT.1>P</PT.1>
+</MSH.11>
+<MSH.12>
+<VID.1>2.5</VID.1>
+</MSH.12>
+</MSH>
+<OML_O21.PATIENT>
+<PID>
+<PID.3>
+<CX.1>BSUSML77M10A390M</CX.1>
+<CX.4>
+<HD.1>Ministero Finanze</HD.1>
+</CX.4>
+<CX.5>NNITA</CX.5>
+</PID.3>
+<PID.5>
+<XPN.1>
+<FN.1>TEST</FN.1>
+</XPN.1>
+<XPN.2>PROVA</XPN.2>
+</PID.5>
+            <PID.7>
+                <TS.1>19931210000000</TS.1>
+            </PID.7>
+<PID.8>M</PID.8>
+<PID.11>
+<XAD.3/>
+<XAD.4/>
+<XAD.7>BR</XAD.7>
+<XAD.9>054013</XAD.9>
+</PID.11>
+<PID.11>
+<XAD.1>
+<SAD.2>VIA DELLO SPORT 27</SAD.2>
+</XAD.1>
+<XAD.2/>
+<XAD.3/>
+<XAD.4/>
+<XAD.5>06010</XAD.5>
+<XAD.7>L</XAD.7>
+<XAD.9>054011</XAD.9>
+</PID.11>
+</PID>
+<PD1>
+<PD1.12>N</PD1.12>
+</PD1>
+<OML_O21.PATIENT_VISIT>
+<PV1>
+<PV1.2>PS</PV1.2>
+<PV1.3>
+<PL.1>SN_PS</PL.1>
+<PL.8/>
+<PL.9>PRONTO SOCCORSO LE SCOTTE</PL.9>
+</PV1.3>
+<PV1.19>
+<CX.1>2024000722</CX.1>
+<CX.5>PS</CX.5>
+</PV1.19>
+</PV1>
+</OML_O21.PATIENT_VISIT>
+</OML_O21.PATIENT>
+<OML_O21.ORDER>
+<ORC>
+<ORC.1>NW</ORC.1>
+<ORC.2>
+<EI.1>OS2024000349_1419</EI.1>
+</ORC.2>
+<ORC.3>
+<EI.1>OS2024000349_1419</EI.1>
+</ORC.3>
+<ORC.4>
+<EI.1>OS2024000349</EI.1>
+</ORC.4>
+<ORC.5>SC</ORC.5>
+<ORC.7>
+<TQ.4>
+<TS.1>20240628124511</TS.1>
+</TQ.4>
+</ORC.7>
+<ORC.9>
+<TS.1/>
+</ORC.9>
+<ORC.12>
+<XCN.1>BSUSML77M10A390M</XCN.1>
+<XCN.2>
+<FN.1>TEST</FN.1>
+</XCN.2>
+<XCN.3>PROVA</XCN.3>
+</ORC.12>
+<ORC.21>
+<XON.10/>
+</ORC.21>
+<ORC.28>
+<CWE.1>N</CWE.1>
+<CWE.2>TEST</CWE.2>
+</ORC.28>
+</ORC>
+<OML_O21.TIMING>
+<TQ1>
+<TQ1.9>
+<CWE.1>R</CWE.1>
+</TQ1.9>
+</TQ1>
+</OML_O21.TIMING>
+<OML_O21.OBSERVATION_REQUEST>
+<OBR>
+<OBR.1>1</OBR.1>
+<OBR.2>
+<EI.1>OS2024000349_1419</EI.1>
+</OBR.2>
+<OBR.3>
+<EI.1>OS2024000349_1419</EI.1>
+</OBR.3>
+<OBR.4>
+<CE.1>5577</CE.1>
+<CE.2>EMOCROMO PIU' FORMULA</CE.2>
+<CE.3>CODCATALOGO_1</CE.3>
+</OBR.4>
+<OBR.7>
+<TS.1>20240628124511</TS.1>
+</OBR.7>
+<OBR.13>prova lis</OBR.13>
+<OBR.16>
+<XCN.1/>
+<XCN.2/>
+<XCN.3/>
+</OBR.16>
+<OBR.19/>
+<OBR.22>
+<TS.1>20240628124511</TS.1>
+</OBR.22>
+<OBR.24>LAB</OBR.24>
+<OBR.28/>
+<OBR.46>
+<CE.1>DataPresc</CE.1>
+<CE.2>20240628</CE.2>
+</OBR.46>
+</OBR>
+</OML_O21.OBSERVATION_REQUEST>
+</OML_O21.ORDER>
+</OML_O21>
+
+
+2024-07-22 20:59:56 [http-nio-8091-exec-2] INFO  c.m.p.S.Endpoint.MessageEndpoint - Controllo i tag esterni al messaggio per capire se sono uguali al MessageTypeStructure del messaggio HL7
+2024-07-22 20:59:56 [http-nio-8091-exec-2] INFO  c.m.p.S.Endpoint.MessageEndpoint - Salvo l'OML_O21 inviato dal PS e l'ORM_O01 generato da noi sul database locale
+2024-07-22 20:59:58 [http-nio-8091-exec-2] INFO  ca.uhn.hl7v2.parser.XMLParser - XML-Encoding a GenericMessage is not covered by the specification. 
+2024-07-22 23:44:01 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-07-22 23:44:01 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-07-22 23:44:01 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-07-22 23:44:10 [restartedMain] INFO  com.mirth.SoapClientApplication - Starting SoapClientApplication using Java 21.0.3 with PID 23976 (C:\Users\davide.cappiello\Desktop\SoapPalm\target\classes started by davide.cappiello in C:\Users\davide.cappiello\Desktop\SoapPalm)
+2024-07-22 23:44:10 [restartedMain] INFO  com.mirth.SoapClientApplication - No active profile set, falling back to 1 default profile: "default"
+2024-07-22 23:44:10 [restartedMain] INFO  o.s.b.d.restart.ChangeableUrls - The Class-Path manifest attribute in C:\Users\davide.cappiello\.m2\repository\com\sun\xml\ws\jaxws-rt\3.0.2\jaxws-rt-3.0.2.jar referenced one or more files that do not exist: file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/jakarta.annotation-api.jar,file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/jakarta.activation.jar,file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/jakarta.mail.jar,file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/jakarta.jws-api.jar,file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/jakarta.xml.bind-api.jar,file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/jakarta.xml.ws-api.jar,file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/jakarta.xml.soap-api.jar,file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/FastInfoset.jar,file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/gmbal-api-only.jar,file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/ha-api.jar,file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/jaxb-core.jar,file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/jaxb-impl.jar,file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/management-api.jar,file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/mimepull.jar,file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/saaj-impl.jar,file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/stax-ex.jar,file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/stax2-api.jar,file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/streambuffer.jar,file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/woodstox-core.jar
+2024-07-22 23:44:10 [restartedMain] INFO  o.s.b.d.restart.ChangeableUrls - The Class-Path manifest attribute in C:\Users\davide.cappiello\.m2\repository\org\glassfish\ha\ha-api\3.1.13\ha-api-3.1.13.jar referenced one or more files that do not exist: file:/C:/Users/davide.cappiello/.m2/repository/org/glassfish/ha/ha-api/3.1.13/hk2.jar,file:/C:/Users/davide.cappiello/.m2/repository/org/glassfish/ha/ha-api/3.1.13/hk2-core.jar,file:/C:/Users/davide.cappiello/.m2/repository/org/glassfish/ha/ha-api/3.1.13/class-model.jar,file:/C:/Users/davide.cappiello/.m2/repository/org/glassfish/ha/ha-api/3.1.13/config-api.jar,file:/C:/Users/davide.cappiello/.m2/repository/org/glassfish/ha/ha-api/3.1.13/tiger-types.jar,file:/C:/Users/davide.cappiello/.m2/repository/org/glassfish/ha/ha-api/3.1.13/bean-validator.jar,file:/C:/Users/davide.cappiello/.m2/repository/org/glassfish/ha/ha-api/3.1.13/jtype.jar,file:/C:/Users/davide.cappiello/.m2/repository/org/glassfish/ha/ha-api/3.1.13/auto-depends.jar,file:/C:/Users/davide.cappiello/.m2/repository/org/glassfish/ha/ha-api/3.1.13/jakarta.inject-api.jar,file:/C:/Users/davide.cappiello/.m2/repository/org/glassfish/ha/ha-api/3.1.13/asm-all-repackaged.jar,file:/C:/Users/davide.cappiello/.m2/repository/org/glassfish/ha/ha-api/3.1.13/hk2-api.jar,file:/C:/Users/davide.cappiello/.m2/repository/org/glassfish/ha/ha-api/3.1.13/osgi-resource-locator.jar
+2024-07-22 23:44:10 [restartedMain] INFO  o.s.b.d.restart.ChangeableUrls - The Class-Path manifest attribute in C:\Users\davide.cappiello\.m2\repository\com\sun\xml\bind\jaxb-core\2.3.0.1\jaxb-core-2.3.0.1.jar referenced one or more files that do not exist: file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/bind/jaxb-core/2.3.0.1/jaxb-api.jar
+2024-07-22 23:44:10 [restartedMain] INFO  o.s.b.d.restart.ChangeableUrls - The Class-Path manifest attribute in C:\Users\davide.cappiello\.m2\repository\com\oracle\database\jdbc\ojdbc8\19.8.0.0\ojdbc8-19.8.0.0.jar referenced one or more files that do not exist: file:/C:/Users/davide.cappiello/.m2/repository/com/oracle/database/jdbc/ojdbc8/19.8.0.0/oraclepki.jar
+2024-07-22 23:44:10 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-07-22 23:44:10 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-07-22 23:44:12 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-07-22 23:44:12 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2024-07-22 23:44:12 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.mirth.prometeo.Repository.MessageEventRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-07-22 23:44:12 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.mirth.prometeo.Repository.MessageSegmentRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-07-22 23:44:12 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 89 ms. Found 0 JDBC repository interfaces.
+2024-07-22 23:44:12 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-07-22 23:44:12 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-07-22 23:44:12 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 86 ms. Found 2 JPA repository interfaces.
+2024-07-22 23:44:13 [restartedMain] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'soapWebServiceConfig' of type [com.mirth.prometeo.SpringbootSoapServer.Config.SoapWebServiceConfig$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [annotationActionEndpointMapping]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2024-07-22 23:44:13 [restartedMain] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [annotationActionEndpointMapping] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2024-07-22 23:44:13 [restartedMain] INFO  o.s.w.s.a.s.AnnotationActionEndpointMapping - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2024-07-22 23:44:14 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8091 (http)
+2024-07-22 23:44:14 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8091"]
+2024-07-22 23:44:14 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-07-22 23:44:14 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.24]
+2024-07-22 23:44:15 [restartedMain] INFO  o.a.c.c.C.[.[localhost].[/hl7palm] - Initializing Spring embedded WebApplicationContext
+2024-07-22 23:44:15 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 4107 ms
+2024-07-22 23:44:15 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-07-22 23:44:15 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-07-22 23:44:15 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-07-22 23:44:16 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-07-22 23:44:16 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-07-22 23:44:17 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection ConnectionID:1 ClientConnectionId: a1746019-2c4e-470c-995f-9898dc0fffdf
+2024-07-22 23:44:17 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-07-22 23:44:19 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-07-22 23:44:27 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-07-22 23:44:28 [restartedMain] INFO  ca.uhn.hl7v2.util.Home - hapi.home is set to C:\Users\davide.cappiello\Desktop\SoapPalm\.
+2024-07-22 23:44:28 [restartedMain] INFO  ca.uhn.hl7v2.VersionLogger - HAPI version is: 2.5.1
+2024-07-22 23:44:28 [restartedMain] INFO  ca.uhn.hl7v2.VersionLogger - Default Structure libraries found for HL7 versions 2.4, 2.5, 
+2024-07-22 23:44:28 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-07-22 23:44:29 [restartedMain] WARN  o.s.data.convert.CustomConversions - Registering converter from class microsoft.sql.DateTimeOffset to class java.time.OffsetDateTime as reading converter although it doesn't convert from a store-supported type; You might want to check your annotation setup at the converter implementation
+2024-07-22 23:44:29 [restartedMain] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 6a48fd48-dcf5-48e3-aa4e-7317401f527d
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2024-07-22 23:44:29 [restartedMain] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2024-07-22 23:44:29 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@5c6ac1e9, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1f298f1d, org.springframework.security.web.context.SecurityContextHolderFilter@47f4896a, org.springframework.security.web.header.HeaderWriterFilter@5fa158e8, org.springframework.web.filter.CorsFilter@67c8954c, org.springframework.security.web.csrf.CsrfFilter@6931f3f8, org.springframework.security.web.authentication.logout.LogoutFilter@5e09b576, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@4db63384, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@1b2b4d69, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@2fcd71a0, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@aa9352c, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@60b1e745, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@93ff119, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@25228839, org.springframework.security.web.access.ExceptionTranslationFilter@48b5ee3b, org.springframework.security.web.access.intercept.AuthorizationFilter@5666a8ae]
+2024-07-22 23:44:29 [restartedMain] WARN  o.s.s.c.a.web.builders.WebSecurity - You are asking Spring Security to ignore Ant [pattern='/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-07-22 23:44:29 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will not secure Ant [pattern='/**']
+2024-07-22 23:44:29 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2024-07-22 23:44:29 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8091"]
+2024-07-22 23:44:29 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8091 (http) with context path '/hl7palm'
+2024-07-22 23:44:29 [restartedMain] INFO  com.mirth.SoapClientApplication - Started SoapClientApplication in 19.958 seconds (process running for 21.723)
+2024-07-22 23:44:39 [http-nio-8091-exec-4] INFO  o.a.c.c.C.[.[localhost].[/hl7palm] - Initializing Spring MessageDispatcherServlet 'messageDispatcherServlet'
+2024-07-22 23:44:39 [http-nio-8091-exec-4] INFO  o.s.w.t.h.MessageDispatcherServlet - Initializing Servlet 'messageDispatcherServlet'
+2024-07-22 23:44:39 [http-nio-8091-exec-4] INFO  o.s.w.s.saaj.SaajSoapMessageFactory - Creating SAAJ 1.3 MessageFactory with SOAP 1.1 Protocol
+2024-07-22 23:44:40 [http-nio-8091-exec-4] INFO  o.s.w.t.h.MessageDispatcherServlet - Completed initialization in 63 ms
+2024-07-22 23:44:40 [http-nio-8091-exec-4] INFO  com.mirth.prometeo.Util - Ricevo il messaggio OML_O21 dal PS
+2024-07-22 23:44:40 [http-nio-8091-exec-4] INFO  com.mirth.prometeo.Util - 
+               <OML_O21
+    xmlns="urn:hl7-org:v2xml">
+<MSH>
+<MSH.1>|</MSH.1>
+<MSH.2>^~\&amp;</MSH.2>
+<MSH.3>
+<HD.1>NGH</HD.1>
+</MSH.3>
+<MSH.4>
+<HD.1>GPI</HD.1>
+</MSH.4>
+<MSH.5>
+<HD.1>LIS</HD.1>
+</MSH.5>
+<MSH.6>
+<HD.1>SIEMENS</HD.1>
+</MSH.6>
+<MSH.7>
+<TS.1>20240705103420</TS.1>
+</MSH.7>
+<MSH.9>
+<MSG.1>OML</MSG.1>
+<MSG.2>O21</MSG.2>
+<MSG.3>OML_O21</MSG.3>
+</MSH.9>
+<MSH.10>ffaf3ca2-ab41-459e-87c8-32b493b5b892</MSH.10>
+<MSH.11>
+<PT.1>P</PT.1>
+</MSH.11>
+<MSH.12>
+<VID.1>2.5</VID.1>
+</MSH.12>
+</MSH>
+<OML_O21.PATIENT>
+<PID>
+<PID.3>
+<CX.1>BSUSML77M10A390M</CX.1>
+<CX.4>
+<HD.1>Ministero Finanze</HD.1>
+</CX.4>
+<CX.5>NNITA</CX.5>
+</PID.3>
+<PID.5>
+<XPN.1>
+<FN.1>TEST</FN.1>
+</XPN.1>
+<XPN.2>PROVA</XPN.2>
+</PID.5>
+            <PID.7>
+                <TS.1>19931210000000</TS.1>
+            </PID.7>
+<PID.8>M</PID.8>
+<PID.11>
+<XAD.3/>
+<XAD.4/>
+<XAD.7>BR</XAD.7>
+<XAD.9>054013</XAD.9>
+</PID.11>
+<PID.11>
+<XAD.1>
+<SAD.2>VIA DELLO SPORT 27</SAD.2>
+</XAD.1>
+<XAD.2/>
+<XAD.3/>
+<XAD.4/>
+<XAD.5>06010</XAD.5>
+<XAD.7>L</XAD.7>
+<XAD.9>054011</XAD.9>
+</PID.11>
+</PID>
+<PD1>
+<PD1.12>N</PD1.12>
+</PD1>
+<OML_O21.PATIENT_VISIT>
+<PV1>
+<PV1.2>PS</PV1.2>
+<PV1.3>
+<PL.1>SN_PS</PL.1>
+<PL.8/>
+<PL.9>PRONTO SOCCORSO LE SCOTTE</PL.9>
+</PV1.3>
+<PV1.19>
+<CX.1>2024000722</CX.1>
+<CX.5>PS</CX.5>
+</PV1.19>
+</PV1>
+</OML_O21.PATIENT_VISIT>
+</OML_O21.PATIENT>
+<OML_O21.ORDER>
+<ORC>
+<ORC.1>NW</ORC.1>
+<ORC.2>
+<EI.1>OS2024000349_1419</EI.1>
+</ORC.2>
+<ORC.3>
+<EI.1>OS2024000349_1419</EI.1>
+</ORC.3>
+<ORC.4>
+<EI.1>OS2024000349</EI.1>
+</ORC.4>
+<ORC.5>SC</ORC.5>
+<ORC.7>
+<TQ.4>
+<TS.1>20240628124511</TS.1>
+</TQ.4>
+</ORC.7>
+<ORC.9>
+<TS.1/>
+</ORC.9>
+<ORC.12>
+<XCN.1>BSUSML77M10A390M</XCN.1>
+<XCN.2>
+<FN.1>TEST</FN.1>
+</XCN.2>
+<XCN.3>PROVA</XCN.3>
+</ORC.12>
+<ORC.21>
+<XON.10/>
+</ORC.21>
+<ORC.28>
+<CWE.1>N</CWE.1>
+<CWE.2>TEST</CWE.2>
+</ORC.28>
+</ORC>
+<OML_O21.TIMING>
+<TQ1>
+<TQ1.9>
+<CWE.1>R</CWE.1>
+</TQ1.9>
+</TQ1>
+</OML_O21.TIMING>
+<OML_O21.OBSERVATION_REQUEST>
+<OBR>
+<OBR.1>1</OBR.1>
+<OBR.2>
+<EI.1>OS2024000349_1419</EI.1>
+</OBR.2>
+<OBR.3>
+<EI.1>OS2024000349_1419</EI.1>
+</OBR.3>
+<OBR.4>
+<CE.1>5577</CE.1>
+<CE.2>EMOCROMO PIU' FORMULA</CE.2>
+<CE.3>CODCATALOGO_1</CE.3>
+</OBR.4>
+<OBR.7>
+<TS.1>20240628124511</TS.1>
+</OBR.7>
+<OBR.13>prova lis</OBR.13>
+<OBR.16>
+<XCN.1/>
+<XCN.2/>
+<XCN.3/>
+</OBR.16>
+<OBR.19/>
+<OBR.22>
+<TS.1>20240628124511</TS.1>
+</OBR.22>
+<OBR.24>LAB</OBR.24>
+<OBR.28/>
+<OBR.46>
+<CE.1>DataPresc</CE.1>
+<CE.2>20240628</CE.2>
+</OBR.46>
+</OBR>
+</OML_O21.OBSERVATION_REQUEST>
+</OML_O21.ORDER>
+</OML_O21>
+
+
+2024-07-22 23:44:40 [http-nio-8091-exec-4] INFO  com.mirth.prometeo.Util - Controllo i tag esterni al messaggio per capire se sono uguali al MessageTypeStructure del messaggio HL7
+2024-07-22 23:44:40 [http-nio-8091-exec-4] INFO  com.mirth.prometeo.Util - Salvo l'OML_O21 inviato dal PS e l'ORM_O01 generato da noi sul database locale
+2024-07-22 23:44:40 [http-nio-8091-exec-4] INFO  com.mirth.prometeo.Util - Parametro ricevuto: oml
+2024-07-22 23:44:40 [http-nio-8091-exec-4] ERROR c.m.p.S.Endpoint.MessageEndpoint - java.lang.NullPointerException: Cannot invoke "com.mirth.prometeo.ServiceOMLO21.Event.MessageEventServiceOMLO21.saveOMLO21Message(ca.uhn.hl7v2.model.v25.message.OML_O21)" because "this.messageEventServiceOMLO21" is null
+	at com.mirth.prometeo.Util.saveOMLO21Database(Util.java:267)
+	at com.mirth.prometeo.Util.handleOML(Util.java:199)
+	at com.mirth.prometeo.SpringbootSoapServer.Endpoint.MessageEndpoint.acceptMessage(MessageEndpoint.java:61)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.ws.server.endpoint.MethodEndpoint.invoke(MethodEndpoint.java:133)
+	at org.springframework.ws.server.endpoint.adapter.DefaultMethodEndpointAdapter.invokeInternal(DefaultMethodEndpointAdapter.java:285)
+	at org.springframework.ws.server.endpoint.adapter.AbstractMethodEndpointAdapter.invoke(AbstractMethodEndpointAdapter.java:54)
+	at org.springframework.ws.server.MessageDispatcher.dispatch(MessageDispatcher.java:230)
+	at org.springframework.ws.server.MessageDispatcher.receive(MessageDispatcher.java:174)
+	at org.springframework.ws.transport.support.WebServiceMessageReceiverObjectSupport.handleConnection(WebServiceMessageReceiverObjectSupport.java:88)
+	at org.springframework.ws.transport.http.WebServiceMessageReceiverHandlerAdapter.handle(WebServiceMessageReceiverHandlerAdapter.java:60)
+	at org.springframework.ws.transport.http.MessageDispatcherServlet.doService(MessageDispatcherServlet.java:288)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:219)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:195)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:230)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:352)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:268)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:389)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+2024-07-22 23:44:40 [http-nio-8091-exec-4] INFO  com.mirth.prometeo.Util - sw: java.lang.NullPointerException: Cannot invoke "com.mirth.prometeo.ServiceOMLO21.Event.MessageEventServiceOMLO21.saveOMLO21Message(ca.uhn.hl7v2.model.v25.message.OML_O21)" because "this.messageEventServiceOMLO21" is null
+	at com.mirth.prometeo.Util.saveOMLO21Database(Util.java:267)
+	at com.mirth.prometeo.Util.handleOML(Util.java:199)
+	at com.mirth.prometeo.SpringbootSoapServer.Endpoint.MessageEndpoint.acceptMessage(MessageEndpoint.java:61)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.ws.server.endpoint.MethodEndpoint.invoke(MethodEndpoint.java:133)
+	at org.springframework.ws.server.endpoint.adapter.DefaultMethodEndpointAdapter.invokeInternal(DefaultMethodEndpointAdapter.java:285)
+	at org.springframework.ws.server.endpoint.adapter.AbstractMethodEndpointAdapter.invoke(AbstractMethodEndpointAdapter.java:54)
+	at org.springframework.ws.server.MessageDispatcher.dispatch(MessageDispatcher.java:230)
+	at org.springframework.ws.server.MessageDispatcher.receive(MessageDispatcher.java:174)
+	at org.springframework.ws.transport.support.WebServiceMessageReceiverObjectSupport.handleConnection(WebServiceMessageReceiverObjectSupport.java:88)
+	at org.springframework.ws.transport.http.WebServiceMessageReceiverHandlerAdapter.handle(WebServiceMessageReceiverHandlerAdapter.java:60)
+	at org.springframework.ws.transport.http.MessageDispatcherServlet.doService(MessageDispatcherServlet.java:288)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:219)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:195)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:230)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:352)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:268)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:389)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+2024-07-22 23:44:40 [http-nio-8091-exec-4] INFO  com.mirth.prometeo.Util - Creo un oggetto acceptMessageResponse e rispondo al PS
+2024-07-22 23:47:28 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-07-22 23:47:28 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-07-22 23:47:28 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-07-22 23:47:37 [restartedMain] INFO  com.mirth.SoapClientApplication - Starting SoapClientApplication using Java 21.0.3 with PID 13152 (C:\Users\davide.cappiello\Desktop\SoapPalm\target\classes started by davide.cappiello in C:\Users\davide.cappiello\Desktop\SoapPalm)
+2024-07-22 23:47:37 [restartedMain] INFO  com.mirth.SoapClientApplication - No active profile set, falling back to 1 default profile: "default"
+2024-07-22 23:47:37 [restartedMain] INFO  o.s.b.d.restart.ChangeableUrls - The Class-Path manifest attribute in C:\Users\davide.cappiello\.m2\repository\com\sun\xml\ws\jaxws-rt\3.0.2\jaxws-rt-3.0.2.jar referenced one or more files that do not exist: file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/jakarta.annotation-api.jar,file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/jakarta.activation.jar,file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/jakarta.mail.jar,file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/jakarta.jws-api.jar,file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/jakarta.xml.bind-api.jar,file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/jakarta.xml.ws-api.jar,file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/jakarta.xml.soap-api.jar,file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/FastInfoset.jar,file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/gmbal-api-only.jar,file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/ha-api.jar,file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/jaxb-core.jar,file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/jaxb-impl.jar,file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/management-api.jar,file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/mimepull.jar,file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/saaj-impl.jar,file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/stax-ex.jar,file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/stax2-api.jar,file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/streambuffer.jar,file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/woodstox-core.jar
+2024-07-22 23:47:37 [restartedMain] INFO  o.s.b.d.restart.ChangeableUrls - The Class-Path manifest attribute in C:\Users\davide.cappiello\.m2\repository\org\glassfish\ha\ha-api\3.1.13\ha-api-3.1.13.jar referenced one or more files that do not exist: file:/C:/Users/davide.cappiello/.m2/repository/org/glassfish/ha/ha-api/3.1.13/hk2.jar,file:/C:/Users/davide.cappiello/.m2/repository/org/glassfish/ha/ha-api/3.1.13/hk2-core.jar,file:/C:/Users/davide.cappiello/.m2/repository/org/glassfish/ha/ha-api/3.1.13/class-model.jar,file:/C:/Users/davide.cappiello/.m2/repository/org/glassfish/ha/ha-api/3.1.13/config-api.jar,file:/C:/Users/davide.cappiello/.m2/repository/org/glassfish/ha/ha-api/3.1.13/tiger-types.jar,file:/C:/Users/davide.cappiello/.m2/repository/org/glassfish/ha/ha-api/3.1.13/bean-validator.jar,file:/C:/Users/davide.cappiello/.m2/repository/org/glassfish/ha/ha-api/3.1.13/jtype.jar,file:/C:/Users/davide.cappiello/.m2/repository/org/glassfish/ha/ha-api/3.1.13/auto-depends.jar,file:/C:/Users/davide.cappiello/.m2/repository/org/glassfish/ha/ha-api/3.1.13/jakarta.inject-api.jar,file:/C:/Users/davide.cappiello/.m2/repository/org/glassfish/ha/ha-api/3.1.13/asm-all-repackaged.jar,file:/C:/Users/davide.cappiello/.m2/repository/org/glassfish/ha/ha-api/3.1.13/hk2-api.jar,file:/C:/Users/davide.cappiello/.m2/repository/org/glassfish/ha/ha-api/3.1.13/osgi-resource-locator.jar
+2024-07-22 23:47:37 [restartedMain] INFO  o.s.b.d.restart.ChangeableUrls - The Class-Path manifest attribute in C:\Users\davide.cappiello\.m2\repository\com\sun\xml\bind\jaxb-core\2.3.0.1\jaxb-core-2.3.0.1.jar referenced one or more files that do not exist: file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/bind/jaxb-core/2.3.0.1/jaxb-api.jar
+2024-07-22 23:47:37 [restartedMain] INFO  o.s.b.d.restart.ChangeableUrls - The Class-Path manifest attribute in C:\Users\davide.cappiello\.m2\repository\com\oracle\database\jdbc\ojdbc8\19.8.0.0\ojdbc8-19.8.0.0.jar referenced one or more files that do not exist: file:/C:/Users/davide.cappiello/.m2/repository/com/oracle/database/jdbc/ojdbc8/19.8.0.0/oraclepki.jar
+2024-07-22 23:47:37 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-07-22 23:47:37 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-07-22 23:47:39 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-07-22 23:47:39 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2024-07-22 23:47:39 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.mirth.prometeo.Repository.MessageEventRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-07-22 23:47:39 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.mirth.prometeo.Repository.MessageSegmentRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-07-22 23:47:39 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 116 ms. Found 0 JDBC repository interfaces.
+2024-07-22 23:47:39 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-07-22 23:47:39 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-07-22 23:47:39 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 125 ms. Found 2 JPA repository interfaces.
+2024-07-22 23:47:40 [restartedMain] INFO  ca.uhn.hl7v2.VersionLogger - HAPI version is: 2.5.1
+2024-07-22 23:47:40 [restartedMain] INFO  ca.uhn.hl7v2.VersionLogger - Default Structure libraries found for HL7 versions 2.4, 2.5, 
+2024-07-22 23:47:40 [restartedMain] INFO  ca.uhn.hl7v2.util.Home - hapi.home is set to C:\Users\davide.cappiello\Desktop\SoapPalm\.
+2024-07-22 23:47:40 [restartedMain] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'soapWebServiceConfig' of type [com.mirth.prometeo.SpringbootSoapServer.Config.SoapWebServiceConfig$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [annotationActionEndpointMapping]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2024-07-22 23:47:40 [restartedMain] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [annotationActionEndpointMapping] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2024-07-22 23:47:40 [restartedMain] INFO  o.s.w.s.a.s.AnnotationActionEndpointMapping - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2024-07-22 23:47:41 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8091 (http)
+2024-07-22 23:47:41 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8091"]
+2024-07-22 23:47:41 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-07-22 23:47:41 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.24]
+2024-07-22 23:47:41 [restartedMain] INFO  o.a.c.c.C.[.[localhost].[/hl7palm] - Initializing Spring embedded WebApplicationContext
+2024-07-22 23:47:41 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 4097 ms
+2024-07-22 23:47:41 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-07-22 23:47:42 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-07-22 23:47:42 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-07-22 23:47:42 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-07-22 23:47:42 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-07-22 23:47:43 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection ConnectionID:1 ClientConnectionId: e6cc131c-9f15-4633-b02b-a159cf677574
+2024-07-22 23:47:43 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-07-22 23:47:45 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-07-22 23:47:50 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-07-22 23:47:51 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-07-22 23:47:51 [restartedMain] WARN  o.s.data.convert.CustomConversions - Registering converter from class microsoft.sql.DateTimeOffset to class java.time.OffsetDateTime as reading converter although it doesn't convert from a store-supported type; You might want to check your annotation setup at the converter implementation
+2024-07-22 23:47:51 [restartedMain] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 33192b64-5bc4-4fda-b5bc-828940412233
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2024-07-22 23:47:51 [restartedMain] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2024-07-22 23:47:52 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@1820fbcf, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@61122df8, org.springframework.security.web.context.SecurityContextHolderFilter@4e8c82d6, org.springframework.security.web.header.HeaderWriterFilter@339e2764, org.springframework.web.filter.CorsFilter@3b3c8460, org.springframework.security.web.csrf.CsrfFilter@12883f6b, org.springframework.security.web.authentication.logout.LogoutFilter@1c36dfa2, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@1e8973d, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@7fdd7a87, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@3fd420a2, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@2a7a762d, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@66b460a3, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5da711b4, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@20355a14, org.springframework.security.web.access.ExceptionTranslationFilter@39cc351, org.springframework.security.web.access.intercept.AuthorizationFilter@5222424c]
+2024-07-22 23:47:52 [restartedMain] WARN  o.s.s.c.a.web.builders.WebSecurity - You are asking Spring Security to ignore Ant [pattern='/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-07-22 23:47:52 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will not secure Ant [pattern='/**']
+2024-07-22 23:47:52 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2024-07-22 23:47:52 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8091"]
+2024-07-22 23:47:52 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8091 (http) with context path '/hl7palm'
+2024-07-22 23:47:52 [restartedMain] INFO  com.mirth.SoapClientApplication - Started SoapClientApplication in 15.913 seconds (process running for 17.503)
+2024-07-22 23:47:59 [http-nio-8091-exec-1] INFO  o.a.c.c.C.[.[localhost].[/hl7palm] - Initializing Spring MessageDispatcherServlet 'messageDispatcherServlet'
+2024-07-22 23:47:59 [http-nio-8091-exec-1] INFO  o.s.w.t.h.MessageDispatcherServlet - Initializing Servlet 'messageDispatcherServlet'
+2024-07-22 23:47:59 [http-nio-8091-exec-1] INFO  o.s.w.s.saaj.SaajSoapMessageFactory - Creating SAAJ 1.3 MessageFactory with SOAP 1.1 Protocol
+2024-07-22 23:47:59 [http-nio-8091-exec-1] INFO  o.s.w.t.h.MessageDispatcherServlet - Completed initialization in 63 ms
+2024-07-22 23:47:59 [http-nio-8091-exec-1] INFO  com.mirth.prometeo.Util - Ricevo il messaggio OML_O21 dal PS
+2024-07-22 23:47:59 [http-nio-8091-exec-1] INFO  com.mirth.prometeo.Util - 
+               <OML_O21
+    xmlns="urn:hl7-org:v2xml">
+<MSH>
+<MSH.1>|</MSH.1>
+<MSH.2>^~\&amp;</MSH.2>
+<MSH.3>
+<HD.1>NGH</HD.1>
+</MSH.3>
+<MSH.4>
+<HD.1>GPI</HD.1>
+</MSH.4>
+<MSH.5>
+<HD.1>LIS</HD.1>
+</MSH.5>
+<MSH.6>
+<HD.1>SIEMENS</HD.1>
+</MSH.6>
+<MSH.7>
+<TS.1>20240705103420</TS.1>
+</MSH.7>
+<MSH.9>
+<MSG.1>OML</MSG.1>
+<MSG.2>O21</MSG.2>
+<MSG.3>OML_O21</MSG.3>
+</MSH.9>
+<MSH.10>ffaf3ca2-ab41-459e-87c8-32b493b5b892</MSH.10>
+<MSH.11>
+<PT.1>P</PT.1>
+</MSH.11>
+<MSH.12>
+<VID.1>2.5</VID.1>
+</MSH.12>
+</MSH>
+<OML_O21.PATIENT>
+<PID>
+<PID.3>
+<CX.1>BSUSML77M10A390M</CX.1>
+<CX.4>
+<HD.1>Ministero Finanze</HD.1>
+</CX.4>
+<CX.5>NNITA</CX.5>
+</PID.3>
+<PID.5>
+<XPN.1>
+<FN.1>TEST</FN.1>
+</XPN.1>
+<XPN.2>PROVA</XPN.2>
+</PID.5>
+            <PID.7>
+                <TS.1>19931210000000</TS.1>
+            </PID.7>
+<PID.8>M</PID.8>
+<PID.11>
+<XAD.3/>
+<XAD.4/>
+<XAD.7>BR</XAD.7>
+<XAD.9>054013</XAD.9>
+</PID.11>
+<PID.11>
+<XAD.1>
+<SAD.2>VIA DELLO SPORT 27</SAD.2>
+</XAD.1>
+<XAD.2/>
+<XAD.3/>
+<XAD.4/>
+<XAD.5>06010</XAD.5>
+<XAD.7>L</XAD.7>
+<XAD.9>054011</XAD.9>
+</PID.11>
+</PID>
+<PD1>
+<PD1.12>N</PD1.12>
+</PD1>
+<OML_O21.PATIENT_VISIT>
+<PV1>
+<PV1.2>PS</PV1.2>
+<PV1.3>
+<PL.1>SN_PS</PL.1>
+<PL.8/>
+<PL.9>PRONTO SOCCORSO LE SCOTTE</PL.9>
+</PV1.3>
+<PV1.19>
+<CX.1>2024000722</CX.1>
+<CX.5>PS</CX.5>
+</PV1.19>
+</PV1>
+</OML_O21.PATIENT_VISIT>
+</OML_O21.PATIENT>
+<OML_O21.ORDER>
+<ORC>
+<ORC.1>NW</ORC.1>
+<ORC.2>
+<EI.1>OS2024000349_1419</EI.1>
+</ORC.2>
+<ORC.3>
+<EI.1>OS2024000349_1419</EI.1>
+</ORC.3>
+<ORC.4>
+<EI.1>OS2024000349</EI.1>
+</ORC.4>
+<ORC.5>SC</ORC.5>
+<ORC.7>
+<TQ.4>
+<TS.1>20240628124511</TS.1>
+</TQ.4>
+</ORC.7>
+<ORC.9>
+<TS.1/>
+</ORC.9>
+<ORC.12>
+<XCN.1>BSUSML77M10A390M</XCN.1>
+<XCN.2>
+<FN.1>TEST</FN.1>
+</XCN.2>
+<XCN.3>PROVA</XCN.3>
+</ORC.12>
+<ORC.21>
+<XON.10/>
+</ORC.21>
+<ORC.28>
+<CWE.1>N</CWE.1>
+<CWE.2>TEST</CWE.2>
+</ORC.28>
+</ORC>
+<OML_O21.TIMING>
+<TQ1>
+<TQ1.9>
+<CWE.1>R</CWE.1>
+</TQ1.9>
+</TQ1>
+</OML_O21.TIMING>
+<OML_O21.OBSERVATION_REQUEST>
+<OBR>
+<OBR.1>1</OBR.1>
+<OBR.2>
+<EI.1>OS2024000349_1419</EI.1>
+</OBR.2>
+<OBR.3>
+<EI.1>OS2024000349_1419</EI.1>
+</OBR.3>
+<OBR.4>
+<CE.1>5577</CE.1>
+<CE.2>EMOCROMO PIU' FORMULA</CE.2>
+<CE.3>CODCATALOGO_1</CE.3>
+</OBR.4>
+<OBR.7>
+<TS.1>20240628124511</TS.1>
+</OBR.7>
+<OBR.13>prova lis</OBR.13>
+<OBR.16>
+<XCN.1/>
+<XCN.2/>
+<XCN.3/>
+</OBR.16>
+<OBR.19/>
+<OBR.22>
+<TS.1>20240628124511</TS.1>
+</OBR.22>
+<OBR.24>LAB</OBR.24>
+<OBR.28/>
+<OBR.46>
+<CE.1>DataPresc</CE.1>
+<CE.2>20240628</CE.2>
+</OBR.46>
+</OBR>
+</OML_O21.OBSERVATION_REQUEST>
+</OML_O21.ORDER>
+</OML_O21>
+
+
+2024-07-22 23:47:59 [http-nio-8091-exec-1] INFO  com.mirth.prometeo.Util - Controllo i tag esterni al messaggio per capire se sono uguali al MessageTypeStructure del messaggio HL7
+2024-07-22 23:47:59 [http-nio-8091-exec-1] INFO  com.mirth.prometeo.Util - Salvo l'OML_O21 inviato dal PS e l'ORM_O01 generato da noi sul database locale
+2024-07-22 23:47:59 [http-nio-8091-exec-1] INFO  com.mirth.prometeo.Util - Parametro ricevuto: oml
+2024-07-22 23:47:59 [http-nio-8091-exec-1] ERROR c.m.p.S.Endpoint.MessageEndpoint - java.lang.NullPointerException: Cannot invoke "com.mirth.prometeo.ServiceOMLO21.Event.MessageEventServiceOMLO21.saveOMLO21Message(ca.uhn.hl7v2.model.v25.message.OML_O21)" because "this.messageEventServiceOMLO21" is null
+	at com.mirth.prometeo.Util.saveOMLO21Database(Util.java:269)
+	at com.mirth.prometeo.Util.handleOML(Util.java:201)
+	at com.mirth.prometeo.SpringbootSoapServer.Endpoint.MessageEndpoint.acceptMessage(MessageEndpoint.java:61)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.ws.server.endpoint.MethodEndpoint.invoke(MethodEndpoint.java:133)
+	at org.springframework.ws.server.endpoint.adapter.DefaultMethodEndpointAdapter.invokeInternal(DefaultMethodEndpointAdapter.java:285)
+	at org.springframework.ws.server.endpoint.adapter.AbstractMethodEndpointAdapter.invoke(AbstractMethodEndpointAdapter.java:54)
+	at org.springframework.ws.server.MessageDispatcher.dispatch(MessageDispatcher.java:230)
+	at org.springframework.ws.server.MessageDispatcher.receive(MessageDispatcher.java:174)
+	at org.springframework.ws.transport.support.WebServiceMessageReceiverObjectSupport.handleConnection(WebServiceMessageReceiverObjectSupport.java:88)
+	at org.springframework.ws.transport.http.WebServiceMessageReceiverHandlerAdapter.handle(WebServiceMessageReceiverHandlerAdapter.java:60)
+	at org.springframework.ws.transport.http.MessageDispatcherServlet.doService(MessageDispatcherServlet.java:288)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:219)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:195)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:230)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:352)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:268)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:389)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+2024-07-22 23:47:59 [http-nio-8091-exec-1] INFO  com.mirth.prometeo.Util - sw: java.lang.NullPointerException: Cannot invoke "com.mirth.prometeo.ServiceOMLO21.Event.MessageEventServiceOMLO21.saveOMLO21Message(ca.uhn.hl7v2.model.v25.message.OML_O21)" because "this.messageEventServiceOMLO21" is null
+	at com.mirth.prometeo.Util.saveOMLO21Database(Util.java:269)
+	at com.mirth.prometeo.Util.handleOML(Util.java:201)
+	at com.mirth.prometeo.SpringbootSoapServer.Endpoint.MessageEndpoint.acceptMessage(MessageEndpoint.java:61)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.ws.server.endpoint.MethodEndpoint.invoke(MethodEndpoint.java:133)
+	at org.springframework.ws.server.endpoint.adapter.DefaultMethodEndpointAdapter.invokeInternal(DefaultMethodEndpointAdapter.java:285)
+	at org.springframework.ws.server.endpoint.adapter.AbstractMethodEndpointAdapter.invoke(AbstractMethodEndpointAdapter.java:54)
+	at org.springframework.ws.server.MessageDispatcher.dispatch(MessageDispatcher.java:230)
+	at org.springframework.ws.server.MessageDispatcher.receive(MessageDispatcher.java:174)
+	at org.springframework.ws.transport.support.WebServiceMessageReceiverObjectSupport.handleConnection(WebServiceMessageReceiverObjectSupport.java:88)
+	at org.springframework.ws.transport.http.WebServiceMessageReceiverHandlerAdapter.handle(WebServiceMessageReceiverHandlerAdapter.java:60)
+	at org.springframework.ws.transport.http.MessageDispatcherServlet.doService(MessageDispatcherServlet.java:288)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:219)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:195)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:230)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:352)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:268)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:389)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+2024-07-22 23:47:59 [http-nio-8091-exec-1] INFO  com.mirth.prometeo.Util - Creo un oggetto acceptMessageResponse e rispondo al PS
+2024-07-22 23:48:29 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-07-22 23:48:29 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-07-22 23:48:29 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-07-22 23:48:38 [restartedMain] INFO  com.mirth.SoapClientApplication - Starting SoapClientApplication using Java 21.0.3 with PID 11036 (C:\Users\davide.cappiello\Desktop\SoapPalm\target\classes started by davide.cappiello in C:\Users\davide.cappiello\Desktop\SoapPalm)
+2024-07-22 23:48:38 [restartedMain] INFO  com.mirth.SoapClientApplication - No active profile set, falling back to 1 default profile: "default"
+2024-07-22 23:48:38 [restartedMain] INFO  o.s.b.d.restart.ChangeableUrls - The Class-Path manifest attribute in C:\Users\davide.cappiello\.m2\repository\com\sun\xml\ws\jaxws-rt\3.0.2\jaxws-rt-3.0.2.jar referenced one or more files that do not exist: file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/jakarta.annotation-api.jar,file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/jakarta.activation.jar,file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/jakarta.mail.jar,file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/jakarta.jws-api.jar,file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/jakarta.xml.bind-api.jar,file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/jakarta.xml.ws-api.jar,file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/jakarta.xml.soap-api.jar,file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/FastInfoset.jar,file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/gmbal-api-only.jar,file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/ha-api.jar,file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/jaxb-core.jar,file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/jaxb-impl.jar,file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/management-api.jar,file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/mimepull.jar,file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/saaj-impl.jar,file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/stax-ex.jar,file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/stax2-api.jar,file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/streambuffer.jar,file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/woodstox-core.jar
+2024-07-22 23:48:38 [restartedMain] INFO  o.s.b.d.restart.ChangeableUrls - The Class-Path manifest attribute in C:\Users\davide.cappiello\.m2\repository\org\glassfish\ha\ha-api\3.1.13\ha-api-3.1.13.jar referenced one or more files that do not exist: file:/C:/Users/davide.cappiello/.m2/repository/org/glassfish/ha/ha-api/3.1.13/hk2.jar,file:/C:/Users/davide.cappiello/.m2/repository/org/glassfish/ha/ha-api/3.1.13/hk2-core.jar,file:/C:/Users/davide.cappiello/.m2/repository/org/glassfish/ha/ha-api/3.1.13/class-model.jar,file:/C:/Users/davide.cappiello/.m2/repository/org/glassfish/ha/ha-api/3.1.13/config-api.jar,file:/C:/Users/davide.cappiello/.m2/repository/org/glassfish/ha/ha-api/3.1.13/tiger-types.jar,file:/C:/Users/davide.cappiello/.m2/repository/org/glassfish/ha/ha-api/3.1.13/bean-validator.jar,file:/C:/Users/davide.cappiello/.m2/repository/org/glassfish/ha/ha-api/3.1.13/jtype.jar,file:/C:/Users/davide.cappiello/.m2/repository/org/glassfish/ha/ha-api/3.1.13/auto-depends.jar,file:/C:/Users/davide.cappiello/.m2/repository/org/glassfish/ha/ha-api/3.1.13/jakarta.inject-api.jar,file:/C:/Users/davide.cappiello/.m2/repository/org/glassfish/ha/ha-api/3.1.13/asm-all-repackaged.jar,file:/C:/Users/davide.cappiello/.m2/repository/org/glassfish/ha/ha-api/3.1.13/hk2-api.jar,file:/C:/Users/davide.cappiello/.m2/repository/org/glassfish/ha/ha-api/3.1.13/osgi-resource-locator.jar
+2024-07-22 23:48:38 [restartedMain] INFO  o.s.b.d.restart.ChangeableUrls - The Class-Path manifest attribute in C:\Users\davide.cappiello\.m2\repository\com\sun\xml\bind\jaxb-core\2.3.0.1\jaxb-core-2.3.0.1.jar referenced one or more files that do not exist: file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/bind/jaxb-core/2.3.0.1/jaxb-api.jar
+2024-07-22 23:48:38 [restartedMain] INFO  o.s.b.d.restart.ChangeableUrls - The Class-Path manifest attribute in C:\Users\davide.cappiello\.m2\repository\com\oracle\database\jdbc\ojdbc8\19.8.0.0\ojdbc8-19.8.0.0.jar referenced one or more files that do not exist: file:/C:/Users/davide.cappiello/.m2/repository/com/oracle/database/jdbc/ojdbc8/19.8.0.0/oraclepki.jar
+2024-07-22 23:48:38 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-07-22 23:48:38 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-07-22 23:48:39 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-07-22 23:48:39 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2024-07-22 23:48:39 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.mirth.prometeo.Repository.MessageEventRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-07-22 23:48:39 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.mirth.prometeo.Repository.MessageSegmentRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-07-22 23:48:39 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 68 ms. Found 0 JDBC repository interfaces.
+2024-07-22 23:48:39 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-07-22 23:48:39 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-07-22 23:48:39 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 84 ms. Found 2 JPA repository interfaces.
+2024-07-22 23:48:40 [restartedMain] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'soapWebServiceConfig' of type [com.mirth.prometeo.SpringbootSoapServer.Config.SoapWebServiceConfig$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [annotationActionEndpointMapping]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2024-07-22 23:48:40 [restartedMain] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [annotationActionEndpointMapping] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2024-07-22 23:48:40 [restartedMain] INFO  o.s.w.s.a.s.AnnotationActionEndpointMapping - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2024-07-22 23:48:41 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8091 (http)
+2024-07-22 23:48:41 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8091"]
+2024-07-22 23:48:41 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-07-22 23:48:41 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.24]
+2024-07-22 23:48:41 [restartedMain] INFO  o.a.c.c.C.[.[localhost].[/hl7palm] - Initializing Spring embedded WebApplicationContext
+2024-07-22 23:48:41 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3426 ms
+2024-07-22 23:48:42 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-07-22 23:48:42 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-07-22 23:48:42 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-07-22 23:48:42 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-07-22 23:48:42 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-07-22 23:48:43 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection ConnectionID:1 ClientConnectionId: ffacff24-6476-4bd6-b06c-d45ef11900f8
+2024-07-22 23:48:43 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-07-22 23:48:45 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-07-22 23:48:49 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-07-22 23:48:49 [restartedMain] INFO  ca.uhn.hl7v2.util.Home - hapi.home is set to C:\Users\davide.cappiello\Desktop\SoapPalm\.
+2024-07-22 23:48:49 [restartedMain] INFO  ca.uhn.hl7v2.VersionLogger - HAPI version is: 2.5.1
+2024-07-22 23:48:49 [restartedMain] INFO  ca.uhn.hl7v2.VersionLogger - Default Structure libraries found for HL7 versions 2.4, 2.5, 
+2024-07-22 23:48:50 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-07-22 23:48:50 [restartedMain] WARN  o.s.data.convert.CustomConversions - Registering converter from class microsoft.sql.DateTimeOffset to class java.time.OffsetDateTime as reading converter although it doesn't convert from a store-supported type; You might want to check your annotation setup at the converter implementation
+2024-07-22 23:48:51 [restartedMain] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: ca851d09-fc2e-4aa7-9a9f-0fe452efa59b
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2024-07-22 23:48:51 [restartedMain] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2024-07-22 23:48:51 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@4627a83a, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4238b532, org.springframework.security.web.context.SecurityContextHolderFilter@31d2adb1, org.springframework.security.web.header.HeaderWriterFilter@3f9f32da, org.springframework.web.filter.CorsFilter@56476bd2, org.springframework.security.web.csrf.CsrfFilter@6d4aa040, org.springframework.security.web.authentication.logout.LogoutFilter@23504942, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@279e299e, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@41476816, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@40094bff, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@4ce90e52, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@cc8f783, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7eab9f36, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3b945dbc, org.springframework.security.web.access.ExceptionTranslationFilter@5c1189cf, org.springframework.security.web.access.intercept.AuthorizationFilter@40b9c249]
+2024-07-22 23:48:51 [restartedMain] WARN  o.s.s.c.a.web.builders.WebSecurity - You are asking Spring Security to ignore Ant [pattern='/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-07-22 23:48:51 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will not secure Ant [pattern='/**']
+2024-07-22 23:48:51 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2024-07-22 23:48:51 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8091"]
+2024-07-22 23:48:51 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8091 (http) with context path '/hl7palm'
+2024-07-22 23:48:51 [restartedMain] INFO  com.mirth.SoapClientApplication - Started SoapClientApplication in 14.373 seconds (process running for 16.028)
+2024-07-22 23:48:54 [http-nio-8091-exec-2] INFO  o.a.c.c.C.[.[localhost].[/hl7palm] - Initializing Spring MessageDispatcherServlet 'messageDispatcherServlet'
+2024-07-22 23:48:54 [http-nio-8091-exec-2] INFO  o.s.w.t.h.MessageDispatcherServlet - Initializing Servlet 'messageDispatcherServlet'
+2024-07-22 23:48:54 [http-nio-8091-exec-2] INFO  o.s.w.s.saaj.SaajSoapMessageFactory - Creating SAAJ 1.3 MessageFactory with SOAP 1.1 Protocol
+2024-07-22 23:48:54 [http-nio-8091-exec-2] INFO  o.s.w.t.h.MessageDispatcherServlet - Completed initialization in 52 ms
+2024-07-22 23:48:55 [http-nio-8091-exec-2] INFO  com.mirth.prometeo.Util - Ricevo il messaggio OML_O21 dal PS
+2024-07-22 23:48:55 [http-nio-8091-exec-2] INFO  com.mirth.prometeo.Util - 
+               <OML_O21
+    xmlns="urn:hl7-org:v2xml">
+<MSH>
+<MSH.1>|</MSH.1>
+<MSH.2>^~\&amp;</MSH.2>
+<MSH.3>
+<HD.1>NGH</HD.1>
+</MSH.3>
+<MSH.4>
+<HD.1>GPI</HD.1>
+</MSH.4>
+<MSH.5>
+<HD.1>LIS</HD.1>
+</MSH.5>
+<MSH.6>
+<HD.1>SIEMENS</HD.1>
+</MSH.6>
+<MSH.7>
+<TS.1>20240705103420</TS.1>
+</MSH.7>
+<MSH.9>
+<MSG.1>OML</MSG.1>
+<MSG.2>O21</MSG.2>
+<MSG.3>OML_O21</MSG.3>
+</MSH.9>
+<MSH.10>ffaf3ca2-ab41-459e-87c8-32b493b5b892</MSH.10>
+<MSH.11>
+<PT.1>P</PT.1>
+</MSH.11>
+<MSH.12>
+<VID.1>2.5</VID.1>
+</MSH.12>
+</MSH>
+<OML_O21.PATIENT>
+<PID>
+<PID.3>
+<CX.1>BSUSML77M10A390M</CX.1>
+<CX.4>
+<HD.1>Ministero Finanze</HD.1>
+</CX.4>
+<CX.5>NNITA</CX.5>
+</PID.3>
+<PID.5>
+<XPN.1>
+<FN.1>TEST</FN.1>
+</XPN.1>
+<XPN.2>PROVA</XPN.2>
+</PID.5>
+            <PID.7>
+                <TS.1>19931210000000</TS.1>
+            </PID.7>
+<PID.8>M</PID.8>
+<PID.11>
+<XAD.3/>
+<XAD.4/>
+<XAD.7>BR</XAD.7>
+<XAD.9>054013</XAD.9>
+</PID.11>
+<PID.11>
+<XAD.1>
+<SAD.2>VIA DELLO SPORT 27</SAD.2>
+</XAD.1>
+<XAD.2/>
+<XAD.3/>
+<XAD.4/>
+<XAD.5>06010</XAD.5>
+<XAD.7>L</XAD.7>
+<XAD.9>054011</XAD.9>
+</PID.11>
+</PID>
+<PD1>
+<PD1.12>N</PD1.12>
+</PD1>
+<OML_O21.PATIENT_VISIT>
+<PV1>
+<PV1.2>PS</PV1.2>
+<PV1.3>
+<PL.1>SN_PS</PL.1>
+<PL.8/>
+<PL.9>PRONTO SOCCORSO LE SCOTTE</PL.9>
+</PV1.3>
+<PV1.19>
+<CX.1>2024000722</CX.1>
+<CX.5>PS</CX.5>
+</PV1.19>
+</PV1>
+</OML_O21.PATIENT_VISIT>
+</OML_O21.PATIENT>
+<OML_O21.ORDER>
+<ORC>
+<ORC.1>NW</ORC.1>
+<ORC.2>
+<EI.1>OS2024000349_1419</EI.1>
+</ORC.2>
+<ORC.3>
+<EI.1>OS2024000349_1419</EI.1>
+</ORC.3>
+<ORC.4>
+<EI.1>OS2024000349</EI.1>
+</ORC.4>
+<ORC.5>SC</ORC.5>
+<ORC.7>
+<TQ.4>
+<TS.1>20240628124511</TS.1>
+</TQ.4>
+</ORC.7>
+<ORC.9>
+<TS.1/>
+</ORC.9>
+<ORC.12>
+<XCN.1>BSUSML77M10A390M</XCN.1>
+<XCN.2>
+<FN.1>TEST</FN.1>
+</XCN.2>
+<XCN.3>PROVA</XCN.3>
+</ORC.12>
+<ORC.21>
+<XON.10/>
+</ORC.21>
+<ORC.28>
+<CWE.1>N</CWE.1>
+<CWE.2>TEST</CWE.2>
+</ORC.28>
+</ORC>
+<OML_O21.TIMING>
+<TQ1>
+<TQ1.9>
+<CWE.1>R</CWE.1>
+</TQ1.9>
+</TQ1>
+</OML_O21.TIMING>
+<OML_O21.OBSERVATION_REQUEST>
+<OBR>
+<OBR.1>1</OBR.1>
+<OBR.2>
+<EI.1>OS2024000349_1419</EI.1>
+</OBR.2>
+<OBR.3>
+<EI.1>OS2024000349_1419</EI.1>
+</OBR.3>
+<OBR.4>
+<CE.1>5577</CE.1>
+<CE.2>EMOCROMO PIU' FORMULA</CE.2>
+<CE.3>CODCATALOGO_1</CE.3>
+</OBR.4>
+<OBR.7>
+<TS.1>20240628124511</TS.1>
+</OBR.7>
+<OBR.13>prova lis</OBR.13>
+<OBR.16>
+<XCN.1/>
+<XCN.2/>
+<XCN.3/>
+</OBR.16>
+<OBR.19/>
+<OBR.22>
+<TS.1>20240628124511</TS.1>
+</OBR.22>
+<OBR.24>LAB</OBR.24>
+<OBR.28/>
+<OBR.46>
+<CE.1>DataPresc</CE.1>
+<CE.2>20240628</CE.2>
+</OBR.46>
+</OBR>
+</OML_O21.OBSERVATION_REQUEST>
+</OML_O21.ORDER>
+</OML_O21>
+
+
+2024-07-22 23:48:55 [http-nio-8091-exec-2] INFO  com.mirth.prometeo.Util - Controllo i tag esterni al messaggio per capire se sono uguali al MessageTypeStructure del messaggio HL7
+2024-07-22 23:48:55 [http-nio-8091-exec-2] INFO  com.mirth.prometeo.Util - Salvo l'OML_O21 inviato dal PS e l'ORM_O01 generato da noi sul database locale
+2024-07-22 23:48:55 [http-nio-8091-exec-2] INFO  com.mirth.prometeo.Util - Parametro ricevuto: oml
+2024-07-22 23:48:55 [http-nio-8091-exec-2] ERROR c.m.p.S.Endpoint.MessageEndpoint - java.lang.NullPointerException: Cannot invoke "com.mirth.prometeo.ServiceOMLO21.Event.MessageEventServiceOMLO21.saveOMLO21Message(ca.uhn.hl7v2.model.v25.message.OML_O21)" because "this.messageEventServiceOMLO21" is null
+	at com.mirth.prometeo.Util.saveOMLO21Database(Util.java:267)
+	at com.mirth.prometeo.Util.handleOML(Util.java:199)
+	at com.mirth.prometeo.SpringbootSoapServer.Endpoint.MessageEndpoint.acceptMessage(MessageEndpoint.java:81)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.ws.server.endpoint.MethodEndpoint.invoke(MethodEndpoint.java:133)
+	at org.springframework.ws.server.endpoint.adapter.DefaultMethodEndpointAdapter.invokeInternal(DefaultMethodEndpointAdapter.java:285)
+	at org.springframework.ws.server.endpoint.adapter.AbstractMethodEndpointAdapter.invoke(AbstractMethodEndpointAdapter.java:54)
+	at org.springframework.ws.server.MessageDispatcher.dispatch(MessageDispatcher.java:230)
+	at org.springframework.ws.server.MessageDispatcher.receive(MessageDispatcher.java:174)
+	at org.springframework.ws.transport.support.WebServiceMessageReceiverObjectSupport.handleConnection(WebServiceMessageReceiverObjectSupport.java:88)
+	at org.springframework.ws.transport.http.WebServiceMessageReceiverHandlerAdapter.handle(WebServiceMessageReceiverHandlerAdapter.java:60)
+	at org.springframework.ws.transport.http.MessageDispatcherServlet.doService(MessageDispatcherServlet.java:288)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:219)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:195)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:230)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:352)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:268)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:389)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+2024-07-22 23:48:55 [http-nio-8091-exec-2] INFO  com.mirth.prometeo.Util - sw: java.lang.NullPointerException: Cannot invoke "com.mirth.prometeo.ServiceOMLO21.Event.MessageEventServiceOMLO21.saveOMLO21Message(ca.uhn.hl7v2.model.v25.message.OML_O21)" because "this.messageEventServiceOMLO21" is null
+	at com.mirth.prometeo.Util.saveOMLO21Database(Util.java:267)
+	at com.mirth.prometeo.Util.handleOML(Util.java:199)
+	at com.mirth.prometeo.SpringbootSoapServer.Endpoint.MessageEndpoint.acceptMessage(MessageEndpoint.java:81)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.ws.server.endpoint.MethodEndpoint.invoke(MethodEndpoint.java:133)
+	at org.springframework.ws.server.endpoint.adapter.DefaultMethodEndpointAdapter.invokeInternal(DefaultMethodEndpointAdapter.java:285)
+	at org.springframework.ws.server.endpoint.adapter.AbstractMethodEndpointAdapter.invoke(AbstractMethodEndpointAdapter.java:54)
+	at org.springframework.ws.server.MessageDispatcher.dispatch(MessageDispatcher.java:230)
+	at org.springframework.ws.server.MessageDispatcher.receive(MessageDispatcher.java:174)
+	at org.springframework.ws.transport.support.WebServiceMessageReceiverObjectSupport.handleConnection(WebServiceMessageReceiverObjectSupport.java:88)
+	at org.springframework.ws.transport.http.WebServiceMessageReceiverHandlerAdapter.handle(WebServiceMessageReceiverHandlerAdapter.java:60)
+	at org.springframework.ws.transport.http.MessageDispatcherServlet.doService(MessageDispatcherServlet.java:288)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:219)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:195)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:230)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:352)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:268)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:389)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+2024-07-22 23:48:55 [http-nio-8091-exec-2] INFO  com.mirth.prometeo.Util - Creo un oggetto acceptMessageResponse e rispondo al PS
+2024-07-22 23:58:30 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-07-22 23:58:30 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-07-22 23:58:30 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-07-22 23:58:39 [restartedMain] INFO  com.mirth.SoapClientApplication - Starting SoapClientApplication using Java 21.0.3 with PID 26596 (C:\Users\davide.cappiello\Desktop\SoapPalm\target\classes started by davide.cappiello in C:\Users\davide.cappiello\Desktop\SoapPalm)
+2024-07-22 23:58:39 [restartedMain] INFO  com.mirth.SoapClientApplication - No active profile set, falling back to 1 default profile: "default"
+2024-07-22 23:58:39 [restartedMain] INFO  o.s.b.d.restart.ChangeableUrls - The Class-Path manifest attribute in C:\Users\davide.cappiello\.m2\repository\com\sun\xml\ws\jaxws-rt\3.0.2\jaxws-rt-3.0.2.jar referenced one or more files that do not exist: file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/jakarta.annotation-api.jar,file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/jakarta.activation.jar,file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/jakarta.mail.jar,file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/jakarta.jws-api.jar,file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/jakarta.xml.bind-api.jar,file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/jakarta.xml.ws-api.jar,file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/jakarta.xml.soap-api.jar,file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/FastInfoset.jar,file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/gmbal-api-only.jar,file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/ha-api.jar,file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/jaxb-core.jar,file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/jaxb-impl.jar,file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/management-api.jar,file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/mimepull.jar,file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/saaj-impl.jar,file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/stax-ex.jar,file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/stax2-api.jar,file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/streambuffer.jar,file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/woodstox-core.jar
+2024-07-22 23:58:39 [restartedMain] INFO  o.s.b.d.restart.ChangeableUrls - The Class-Path manifest attribute in C:\Users\davide.cappiello\.m2\repository\org\glassfish\ha\ha-api\3.1.13\ha-api-3.1.13.jar referenced one or more files that do not exist: file:/C:/Users/davide.cappiello/.m2/repository/org/glassfish/ha/ha-api/3.1.13/hk2.jar,file:/C:/Users/davide.cappiello/.m2/repository/org/glassfish/ha/ha-api/3.1.13/hk2-core.jar,file:/C:/Users/davide.cappiello/.m2/repository/org/glassfish/ha/ha-api/3.1.13/class-model.jar,file:/C:/Users/davide.cappiello/.m2/repository/org/glassfish/ha/ha-api/3.1.13/config-api.jar,file:/C:/Users/davide.cappiello/.m2/repository/org/glassfish/ha/ha-api/3.1.13/tiger-types.jar,file:/C:/Users/davide.cappiello/.m2/repository/org/glassfish/ha/ha-api/3.1.13/bean-validator.jar,file:/C:/Users/davide.cappiello/.m2/repository/org/glassfish/ha/ha-api/3.1.13/jtype.jar,file:/C:/Users/davide.cappiello/.m2/repository/org/glassfish/ha/ha-api/3.1.13/auto-depends.jar,file:/C:/Users/davide.cappiello/.m2/repository/org/glassfish/ha/ha-api/3.1.13/jakarta.inject-api.jar,file:/C:/Users/davide.cappiello/.m2/repository/org/glassfish/ha/ha-api/3.1.13/asm-all-repackaged.jar,file:/C:/Users/davide.cappiello/.m2/repository/org/glassfish/ha/ha-api/3.1.13/hk2-api.jar,file:/C:/Users/davide.cappiello/.m2/repository/org/glassfish/ha/ha-api/3.1.13/osgi-resource-locator.jar
+2024-07-22 23:58:39 [restartedMain] INFO  o.s.b.d.restart.ChangeableUrls - The Class-Path manifest attribute in C:\Users\davide.cappiello\.m2\repository\com\sun\xml\bind\jaxb-core\2.3.0.1\jaxb-core-2.3.0.1.jar referenced one or more files that do not exist: file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/bind/jaxb-core/2.3.0.1/jaxb-api.jar
+2024-07-22 23:58:39 [restartedMain] INFO  o.s.b.d.restart.ChangeableUrls - The Class-Path manifest attribute in C:\Users\davide.cappiello\.m2\repository\com\oracle\database\jdbc\ojdbc8\19.8.0.0\ojdbc8-19.8.0.0.jar referenced one or more files that do not exist: file:/C:/Users/davide.cappiello/.m2/repository/com/oracle/database/jdbc/ojdbc8/19.8.0.0/oraclepki.jar
+2024-07-22 23:58:39 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-07-22 23:58:39 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-07-22 23:58:40 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-07-22 23:58:40 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2024-07-22 23:58:41 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.mirth.prometeo.Repository.MessageEventRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-07-22 23:58:41 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.mirth.prometeo.Repository.MessageSegmentRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-07-22 23:58:41 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 83 ms. Found 0 JDBC repository interfaces.
+2024-07-22 23:58:41 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-07-22 23:58:41 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-07-22 23:58:41 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 73 ms. Found 2 JPA repository interfaces.
+2024-07-22 23:58:41 [restartedMain] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'soapWebServiceConfig' of type [com.mirth.prometeo.SpringbootSoapServer.Config.SoapWebServiceConfig$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [annotationActionEndpointMapping]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2024-07-22 23:58:41 [restartedMain] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [annotationActionEndpointMapping] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2024-07-22 23:58:42 [restartedMain] INFO  o.s.w.s.a.s.AnnotationActionEndpointMapping - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2024-07-22 23:58:43 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8091 (http)
+2024-07-22 23:58:43 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8091"]
+2024-07-22 23:58:43 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-07-22 23:58:43 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.24]
+2024-07-22 23:58:43 [restartedMain] INFO  o.a.c.c.C.[.[localhost].[/hl7palm] - Initializing Spring embedded WebApplicationContext
+2024-07-22 23:58:43 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 4069 ms
+2024-07-22 23:58:43 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-07-22 23:58:43 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-07-22 23:58:43 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-07-22 23:58:44 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-07-22 23:58:44 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-07-22 23:58:45 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection ConnectionID:1 ClientConnectionId: 7b31f597-4c4d-434c-bcd1-c928b95feb68
+2024-07-22 23:58:45 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-07-22 23:58:47 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-07-22 23:58:52 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-07-22 23:58:52 [restartedMain] INFO  ca.uhn.hl7v2.util.Home - hapi.home is set to C:\Users\davide.cappiello\Desktop\SoapPalm\.
+2024-07-22 23:58:53 [restartedMain] INFO  ca.uhn.hl7v2.VersionLogger - HAPI version is: 2.5.1
+2024-07-22 23:58:53 [restartedMain] INFO  ca.uhn.hl7v2.VersionLogger - Default Structure libraries found for HL7 versions 2.4, 2.5, 
+2024-07-22 23:58:53 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-07-22 23:58:54 [restartedMain] WARN  o.s.data.convert.CustomConversions - Registering converter from class microsoft.sql.DateTimeOffset to class java.time.OffsetDateTime as reading converter although it doesn't convert from a store-supported type; You might want to check your annotation setup at the converter implementation
+2024-07-22 23:58:54 [restartedMain] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: b867e324-399c-45dd-97cc-5f6cbfb7f0e1
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2024-07-22 23:58:54 [restartedMain] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2024-07-22 23:58:54 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@87e7c43, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@799133e3, org.springframework.security.web.context.SecurityContextHolderFilter@4c38261c, org.springframework.security.web.header.HeaderWriterFilter@658cc8e7, org.springframework.web.filter.CorsFilter@524721de, org.springframework.security.web.csrf.CsrfFilter@1ef8931d, org.springframework.security.web.authentication.logout.LogoutFilter@46282e5b, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@4233422, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@2876ffe0, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@52cb5f41, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@1c5db86f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7f3e2442, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@175b9c69, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@292cad3f, org.springframework.security.web.access.ExceptionTranslationFilter@67fb4772, org.springframework.security.web.access.intercept.AuthorizationFilter@1f41113b]
+2024-07-22 23:58:54 [restartedMain] WARN  o.s.s.c.a.web.builders.WebSecurity - You are asking Spring Security to ignore Ant [pattern='/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-07-22 23:58:54 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will not secure Ant [pattern='/**']
+2024-07-22 23:58:54 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2024-07-22 23:58:54 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8091"]
+2024-07-22 23:58:54 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8091 (http) with context path '/hl7palm'
+2024-07-22 23:58:54 [restartedMain] INFO  com.mirth.SoapClientApplication - Started SoapClientApplication in 16.345 seconds (process running for 18.047)
+2024-07-22 23:59:00 [http-nio-8091-exec-2] INFO  o.a.c.c.C.[.[localhost].[/hl7palm] - Initializing Spring MessageDispatcherServlet 'messageDispatcherServlet'
+2024-07-22 23:59:00 [http-nio-8091-exec-2] INFO  o.s.w.t.h.MessageDispatcherServlet - Initializing Servlet 'messageDispatcherServlet'
+2024-07-22 23:59:00 [http-nio-8091-exec-2] INFO  o.s.w.s.saaj.SaajSoapMessageFactory - Creating SAAJ 1.3 MessageFactory with SOAP 1.1 Protocol
+2024-07-22 23:59:00 [http-nio-8091-exec-2] INFO  o.s.w.t.h.MessageDispatcherServlet - Completed initialization in 78 ms
+2024-07-22 23:59:01 [http-nio-8091-exec-2] INFO  com.mirth.prometeo.Util - Ricevo il messaggio OML_O21 dal PS
+2024-07-22 23:59:01 [http-nio-8091-exec-2] INFO  com.mirth.prometeo.Util - 
+               <OML_O21
+    xmlns="urn:hl7-org:v2xml">
+<MSH>
+<MSH.1>|</MSH.1>
+<MSH.2>^~\&amp;</MSH.2>
+<MSH.3>
+<HD.1>NGH</HD.1>
+</MSH.3>
+<MSH.4>
+<HD.1>GPI</HD.1>
+</MSH.4>
+<MSH.5>
+<HD.1>LIS</HD.1>
+</MSH.5>
+<MSH.6>
+<HD.1>SIEMENS</HD.1>
+</MSH.6>
+<MSH.7>
+<TS.1>20240705103420</TS.1>
+</MSH.7>
+<MSH.9>
+<MSG.1>OML</MSG.1>
+<MSG.2>O21</MSG.2>
+<MSG.3>OML_O21</MSG.3>
+</MSH.9>
+<MSH.10>ffaf3ca2-ab41-459e-87c8-32b493b5b892</MSH.10>
+<MSH.11>
+<PT.1>P</PT.1>
+</MSH.11>
+<MSH.12>
+<VID.1>2.5</VID.1>
+</MSH.12>
+</MSH>
+<OML_O21.PATIENT>
+<PID>
+<PID.3>
+<CX.1>BSUSML77M10A390M</CX.1>
+<CX.4>
+<HD.1>Ministero Finanze</HD.1>
+</CX.4>
+<CX.5>NNITA</CX.5>
+</PID.3>
+<PID.5>
+<XPN.1>
+<FN.1>TEST</FN.1>
+</XPN.1>
+<XPN.2>PROVA</XPN.2>
+</PID.5>
+            <PID.7>
+                <TS.1>19931210000000</TS.1>
+            </PID.7>
+<PID.8>M</PID.8>
+<PID.11>
+<XAD.3/>
+<XAD.4/>
+<XAD.7>BR</XAD.7>
+<XAD.9>054013</XAD.9>
+</PID.11>
+<PID.11>
+<XAD.1>
+<SAD.2>VIA DELLO SPORT 27</SAD.2>
+</XAD.1>
+<XAD.2/>
+<XAD.3/>
+<XAD.4/>
+<XAD.5>06010</XAD.5>
+<XAD.7>L</XAD.7>
+<XAD.9>054011</XAD.9>
+</PID.11>
+</PID>
+<PD1>
+<PD1.12>N</PD1.12>
+</PD1>
+<OML_O21.PATIENT_VISIT>
+<PV1>
+<PV1.2>PS</PV1.2>
+<PV1.3>
+<PL.1>SN_PS</PL.1>
+<PL.8/>
+<PL.9>PRONTO SOCCORSO LE SCOTTE</PL.9>
+</PV1.3>
+<PV1.19>
+<CX.1>2024000722</CX.1>
+<CX.5>PS</CX.5>
+</PV1.19>
+</PV1>
+</OML_O21.PATIENT_VISIT>
+</OML_O21.PATIENT>
+<OML_O21.ORDER>
+<ORC>
+<ORC.1>NW</ORC.1>
+<ORC.2>
+<EI.1>OS2024000349_1419</EI.1>
+</ORC.2>
+<ORC.3>
+<EI.1>OS2024000349_1419</EI.1>
+</ORC.3>
+<ORC.4>
+<EI.1>OS2024000349</EI.1>
+</ORC.4>
+<ORC.5>SC</ORC.5>
+<ORC.7>
+<TQ.4>
+<TS.1>20240628124511</TS.1>
+</TQ.4>
+</ORC.7>
+<ORC.9>
+<TS.1/>
+</ORC.9>
+<ORC.12>
+<XCN.1>BSUSML77M10A390M</XCN.1>
+<XCN.2>
+<FN.1>TEST</FN.1>
+</XCN.2>
+<XCN.3>PROVA</XCN.3>
+</ORC.12>
+<ORC.21>
+<XON.10/>
+</ORC.21>
+<ORC.28>
+<CWE.1>N</CWE.1>
+<CWE.2>TEST</CWE.2>
+</ORC.28>
+</ORC>
+<OML_O21.TIMING>
+<TQ1>
+<TQ1.9>
+<CWE.1>R</CWE.1>
+</TQ1.9>
+</TQ1>
+</OML_O21.TIMING>
+<OML_O21.OBSERVATION_REQUEST>
+<OBR>
+<OBR.1>1</OBR.1>
+<OBR.2>
+<EI.1>OS2024000349_1419</EI.1>
+</OBR.2>
+<OBR.3>
+<EI.1>OS2024000349_1419</EI.1>
+</OBR.3>
+<OBR.4>
+<CE.1>5577</CE.1>
+<CE.2>EMOCROMO PIU' FORMULA</CE.2>
+<CE.3>CODCATALOGO_1</CE.3>
+</OBR.4>
+<OBR.7>
+<TS.1>20240628124511</TS.1>
+</OBR.7>
+<OBR.13>prova lis</OBR.13>
+<OBR.16>
+<XCN.1/>
+<XCN.2/>
+<XCN.3/>
+</OBR.16>
+<OBR.19/>
+<OBR.22>
+<TS.1>20240628124511</TS.1>
+</OBR.22>
+<OBR.24>LAB</OBR.24>
+<OBR.28/>
+<OBR.46>
+<CE.1>DataPresc</CE.1>
+<CE.2>20240628</CE.2>
+</OBR.46>
+</OBR>
+</OML_O21.OBSERVATION_REQUEST>
+</OML_O21.ORDER>
+</OML_O21>
+
+
+2024-07-22 23:59:01 [http-nio-8091-exec-2] INFO  com.mirth.prometeo.Util - Controllo i tag esterni al messaggio per capire se sono uguali al MessageTypeStructure del messaggio HL7
+2024-07-22 23:59:01 [http-nio-8091-exec-2] INFO  com.mirth.prometeo.Util - Salvo l'OML_O21 inviato dal PS e l'ORM_O01 generato da noi sul database locale
+2024-07-22 23:59:01 [http-nio-8091-exec-2] INFO  com.mirth.prometeo.Util - Parametro ricevuto: oml
+2024-07-22 23:59:01 [http-nio-8091-exec-2] INFO  com.mirth.prometeo.Util - Invio via socket il messaggio a TD
+2024-07-22 23:59:01 [http-nio-8091-exec-2] INFO  com.mirth.prometeo.Util - MSH|^~\&|LIS|SIEMENS|NGH|GPI|20240717151117||ORL^O22^ORL_O22|TD0000376125|P|2.5||||||||||MSA|AA|ffaf3ca2-ab41-459e-87c8-32b493b5b892|ERR|||0|I|PID|1||00000000000000000001^^^PATNUM^PI||||19870525000000|M||||||||||ORC|OK|OS2024000370_1419|OS2024000370_1419|OS2024000370|||^^^20240628124511|||||PNGH^BUSA|TQ1|||||||||R|OBR|1|OS2024000370_1419|OS2024000370_1419|K^POTASSIO|||20240628124511||||||||||||||||||||^^^^^R|SPM|1|0011201158||001^P|||Giallo |||||||||||||||||||1|001^UNICA|
+2024-07-22 23:59:02 [http-nio-8091-exec-2] INFO  com.mirth.prometeo.Util - 
+               <OML_O21
+    xmlns="urn:hl7-org:v2xml">
+<MSH>
+<MSH.1>|</MSH.1>
+<MSH.2>^~\&amp;</MSH.2>
+<MSH.3>
+<HD.1>NGH</HD.1>
+</MSH.3>
+<MSH.4>
+<HD.1>GPI</HD.1>
+</MSH.4>
+<MSH.5>
+<HD.1>LIS</HD.1>
+</MSH.5>
+<MSH.6>
+<HD.1>SIEMENS</HD.1>
+</MSH.6>
+<MSH.7>
+<TS.1>20240705103420</TS.1>
+</MSH.7>
+<MSH.9>
+<MSG.1>OML</MSG.1>
+<MSG.2>O21</MSG.2>
+<MSG.3>OML_O21</MSG.3>
+</MSH.9>
+<MSH.10>ffaf3ca2-ab41-459e-87c8-32b493b5b892</MSH.10>
+<MSH.11>
+<PT.1>P</PT.1>
+</MSH.11>
+<MSH.12>
+<VID.1>2.5</VID.1>
+</MSH.12>
+</MSH>
+<OML_O21.PATIENT>
+<PID>
+<PID.3>
+<CX.1>BSUSML77M10A390M</CX.1>
+<CX.4>
+<HD.1>Ministero Finanze</HD.1>
+</CX.4>
+<CX.5>NNITA</CX.5>
+</PID.3>
+<PID.5>
+<XPN.1>
+<FN.1>TEST</FN.1>
+</XPN.1>
+<XPN.2>PROVA</XPN.2>
+</PID.5>
+            <PID.7>
+                <TS.1>19931210000000</TS.1>
+            </PID.7>
+<PID.8>M</PID.8>
+<PID.11>
+<XAD.3/>
+<XAD.4/>
+<XAD.7>BR</XAD.7>
+<XAD.9>054013</XAD.9>
+</PID.11>
+<PID.11>
+<XAD.1>
+<SAD.2>VIA DELLO SPORT 27</SAD.2>
+</XAD.1>
+<XAD.2/>
+<XAD.3/>
+<XAD.4/>
+<XAD.5>06010</XAD.5>
+<XAD.7>L</XAD.7>
+<XAD.9>054011</XAD.9>
+</PID.11>
+</PID>
+<PD1>
+<PD1.12>N</PD1.12>
+</PD1>
+<OML_O21.PATIENT_VISIT>
+<PV1>
+<PV1.2>PS</PV1.2>
+<PV1.3>
+<PL.1>SN_PS</PL.1>
+<PL.8/>
+<PL.9>PRONTO SOCCORSO LE SCOTTE</PL.9>
+</PV1.3>
+<PV1.19>
+<CX.1>2024000722</CX.1>
+<CX.5>PS</CX.5>
+</PV1.19>
+</PV1>
+</OML_O21.PATIENT_VISIT>
+</OML_O21.PATIENT>
+<OML_O21.ORDER>
+<ORC>
+<ORC.1>NW</ORC.1>
+<ORC.2>
+<EI.1>OS2024000349_1419</EI.1>
+</ORC.2>
+<ORC.3>
+<EI.1>OS2024000349_1419</EI.1>
+</ORC.3>
+<ORC.4>
+<EI.1>OS2024000349</EI.1>
+</ORC.4>
+<ORC.5>SC</ORC.5>
+<ORC.7>
+<TQ.4>
+<TS.1>20240628124511</TS.1>
+</TQ.4>
+</ORC.7>
+<ORC.9>
+<TS.1/>
+</ORC.9>
+<ORC.12>
+<XCN.1>BSUSML77M10A390M</XCN.1>
+<XCN.2>
+<FN.1>TEST</FN.1>
+</XCN.2>
+<XCN.3>PROVA</XCN.3>
+</ORC.12>
+<ORC.21>
+<XON.10/>
+</ORC.21>
+<ORC.28>
+<CWE.1>N</CWE.1>
+<CWE.2>TEST</CWE.2>
+</ORC.28>
+</ORC>
+<OML_O21.TIMING>
+<TQ1>
+<TQ1.9>
+<CWE.1>R</CWE.1>
+</TQ1.9>
+</TQ1>
+</OML_O21.TIMING>
+<OML_O21.OBSERVATION_REQUEST>
+<OBR>
+<OBR.1>1</OBR.1>
+<OBR.2>
+<EI.1>OS2024000349_1419</EI.1>
+</OBR.2>
+<OBR.3>
+<EI.1>OS2024000349_1419</EI.1>
+</OBR.3>
+<OBR.4>
+<CE.1>5577</CE.1>
+<CE.2>EMOCROMO PIU' FORMULA</CE.2>
+<CE.3>CODCATALOGO_1</CE.3>
+</OBR.4>
+<OBR.7>
+<TS.1>20240628124511</TS.1>
+</OBR.7>
+<OBR.13>prova lis</OBR.13>
+<OBR.16>
+<XCN.1/>
+<XCN.2/>
+<XCN.3/>
+</OBR.16>
+<OBR.19/>
+<OBR.22>
+<TS.1>20240628124511</TS.1>
+</OBR.22>
+<OBR.24>LAB</OBR.24>
+<OBR.28/>
+<OBR.46>
+<CE.1>DataPresc</CE.1>
+<CE.2>20240628</CE.2>
+</OBR.46>
+</OBR>
+</OML_O21.OBSERVATION_REQUEST>
+</OML_O21.ORDER>
+</OML_O21>
+
+
+2024-07-22 23:59:02 [http-nio-8091-exec-2] INFO  com.mirth.prometeo.Util - Genero la risposta ACK inviata da TD
+2024-07-22 23:59:02 [http-nio-8091-exec-2] INFO  ca.uhn.hl7v2.parser.XMLParser - XML-Encoding a GenericMessage is not covered by the specification. 
+2024-07-22 23:59:02 [http-nio-8091-exec-2] INFO  com.mirth.prometeo.Util - Setto il return
+2024-07-22 23:59:02 [http-nio-8091-exec-2] INFO  com.mirth.prometeo.Util - Creo un oggetto acceptMessageResponse e rispondo al PS

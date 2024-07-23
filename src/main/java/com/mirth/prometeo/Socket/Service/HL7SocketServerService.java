@@ -1,10 +1,9 @@
 package com.mirth.prometeo.Socket.Service;
 
-import ca.uhn.hl7v2.model.Message;
 import ca.uhn.hl7v2.model.v25.message.ACK;
-import ca.uhn.hl7v2.model.v25.segment.MSH;
 import ca.uhn.hl7v2.parser.DefaultXMLParser;
 import ca.uhn.hl7v2.parser.XMLParser;
+import com.mirth.prometeo.HL7Config;
 import com.mirth.prometeo.HL7Palm.Message.ACKResponse;
 import com.mirth.prometeo.HL7Palm.Message.ORUR01;
 import ca.uhn.hl7v2.HL7Exception;
@@ -18,6 +17,7 @@ import com.mirth.prometeo.ServiceOMLO21.Segment.MessageSegmentServiceOMLO21;
 import com.mirth.prometeo.ServiceORUR01.Event.MessageEventServiceORUR01;
 import com.mirth.prometeo.ServiceORUR01.Segment.MessageSegmentServiceORUR01;
 import com.mirth.prometeo.SpringbootSoapClient.SoapClient;
+import com.mirth.prometeo.Util;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.io.*;
@@ -26,8 +26,12 @@ import java.net.Socket;
 
 @Service
 public class HL7SocketServerService {
+
     private final Parser pipeParser = new PipeParser();
     private final XMLParser xmlParser = new DefaultXMLParser();
+    private static final Util util = new Util();
+    private static ORUR01 oruObject = new ORUR01();
+    private static ORU_R01 parsedORU = null;
 
     @Autowired
     private MessageEventServiceORUR01 messageEventServiceORUR01;
@@ -40,24 +44,21 @@ public class HL7SocketServerService {
     @Autowired
     private SoapClient soapClient;
 
-    public void startServer(int port) {
-        try (ServerSocket serverSocket = new ServerSocket(port)) {
-            System.out.println("Server in ascolto sulla porta " + port);
+    public void startServer(int socketServerPort) {
+        try (ServerSocket serverSocket = new ServerSocket(socketServerPort)) {
 
             while (true) {
                 try (Socket clientSocket = serverSocket.accept()) {
-                    System.out.println("Connessione accettata da " + clientSocket.getInetAddress());
+                    util.insertLogRow("Connessione accettata da " + clientSocket.getInetAddress());
 
                     BufferedReader in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
                     PrintWriter out = new PrintWriter(new OutputStreamWriter(clientSocket.getOutputStream()), true);
 
                     String hl7Message = readMessage(in);
-                    System.out.println("Ricevuto: " + hl7Message);
-                    System.out.println("Salvo sul db locale il messaggio ORU");
-                    saveORUR01Database(hl7Message);
-                    System.out.println("Utilizzo i dati contenuti nell'ORU per generare un OML_O21");
-                    ORUR01 object = new ORUR01();
-                    ORU_R01 parsedORU = null;
+                    util.insertLogRow("Ricevuto: " + hl7Message);
+                    util.insertLogRow("Salvo sul db locale il messaggio ORU");
+                    util.saveORUR01Database(hl7Message, messageEventServiceORUR01, messageSegmentServiceORUR01);
+                    util.insertLogRow("Utilizzo i dati contenuti nell'ORU per generare un OML_O21");
                     try {
                         parsedORU = (ORU_R01) pipeParser.parse(hl7Message);
                         ACK ackPositiveResponse = (ACK) parsedORU.generateACK();
@@ -66,21 +67,19 @@ public class HL7SocketServerService {
                         } catch (Error e) {
                             e.printStackTrace();
                         }
-
-                        OML_O21 omlO21 = object.generateOMLO21FromORUR01TD(parsedORU);
-                        System.out.println("Salvo sul db locale l'OML_O21 generato, prima di inviarlo al PS");
-                        saveOMLO21Database(omlO21);
-                        PipeParser pipeParser = new PipeParser();
+                        OML_O21 omlO21 = oruObject.generateOMLO21FromORUR01TD(parsedORU);
+                        util.insertLogRow("Salvo sul db locale l'OML_O21 generato, prima di inviarlo al PS");
+                        util.saveOMLO21Database2(omlO21, messageEventServiceOMLO21, messageSegmentServiceOMLO21);
                         String omlFinal = String.valueOf(pipeParser.parse(String.valueOf(omlO21)));
-                        String omlXML = object.convertPIPEToXML(omlO21);
+                        String omlXML = oruObject.convertPIPEToXML(omlO21);
                         String responseMessage = processHL7Message(omlFinal);
                         soapClient.sendAcceptMessage(omlXML);
                         writeMessage(out, responseMessage);
                     } catch (Exception e) {
                         ACKResponse ackResponse = new ACKResponse();
-                        System.out.println("Genero la risposta ACK inviata da TD");
+                        util.insertLogRow("Genero la risposta ACK inviata da TD");
                         ACK ackMessage = ackResponse.generateACKResponseORUError(hl7Message);
-                        System.out.println(xmlParser.encode(ackMessage));
+                        util.insertLogRow(xmlParser.encode(ackMessage));
                         //hl7SocketClientService.sendHL7Message(pipeParser.encode(ackMessage));
                         System.err.println("Errore di comunicazione: " + e.getMessage());
                         writeMessage(out, pipeParser.encode(ackMessage));
@@ -128,32 +127,6 @@ public class HL7SocketServerService {
         String messageWithDelimiters = '\u000b' + hl7Message + '\u001c' + '\r';
         out.print(messageWithDelimiters);
         out.flush();
-    }
-
-    public void saveORUR01Database(String hl7Message) {
-        try {
-            Parser parser = new PipeParser();
-            ORU_R01 oruR01 = (ORU_R01) parser.parse(hl7Message);
-            MessageEvent messageEvent = messageEventServiceORUR01.saveORUR01Message(oruR01);
-            messageSegmentServiceORUR01.saveMSHMessageSegmentORUR01(oruR01, messageEvent);
-            messageSegmentServiceORUR01.savePIDMessageSegmentORUR01(oruR01, messageEvent);
-            messageSegmentServiceORUR01.savePV1MessageSegmentORUR01(oruR01, messageEvent);
-            messageSegmentServiceORUR01.saveORDERBLOCKMessageORUR01(oruR01, messageEvent);
-        } catch (HL7Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    public void saveOMLO21Database(OML_O21 omlO21) {
-        try {
-            MessageEvent messageEvent = messageEventServiceOMLO21.saveOMLO21MessageCheckStatus(omlO21);
-            messageSegmentServiceOMLO21.saveMSHMessageSegmentOMLO21(omlO21, messageEvent);
-            messageSegmentServiceOMLO21.savePIDMessageSegmentOMLO21(omlO21, messageEvent);
-            messageSegmentServiceOMLO21.savePV1MessageSegmentOMLO21(omlO21, messageEvent);
-            messageSegmentServiceOMLO21.saveORDERBLOCKMessageOMLO21(omlO21, messageEvent);
-        } catch (HL7Exception e) {
-            e.printStackTrace();
-        }
     }
 
 }

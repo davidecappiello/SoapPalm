@@ -6,14 +6,19 @@ import ca.uhn.hl7v2.model.v25.message.OML_O21;
 import ca.uhn.hl7v2.model.v25.segment.ERR;
 import ca.uhn.hl7v2.model.v25.segment.MSA;
 import ca.uhn.hl7v2.model.v25.segment.MSH;
+import com.mirth.prometeo.HL7Config;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+@Component
 public class SegmentFactoryACKResponseORU {
-    private static final String separator = "|";
-    private static final String encodingCharacters = "^~\\&";
-    private static final String messageCode = "ACK";
-    private static final String triggerEvent = "O01";
-    private static final String messageStructure = "ACK_O01";
-    private static final String applicationError = "AE";
+
+    private static HL7Config hl7Config = null;
+
+    @Autowired
+    public SegmentFactoryACKResponseORU(HL7Config hl7Config) {
+        SegmentFactoryACKResponseORU.hl7Config = hl7Config;
+    }
 
     public static void createMSHSegmentIntegrateACKResponse(MSH mshSegmentIntegrate, String hl7Message) throws HL7Exception {
 
@@ -34,18 +39,13 @@ public class SegmentFactoryACKResponseORU {
 
             String[] fields = mshSegment.split("\\|");
 
-//            for(int i = 0; i < fields.length; i++)
-//            {
-//                System.out.println(i + " "+ fields[i]);
-//            }
-
             if (fields.length < 12) {
                 throw new HL7Exception("Invalid MSH segment: missing required fields");
             }
 
             MSH msh = mshSegmentIntegrate;
-            msh.getFieldSeparator().setValue(separator);
-            msh.getEncodingCharacters().setValue(encodingCharacters);
+            msh.getFieldSeparator().setValue(hl7Config.getSeparator());
+            msh.getEncodingCharacters().setValue(hl7Config.getEncodingCharacters());
 
             msh.getSendingApplication().getNamespaceID().setValue(fields[5]);
 
@@ -58,28 +58,23 @@ public class SegmentFactoryACKResponseORU {
 
 
             msh.getDateTimeOfMessage().getTime().setValue(fields[6]);
-            mshSegmentIntegrate.getMessageType().getMessageCode().setValue(messageCode);
-            mshSegmentIntegrate.getMessageType().getTriggerEvent().setValue(triggerEvent);
-            mshSegmentIntegrate.getMessageType().getMessageStructure().setValue(messageStructure);
+            mshSegmentIntegrate.getMessageType().getMessageCode().setValue(hl7Config.getMessageCodeAck());
+            mshSegmentIntegrate.getMessageType().getTriggerEvent().setValue(hl7Config.getTriggerEventO01());
+            mshSegmentIntegrate.getMessageType().getMessageStructure().setValue(hl7Config.getMessageStructureACKO01());
             msh.getMessageControlID().setValue(fields[10]);
             msh.getProcessingID().getProcessingID().setValue(fields[11]);
             msh.getVersionID().getVersionID().setValue(fields[12]);
-
     }
 
     public static void createMSASegmentIntegrateACKResponse(MSA msaSegmentIntegrate, MSH mshSegmentIntegrate) throws HL7Exception {
 
-        msaSegmentIntegrate.getAcknowledgmentCode().setValue(applicationError);
+        msaSegmentIntegrate.getAcknowledgmentCode().setValue(hl7Config.getApplicationError());
         msaSegmentIntegrate.getMessageControlID().setValue(mshSegmentIntegrate.getMessageControlID().getValue());
-
     }
 
     public static void createERRSSegmentIntegrateACKResponse(ERR errSegmentIntegrate)throws HL7Exception {
 
         errSegmentIntegrate.getHL7ErrorCode().getIdentifier().setValue("1");
         errSegmentIntegrate.getHL7ErrorCode().getText().setValue("Error: Error decoding ORU message");
-
-
-
     }
 }
