@@ -254,7 +254,7 @@ public class SegmentFactoryRSPK11 {
         obxSegmentORIntegrate.getEquipmentInstanceIdentifier(0).getEntityIdentifier().setValue("F"); // “F” – visibile su referto, “X”– non visibile su referto
     }
 
-    public static void createSegmentZET (ZET zet) throws DataTypeException {
+    public static void createSegmentZET (ZET zet, QBP_Q11 qbpQ11) throws DataTypeException {
 
         zet.getBarcode().setValue("10000167-0092");
         zet.getLabelDescription().setValue(" 13X75 VIOLA EMOVES");
