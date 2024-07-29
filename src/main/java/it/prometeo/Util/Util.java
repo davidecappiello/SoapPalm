@@ -8,7 +8,7 @@ import ca.uhn.hl7v2.parser.Parser;
 import ca.uhn.hl7v2.parser.PipeParser;
 import ca.uhn.hl7v2.parser.XMLParser;
 import com.mirth.connect.connectors.ws.AcceptMessageResponse;
-import it.prometeo.Configuration.HL7Config;
+
 import it.prometeo.Entity.MessageEvent;
 import it.prometeo.HL7Palm.Decoding.OMLDecoding;
 import it.prometeo.HL7Palm.Decoding.ORLDecoding;
@@ -30,8 +30,10 @@ import it.prometeo.Socket.Service.HL7SocketClientService;
 import it.prometeo.Socket.Service.HL7SocketClientServiceTransfusion;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.annotation.AccessType;
+import org.springframework.stereotype.Service;
 import org.xml.sax.SAXException;
-
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -40,6 +42,7 @@ import java.util.Date;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+@Service
 public class Util {
 
     private static final Logger logger = LoggerFactory.getLogger(Util.class);
@@ -51,7 +54,8 @@ public class Util {
     private static ORLO22 orlObject = new ORLO22();
     private static ORM_O01 ormCreated = null;
     private static OMLO21 omlObject = new OMLO21();
-    private static RSPK11 rspk11Object = new RSPK11();
+    @Autowired
+    private RSPK11 rspk11Object;
     private static String finalResponseToPSPIPE = null;
     private static String finalResponseToPSXML = null;
     private static OML_O21 omlMessage = null;
@@ -70,7 +74,7 @@ public class Util {
         } catch (Exception e) {
             e.printStackTrace(pw);
             logger.error(sw.toString());
-            System.out.println("sw: "+sw.toString());
+            System.out.println("sw: " + sw.toString());
             throw new RuntimeException(e);
         }
     }
@@ -83,7 +87,7 @@ public class Util {
             Exception e = new Exception("Invalid CDATA section");
             e.printStackTrace(pw);
             logger.error(sw.toString());
-            System.out.println("sw: "+sw.toString());
+            System.out.println("sw: " + sw.toString());
             throw new Exception("Invalid CDATA section");
         }
         System.out.println(cdataMessage.substring(start, end));
@@ -102,13 +106,13 @@ public class Util {
             Exception e = new Exception("MSG.3 value not found in MSH");
             e.printStackTrace(pw);
             logger.error(sw.toString());
-            System.out.println("sw: "+sw.toString());
+            System.out.println("sw: " + sw.toString());
             throw new Exception("MSG.3 value not found in MSH");
         }
     }
 
     public String extractMSH3_HD1Value(String message) throws Exception {
-        Pattern pattern = Pattern.compile("<MSH.3>\n<HD.1>(.*)</HD.1>\n</MSH.3>");
+        Pattern pattern = Pattern.compile(" <MSH.3>\n<HD.1>(.*)</HD.1>\n</MSH.3>");
         Matcher matcher = pattern.matcher(message);
 
         if (matcher.find()) {
@@ -133,7 +137,7 @@ public class Util {
                 if (!tagName.equals(msg3Value)) {
                     String newTag = (matcher.group(1) != null ? matcher.group(1) : "") + msg3Value;
 
-                    if(uri != null && uri.equals(" xmlns=\"urn:hl7-org:v2xml\"")) {
+                    if (uri != null && uri.equals(" xmlns=\"urn:hl7-org:v2xml\"")) {
                         String updatedMessage = matcher.replaceFirst("<" + newTag + (matcher.group(3) != null ? matcher.group(3) : "") + ">");
                         updatedMessage = updatedMessage.replaceAll("</" + tagName + ">", "</" + newTag + ">");
                         return updatedMessage;
@@ -157,10 +161,10 @@ public class Util {
                 }
             }
             return message;
-        } catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace(pw);
             logger.error(sw.toString());
-            System.out.println("sw: "+sw.toString());
+            System.out.println("sw: " + sw.toString());
             throw new RuntimeException(e);
         }
     }
@@ -180,7 +184,7 @@ public class Util {
             Exception e = new Exception("TS.1 Null");
             e.printStackTrace(pw);
             logger.error(sw.toString());
-            System.out.println("sw: "+sw.toString());
+            System.out.println("sw: " + sw.toString());
             throw new Exception("TS.1 Null");
         }
     }
@@ -212,9 +216,9 @@ public class Util {
     }
 
     public void handleOMLPS(String updatedMessage, OML_O21 omlCreated, OMLO21 oml_o21, String hl7Response, AcceptMessageResponse response, String param,
-                          MessageEventServiceOMLO21 messageEventServiceOMLO21, MessageSegmentServiceOMLO21 messageSegmentServiceOMLO21,
-                          MessageEventServiceORLO22 messageEventServiceORLO22, MessageSegmentServiceORLO22 messageSegmentServiceORLO22,
-                          MessageEventRepository messageEventRepository, String msh3Value, Boolean routeError) throws HL7Exception, IOException, ParserConfigurationException, SAXException {
+                            MessageEventServiceOMLO21 messageEventServiceOMLO21, MessageSegmentServiceOMLO21 messageSegmentServiceOMLO21,
+                            MessageEventServiceORLO22 messageEventServiceORLO22, MessageSegmentServiceORLO22 messageSegmentServiceORLO22,
+                            MessageEventRepository messageEventRepository, String msh3Value, Boolean routeError) throws HL7Exception, IOException, ParserConfigurationException, SAXException {
 
         insertLogRow("Parametro ricevuto: " + param);
         routeError = true;
@@ -389,9 +393,9 @@ public class Util {
             throw new HL7Exception("Invalid MSH segment: missing required fields");
         }
 
-        if(fields[1].equals("AA")){
+        if (fields[1].equals("AA")) {
             flag = true;
-        } else if(fields[1].equals("AE") || fields[1].equals("AR")){
+        } else if (fields[1].equals("AE") || fields[1].equals("AR")) {
             flag = false;
         }
 
@@ -409,7 +413,7 @@ public class Util {
             Exception e = new Exception("MSG.2 value not found in MSH");
             e.printStackTrace(pw);
             logger.error(sw.toString());
-            System.out.println("sw: "+sw.toString());
+            System.out.println("sw: " + sw.toString());
             throw new Exception("MSG.2 value not found in MSH");
         }
     }

@@ -5,19 +5,33 @@ import ca.uhn.hl7v2.HL7Exception;
 import ca.uhn.hl7v2.model.DataTypeException;
 import ca.uhn.hl7v2.model.Message;
 import ca.uhn.hl7v2.model.v25.datatype.CE;
+import ca.uhn.hl7v2.model.v25.message.OML_O21;
+import ca.uhn.hl7v2.model.v25.message.ORL_O22;
 import ca.uhn.hl7v2.model.v25.message.QBP_Q11;
 import ca.uhn.hl7v2.model.v25.segment.*;
+import ca.uhn.hl7v2.parser.PipeParser;
 import it.prometeo.Configuration.HL7Config;
 import it.prometeo.HL7Palm.Message.Custom.RSP_K11;
 import it.prometeo.HL7Palm.Segment.ZET;
+import it.prometeo.Repository.MessageEventDao;
+import it.prometeo.Repository.MessageSegmentDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.List;
 
 @Component
 public class SegmentFactoryRSPK11 {
+
+    @Autowired
+    private static MessageEventDao eventDao;
+    @Autowired
+    private static MessageSegmentDao messageSegmentDao;
+
+    private static PipeParser pipeParser = new PipeParser();
+
 
     private static HL7Config hl7Config = null;
 
@@ -62,13 +76,26 @@ public class SegmentFactoryRSPK11 {
         }
     }
 
+    public static void createMSASegmentIntegrateSLI(MSA msaSegmentIntegrate, QBP_Q11 qbpDecoded, boolean flag) throws HL7Exception {
+
+        MSH oldMSH = qbpDecoded.getMSH();
+
+        if(flag == true) {
+            msaSegmentIntegrate.getAcknowledgmentCode().setValue(hl7Config.getApplicationAccepted());
+        } else {
+            msaSegmentIntegrate.getAcknowledgmentCode().setValue(hl7Config.getApplicationError());
+        }
+        msaSegmentIntegrate.getMessageControlID().setValue(oldMSH.getMessageControlID().getValue());
+        if(msaSegmentIntegrate.getAcknowledgmentCode().getValue().equals(hl7Config.getApplicationError()) || (msaSegmentIntegrate.getAcknowledgmentCode().getValue().equals(hl7Config.getApplicationRejected()))) {
+            msaSegmentIntegrate.getTextMessage().setValue(hl7Config.getApplicationError());
+        }
+    }
+
     public static void createQAKSegmentIntegrateRSPK11ToQBP(QAK qakSegmentIntegrate, QBP_Q11 qbpDecoded) throws HL7Exception {
 
-        //CONTROLLARE IL TAG
         qakSegmentIntegrate.getQueryTag().setValue(qbpDecoded.getQPD().getQueryTag().getValue());
         qakSegmentIntegrate.getQueryResponseStatus().setValue("Esito [Tab HL7 #0208]");
-        //AGGIUNGERE IL CE1-2-3
-        qakSegmentIntegrate.getMessageQueryName().getIdentifier().setValue(qbpDecoded.getQPD().getMessageQueryName().getName());
+        qakSegmentIntegrate.getMessageQueryName().getIdentifier().setValue(qbpDecoded.getQPD().getMessageQueryName().getText().getValue());
 
     }
 
@@ -85,52 +112,43 @@ public class SegmentFactoryRSPK11 {
         spmSegmentIntegrate.getSpecimenCollectionDateTime().getRangeStartDateTime().getTime().setValue("20240614113000");
     }
 
-    public static void createORCSegmentSCIntegrateRSPK11ToQBP(ORC orcSegmentSCIntegrate) throws HL7Exception {
+    public static void createORCSegmentSCIntegrateRSPK11ToQBP(ORC orcSegmentSCIntegrate, ORC orcFromOML) throws HL7Exception {
 
-        Calendar dateTimeOfMessage = Calendar.getInstance();
-        SimpleDateFormat hl7DateFormat = new SimpleDateFormat("yyyyMMddHHmmss");
-        String formattedDateTime = hl7DateFormat.format(dateTimeOfMessage.getTime());
-
-        //Messaggi SC
-        orcSegmentSCIntegrate.getOrc1_OrderControl().setValue("NW");
-        orcSegmentSCIntegrate.getOrc4_PlacerGroupNumber().getEi1_EntityIdentifier().setValue("022");
-        orcSegmentSCIntegrate.getOrc5_OrderStatus().setValue("SC");
-        orcSegmentSCIntegrate.getOrc9_DateTimeOfTransaction().getTime().setValue(formattedDateTime);
+        orcSegmentSCIntegrate.getOrc1_OrderControl().setValue(orcFromOML.getOrc1_OrderControl().getValue());
+        orcSegmentSCIntegrate.getOrc4_PlacerGroupNumber().getEi1_EntityIdentifier().setValue(orcFromOML.getPlacerGroupNumber().getEntityIdentifier().getValue());
+        orcSegmentSCIntegrate.getOrc5_OrderStatus().setValue(orcFromOML.getOrderStatus().getValue());
+        orcSegmentSCIntegrate.getOrc9_DateTimeOfTransaction().getTime().setValue(orcFromOML.getDateTimeOfTransaction().getTime().getValue());
     }
 
-    public static void createORCSegmentORIntegrateRSPK11ToQBP(ORC orcSegmentORIntegrate) throws HL7Exception {
+    public static void createORCSegmentORIntegrateRSPK11ToQBP(ORC orcSegmentORIntegrate, Message oml) throws HL7Exception {
 
-        Calendar dateTimeOfMessage = Calendar.getInstance();
-        SimpleDateFormat hl7DateFormat = new SimpleDateFormat("yyyyMMddHHmmss");
-        String formattedDateTime = hl7DateFormat.format(dateTimeOfMessage.getTime());
+        ORC orc = (ORC) oml.get("ORC");
 
-        orcSegmentORIntegrate.getOrc1_OrderControl().setValue("NW");
-        orcSegmentORIntegrate.getOrc2_PlacerOrderNumber().getEi1_EntityIdentifier().setValue("VE");
-        orcSegmentORIntegrate.getOrc2_PlacerOrderNumber().getEi2_NamespaceID().setValue("RO");
-        orcSegmentORIntegrate.getOrc2_PlacerOrderNumber().getEi3_UniversalID().setValue("NRE");
-        orcSegmentORIntegrate.getOrc2_PlacerOrderNumber().getEi4_UniversalIDType().setValue("NRE");
-        orcSegmentORIntegrate.getOrc3_FillerOrderNumber().getEi1_EntityIdentifier().setValue("fdf");
-        orcSegmentORIntegrate.getOrc3_FillerOrderNumber().getEi2_NamespaceID().setValue("D45");
-        orcSegmentORIntegrate.getOrc4_PlacerGroupNumber().getEi1_EntityIdentifier().setValue("022");
-        orcSegmentORIntegrate.getOrc5_OrderStatus().setValue("SC");
-        orcSegmentORIntegrate.getOrc7_QuantityTiming(0).getTq4_StartDateTime().getTs1_Time().setValue("20240605");
-        orcSegmentORIntegrate.getOrc9_DateTimeOfTransaction().getTime().setValue(formattedDateTime);
-        orcSegmentORIntegrate.getOrc12_OrderingProvider(0).getXcn1_IDNumber().setValue("CPPDVD94C21L219F");
-        orcSegmentORIntegrate.getOrc12_OrderingProvider(0).getXcn2_FamilyName().getFn1_Surname().setValue("Cappiello");
-        orcSegmentORIntegrate.getOrc12_OrderingProvider(0).getXcn3_GivenName().setValue("Davide");
-        orcSegmentORIntegrate.getOrc21_OrderingFacilityName(0).getXon1_OrganizationName().setValue("Amazon");
-        orcSegmentORIntegrate.getOrc21_OrderingFacilityName(0).getXon10_OrganizationIdentifier().setValue("1");
+        orcSegmentORIntegrate.getOrc1_OrderControl().setValue("SC");
+        orcSegmentORIntegrate.getOrc2_PlacerOrderNumber().getEi1_EntityIdentifier().setValue(orc.getPlacerOrderNumber().getEntityIdentifier().getValue());
+        orcSegmentORIntegrate.getOrc2_PlacerOrderNumber().getEi2_NamespaceID().setValue(orc.getOrc2_PlacerOrderNumber().getEi2_NamespaceID().getValue());
+        orcSegmentORIntegrate.getOrc2_PlacerOrderNumber().getEi3_UniversalID().setValue(orc.getOrc2_PlacerOrderNumber().getEi3_UniversalID().getValue());
+        orcSegmentORIntegrate.getOrc2_PlacerOrderNumber().getEi4_UniversalIDType().setValue(orc.getOrc2_PlacerOrderNumber().getEi4_UniversalIDType().getValue());
+        orcSegmentORIntegrate.getOrc3_FillerOrderNumber().getEi1_EntityIdentifier().setValue(orc.getOrc3_FillerOrderNumber().getEi1_EntityIdentifier().getValue());
+        orcSegmentORIntegrate.getOrc3_FillerOrderNumber().getEi2_NamespaceID().setValue(orc.getOrc3_FillerOrderNumber().getEi2_NamespaceID().getValue());
+        orcSegmentORIntegrate.getOrc4_PlacerGroupNumber().getEi1_EntityIdentifier().setValue(orc.getOrc4_PlacerGroupNumber().getEi1_EntityIdentifier().getValue());
+        orcSegmentORIntegrate.getOrc5_OrderStatus().setValue(orc.getOrc5_OrderStatus().getValue());
+        orcSegmentORIntegrate.getOrc7_QuantityTiming(0).getTq4_StartDateTime().getTs1_Time().setValue(orc.getOrc7_QuantityTiming(0).getTq4_StartDateTime().getTs1_Time().getValue());
+        orcSegmentORIntegrate.getOrc9_DateTimeOfTransaction().getTime().setValue(orc.getOrc9_DateTimeOfTransaction().getTime().getValue());
+        orcSegmentORIntegrate.getOrc12_OrderingProvider(0).getXcn1_IDNumber().setValue(orc.getOrc12_OrderingProvider(0).getXcn1_IDNumber().getValue());
+        orcSegmentORIntegrate.getOrc12_OrderingProvider(0).getXcn2_FamilyName().getFn1_Surname().setValue(orc.getOrc12_OrderingProvider(0).getXcn2_FamilyName().getFn1_Surname().getValue());
+        orcSegmentORIntegrate.getOrc12_OrderingProvider(0).getXcn3_GivenName().setValue(orc.getOrc12_OrderingProvider(0).getXcn3_GivenName().getValue());
+        orcSegmentORIntegrate.getOrc21_OrderingFacilityName(0).getXon1_OrganizationName().setValue(orc.getOrc21_OrderingFacilityName(0).getXon1_OrganizationName().getValue());
+        orcSegmentORIntegrate.getOrc21_OrderingFacilityName(0).getXon10_OrganizationIdentifier().setValue(orc.getOrc21_OrderingFacilityName(0).getXon10_OrganizationIdentifier().getValue());
     }
 
-    public static void createTQ1SegmentIntegrateRSPK11ToQBP(TQ1 tq1SegmentIntegrate) throws HL7Exception {
+    public static void createTQ1SegmentIntegrateRSPK11ToQBP(TQ1 tq1SegmentIntegrate, Message oml) throws HL7Exception {
 
-        Calendar dateTimeOfMessage = Calendar.getInstance();
-        SimpleDateFormat hl7DateFormat = new SimpleDateFormat("yyyyMMddHHmmss");
-        String formattedDateTime = hl7DateFormat.format(dateTimeOfMessage.getTime());
+        TQ1 tq1 = (TQ1) oml.get("TQ1");
 
-        tq1SegmentIntegrate.getSetIDTQ1().setValue("");
-        tq1SegmentIntegrate.getStartDateTime().getTime().setValue(formattedDateTime);
-        tq1SegmentIntegrate.getPriority(0).getIdentifier().setValue("R");
+//        tq1SegmentIntegrate.getSetIDTQ1().setValue();
+//        tq1SegmentIntegrate.getStartDateTime().getTime().setValue();
+//        tq1SegmentIntegrate.getPriority(0).getIdentifier().setValue();
     }
 
     public static void createOBRSegmentIntegrateRSPK11ToQBP(OBR obrSegmentIntegrate, ORC orcSegmentIntegrate) throws HL7Exception {
@@ -254,13 +272,16 @@ public class SegmentFactoryRSPK11 {
         obxSegmentORIntegrate.getEquipmentInstanceIdentifier(0).getEntityIdentifier().setValue("F"); // “F” – visibile su referto, “X”– non visibile su referto
     }
 
-    public static void createSegmentZET (ZET zet, QBP_Q11 qbpQ11) throws DataTypeException {
+    public static void createSegmentZET(ZET zet, Message orl, OML_O21 oml) throws HL7Exception {
 
-        zet.getBarcode().setValue("10000167-0092");
-        zet.getLabelDescription().setValue(" 13X75 VIOLA EMOVES");
-        zet.getEmergencyLevel().setValue("URG");
-        zet.getSurname().setValue("DOE");
-        zet.getNome().setValue("JOHN");
+        PID pid = oml.getPATIENT().getPID();
+        TQ1 tq1 = (TQ1) oml.getORDER().get("TQ1");
+        SPM spm = (SPM) orl.get("SPM");
+
+        zet.getBarcode().setValue(spm.getSpecimenID().getPlacerAssignedIdentifier().getEntityIdentifier().getValue());
+        zet.getLabelDescription().setValue(spm.getSpecimenCollectionMethod().getIdentifier().getValue());
+        zet.getEmergencyLevel().setValue(tq1.getPriority(0).getIdentifier().getValue());
+        zet.getSurname().setValue(pid.getPatientName(0).getFamilyName().getSurname().getValue());
+        zet.getNome().setValue(pid.getPatientName(0).getGivenName().getValue());
     }
-
 }

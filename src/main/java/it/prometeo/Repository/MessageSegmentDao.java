@@ -25,6 +25,33 @@ public class MessageSegmentDao {
         try (Connection con = dataSource.getConnection()) {
             PreparedStatement statement = con.prepareStatement("Select * " +
                     "FROM PRO_MESSAGE_SEGMENT " +
+                    "WHERE MESSAGE_EVENT_ID = ? " +
+                    "ORDER BY ID ASC ");
+            statement.setInt(1, messageEvent.getId());
+            ResultSet results = statement.executeQuery();
+
+            while (results.next()) {
+                MessageSegment messageSegment = new MessageSegment();
+                messageSegment.setId(results.getInt("ID"));
+                messageSegment.setCode(results.getString("CODE"));
+                messageSegment.setBody(results.getString("BODY"));
+                messageSegment.setMessageEventId(messageEvent);
+
+                messageSegmentList.add(messageSegment);
+            }
+            return messageSegmentList;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public List<MessageSegment> findSPMforZET(MessageEvent messageEvent) {
+
+        List<MessageSegment> messageSegmentList = new ArrayList<>();
+
+        try (Connection con = dataSource.getConnection()) {
+            PreparedStatement statement = con.prepareStatement("Select * " +
+                    "FROM PRO_MESSAGE_SEGMENT " +
                     "WHERE MESSAGE_EVENT_ID = ? ");
             statement.setInt(1, messageEvent.getId());
             ResultSet results = statement.executeQuery();

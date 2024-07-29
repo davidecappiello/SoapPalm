@@ -18,7 +18,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class SegmentFactoryORLO22 {
 
-    private static HL7Config hl7Config = null;
+    static HL7Config hl7Config = null;
 
     @Autowired
     public SegmentFactoryORLO22(HL7Config hl7Config) {

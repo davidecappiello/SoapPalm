@@ -20,31 +20,27 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
+
 import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.*;
 
-/*@Service
+@Service
 public class Poller {
+    private PipeParser pipeParser = new PipeParser();
 
-    private final PipeParser pipeParser = new PipeParser();
-    private final XMLParser xmlParser = new DefaultXMLParser();
+    private XMLParser xmlParser = new DefaultXMLParser();
+
     private final JdbcTemplate jdbcTemplate;
-    private static HL7Config hl7Config = null;
-    private static final Util util = new Util();
 
     @Autowired
-    public Poller(JdbcTemplate jdbcTemplate, HL7Config hl7Config) {
-        this.jdbcTemplate = jdbcTemplate;
-        Poller.hl7Config = hl7Config;
-    }
+    MessageEventDao messageEventDao;
     @Autowired
-    private MessageEventDao messageEventDao;
+    MessageSegmentDao messageSegmentDao;
     @Autowired
-    private MessageSegmentDao messageSegmentDao;
-    @Autowired
-    private PRO_TDQ2HL7_Dao proTdq2HL7Dao;
+    PRO_TDQ2HL7_Dao proTdq2HL7Dao;
+
     @Autowired
     private SoapClient soapClient;
 
@@ -58,10 +54,13 @@ public class Poller {
     //                             In caso di successo: 210 checkin
     //                             In caso di successo: 220 risultati
 
-    private final String QUERY_TO_CHECK_CHANGES = hl7Config.getQueryChanges();
+    private final String QUERY_TO_CHECK_CHANGES = "SELECT * FROM PRO_TDQ2HL7 pth WHERE FLAG_INOLTRATO = 0 AND REPARTO = 'PNGH'";
     private final String QUERY_TO_EXECUTE_ON_CHANGE = "YOUR QUERY HERE";
 
-    @Scheduled(fixedRate = 60000)
+
+
+// parametro in secondi ma che va messo nell'.app
+    @Scheduled(fixedRate = 30000)
     public void pollDatabase() throws HL7Exception, IOException {
 
         Formatter format = new Formatter();
@@ -73,34 +72,35 @@ public class Poller {
             @Override
             public PRO_TDQ2HL7 mapRow(ResultSet rs, int rowNum) throws SQLException {
 
-                util.insertLogRow(String.valueOf(format));
+                System.out.println(format);
 
                 PRO_TDQ2HL7 result = new PRO_TDQ2HL7(
-                       rs.getString(hl7Config.getColumnAccessNumber()),
-                       rs.getString(hl7Config.getColumnTubeNumber()),
-                       rs.getInt(hl7Config.getColumnStato()),
-                       rs.getInt(hl7Config.getColumnFlagInoltrato()),
-                       rs.getString(hl7Config.getColumnLogUserID()),
-                       rs.getString(hl7Config.getColumnHostOrderNumber()),
-                       rs.getString(hl7Config.getColumnReparto()),
-                       rs.getDate(hl7Config.getColumnDateCHK())
+                       rs.getString("ACCESSNUMBER"),
+                       rs.getString("TUBENUMBER"),
+                       rs.getInt("STATO"),
+                       rs.getInt("FLAG_INOLTRATO"),
+                       rs.getString("LOGUSERID"),
+                       rs.getString("HOSTORDERNUMBER"),
+                       rs.getString("REPARTO"),
+                       rs.getDate("DATE_CHK")
                 );
-
-                util.insertLogRow(result.getACCESSNUMBER());
-                util.insertLogRow(result.getTUBENUMBER());
-                util.insertLogRowInt(result.getSTATO());
-                util.insertLogRowInt(result.getFLAG_INOLTRATO());
-                util.insertLogRow(result.getLOGUSERID());
-                util.insertLogRow(result.getHOSTORDERNUMBER());
-                util.insertLogRow(result.getREPARTO());
-                util.insertLogRowDate(result.getDATE_CHK());
-
+                System.out.println("\n");
+                System.out.println(result.getACCESSNUMBER());
+                System.out.println(result.getTUBENUMBER());
+                System.out.println(result.getSTATO());
+                System.out.println(result.getFLAG_INOLTRATO());
+                System.out.println(result.getLOGUSERID());
+                System.out.println(result.getHOSTORDERNUMBER());
+                System.out.println(result.getREPARTO());
+                System.out.println(result.getDATE_CHK());
                 return result;
             }
         });
 
         for(int i = 0; i < entities.size(); i++){
-            MessageEvent message = messageEventDao.findMessageEventFiller(entities.get(i).getACCESSNUMBER());
+            String placer = messageEventDao.findMessageEventPlacer(entities.get(i).getACCESSNUMBER());
+            System.out.println(placer);
+            MessageEvent message = messageEventDao.findMessageEventPlacerFromOML(placer);
             List<MessageSegment> segmentList = messageSegmentDao.findMessageSegment(message);
 
             StringBuilder messageBody = new StringBuilder();
@@ -115,9 +115,12 @@ public class Poller {
             OMLO21 object = new OMLO21();
             OML_O21 omlCheckIn = object.generateOML_021CheckIn(oml_o21);
 
+
+           //System.out.println("OML Per PS:\n"+xmlParser.encode(omlCheckIn));
+
             soapClient.sendAcceptMessage(xmlParser.encode(omlCheckIn));
 
             proTdq2HL7Dao.updateTDQ2HL7(entities.get(i));
         }
     }
-}*/
+}
