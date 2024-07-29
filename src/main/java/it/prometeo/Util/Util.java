@@ -112,7 +112,7 @@ public class Util {
     }
 
     public String extractMSH3_HD1Value(String message) throws Exception {
-        Pattern pattern = Pattern.compile(" <MSH.3>\n<HD.1>(.*)</HD.1>\n</MSH.3>");
+        Pattern pattern = Pattern.compile("<MSH\\.3>\\s*<HD\\.1>(.*?)</HD\\.1>\\s*</MSH\\.3>", Pattern.DOTALL);
         Matcher matcher = pattern.matcher(message);
 
         if (matcher.find()) {
@@ -122,7 +122,7 @@ public class Util {
             Exception e = new Exception("MSH.3 value not found in MSH");
             e.printStackTrace(pw);
             logger.error(sw.toString());
-            System.out.println("sw: "+sw.toString());
+            System.out.println("sw: " + sw.toString());
             throw new Exception("HD.1 value not found in MSH");
         }
     }
