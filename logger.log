@@ -8728,3 +8728,2091 @@ This generated password is for development use only. Your security configuration
 2024-07-29 14:35:45 [http-nio-8091-exec-7] INFO  it.prometeo.Util.Util - Determine encoding for message. The following is the first 50 chars of the message for reference, although this may not be where the issue is: MSH^~\&|LIS|SIEMENS|NGH|GPI|20240724164820||ORL^O22^ORL_O22|TD0000455757|P|2.5||||||||||
 2024-07-29 14:35:45 [http-nio-8091-exec-7] INFO  ca.uhn.hl7v2.parser.XMLParser - XML-Encoding a GenericMessage is not covered by the specification. 
 2024-07-29 14:35:45 [http-nio-8091-exec-7] INFO  it.prometeo.Util.Util - Creo un oggetto acceptMessageResponse e rispondo al PS
+2024-07-29 15:42:39 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-07-29 15:42:39 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-07-29 15:42:39 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-07-29 16:44:20 [restartedMain] INFO  it.prometeo.SoapClientApplication - Starting SoapClientApplication using Java 21.0.3 with PID 11276 (C:\Users\VGpc\Desktop\SoapPalm\target\classes started by VGpc in C:\Users\VGpc\Desktop\SoapPalm)
+2024-07-29 16:44:20 [restartedMain] INFO  it.prometeo.SoapClientApplication - No active profile set, falling back to 1 default profile: "default"
+2024-07-29 16:44:20 [restartedMain] INFO  o.s.b.d.restart.ChangeableUrls - The Class-Path manifest attribute in C:\Users\VGpc\.m2\repository\com\sun\xml\ws\jaxws-rt\3.0.2\jaxws-rt-3.0.2.jar referenced one or more files that do not exist: file:/C:/Users/VGpc/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/jakarta.annotation-api.jar,file:/C:/Users/VGpc/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/jakarta.activation.jar,file:/C:/Users/VGpc/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/jakarta.mail.jar,file:/C:/Users/VGpc/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/jakarta.jws-api.jar,file:/C:/Users/VGpc/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/jakarta.xml.bind-api.jar,file:/C:/Users/VGpc/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/jakarta.xml.ws-api.jar,file:/C:/Users/VGpc/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/jakarta.xml.soap-api.jar,file:/C:/Users/VGpc/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/FastInfoset.jar,file:/C:/Users/VGpc/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/gmbal-api-only.jar,file:/C:/Users/VGpc/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/ha-api.jar,file:/C:/Users/VGpc/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/jaxb-core.jar,file:/C:/Users/VGpc/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/jaxb-impl.jar,file:/C:/Users/VGpc/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/management-api.jar,file:/C:/Users/VGpc/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/mimepull.jar,file:/C:/Users/VGpc/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/saaj-impl.jar,file:/C:/Users/VGpc/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/stax-ex.jar,file:/C:/Users/VGpc/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/stax2-api.jar,file:/C:/Users/VGpc/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/streambuffer.jar,file:/C:/Users/VGpc/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/woodstox-core.jar
+2024-07-29 16:44:20 [restartedMain] INFO  o.s.b.d.restart.ChangeableUrls - The Class-Path manifest attribute in C:\Users\VGpc\.m2\repository\org\glassfish\ha\ha-api\3.1.13\ha-api-3.1.13.jar referenced one or more files that do not exist: file:/C:/Users/VGpc/.m2/repository/org/glassfish/ha/ha-api/3.1.13/hk2.jar,file:/C:/Users/VGpc/.m2/repository/org/glassfish/ha/ha-api/3.1.13/hk2-core.jar,file:/C:/Users/VGpc/.m2/repository/org/glassfish/ha/ha-api/3.1.13/class-model.jar,file:/C:/Users/VGpc/.m2/repository/org/glassfish/ha/ha-api/3.1.13/config-api.jar,file:/C:/Users/VGpc/.m2/repository/org/glassfish/ha/ha-api/3.1.13/tiger-types.jar,file:/C:/Users/VGpc/.m2/repository/org/glassfish/ha/ha-api/3.1.13/bean-validator.jar,file:/C:/Users/VGpc/.m2/repository/org/glassfish/ha/ha-api/3.1.13/jtype.jar,file:/C:/Users/VGpc/.m2/repository/org/glassfish/ha/ha-api/3.1.13/auto-depends.jar,file:/C:/Users/VGpc/.m2/repository/org/glassfish/ha/ha-api/3.1.13/jakarta.inject-api.jar,file:/C:/Users/VGpc/.m2/repository/org/glassfish/ha/ha-api/3.1.13/asm-all-repackaged.jar,file:/C:/Users/VGpc/.m2/repository/org/glassfish/ha/ha-api/3.1.13/hk2-api.jar,file:/C:/Users/VGpc/.m2/repository/org/glassfish/ha/ha-api/3.1.13/osgi-resource-locator.jar
+2024-07-29 16:44:20 [restartedMain] INFO  o.s.b.d.restart.ChangeableUrls - The Class-Path manifest attribute in C:\Users\VGpc\.m2\repository\com\sun\xml\bind\jaxb-core\2.3.0.1\jaxb-core-2.3.0.1.jar referenced one or more files that do not exist: file:/C:/Users/VGpc/.m2/repository/com/sun/xml/bind/jaxb-core/2.3.0.1/jaxb-api.jar
+2024-07-29 16:44:20 [restartedMain] INFO  o.s.b.d.restart.ChangeableUrls - The Class-Path manifest attribute in C:\Users\VGpc\.m2\repository\com\oracle\database\jdbc\ojdbc8\19.8.0.0\ojdbc8-19.8.0.0.jar referenced one or more files that do not exist: file:/C:/Users/VGpc/.m2/repository/com/oracle/database/jdbc/ojdbc8/19.8.0.0/oraclepki.jar
+2024-07-29 16:44:20 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-07-29 16:44:20 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-07-29 16:44:21 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-07-29 16:44:21 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2024-07-29 16:44:21 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface it.prometeo.Repository.MessageEventRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-07-29 16:44:21 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface it.prometeo.Repository.MessageSegmentRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-07-29 16:44:21 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 36 ms. Found 0 JDBC repository interfaces.
+2024-07-29 16:44:21 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-07-29 16:44:21 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-07-29 16:44:21 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 30 ms. Found 2 JPA repository interfaces.
+2024-07-29 16:44:22 [restartedMain] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'soapWebServiceConfig' of type [it.prometeo.SpringbootSoapServer.Config.SoapWebServiceConfig$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [annotationActionEndpointMapping]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2024-07-29 16:44:22 [restartedMain] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [annotationActionEndpointMapping] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2024-07-29 16:44:22 [restartedMain] INFO  o.s.w.s.a.s.AnnotationActionEndpointMapping - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2024-07-29 16:44:22 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8091 (http)
+2024-07-29 16:44:22 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8091"]
+2024-07-29 16:44:22 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-07-29 16:44:22 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.24]
+2024-07-29 16:44:22 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-07-29 16:44:22 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1750 ms
+2024-07-29 16:44:22 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-07-29 16:44:22 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-07-29 16:44:23 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-07-29 16:44:23 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-07-29 16:44:23 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-07-29 16:44:23 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection oracle.jdbc.driver.T4CConnection@33fbffc5
+2024-07-29 16:44:23 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-07-29 16:44:23 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: OracleDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-07-29 16:44:24 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-07-29 16:44:38 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-07-29 16:44:38 [restartedMain] INFO  ca.uhn.hl7v2.VersionLogger - HAPI version is: 2.5.1
+2024-07-29 16:44:38 [restartedMain] INFO  ca.uhn.hl7v2.VersionLogger - Default Structure libraries found for HL7 versions 2.4, 2.5, 
+2024-07-29 16:44:38 [restartedMain] INFO  ca.uhn.hl7v2.util.Home - hapi.home is set to C:\Users\VGpc\Desktop\SoapPalm\.
+2024-07-29 16:44:38 [restartedMain] INFO  o.s.d.j.r.query.QueryEnhancerFactory - JSqlParser is in classpath; If applicable, JSqlParser will be used
+2024-07-29 16:44:38 [restartedMain] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-07-29 16:44:39 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-07-29 16:44:39 [restartedMain] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 946ebead-bf00-4523-a90f-7f5f42aeae48
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2024-07-29 16:44:39 [restartedMain] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2024-07-29 16:44:39 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@5897005c, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6ada6b5a, org.springframework.security.web.context.SecurityContextHolderFilter@9a0431e, org.springframework.security.web.header.HeaderWriterFilter@64f8c311, org.springframework.web.filter.CorsFilter@579507ec, org.springframework.security.web.csrf.CsrfFilter@1c4c9e0e, org.springframework.security.web.authentication.logout.LogoutFilter@15e3e720, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@3f55af63, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@5ec3322, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@18af0baa, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@2cc3c78b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@561db6fb, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2060e74a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@78da6d03, org.springframework.security.web.access.ExceptionTranslationFilter@24e2d2de, org.springframework.security.web.access.intercept.AuthorizationFilter@532b731]
+2024-07-29 16:44:39 [restartedMain] WARN  o.s.s.c.a.web.builders.WebSecurity - You are asking Spring Security to ignore Ant [pattern='/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-07-29 16:44:39 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will not secure Ant [pattern='/**']
+2024-07-29 16:44:39 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2024-07-29 16:44:39 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8091"]
+2024-07-29 16:44:39 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8091 (http) with context path '/'
+2024-07-29 16:44:39 [restartedMain] INFO  it.prometeo.SoapClientApplication - Started SoapClientApplication in 19.37 seconds (process running for 20.046)
+2024-07-29 16:44:44 [http-nio-8091-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring MessageDispatcherServlet 'messageDispatcherServlet'
+2024-07-29 16:44:44 [http-nio-8091-exec-1] INFO  o.s.w.t.h.MessageDispatcherServlet - Initializing Servlet 'messageDispatcherServlet'
+2024-07-29 16:44:44 [http-nio-8091-exec-1] INFO  o.s.w.s.saaj.SaajSoapMessageFactory - Creating SAAJ 1.3 MessageFactory with SOAP 1.1 Protocol
+2024-07-29 16:44:44 [http-nio-8091-exec-1] INFO  o.s.w.t.h.MessageDispatcherServlet - Completed initialization in 35 ms
+2024-07-29 16:44:45 [http-nio-8091-exec-1] INFO  it.prometeo.Util.Util - Ricevo il messaggio OML_O21 dal PS
+2024-07-29 16:44:45 [http-nio-8091-exec-1] INFO  it.prometeo.Util.Util - 
+               <OML_O21
+    xmlns="urn:hl7-org:v2xml">
+<MSH>
+<MSH.1>|</MSH.1>
+<MSH.2>^~\&amp;</MSH.2>
+<MSH.3>
+<HD.1>NGH</HD.1>
+</MSH.3>
+<MSH.4>
+<HD.1>GPI</HD.1>
+</MSH.4>
+<MSH.5>
+<HD.1>LIS</HD.1>
+</MSH.5>
+<MSH.6>
+<HD.1>SIEMENS</HD.1>
+</MSH.6>
+<MSH.7>
+<TS.1>20240705103420</TS.1>
+</MSH.7>
+<MSH.9>
+<MSG.1>OML</MSG.1>
+<MSG.2>O21</MSG.2>
+<MSG.3>OML_O21</MSG.3>
+</MSH.9>
+<MSH.10>ffaf3ca2-ab41-459e-87c8-32b493b5b892</MSH.10>
+<MSH.11>
+<PT.1>P</PT.1>
+</MSH.11>
+<MSH.12>
+<VID.1>2.5</VID.1>
+</MSH.12>
+</MSH>
+<OML_O21.PATIENT>
+<PID>
+<PID.3>
+<CX.1>BSUSML77M10A390M</CX.1>
+<CX.4>
+<HD.1>Ministero Finanze</HD.1>
+</CX.4>
+<CX.5>NNITA</CX.5>
+</PID.3>
+<PID.5>
+<XPN.1>
+<FN.1>TEST</FN.1>
+</XPN.1>
+<XPN.2>PROVA</XPN.2>
+</PID.5>
+            <PID.7>
+                <TS.1>19931210000000</TS.1>
+            </PID.7>
+<PID.8>M</PID.8>
+<PID.11>
+<XAD.3/>
+<XAD.4/>
+<XAD.7>BR</XAD.7>
+<XAD.9>054013</XAD.9>
+</PID.11>
+<PID.11>
+<XAD.1>
+<SAD.2>VIA DELLO SPORT 27</SAD.2>
+</XAD.1>
+<XAD.2/>
+<XAD.3/>
+<XAD.4/>
+<XAD.5>06010</XAD.5>
+<XAD.7>L</XAD.7>
+<XAD.9>054011</XAD.9>
+</PID.11>
+</PID>
+<PD1>
+<PD1.12>N</PD1.12>
+</PD1>
+<OML_O21.PATIENT_VISIT>
+<PV1>
+<PV1.2>PS</PV1.2>
+<PV1.3>
+<PL.1>SN_PS</PL.1>
+<PL.8/>
+<PL.9>PRONTO SOCCORSO LE SCOTTE</PL.9>
+</PV1.3>
+<PV1.19>
+<CX.1>2024000722</CX.1>
+<CX.5>PS</CX.5>
+</PV1.19>
+</PV1>
+</OML_O21.PATIENT_VISIT>
+</OML_O21.PATIENT>
+<OML_O21.ORDER>
+<ORC>
+<ORC.1>NW</ORC.1>
+<ORC.2>
+<EI.1>OS2024000349_1419</EI.1>
+</ORC.2>
+<ORC.3>
+<EI.1>OS2024000349_1419</EI.1>
+</ORC.3>
+<ORC.4>
+<EI.1>OS2024000349</EI.1>
+</ORC.4>
+<ORC.5>SC</ORC.5>
+<ORC.7>
+<TQ.4>
+<TS.1>20240628124511</TS.1>
+</TQ.4>
+</ORC.7>
+<ORC.9>
+<TS.1/>
+</ORC.9>
+<ORC.12>
+<XCN.1>BSUSML77M10A390M</XCN.1>
+<XCN.2>
+<FN.1>TEST</FN.1>
+</XCN.2>
+<XCN.3>PROVA</XCN.3>
+</ORC.12>
+<ORC.21>
+<XON.10/>
+</ORC.21>
+<ORC.28>
+<CWE.1>N</CWE.1>
+<CWE.2>TEST</CWE.2>
+</ORC.28>
+</ORC>
+<OML_O21.TIMING>
+<TQ1>
+<TQ1.9>
+<CWE.1>R</CWE.1>
+</TQ1.9>
+</TQ1>
+</OML_O21.TIMING>
+<OML_O21.OBSERVATION_REQUEST>
+<OBR>
+<OBR.1>1</OBR.1>
+<OBR.2>
+<EI.1>OS2024000349_1419</EI.1>
+</OBR.2>
+<OBR.3>
+<EI.1>OS2024000349_1419</EI.1>
+</OBR.3>
+<OBR.4>
+<CE.1>5577</CE.1>
+<CE.2>EMOCROMO PIU' FORMULA</CE.2>
+<CE.3>CODCATALOGO_1</CE.3>
+</OBR.4>
+<OBR.7>
+<TS.1>20240628124511</TS.1>
+</OBR.7>
+<OBR.13>prova lis</OBR.13>
+<OBR.16>
+<XCN.1/>
+<XCN.2/>
+<XCN.3/>
+</OBR.16>
+<OBR.19/>
+<OBR.22>
+<TS.1>20240628124511</TS.1>
+</OBR.22>
+<OBR.24>LAB</OBR.24>
+<OBR.28/>
+<OBR.46>
+<CE.1>DataPresc</CE.1>
+<CE.2>20240628</CE.2>
+</OBR.46>
+</OBR>
+</OML_O21.OBSERVATION_REQUEST>
+</OML_O21.ORDER>
+</OML_O21>
+
+
+2024-07-29 16:44:45 [http-nio-8091-exec-1] INFO  it.prometeo.Util.Util - Controllo i tag esterni al messaggio per capire se sono uguali al MessageTypeStructure del messaggio HL7
+2024-07-29 16:44:45 [http-nio-8091-exec-1] INFO  it.prometeo.Util.Util - NGH
+2024-07-29 16:44:45 [http-nio-8091-exec-1] INFO  it.prometeo.Util.Util - Salvo l'OML_O21 inviato dal PS e l'ORM_O01 generato da noi sul database locale
+2024-07-29 16:44:45 [http-nio-8091-exec-1] INFO  it.prometeo.Util.Util - Parametro ricevuto: oml
+2024-07-29 16:44:45 [http-nio-8091-exec-1] INFO  it.prometeo.Util.Util - Invio via socket il messaggio a TD
+2024-07-29 16:44:45 [http-nio-8091-exec-1] INFO  it.prometeo.Util.Util - Socket Client Pronto Soccorso attiva su porta 32000
+2024-07-29 16:44:45 [http-nio-8091-exec-1] INFO  it.prometeo.Util.Util - MSH^~\&|LIS|SIEMENS|NGH|GPI|20240724164820||ORL^O22^ORL_O22|TD0000455757|P|2.5||||||||||MSA|AA|ffaf3ca2-ab41-459e-87c8-32b493b5b892|ERR|||0|I|PID|1||000000000000000000001^^^^PATNUMBER||||19870525000000|M||||||||||ORC|OK|OS2024000390_1419|OS2024000390_1419|OS2024000390|||^^^20240628124511|||||PNGH^BUSA|PROVA|TQ1|||||||||R|OBR|1|OS2024000390_1419|OS2024000390_1419|EL1^ELETTROFORESI/SIERO|||20240628124511||||||||||||||||||||^^^^^R|SPM|1|0010288737||001^P|||Giallo |||||||||||||||||||1|001^UNICA|
+2024-07-29 16:44:45 [http-nio-8091-exec-1] INFO  it.prometeo.Util.Util - Errore nella decodifica del messaggio
+2024-07-29 16:44:45 [http-nio-8091-exec-1] INFO  it.prometeo.Util.Util - Determine encoding for message. The following is the first 50 chars of the message for reference, although this may not be where the issue is: MSH^~\&|LIS|SIEMENS|NGH|GPI|20240724164820||ORL^O22^ORL_O22|TD0000455757|P|2.5||||||||||
+2024-07-29 16:45:37 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-07-29 16:45:37 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-07-29 16:45:37 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-07-29 16:45:41 [restartedMain] INFO  it.prometeo.SoapClientApplication - Starting SoapClientApplication using Java 21.0.3 with PID 17564 (C:\Users\VGpc\Desktop\SoapPalm\target\classes started by VGpc in C:\Users\VGpc\Desktop\SoapPalm)
+2024-07-29 16:45:41 [restartedMain] INFO  it.prometeo.SoapClientApplication - No active profile set, falling back to 1 default profile: "default"
+2024-07-29 16:45:41 [restartedMain] INFO  o.s.b.d.restart.ChangeableUrls - The Class-Path manifest attribute in C:\Users\VGpc\.m2\repository\com\sun\xml\ws\jaxws-rt\3.0.2\jaxws-rt-3.0.2.jar referenced one or more files that do not exist: file:/C:/Users/VGpc/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/jakarta.annotation-api.jar,file:/C:/Users/VGpc/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/jakarta.activation.jar,file:/C:/Users/VGpc/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/jakarta.mail.jar,file:/C:/Users/VGpc/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/jakarta.jws-api.jar,file:/C:/Users/VGpc/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/jakarta.xml.bind-api.jar,file:/C:/Users/VGpc/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/jakarta.xml.ws-api.jar,file:/C:/Users/VGpc/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/jakarta.xml.soap-api.jar,file:/C:/Users/VGpc/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/FastInfoset.jar,file:/C:/Users/VGpc/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/gmbal-api-only.jar,file:/C:/Users/VGpc/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/ha-api.jar,file:/C:/Users/VGpc/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/jaxb-core.jar,file:/C:/Users/VGpc/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/jaxb-impl.jar,file:/C:/Users/VGpc/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/management-api.jar,file:/C:/Users/VGpc/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/mimepull.jar,file:/C:/Users/VGpc/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/saaj-impl.jar,file:/C:/Users/VGpc/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/stax-ex.jar,file:/C:/Users/VGpc/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/stax2-api.jar,file:/C:/Users/VGpc/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/streambuffer.jar,file:/C:/Users/VGpc/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/woodstox-core.jar
+2024-07-29 16:45:41 [restartedMain] INFO  o.s.b.d.restart.ChangeableUrls - The Class-Path manifest attribute in C:\Users\VGpc\.m2\repository\org\glassfish\ha\ha-api\3.1.13\ha-api-3.1.13.jar referenced one or more files that do not exist: file:/C:/Users/VGpc/.m2/repository/org/glassfish/ha/ha-api/3.1.13/hk2.jar,file:/C:/Users/VGpc/.m2/repository/org/glassfish/ha/ha-api/3.1.13/hk2-core.jar,file:/C:/Users/VGpc/.m2/repository/org/glassfish/ha/ha-api/3.1.13/class-model.jar,file:/C:/Users/VGpc/.m2/repository/org/glassfish/ha/ha-api/3.1.13/config-api.jar,file:/C:/Users/VGpc/.m2/repository/org/glassfish/ha/ha-api/3.1.13/tiger-types.jar,file:/C:/Users/VGpc/.m2/repository/org/glassfish/ha/ha-api/3.1.13/bean-validator.jar,file:/C:/Users/VGpc/.m2/repository/org/glassfish/ha/ha-api/3.1.13/jtype.jar,file:/C:/Users/VGpc/.m2/repository/org/glassfish/ha/ha-api/3.1.13/auto-depends.jar,file:/C:/Users/VGpc/.m2/repository/org/glassfish/ha/ha-api/3.1.13/jakarta.inject-api.jar,file:/C:/Users/VGpc/.m2/repository/org/glassfish/ha/ha-api/3.1.13/asm-all-repackaged.jar,file:/C:/Users/VGpc/.m2/repository/org/glassfish/ha/ha-api/3.1.13/hk2-api.jar,file:/C:/Users/VGpc/.m2/repository/org/glassfish/ha/ha-api/3.1.13/osgi-resource-locator.jar
+2024-07-29 16:45:41 [restartedMain] INFO  o.s.b.d.restart.ChangeableUrls - The Class-Path manifest attribute in C:\Users\VGpc\.m2\repository\com\sun\xml\bind\jaxb-core\2.3.0.1\jaxb-core-2.3.0.1.jar referenced one or more files that do not exist: file:/C:/Users/VGpc/.m2/repository/com/sun/xml/bind/jaxb-core/2.3.0.1/jaxb-api.jar
+2024-07-29 16:45:41 [restartedMain] INFO  o.s.b.d.restart.ChangeableUrls - The Class-Path manifest attribute in C:\Users\VGpc\.m2\repository\com\oracle\database\jdbc\ojdbc8\19.8.0.0\ojdbc8-19.8.0.0.jar referenced one or more files that do not exist: file:/C:/Users/VGpc/.m2/repository/com/oracle/database/jdbc/ojdbc8/19.8.0.0/oraclepki.jar
+2024-07-29 16:45:41 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-07-29 16:45:41 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-07-29 16:45:41 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-07-29 16:45:41 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2024-07-29 16:45:41 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface it.prometeo.Repository.MessageEventRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-07-29 16:45:41 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface it.prometeo.Repository.MessageSegmentRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-07-29 16:45:41 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 37 ms. Found 0 JDBC repository interfaces.
+2024-07-29 16:45:41 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-07-29 16:45:41 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-07-29 16:45:41 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 27 ms. Found 2 JPA repository interfaces.
+2024-07-29 16:45:42 [restartedMain] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'soapWebServiceConfig' of type [it.prometeo.SpringbootSoapServer.Config.SoapWebServiceConfig$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [annotationActionEndpointMapping]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2024-07-29 16:45:42 [restartedMain] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [annotationActionEndpointMapping] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2024-07-29 16:45:42 [restartedMain] INFO  o.s.w.s.a.s.AnnotationActionEndpointMapping - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2024-07-29 16:45:42 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8091 (http)
+2024-07-29 16:45:42 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8091"]
+2024-07-29 16:45:42 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-07-29 16:45:42 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.24]
+2024-07-29 16:45:42 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-07-29 16:45:42 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1448 ms
+2024-07-29 16:45:42 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-07-29 16:45:42 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-07-29 16:45:42 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-07-29 16:45:43 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-07-29 16:45:43 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-07-29 16:45:43 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection oracle.jdbc.driver.T4CConnection@7a306bd9
+2024-07-29 16:45:43 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-07-29 16:45:43 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: OracleDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-07-29 16:45:44 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-07-29 16:45:58 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-07-29 16:45:58 [restartedMain] INFO  ca.uhn.hl7v2.VersionLogger - HAPI version is: 2.5.1
+2024-07-29 16:45:58 [restartedMain] INFO  ca.uhn.hl7v2.VersionLogger - Default Structure libraries found for HL7 versions 2.4, 2.5, 
+2024-07-29 16:45:58 [restartedMain] INFO  ca.uhn.hl7v2.util.Home - hapi.home is set to C:\Users\VGpc\Desktop\SoapPalm\.
+2024-07-29 16:45:58 [restartedMain] INFO  o.s.d.j.r.query.QueryEnhancerFactory - JSqlParser is in classpath; If applicable, JSqlParser will be used
+2024-07-29 16:45:58 [restartedMain] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-07-29 16:45:59 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-07-29 16:45:59 [restartedMain] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 2ce97b43-d38b-40ab-a28a-b96a4a2050c8
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2024-07-29 16:45:59 [restartedMain] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2024-07-29 16:45:59 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@6830b7fa, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@434668c5, org.springframework.security.web.context.SecurityContextHolderFilter@2a3a079a, org.springframework.security.web.header.HeaderWriterFilter@3cdf2af4, org.springframework.web.filter.CorsFilter@5a2e2be4, org.springframework.security.web.csrf.CsrfFilter@4007a0bf, org.springframework.security.web.authentication.logout.LogoutFilter@5f153107, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@5e242269, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@6d2b240a, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@3330bb7d, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@2aa03fb6, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6cbf3450, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@40d962a6, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5e524586, org.springframework.security.web.access.ExceptionTranslationFilter@52597b2e, org.springframework.security.web.access.intercept.AuthorizationFilter@3e369c5e]
+2024-07-29 16:45:59 [restartedMain] WARN  o.s.s.c.a.web.builders.WebSecurity - You are asking Spring Security to ignore Ant [pattern='/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-07-29 16:45:59 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will not secure Ant [pattern='/**']
+2024-07-29 16:45:59 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2024-07-29 16:45:59 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8091"]
+2024-07-29 16:45:59 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8091 (http) with context path '/'
+2024-07-29 16:45:59 [restartedMain] INFO  it.prometeo.SoapClientApplication - Started SoapClientApplication in 19.095 seconds (process running for 19.746)
+2024-07-29 16:46:03 [http-nio-8091-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring MessageDispatcherServlet 'messageDispatcherServlet'
+2024-07-29 16:46:03 [http-nio-8091-exec-2] INFO  o.s.w.t.h.MessageDispatcherServlet - Initializing Servlet 'messageDispatcherServlet'
+2024-07-29 16:46:03 [http-nio-8091-exec-2] INFO  o.s.w.s.saaj.SaajSoapMessageFactory - Creating SAAJ 1.3 MessageFactory with SOAP 1.1 Protocol
+2024-07-29 16:46:03 [http-nio-8091-exec-2] INFO  o.s.w.t.h.MessageDispatcherServlet - Completed initialization in 17 ms
+2024-07-29 16:46:03 [http-nio-8091-exec-2] INFO  it.prometeo.Util.Util - Ricevo il messaggio OML_O21 dal PS
+2024-07-29 16:46:03 [http-nio-8091-exec-2] INFO  it.prometeo.Util.Util - 
+               <OML_O21
+    xmlns="urn:hl7-org:v2xml">
+<MSH>
+<MSH.1>|</MSH.1>
+<MSH.2>^~\&amp;</MSH.2>
+<MSH.3>
+<HD.1>NGH</HD.1>
+</MSH.3>
+<MSH.4>
+<HD.1>GPI</HD.1>
+</MSH.4>
+<MSH.5>
+<HD.1>LIS</HD.1>
+</MSH.5>
+<MSH.6>
+<HD.1>SIEMENS</HD.1>
+</MSH.6>
+<MSH.7>
+<TS.1>20240705103420</TS.1>
+</MSH.7>
+<MSH.9>
+<MSG.1>OML</MSG.1>
+<MSG.2>O21</MSG.2>
+<MSG.3>OML_O21</MSG.3>
+</MSH.9>
+<MSH.10>ffaf3ca2-ab41-459e-87c8-32b493b5b892</MSH.10>
+<MSH.11>
+<PT.1>P</PT.1>
+</MSH.11>
+<MSH.12>
+<VID.1>2.5</VID.1>
+</MSH.12>
+</MSH>
+<OML_O21.PATIENT>
+<PID>
+<PID.3>
+<CX.1>BSUSML77M10A390M</CX.1>
+<CX.4>
+<HD.1>Ministero Finanze</HD.1>
+</CX.4>
+<CX.5>NNITA</CX.5>
+</PID.3>
+<PID.5>
+<XPN.1>
+<FN.1>TEST</FN.1>
+</XPN.1>
+<XPN.2>PROVA</XPN.2>
+</PID.5>
+            <PID.7>
+                <TS.1>19931210000000</TS.1>
+            </PID.7>
+<PID.8>M</PID.8>
+<PID.11>
+<XAD.3/>
+<XAD.4/>
+<XAD.7>BR</XAD.7>
+<XAD.9>054013</XAD.9>
+</PID.11>
+<PID.11>
+<XAD.1>
+<SAD.2>VIA DELLO SPORT 27</SAD.2>
+</XAD.1>
+<XAD.2/>
+<XAD.3/>
+<XAD.4/>
+<XAD.5>06010</XAD.5>
+<XAD.7>L</XAD.7>
+<XAD.9>054011</XAD.9>
+</PID.11>
+</PID>
+<PD1>
+<PD1.12>N</PD1.12>
+</PD1>
+<OML_O21.PATIENT_VISIT>
+<PV1>
+<PV1.2>PS</PV1.2>
+<PV1.3>
+<PL.1>SN_PS</PL.1>
+<PL.8/>
+<PL.9>PRONTO SOCCORSO LE SCOTTE</PL.9>
+</PV1.3>
+<PV1.19>
+<CX.1>2024000722</CX.1>
+<CX.5>PS</CX.5>
+</PV1.19>
+</PV1>
+</OML_O21.PATIENT_VISIT>
+</OML_O21.PATIENT>
+<OML_O21.ORDER>
+<ORC>
+<ORC.1>NW</ORC.1>
+<ORC.2>
+<EI.1>OS2024000349_1419</EI.1>
+</ORC.2>
+<ORC.3>
+<EI.1>OS2024000349_1419</EI.1>
+</ORC.3>
+<ORC.4>
+<EI.1>OS2024000349</EI.1>
+</ORC.4>
+<ORC.5>SC</ORC.5>
+<ORC.7>
+<TQ.4>
+<TS.1>20240628124511</TS.1>
+</TQ.4>
+</ORC.7>
+<ORC.9>
+<TS.1/>
+</ORC.9>
+<ORC.12>
+<XCN.1>BSUSML77M10A390M</XCN.1>
+<XCN.2>
+<FN.1>TEST</FN.1>
+</XCN.2>
+<XCN.3>PROVA</XCN.3>
+</ORC.12>
+<ORC.21>
+<XON.10/>
+</ORC.21>
+<ORC.28>
+<CWE.1>N</CWE.1>
+<CWE.2>TEST</CWE.2>
+</ORC.28>
+</ORC>
+<OML_O21.TIMING>
+<TQ1>
+<TQ1.9>
+<CWE.1>R</CWE.1>
+</TQ1.9>
+</TQ1>
+</OML_O21.TIMING>
+<OML_O21.OBSERVATION_REQUEST>
+<OBR>
+<OBR.1>1</OBR.1>
+<OBR.2>
+<EI.1>OS2024000349_1419</EI.1>
+</OBR.2>
+<OBR.3>
+<EI.1>OS2024000349_1419</EI.1>
+</OBR.3>
+<OBR.4>
+<CE.1>5577</CE.1>
+<CE.2>EMOCROMO PIU' FORMULA</CE.2>
+<CE.3>CODCATALOGO_1</CE.3>
+</OBR.4>
+<OBR.7>
+<TS.1>20240628124511</TS.1>
+</OBR.7>
+<OBR.13>prova lis</OBR.13>
+<OBR.16>
+<XCN.1/>
+<XCN.2/>
+<XCN.3/>
+</OBR.16>
+<OBR.19/>
+<OBR.22>
+<TS.1>20240628124511</TS.1>
+</OBR.22>
+<OBR.24>LAB</OBR.24>
+<OBR.28/>
+<OBR.46>
+<CE.1>DataPresc</CE.1>
+<CE.2>20240628</CE.2>
+</OBR.46>
+</OBR>
+</OML_O21.OBSERVATION_REQUEST>
+</OML_O21.ORDER>
+</OML_O21>
+
+
+2024-07-29 16:46:03 [http-nio-8091-exec-2] INFO  it.prometeo.Util.Util - Controllo i tag esterni al messaggio per capire se sono uguali al MessageTypeStructure del messaggio HL7
+2024-07-29 16:46:03 [http-nio-8091-exec-2] INFO  it.prometeo.Util.Util - NGH
+2024-07-29 16:46:03 [http-nio-8091-exec-2] INFO  it.prometeo.Util.Util - Salvo l'OML_O21 inviato dal PS e l'ORM_O01 generato da noi sul database locale
+2024-07-29 16:46:03 [http-nio-8091-exec-2] INFO  it.prometeo.Util.Util - Parametro ricevuto: oml
+2024-07-29 16:46:03 [http-nio-8091-exec-2] INFO  it.prometeo.Util.Util - Invio via socket il messaggio a TD
+2024-07-29 16:46:03 [http-nio-8091-exec-2] INFO  it.prometeo.Util.Util - Socket Client Pronto Soccorso attiva su porta 32000
+2024-07-29 16:46:03 [http-nio-8091-exec-2] INFO  it.prometeo.Util.Util - MSH^~\&|LIS|SIEMENS|NGH|GPI|20240724164820||ORL^O22^ORL_O22|TD0000455757|P|2.5||||||||||MSA|AA|ffaf3ca2-ab41-459e-87c8-32b493b5b892|ERR|||0|I|PID|1||000000000000000000001^^^^PATNUMBER||||19870525000000|M||||||||||ORC|OK|OS2024000390_1419|OS2024000390_1419|OS2024000390|||^^^20240628124511|||||PNGH^BUSA|PROVA|TQ1|||||||||R|OBR|1|OS2024000390_1419|OS2024000390_1419|EL1^ELETTROFORESI/SIERO|||20240628124511||||||||||||||||||||^^^^^R|SPM|1|0010288737||001^P|||Giallo |||||||||||||||||||1|001^UNICA|
+2024-07-29 16:46:03 [http-nio-8091-exec-2] INFO  it.prometeo.Util.Util - Errore nella decodifica del messaggio
+2024-07-29 16:46:03 [http-nio-8091-exec-2] INFO  it.prometeo.Util.Util - Determine encoding for message. The following is the first 50 chars of the message for reference, although this may not be where the issue is: MSH^~\&|LIS|SIEMENS|NGH|GPI|20240724164820||ORL^O22^ORL_O22|TD0000455757|P|2.5||||||||||
+2024-07-29 16:46:16 [http-nio-8091-exec-4] INFO  it.prometeo.Util.Util - Ricevo il messaggio OML_O21 dal PS
+2024-07-29 16:46:16 [http-nio-8091-exec-4] INFO  it.prometeo.Util.Util - 
+               <OML_O21
+    xmlns="urn:hl7-org:v2xml">
+<MSH>
+<MSH.1>|</MSH.1>
+<MSH.2>^~\&amp;</MSH.2>
+<MSH.3>
+<HD.1>NGH</HD.1>
+</MSH.3>
+<MSH.4>
+<HD.1>GPI</HD.1>
+</MSH.4>
+<MSH.5>
+<HD.1>LIS</HD.1>
+</MSH.5>
+<MSH.6>
+<HD.1>SIEMENS</HD.1>
+</MSH.6>
+<MSH.7>
+<TS.1>20240705103420</TS.1>
+</MSH.7>
+<MSH.9>
+<MSG.1>OML</MSG.1>
+<MSG.2>O21</MSG.2>
+<MSG.3>OML_O21</MSG.3>
+</MSH.9>
+<MSH.10>ffaf3ca2-ab41-459e-87c8-32b493b5b892</MSH.10>
+<MSH.11>
+<PT.1>P</PT.1>
+</MSH.11>
+<MSH.12>
+<VID.1>2.5</VID.1>
+</MSH.12>
+</MSH>
+<OML_O21.PATIENT>
+<PID>
+<PID.3>
+<CX.1>BSUSML77M10A390M</CX.1>
+<CX.4>
+<HD.1>Ministero Finanze</HD.1>
+</CX.4>
+<CX.5>NNITA</CX.5>
+</PID.3>
+<PID.5>
+<XPN.1>
+<FN.1>TEST</FN.1>
+</XPN.1>
+<XPN.2>PROVA</XPN.2>
+</PID.5>
+            <PID.7>
+                <TS.1>19931210000000</TS.1>
+            </PID.7>
+<PID.8>M</PID.8>
+<PID.11>
+<XAD.3/>
+<XAD.4/>
+<XAD.7>BR</XAD.7>
+<XAD.9>054013</XAD.9>
+</PID.11>
+<PID.11>
+<XAD.1>
+<SAD.2>VIA DELLO SPORT 27</SAD.2>
+</XAD.1>
+<XAD.2/>
+<XAD.3/>
+<XAD.4/>
+<XAD.5>06010</XAD.5>
+<XAD.7>L</XAD.7>
+<XAD.9>054011</XAD.9>
+</PID.11>
+</PID>
+<PD1>
+<PD1.12>N</PD1.12>
+</PD1>
+<OML_O21.PATIENT_VISIT>
+<PV1>
+<PV1.2>PS</PV1.2>
+<PV1.3>
+<PL.1>SN_PS</PL.1>
+<PL.8/>
+<PL.9>PRONTO SOCCORSO LE SCOTTE</PL.9>
+</PV1.3>
+<PV1.19>
+<CX.1>2024000722</CX.1>
+<CX.5>PS</CX.5>
+</PV1.19>
+</PV1>
+</OML_O21.PATIENT_VISIT>
+</OML_O21.PATIENT>
+<OML_O21.ORDER>
+<ORC>
+<ORC.1>NW</ORC.1>
+<ORC.2>
+<EI.1>OS2024000349_1419</EI.1>
+</ORC.2>
+<ORC.3>
+<EI.1>OS2024000349_1419</EI.1>
+</ORC.3>
+<ORC.4>
+<EI.1>OS2024000349</EI.1>
+</ORC.4>
+<ORC.5>SC</ORC.5>
+<ORC.7>
+<TQ.4>
+<TS.1>20240628124511</TS.1>
+</TQ.4>
+</ORC.7>
+<ORC.9>
+<TS.1/>
+</ORC.9>
+<ORC.12>
+<XCN.1>BSUSML77M10A390M</XCN.1>
+<XCN.2>
+<FN.1>TEST</FN.1>
+</XCN.2>
+<XCN.3>PROVA</XCN.3>
+</ORC.12>
+<ORC.21>
+<XON.10/>
+</ORC.21>
+<ORC.28>
+<CWE.1>N</CWE.1>
+<CWE.2>TEST</CWE.2>
+</ORC.28>
+</ORC>
+<OML_O21.TIMING>
+<TQ1>
+<TQ1.9>
+<CWE.1>R</CWE.1>
+</TQ1.9>
+</TQ1>
+</OML_O21.TIMING>
+<OML_O21.OBSERVATION_REQUEST>
+<OBR>
+<OBR.1>1</OBR.1>
+<OBR.2>
+<EI.1>OS2024000349_1419</EI.1>
+</OBR.2>
+<OBR.3>
+<EI.1>OS2024000349_1419</EI.1>
+</OBR.3>
+<OBR.4>
+<CE.1>5577</CE.1>
+<CE.2>EMOCROMO PIU' FORMULA</CE.2>
+<CE.3>CODCATALOGO_1</CE.3>
+</OBR.4>
+<OBR.7>
+<TS.1>20240628124511</TS.1>
+</OBR.7>
+<OBR.13>prova lis</OBR.13>
+<OBR.16>
+<XCN.1/>
+<XCN.2/>
+<XCN.3/>
+</OBR.16>
+<OBR.19/>
+<OBR.22>
+<TS.1>20240628124511</TS.1>
+</OBR.22>
+<OBR.24>LAB</OBR.24>
+<OBR.28/>
+<OBR.46>
+<CE.1>DataPresc</CE.1>
+<CE.2>20240628</CE.2>
+</OBR.46>
+</OBR>
+</OML_O21.OBSERVATION_REQUEST>
+</OML_O21.ORDER>
+</OML_O21>
+
+
+2024-07-29 16:46:16 [http-nio-8091-exec-4] INFO  it.prometeo.Util.Util - Controllo i tag esterni al messaggio per capire se sono uguali al MessageTypeStructure del messaggio HL7
+2024-07-29 16:46:16 [http-nio-8091-exec-4] INFO  it.prometeo.Util.Util - NGH
+2024-07-29 16:46:16 [http-nio-8091-exec-4] INFO  it.prometeo.Util.Util - Salvo l'OML_O21 inviato dal PS e l'ORM_O01 generato da noi sul database locale
+2024-07-29 16:46:16 [http-nio-8091-exec-4] INFO  it.prometeo.Util.Util - Parametro ricevuto: oml
+2024-07-29 16:46:16 [http-nio-8091-exec-4] INFO  it.prometeo.Util.Util - Invio via socket il messaggio a TD
+2024-07-29 16:46:16 [http-nio-8091-exec-4] INFO  it.prometeo.Util.Util - Socket Client Pronto Soccorso attiva su porta 32000
+2024-07-29 16:46:16 [http-nio-8091-exec-4] INFO  it.prometeo.Util.Util - MSH^~\&|LIS|SIEMENS|NGH|GPI|20240724164820||ORL^O22^ORL_O22|TD0000455757|P|2.5||||||||||MSA|AA|ffaf3ca2-ab41-459e-87c8-32b493b5b892|ERR|||0|I|PID|1||000000000000000000001^^^^PATNUMBER||||19870525000000|M||||||||||ORC|OK|OS2024000390_1419|OS2024000390_1419|OS2024000390|||^^^20240628124511|||||PNGH^BUSA|PROVA|TQ1|||||||||R|OBR|1|OS2024000390_1419|OS2024000390_1419|EL1^ELETTROFORESI/SIERO|||20240628124511||||||||||||||||||||^^^^^R|SPM|1|0010288737||001^P|||Giallo |||||||||||||||||||1|001^UNICA|
+2024-07-29 16:46:16 [http-nio-8091-exec-4] INFO  it.prometeo.Util.Util - Errore nella decodifica del messaggio
+2024-07-29 16:46:16 [http-nio-8091-exec-4] INFO  it.prometeo.Util.Util - Determine encoding for message. The following is the first 50 chars of the message for reference, although this may not be where the issue is: MSH^~\&|LIS|SIEMENS|NGH|GPI|20240724164820||ORL^O22^ORL_O22|TD0000455757|P|2.5||||||||||
+2024-07-29 16:48:26 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-07-29 16:48:26 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-07-29 16:48:26 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-07-29 16:48:30 [restartedMain] INFO  it.prometeo.SoapClientApplication - Starting SoapClientApplication using Java 21.0.3 with PID 12352 (C:\Users\VGpc\Desktop\SoapPalm\target\classes started by VGpc in C:\Users\VGpc\Desktop\SoapPalm)
+2024-07-29 16:48:30 [restartedMain] INFO  it.prometeo.SoapClientApplication - No active profile set, falling back to 1 default profile: "default"
+2024-07-29 16:48:30 [restartedMain] INFO  o.s.b.d.restart.ChangeableUrls - The Class-Path manifest attribute in C:\Users\VGpc\.m2\repository\com\sun\xml\ws\jaxws-rt\3.0.2\jaxws-rt-3.0.2.jar referenced one or more files that do not exist: file:/C:/Users/VGpc/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/jakarta.annotation-api.jar,file:/C:/Users/VGpc/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/jakarta.activation.jar,file:/C:/Users/VGpc/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/jakarta.mail.jar,file:/C:/Users/VGpc/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/jakarta.jws-api.jar,file:/C:/Users/VGpc/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/jakarta.xml.bind-api.jar,file:/C:/Users/VGpc/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/jakarta.xml.ws-api.jar,file:/C:/Users/VGpc/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/jakarta.xml.soap-api.jar,file:/C:/Users/VGpc/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/FastInfoset.jar,file:/C:/Users/VGpc/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/gmbal-api-only.jar,file:/C:/Users/VGpc/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/ha-api.jar,file:/C:/Users/VGpc/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/jaxb-core.jar,file:/C:/Users/VGpc/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/jaxb-impl.jar,file:/C:/Users/VGpc/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/management-api.jar,file:/C:/Users/VGpc/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/mimepull.jar,file:/C:/Users/VGpc/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/saaj-impl.jar,file:/C:/Users/VGpc/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/stax-ex.jar,file:/C:/Users/VGpc/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/stax2-api.jar,file:/C:/Users/VGpc/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/streambuffer.jar,file:/C:/Users/VGpc/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/woodstox-core.jar
+2024-07-29 16:48:30 [restartedMain] INFO  o.s.b.d.restart.ChangeableUrls - The Class-Path manifest attribute in C:\Users\VGpc\.m2\repository\org\glassfish\ha\ha-api\3.1.13\ha-api-3.1.13.jar referenced one or more files that do not exist: file:/C:/Users/VGpc/.m2/repository/org/glassfish/ha/ha-api/3.1.13/hk2.jar,file:/C:/Users/VGpc/.m2/repository/org/glassfish/ha/ha-api/3.1.13/hk2-core.jar,file:/C:/Users/VGpc/.m2/repository/org/glassfish/ha/ha-api/3.1.13/class-model.jar,file:/C:/Users/VGpc/.m2/repository/org/glassfish/ha/ha-api/3.1.13/config-api.jar,file:/C:/Users/VGpc/.m2/repository/org/glassfish/ha/ha-api/3.1.13/tiger-types.jar,file:/C:/Users/VGpc/.m2/repository/org/glassfish/ha/ha-api/3.1.13/bean-validator.jar,file:/C:/Users/VGpc/.m2/repository/org/glassfish/ha/ha-api/3.1.13/jtype.jar,file:/C:/Users/VGpc/.m2/repository/org/glassfish/ha/ha-api/3.1.13/auto-depends.jar,file:/C:/Users/VGpc/.m2/repository/org/glassfish/ha/ha-api/3.1.13/jakarta.inject-api.jar,file:/C:/Users/VGpc/.m2/repository/org/glassfish/ha/ha-api/3.1.13/asm-all-repackaged.jar,file:/C:/Users/VGpc/.m2/repository/org/glassfish/ha/ha-api/3.1.13/hk2-api.jar,file:/C:/Users/VGpc/.m2/repository/org/glassfish/ha/ha-api/3.1.13/osgi-resource-locator.jar
+2024-07-29 16:48:30 [restartedMain] INFO  o.s.b.d.restart.ChangeableUrls - The Class-Path manifest attribute in C:\Users\VGpc\.m2\repository\com\sun\xml\bind\jaxb-core\2.3.0.1\jaxb-core-2.3.0.1.jar referenced one or more files that do not exist: file:/C:/Users/VGpc/.m2/repository/com/sun/xml/bind/jaxb-core/2.3.0.1/jaxb-api.jar
+2024-07-29 16:48:30 [restartedMain] INFO  o.s.b.d.restart.ChangeableUrls - The Class-Path manifest attribute in C:\Users\VGpc\.m2\repository\com\oracle\database\jdbc\ojdbc8\19.8.0.0\ojdbc8-19.8.0.0.jar referenced one or more files that do not exist: file:/C:/Users/VGpc/.m2/repository/com/oracle/database/jdbc/ojdbc8/19.8.0.0/oraclepki.jar
+2024-07-29 16:48:30 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-07-29 16:48:30 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-07-29 16:48:30 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-07-29 16:48:30 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2024-07-29 16:48:30 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface it.prometeo.Repository.MessageEventRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-07-29 16:48:30 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface it.prometeo.Repository.MessageSegmentRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-07-29 16:48:30 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 38 ms. Found 0 JDBC repository interfaces.
+2024-07-29 16:48:30 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-07-29 16:48:30 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-07-29 16:48:30 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 27 ms. Found 2 JPA repository interfaces.
+2024-07-29 16:48:31 [restartedMain] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'soapWebServiceConfig' of type [it.prometeo.SpringbootSoapServer.Config.SoapWebServiceConfig$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [annotationActionEndpointMapping]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2024-07-29 16:48:31 [restartedMain] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [annotationActionEndpointMapping] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2024-07-29 16:48:31 [restartedMain] INFO  o.s.w.s.a.s.AnnotationActionEndpointMapping - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2024-07-29 16:48:31 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8091 (http)
+2024-07-29 16:48:31 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8091"]
+2024-07-29 16:48:31 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-07-29 16:48:31 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.24]
+2024-07-29 16:48:31 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-07-29 16:48:31 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1460 ms
+2024-07-29 16:48:31 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-07-29 16:48:31 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-07-29 16:48:31 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-07-29 16:48:32 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-07-29 16:48:32 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-07-29 16:48:32 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection oracle.jdbc.driver.T4CConnection@328b45ec
+2024-07-29 16:48:32 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-07-29 16:48:32 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: OracleDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-07-29 16:48:33 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-07-29 16:48:47 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-07-29 16:48:47 [restartedMain] INFO  ca.uhn.hl7v2.VersionLogger - HAPI version is: 2.5.1
+2024-07-29 16:48:47 [restartedMain] INFO  ca.uhn.hl7v2.VersionLogger - Default Structure libraries found for HL7 versions 2.4, 2.5, 
+2024-07-29 16:48:47 [restartedMain] INFO  ca.uhn.hl7v2.util.Home - hapi.home is set to C:\Users\VGpc\Desktop\SoapPalm\.
+2024-07-29 16:48:47 [restartedMain] INFO  o.s.d.j.r.query.QueryEnhancerFactory - JSqlParser is in classpath; If applicable, JSqlParser will be used
+2024-07-29 16:48:47 [restartedMain] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-07-29 16:48:48 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-07-29 16:48:48 [restartedMain] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 96a399b5-f265-4690-9f23-031f2bccff02
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2024-07-29 16:48:48 [restartedMain] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2024-07-29 16:48:48 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@e887a09, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@466235c0, org.springframework.security.web.context.SecurityContextHolderFilter@2d9726c6, org.springframework.security.web.header.HeaderWriterFilter@21b3b887, org.springframework.web.filter.CorsFilter@40222871, org.springframework.security.web.csrf.CsrfFilter@5edc9f7b, org.springframework.security.web.authentication.logout.LogoutFilter@c1a6334, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@48ce1999, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@7d82766c, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@35217944, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@62c54cf4, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@add6e44, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@594c0f08, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@783415db, org.springframework.security.web.access.ExceptionTranslationFilter@43752b39, org.springframework.security.web.access.intercept.AuthorizationFilter@7a6cce40]
+2024-07-29 16:48:48 [restartedMain] WARN  o.s.s.c.a.web.builders.WebSecurity - You are asking Spring Security to ignore Ant [pattern='/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-07-29 16:48:48 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will not secure Ant [pattern='/**']
+2024-07-29 16:48:48 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2024-07-29 16:48:48 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8091"]
+2024-07-29 16:48:48 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8091 (http) with context path '/'
+2024-07-29 16:48:48 [restartedMain] INFO  it.prometeo.SoapClientApplication - Started SoapClientApplication in 19.05 seconds (process running for 19.687)
+2024-07-29 16:48:52 [http-nio-8091-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring MessageDispatcherServlet 'messageDispatcherServlet'
+2024-07-29 16:48:52 [http-nio-8091-exec-1] INFO  o.s.w.t.h.MessageDispatcherServlet - Initializing Servlet 'messageDispatcherServlet'
+2024-07-29 16:48:52 [http-nio-8091-exec-1] INFO  o.s.w.s.saaj.SaajSoapMessageFactory - Creating SAAJ 1.3 MessageFactory with SOAP 1.1 Protocol
+2024-07-29 16:48:52 [http-nio-8091-exec-1] INFO  o.s.w.t.h.MessageDispatcherServlet - Completed initialization in 19 ms
+2024-07-29 16:48:52 [http-nio-8091-exec-1] INFO  it.prometeo.Util.Util - Ricevo il messaggio OML_O21 dal PS
+2024-07-29 16:48:52 [http-nio-8091-exec-1] INFO  it.prometeo.Util.Util - 
+               <OML_O21
+    xmlns="urn:hl7-org:v2xml">
+<MSH>
+<MSH.1>|</MSH.1>
+<MSH.2>^~\&amp;</MSH.2>
+<MSH.3>
+<HD.1>NGH</HD.1>
+</MSH.3>
+<MSH.4>
+<HD.1>GPI</HD.1>
+</MSH.4>
+<MSH.5>
+<HD.1>LIS</HD.1>
+</MSH.5>
+<MSH.6>
+<HD.1>SIEMENS</HD.1>
+</MSH.6>
+<MSH.7>
+<TS.1>20240705103420</TS.1>
+</MSH.7>
+<MSH.9>
+<MSG.1>OML</MSG.1>
+<MSG.2>O21</MSG.2>
+<MSG.3>OML_O21</MSG.3>
+</MSH.9>
+<MSH.10>ffaf3ca2-ab41-459e-87c8-32b493b5b892</MSH.10>
+<MSH.11>
+<PT.1>P</PT.1>
+</MSH.11>
+<MSH.12>
+<VID.1>2.5</VID.1>
+</MSH.12>
+</MSH>
+<OML_O21.PATIENT>
+<PID>
+<PID.3>
+<CX.1>BSUSML77M10A390M</CX.1>
+<CX.4>
+<HD.1>Ministero Finanze</HD.1>
+</CX.4>
+<CX.5>NNITA</CX.5>
+</PID.3>
+<PID.5>
+<XPN.1>
+<FN.1>TEST</FN.1>
+</XPN.1>
+<XPN.2>PROVA</XPN.2>
+</PID.5>
+            <PID.7>
+                <TS.1>19931210000000</TS.1>
+            </PID.7>
+<PID.8>M</PID.8>
+<PID.11>
+<XAD.3/>
+<XAD.4/>
+<XAD.7>BR</XAD.7>
+<XAD.9>054013</XAD.9>
+</PID.11>
+<PID.11>
+<XAD.1>
+<SAD.2>VIA DELLO SPORT 27</SAD.2>
+</XAD.1>
+<XAD.2/>
+<XAD.3/>
+<XAD.4/>
+<XAD.5>06010</XAD.5>
+<XAD.7>L</XAD.7>
+<XAD.9>054011</XAD.9>
+</PID.11>
+</PID>
+<PD1>
+<PD1.12>N</PD1.12>
+</PD1>
+<OML_O21.PATIENT_VISIT>
+<PV1>
+<PV1.2>PS</PV1.2>
+<PV1.3>
+<PL.1>SN_PS</PL.1>
+<PL.8/>
+<PL.9>PRONTO SOCCORSO LE SCOTTE</PL.9>
+</PV1.3>
+<PV1.19>
+<CX.1>2024000722</CX.1>
+<CX.5>PS</CX.5>
+</PV1.19>
+</PV1>
+</OML_O21.PATIENT_VISIT>
+</OML_O21.PATIENT>
+<OML_O21.ORDER>
+<ORC>
+<ORC.1>NW</ORC.1>
+<ORC.2>
+<EI.1>OS2024000349_1419</EI.1>
+</ORC.2>
+<ORC.3>
+<EI.1>OS2024000349_1419</EI.1>
+</ORC.3>
+<ORC.4>
+<EI.1>OS2024000349</EI.1>
+</ORC.4>
+<ORC.5>SC</ORC.5>
+<ORC.7>
+<TQ.4>
+<TS.1>20240628124511</TS.1>
+</TQ.4>
+</ORC.7>
+<ORC.9>
+<TS.1/>
+</ORC.9>
+<ORC.12>
+<XCN.1>BSUSML77M10A390M</XCN.1>
+<XCN.2>
+<FN.1>TEST</FN.1>
+</XCN.2>
+<XCN.3>PROVA</XCN.3>
+</ORC.12>
+<ORC.21>
+<XON.10/>
+</ORC.21>
+<ORC.28>
+<CWE.1>N</CWE.1>
+<CWE.2>TEST</CWE.2>
+</ORC.28>
+</ORC>
+<OML_O21.TIMING>
+<TQ1>
+<TQ1.9>
+<CWE.1>R</CWE.1>
+</TQ1.9>
+</TQ1>
+</OML_O21.TIMING>
+<OML_O21.OBSERVATION_REQUEST>
+<OBR>
+<OBR.1>1</OBR.1>
+<OBR.2>
+<EI.1>OS2024000349_1419</EI.1>
+</OBR.2>
+<OBR.3>
+<EI.1>OS2024000349_1419</EI.1>
+</OBR.3>
+<OBR.4>
+<CE.1>5577</CE.1>
+<CE.2>EMOCROMO PIU' FORMULA</CE.2>
+<CE.3>CODCATALOGO_1</CE.3>
+</OBR.4>
+<OBR.7>
+<TS.1>20240628124511</TS.1>
+</OBR.7>
+<OBR.13>prova lis</OBR.13>
+<OBR.16>
+<XCN.1/>
+<XCN.2/>
+<XCN.3/>
+</OBR.16>
+<OBR.19/>
+<OBR.22>
+<TS.1>20240628124511</TS.1>
+</OBR.22>
+<OBR.24>LAB</OBR.24>
+<OBR.28/>
+<OBR.46>
+<CE.1>DataPresc</CE.1>
+<CE.2>20240628</CE.2>
+</OBR.46>
+</OBR>
+</OML_O21.OBSERVATION_REQUEST>
+</OML_O21.ORDER>
+</OML_O21>
+
+
+2024-07-29 16:48:52 [http-nio-8091-exec-1] INFO  it.prometeo.Util.Util - Controllo i tag esterni al messaggio per capire se sono uguali al MessageTypeStructure del messaggio HL7
+2024-07-29 16:48:52 [http-nio-8091-exec-1] INFO  it.prometeo.Util.Util - NGH
+2024-07-29 16:48:52 [http-nio-8091-exec-1] INFO  it.prometeo.Util.Util - Salvo l'OML_O21 inviato dal PS e l'ORM_O01 generato da noi sul database locale
+2024-07-29 16:48:52 [http-nio-8091-exec-1] INFO  it.prometeo.Util.Util - Parametro ricevuto: oml
+2024-07-29 16:48:53 [http-nio-8091-exec-1] INFO  it.prometeo.Util.Util - Invio via socket il messaggio a TD
+2024-07-29 16:48:53 [http-nio-8091-exec-1] INFO  it.prometeo.Util.Util - Socket Client Pronto Soccorso attiva su porta 32000
+2024-07-29 16:48:53 [http-nio-8091-exec-1] INFO  it.prometeo.Util.Util - MSH|^~\&|LIS|SIEMENS|NGH|GPI|20240724164820||ORL^O22^ORL_O22|TD0000455757|P|2.5||||||||||MSA|AA|ffaf3ca2-ab41-459e-87c8-32b493b5b892|ERR|||0|I|PID|1||000000000000000000001^^^^PATNUMBER||||19870525000000|M||||||||||ORC|OK|OS2024000390_1419|OS2024000390_1419|OS2024000390|||^^^20240628124511|||||PNGH^BUSA|PROVA|TQ1|||||||||R|OBR|1|OS2024000390_1419|OS2024000390_1419|EL1^ELETTROFORESI/SIERO|||20240628124511||||||||||||||||||||^^^^^R|SPM|1|0010288737||001^P|||Giallo |||||||||||||||||||1|001^UNICA|
+2024-07-29 16:48:53 [http-nio-8091-exec-1] INFO  it.prometeo.Util.Util - 
+               <OML_O21
+    xmlns="urn:hl7-org:v2xml">
+<MSH>
+<MSH.1>|</MSH.1>
+<MSH.2>^~\&amp;</MSH.2>
+<MSH.3>
+<HD.1>NGH</HD.1>
+</MSH.3>
+<MSH.4>
+<HD.1>GPI</HD.1>
+</MSH.4>
+<MSH.5>
+<HD.1>LIS</HD.1>
+</MSH.5>
+<MSH.6>
+<HD.1>SIEMENS</HD.1>
+</MSH.6>
+<MSH.7>
+<TS.1>20240705103420</TS.1>
+</MSH.7>
+<MSH.9>
+<MSG.1>OML</MSG.1>
+<MSG.2>O21</MSG.2>
+<MSG.3>OML_O21</MSG.3>
+</MSH.9>
+<MSH.10>ffaf3ca2-ab41-459e-87c8-32b493b5b892</MSH.10>
+<MSH.11>
+<PT.1>P</PT.1>
+</MSH.11>
+<MSH.12>
+<VID.1>2.5</VID.1>
+</MSH.12>
+</MSH>
+<OML_O21.PATIENT>
+<PID>
+<PID.3>
+<CX.1>BSUSML77M10A390M</CX.1>
+<CX.4>
+<HD.1>Ministero Finanze</HD.1>
+</CX.4>
+<CX.5>NNITA</CX.5>
+</PID.3>
+<PID.5>
+<XPN.1>
+<FN.1>TEST</FN.1>
+</XPN.1>
+<XPN.2>PROVA</XPN.2>
+</PID.5>
+            <PID.7>
+                <TS.1>19931210000000</TS.1>
+            </PID.7>
+<PID.8>M</PID.8>
+<PID.11>
+<XAD.3/>
+<XAD.4/>
+<XAD.7>BR</XAD.7>
+<XAD.9>054013</XAD.9>
+</PID.11>
+<PID.11>
+<XAD.1>
+<SAD.2>VIA DELLO SPORT 27</SAD.2>
+</XAD.1>
+<XAD.2/>
+<XAD.3/>
+<XAD.4/>
+<XAD.5>06010</XAD.5>
+<XAD.7>L</XAD.7>
+<XAD.9>054011</XAD.9>
+</PID.11>
+</PID>
+<PD1>
+<PD1.12>N</PD1.12>
+</PD1>
+<OML_O21.PATIENT_VISIT>
+<PV1>
+<PV1.2>PS</PV1.2>
+<PV1.3>
+<PL.1>SN_PS</PL.1>
+<PL.8/>
+<PL.9>PRONTO SOCCORSO LE SCOTTE</PL.9>
+</PV1.3>
+<PV1.19>
+<CX.1>2024000722</CX.1>
+<CX.5>PS</CX.5>
+</PV1.19>
+</PV1>
+</OML_O21.PATIENT_VISIT>
+</OML_O21.PATIENT>
+<OML_O21.ORDER>
+<ORC>
+<ORC.1>NW</ORC.1>
+<ORC.2>
+<EI.1>OS2024000349_1419</EI.1>
+</ORC.2>
+<ORC.3>
+<EI.1>OS2024000349_1419</EI.1>
+</ORC.3>
+<ORC.4>
+<EI.1>OS2024000349</EI.1>
+</ORC.4>
+<ORC.5>SC</ORC.5>
+<ORC.7>
+<TQ.4>
+<TS.1>20240628124511</TS.1>
+</TQ.4>
+</ORC.7>
+<ORC.9>
+<TS.1/>
+</ORC.9>
+<ORC.12>
+<XCN.1>BSUSML77M10A390M</XCN.1>
+<XCN.2>
+<FN.1>TEST</FN.1>
+</XCN.2>
+<XCN.3>PROVA</XCN.3>
+</ORC.12>
+<ORC.21>
+<XON.10/>
+</ORC.21>
+<ORC.28>
+<CWE.1>N</CWE.1>
+<CWE.2>TEST</CWE.2>
+</ORC.28>
+</ORC>
+<OML_O21.TIMING>
+<TQ1>
+<TQ1.9>
+<CWE.1>R</CWE.1>
+</TQ1.9>
+</TQ1>
+</OML_O21.TIMING>
+<OML_O21.OBSERVATION_REQUEST>
+<OBR>
+<OBR.1>1</OBR.1>
+<OBR.2>
+<EI.1>OS2024000349_1419</EI.1>
+</OBR.2>
+<OBR.3>
+<EI.1>OS2024000349_1419</EI.1>
+</OBR.3>
+<OBR.4>
+<CE.1>5577</CE.1>
+<CE.2>EMOCROMO PIU' FORMULA</CE.2>
+<CE.3>CODCATALOGO_1</CE.3>
+</OBR.4>
+<OBR.7>
+<TS.1>20240628124511</TS.1>
+</OBR.7>
+<OBR.13>prova lis</OBR.13>
+<OBR.16>
+<XCN.1/>
+<XCN.2/>
+<XCN.3/>
+</OBR.16>
+<OBR.19/>
+<OBR.22>
+<TS.1>20240628124511</TS.1>
+</OBR.22>
+<OBR.24>LAB</OBR.24>
+<OBR.28/>
+<OBR.46>
+<CE.1>DataPresc</CE.1>
+<CE.2>20240628</CE.2>
+</OBR.46>
+</OBR>
+</OML_O21.OBSERVATION_REQUEST>
+</OML_O21.ORDER>
+</OML_O21>
+
+
+2024-07-29 16:48:53 [http-nio-8091-exec-1] INFO  it.prometeo.Util.Util - Genero la risposta ACK inviata da TD
+2024-07-29 16:48:53 [http-nio-8091-exec-1] INFO  ca.uhn.hl7v2.parser.XMLParser - XML-Encoding a GenericMessage is not covered by the specification. 
+2024-07-29 16:48:53 [http-nio-8091-exec-1] INFO  it.prometeo.Util.Util - Creo un oggetto acceptMessageResponse e rispondo al PS
+2024-07-29 16:48:53 [http-nio-8091-exec-1] INFO  it.prometeo.Util.Util - Setto il return
+2024-07-29 16:48:53 [http-nio-8091-exec-1] INFO  it.prometeo.Util.Util - <?xml version="1.0" encoding="UTF-8"?><ORL_O22 xmlns="urn:hl7-org:v2xml">
+    <MSH>
+        <MSH.1>|</MSH.1>
+        <MSH.2>^~\&amp;</MSH.2>
+        <MSH.3>
+            <HD.1>LIS</HD.1>
+        </MSH.3>
+        <MSH.4>
+            <HD.1>SIEMENS</HD.1>
+        </MSH.4>
+        <MSH.5>
+            <HD.1>NGH</HD.1>
+        </MSH.5>
+        <MSH.6>
+            <HD.1>GPI</HD.1>
+        </MSH.6>
+        <MSH.7>
+            <TS.1>20240724164820</TS.1>
+        </MSH.7>
+        <MSH.9>
+            <MSG.1>OML</MSG.1>
+            <MSG.2>O22</MSG.2>
+            <MSG.3>ORL_O22</MSG.3>
+        </MSH.9>
+        <MSH.10>TD0000455757</MSH.10>
+        <MSH.11>
+            <PT.1>P</PT.1>
+        </MSH.11>
+        <MSH.12>
+            <VID.1>2.5</VID.1>
+        </MSH.12>
+    </MSH>
+    <MSA>
+        <MSA.1>AA</MSA.1>
+        <MSA.2>TD0000455757</MSA.2>
+    </MSA>
+    <ORL_O22.RESPONSE>
+        <ORL_O22.PATIENT>
+            <PID/>
+            <ORL_O22.ORDER>
+                <ORC>
+                    <ORC.1>OK</ORC.1>
+                    <ORC.2>
+                        <EI.1>OS2024000390_1419</EI.1>
+                    </ORC.2>
+                    <ORC.3>
+                        <EI.1>OS2024000390_1419</EI.1>
+                    </ORC.3>
+                    <ORC.4>
+                        <EI.1>OS2024000390</EI.1>
+                    </ORC.4>
+                    <ORC.7>
+                        <TQ.4>
+                            <TS.1>20240628124511</TS.1>
+                        </TQ.4>
+                    </ORC.7>
+                    <ORC.12>
+                        <XCN.1>PNGH</XCN.1>
+                        <XCN.2>
+                            <FN.1>BUSA</FN.1>
+                        </XCN.2>
+                    </ORC.12>
+                </ORC>
+                <ORL_O22.OBSERVATION_REQUEST>
+                    <OBR>
+                        <OBR.1>1</OBR.1>
+                        <OBR.2>
+                            <EI.1>OS2024000390_1419</EI.1>
+                        </OBR.2>
+                        <OBR.3>
+                            <EI.1>OS2024000390_1419</EI.1>
+                        </OBR.3>
+                        <OBR.4>
+                            <CE.1>EL1</CE.1>
+                            <CE.2>ELETTROFORESI/SIERO</CE.2>
+                        </OBR.4>
+                        <OBR.7>
+                            <TS.1>20240628124511</TS.1>
+                        </OBR.7>
+                        <OBR.16>
+                            <XCN.1>PNGH</XCN.1>
+                            <XCN.2>
+                                <FN.1>BUSA</FN.1>
+                            </XCN.2>
+                        </OBR.16>
+                        <OBR.28>
+                            <XCN.1>PNGH</XCN.1>
+                            <XCN.2>
+                                <FN.1>BUSA</FN.1>
+                            </XCN.2>
+                        </OBR.28>
+                    </OBR>
+                </ORL_O22.OBSERVATION_REQUEST>
+            </ORL_O22.ORDER>
+        </ORL_O22.PATIENT>
+    </ORL_O22.RESPONSE>
+</ORL_O22>
+
+2024-07-29 16:48:53 [http-nio-8091-exec-1] INFO  it.prometeo.Util.Util - Flusso completato correttamente
+2024-07-29 16:49:12 [http-nio-8091-exec-3] INFO  it.prometeo.Util.Util - Ricevo il messaggio OML_O21 dal PS
+2024-07-29 16:49:12 [http-nio-8091-exec-3] INFO  it.prometeo.Util.Util - 
+               <OML_O21
+    xmlns="urn:hl7-org:v2xml">
+<MSH>
+<MSH.1>|</MSH.1>
+<MSH.2>^~\&amp;</MSH.2>
+                      <MSH.3>
+                         <HD.1>NGH</HD.1>
+                      </MSH.3>
+<MSH.4>
+<HD.1>GPI</HD.1>
+</MSH.4>
+<MSH.5>
+<HD.1>LIS</HD.1>
+</MSH.5>
+<MSH.6>
+<HD.1>SIEMENS</HD.1>
+</MSH.6>
+<MSH.7>
+<TS.1>20240705103420</TS.1>
+</MSH.7>
+<MSH.9>
+<MSG.1>OML</MSG.1>
+<MSG.2>O21</MSG.2>
+<MSG.3>OML_O21</MSG.3>
+</MSH.9>
+<MSH.10>ffaf3ca2-ab41-459e-87c8-32b493b5b892</MSH.10>
+<MSH.11>
+<PT.1>P</PT.1>
+</MSH.11>
+<MSH.12>
+<VID.1>2.5</VID.1>
+</MSH.12>
+</MSH>
+<OML_O21.PATIENT>
+<PID>
+<PID.3>
+<CX.1>BSUSML77M10A390M</CX.1>
+<CX.4>
+<HD.1>Ministero Finanze</HD.1>
+</CX.4>
+<CX.5>NNITA</CX.5>
+</PID.3>
+<PID.5>
+<XPN.1>
+<FN.1>TEST</FN.1>
+</XPN.1>
+<XPN.2>PROVA</XPN.2>
+</PID.5>
+            <PID.7>
+                <TS.1>19931210000000</TS.1>
+            </PID.7>
+<PID.8>M</PID.8>
+<PID.11>
+<XAD.3/>
+<XAD.4/>
+<XAD.7>BR</XAD.7>
+<XAD.9>054013</XAD.9>
+</PID.11>
+<PID.11>
+<XAD.1>
+<SAD.2>VIA DELLO SPORT 27</SAD.2>
+</XAD.1>
+<XAD.2/>
+<XAD.3/>
+<XAD.4/>
+<XAD.5>06010</XAD.5>
+<XAD.7>L</XAD.7>
+<XAD.9>054011</XAD.9>
+</PID.11>
+</PID>
+<PD1>
+<PD1.12>N</PD1.12>
+</PD1>
+<OML_O21.PATIENT_VISIT>
+<PV1>
+<PV1.2>PS</PV1.2>
+<PV1.3>
+<PL.1>SN_PS</PL.1>
+<PL.8/>
+<PL.9>PRONTO SOCCORSO LE SCOTTE</PL.9>
+</PV1.3>
+<PV1.19>
+<CX.1>2024000722</CX.1>
+<CX.5>PS</CX.5>
+</PV1.19>
+</PV1>
+</OML_O21.PATIENT_VISIT>
+</OML_O21.PATIENT>
+<OML_O21.ORDER>
+<ORC>
+<ORC.1>NW</ORC.1>
+<ORC.2>
+<EI.1>OS2024000349_1419</EI.1>
+</ORC.2>
+<ORC.3>
+<EI.1>OS2024000349_1419</EI.1>
+</ORC.3>
+<ORC.4>
+<EI.1>OS2024000349</EI.1>
+</ORC.4>
+<ORC.5>SC</ORC.5>
+<ORC.7>
+<TQ.4>
+<TS.1>20240628124511</TS.1>
+</TQ.4>
+</ORC.7>
+<ORC.9>
+<TS.1/>
+</ORC.9>
+<ORC.12>
+<XCN.1>BSUSML77M10A390M</XCN.1>
+<XCN.2>
+<FN.1>TEST</FN.1>
+</XCN.2>
+<XCN.3>PROVA</XCN.3>
+</ORC.12>
+<ORC.21>
+<XON.10/>
+</ORC.21>
+<ORC.28>
+<CWE.1>N</CWE.1>
+<CWE.2>TEST</CWE.2>
+</ORC.28>
+</ORC>
+<OML_O21.TIMING>
+<TQ1>
+<TQ1.9>
+<CWE.1>R</CWE.1>
+</TQ1.9>
+</TQ1>
+</OML_O21.TIMING>
+<OML_O21.OBSERVATION_REQUEST>
+<OBR>
+<OBR.1>1</OBR.1>
+<OBR.2>
+<EI.1>OS2024000349_1419</EI.1>
+</OBR.2>
+<OBR.3>
+<EI.1>OS2024000349_1419</EI.1>
+</OBR.3>
+<OBR.4>
+<CE.1>5577</CE.1>
+<CE.2>EMOCROMO PIU' FORMULA</CE.2>
+<CE.3>CODCATALOGO_1</CE.3>
+</OBR.4>
+<OBR.7>
+<TS.1>20240628124511</TS.1>
+</OBR.7>
+<OBR.13>prova lis</OBR.13>
+<OBR.16>
+<XCN.1/>
+<XCN.2/>
+<XCN.3/>
+</OBR.16>
+<OBR.19/>
+<OBR.22>
+<TS.1>20240628124511</TS.1>
+</OBR.22>
+<OBR.24>LAB</OBR.24>
+<OBR.28/>
+<OBR.46>
+<CE.1>DataPresc</CE.1>
+<CE.2>20240628</CE.2>
+</OBR.46>
+</OBR>
+</OML_O21.OBSERVATION_REQUEST>
+</OML_O21.ORDER>
+</OML_O21>
+
+
+2024-07-29 16:49:12 [http-nio-8091-exec-3] INFO  it.prometeo.Util.Util - Controllo i tag esterni al messaggio per capire se sono uguali al MessageTypeStructure del messaggio HL7
+2024-07-29 16:49:12 [http-nio-8091-exec-3] INFO  it.prometeo.Util.Util - NGH
+2024-07-29 16:49:12 [http-nio-8091-exec-3] INFO  it.prometeo.Util.Util - Salvo l'OML_O21 inviato dal PS e l'ORM_O01 generato da noi sul database locale
+2024-07-29 16:49:12 [http-nio-8091-exec-3] INFO  it.prometeo.Util.Util - Parametro ricevuto: oml
+2024-07-29 16:49:12 [http-nio-8091-exec-3] INFO  it.prometeo.Util.Util - Invio via socket il messaggio a TD
+2024-07-29 16:49:12 [http-nio-8091-exec-3] INFO  it.prometeo.Util.Util - Socket Client Pronto Soccorso attiva su porta 32000
+2024-07-29 16:49:12 [http-nio-8091-exec-3] INFO  it.prometeo.Util.Util - MSH|^~\&|LIS|SIEMENS|NGH|GPI|20240724164820||ORL^O22^ORL_O22|TD0000455757|P|2.5||||||||||MSA|AA|ffaf3ca2-ab41-459e-87c8-32b493b5b892|ERR|||0|I|PID|1||000000000000000000001^^^^PATNUMBER||||19870525000000|M||||||||||ORC|OK|OS2024000390_1419|OS2024000390_1419|OS2024000390|||^^^20240628124511|||||PNGH^BUSA|PROVA|TQ1|||||||||R|OBR|1|OS2024000390_1419|OS2024000390_1419|EL1^ELETTROFORESI/SIERO|||20240628124511||||||||||||||||||||^^^^^R|SPM|1|0010288737||001^P|||Giallo |||||||||||||||||||1|001^UNICA|
+2024-07-29 16:49:12 [http-nio-8091-exec-3] INFO  it.prometeo.Util.Util - 
+               <OML_O21
+    xmlns="urn:hl7-org:v2xml">
+<MSH>
+<MSH.1>|</MSH.1>
+<MSH.2>^~\&amp;</MSH.2>
+                      <MSH.3>
+                         <HD.1>NGH</HD.1>
+                      </MSH.3>
+<MSH.4>
+<HD.1>GPI</HD.1>
+</MSH.4>
+<MSH.5>
+<HD.1>LIS</HD.1>
+</MSH.5>
+<MSH.6>
+<HD.1>SIEMENS</HD.1>
+</MSH.6>
+<MSH.7>
+<TS.1>20240705103420</TS.1>
+</MSH.7>
+<MSH.9>
+<MSG.1>OML</MSG.1>
+<MSG.2>O21</MSG.2>
+<MSG.3>OML_O21</MSG.3>
+</MSH.9>
+<MSH.10>ffaf3ca2-ab41-459e-87c8-32b493b5b892</MSH.10>
+<MSH.11>
+<PT.1>P</PT.1>
+</MSH.11>
+<MSH.12>
+<VID.1>2.5</VID.1>
+</MSH.12>
+</MSH>
+<OML_O21.PATIENT>
+<PID>
+<PID.3>
+<CX.1>BSUSML77M10A390M</CX.1>
+<CX.4>
+<HD.1>Ministero Finanze</HD.1>
+</CX.4>
+<CX.5>NNITA</CX.5>
+</PID.3>
+<PID.5>
+<XPN.1>
+<FN.1>TEST</FN.1>
+</XPN.1>
+<XPN.2>PROVA</XPN.2>
+</PID.5>
+            <PID.7>
+                <TS.1>19931210000000</TS.1>
+            </PID.7>
+<PID.8>M</PID.8>
+<PID.11>
+<XAD.3/>
+<XAD.4/>
+<XAD.7>BR</XAD.7>
+<XAD.9>054013</XAD.9>
+</PID.11>
+<PID.11>
+<XAD.1>
+<SAD.2>VIA DELLO SPORT 27</SAD.2>
+</XAD.1>
+<XAD.2/>
+<XAD.3/>
+<XAD.4/>
+<XAD.5>06010</XAD.5>
+<XAD.7>L</XAD.7>
+<XAD.9>054011</XAD.9>
+</PID.11>
+</PID>
+<PD1>
+<PD1.12>N</PD1.12>
+</PD1>
+<OML_O21.PATIENT_VISIT>
+<PV1>
+<PV1.2>PS</PV1.2>
+<PV1.3>
+<PL.1>SN_PS</PL.1>
+<PL.8/>
+<PL.9>PRONTO SOCCORSO LE SCOTTE</PL.9>
+</PV1.3>
+<PV1.19>
+<CX.1>2024000722</CX.1>
+<CX.5>PS</CX.5>
+</PV1.19>
+</PV1>
+</OML_O21.PATIENT_VISIT>
+</OML_O21.PATIENT>
+<OML_O21.ORDER>
+<ORC>
+<ORC.1>NW</ORC.1>
+<ORC.2>
+<EI.1>OS2024000349_1419</EI.1>
+</ORC.2>
+<ORC.3>
+<EI.1>OS2024000349_1419</EI.1>
+</ORC.3>
+<ORC.4>
+<EI.1>OS2024000349</EI.1>
+</ORC.4>
+<ORC.5>SC</ORC.5>
+<ORC.7>
+<TQ.4>
+<TS.1>20240628124511</TS.1>
+</TQ.4>
+</ORC.7>
+<ORC.9>
+<TS.1/>
+</ORC.9>
+<ORC.12>
+<XCN.1>BSUSML77M10A390M</XCN.1>
+<XCN.2>
+<FN.1>TEST</FN.1>
+</XCN.2>
+<XCN.3>PROVA</XCN.3>
+</ORC.12>
+<ORC.21>
+<XON.10/>
+</ORC.21>
+<ORC.28>
+<CWE.1>N</CWE.1>
+<CWE.2>TEST</CWE.2>
+</ORC.28>
+</ORC>
+<OML_O21.TIMING>
+<TQ1>
+<TQ1.9>
+<CWE.1>R</CWE.1>
+</TQ1.9>
+</TQ1>
+</OML_O21.TIMING>
+<OML_O21.OBSERVATION_REQUEST>
+<OBR>
+<OBR.1>1</OBR.1>
+<OBR.2>
+<EI.1>OS2024000349_1419</EI.1>
+</OBR.2>
+<OBR.3>
+<EI.1>OS2024000349_1419</EI.1>
+</OBR.3>
+<OBR.4>
+<CE.1>5577</CE.1>
+<CE.2>EMOCROMO PIU' FORMULA</CE.2>
+<CE.3>CODCATALOGO_1</CE.3>
+</OBR.4>
+<OBR.7>
+<TS.1>20240628124511</TS.1>
+</OBR.7>
+<OBR.13>prova lis</OBR.13>
+<OBR.16>
+<XCN.1/>
+<XCN.2/>
+<XCN.3/>
+</OBR.16>
+<OBR.19/>
+<OBR.22>
+<TS.1>20240628124511</TS.1>
+</OBR.22>
+<OBR.24>LAB</OBR.24>
+<OBR.28/>
+<OBR.46>
+<CE.1>DataPresc</CE.1>
+<CE.2>20240628</CE.2>
+</OBR.46>
+</OBR>
+</OML_O21.OBSERVATION_REQUEST>
+</OML_O21.ORDER>
+</OML_O21>
+
+
+2024-07-29 16:49:12 [http-nio-8091-exec-3] INFO  it.prometeo.Util.Util - Genero la risposta ACK inviata da TD
+2024-07-29 16:49:12 [http-nio-8091-exec-3] INFO  ca.uhn.hl7v2.parser.XMLParser - XML-Encoding a GenericMessage is not covered by the specification. 
+2024-07-29 16:49:12 [http-nio-8091-exec-3] INFO  it.prometeo.Util.Util - Creo un oggetto acceptMessageResponse e rispondo al PS
+2024-07-29 16:49:12 [http-nio-8091-exec-3] INFO  it.prometeo.Util.Util - Setto il return
+2024-07-29 16:49:12 [http-nio-8091-exec-3] INFO  it.prometeo.Util.Util - <?xml version="1.0" encoding="UTF-8"?><ORL_O22 xmlns="urn:hl7-org:v2xml">
+    <MSH>
+        <MSH.1>|</MSH.1>
+        <MSH.2>^~\&amp;</MSH.2>
+        <MSH.3>
+            <HD.1>LIS</HD.1>
+        </MSH.3>
+        <MSH.4>
+            <HD.1>SIEMENS</HD.1>
+        </MSH.4>
+        <MSH.5>
+            <HD.1>NGH</HD.1>
+        </MSH.5>
+        <MSH.6>
+            <HD.1>GPI</HD.1>
+        </MSH.6>
+        <MSH.7>
+            <TS.1>20240724164820</TS.1>
+        </MSH.7>
+        <MSH.9>
+            <MSG.1>OML</MSG.1>
+            <MSG.2>O22</MSG.2>
+            <MSG.3>ORL_O22</MSG.3>
+        </MSH.9>
+        <MSH.10>TD0000455757</MSH.10>
+        <MSH.11>
+            <PT.1>P</PT.1>
+        </MSH.11>
+        <MSH.12>
+            <VID.1>2.5</VID.1>
+        </MSH.12>
+    </MSH>
+    <MSA>
+        <MSA.1>AA</MSA.1>
+        <MSA.2>TD0000455757</MSA.2>
+    </MSA>
+    <ORL_O22.RESPONSE>
+        <ORL_O22.PATIENT>
+            <PID/>
+            <ORL_O22.ORDER>
+                <ORC>
+                    <ORC.1>OK</ORC.1>
+                    <ORC.2>
+                        <EI.1>OS2024000390_1419</EI.1>
+                    </ORC.2>
+                    <ORC.3>
+                        <EI.1>OS2024000390_1419</EI.1>
+                    </ORC.3>
+                    <ORC.4>
+                        <EI.1>OS2024000390</EI.1>
+                    </ORC.4>
+                    <ORC.7>
+                        <TQ.4>
+                            <TS.1>20240628124511</TS.1>
+                        </TQ.4>
+                    </ORC.7>
+                    <ORC.12>
+                        <XCN.1>PNGH</XCN.1>
+                        <XCN.2>
+                            <FN.1>BUSA</FN.1>
+                        </XCN.2>
+                    </ORC.12>
+                </ORC>
+                <ORL_O22.OBSERVATION_REQUEST>
+                    <OBR>
+                        <OBR.1>1</OBR.1>
+                        <OBR.2>
+                            <EI.1>OS2024000390_1419</EI.1>
+                        </OBR.2>
+                        <OBR.3>
+                            <EI.1>OS2024000390_1419</EI.1>
+                        </OBR.3>
+                        <OBR.4>
+                            <CE.1>EL1</CE.1>
+                            <CE.2>ELETTROFORESI/SIERO</CE.2>
+                        </OBR.4>
+                        <OBR.7>
+                            <TS.1>20240628124511</TS.1>
+                        </OBR.7>
+                        <OBR.16>
+                            <XCN.1>PNGH</XCN.1>
+                            <XCN.2>
+                                <FN.1>BUSA</FN.1>
+                            </XCN.2>
+                        </OBR.16>
+                        <OBR.28>
+                            <XCN.1>PNGH</XCN.1>
+                            <XCN.2>
+                                <FN.1>BUSA</FN.1>
+                            </XCN.2>
+                        </OBR.28>
+                    </OBR>
+                </ORL_O22.OBSERVATION_REQUEST>
+            </ORL_O22.ORDER>
+        </ORL_O22.PATIENT>
+    </ORL_O22.RESPONSE>
+</ORL_O22>
+
+2024-07-29 16:49:12 [http-nio-8091-exec-3] INFO  it.prometeo.Util.Util - Flusso completato correttamente
+2024-07-29 16:49:18 [http-nio-8091-exec-4] INFO  it.prometeo.Util.Util - Ricevo il messaggio OML_O21 dal PS
+2024-07-29 16:49:18 [http-nio-8091-exec-4] INFO  it.prometeo.Util.Util - 
+               <OML_O21
+    xmlns="urn:hl7-org:v2xml">
+<MSH>
+<MSH.1>|</MSH.1>
+<MSH.2>^~\&amp;</MSH.2>
+                      <MSH.3>
+                         <HD.1>NGH</HD.1>
+                      </MSH.3>
+<MSH.4>
+<HD.1>GPI</HD.1>
+</MSH.4>
+<MSH.5>
+<HD.1>LIS</HD.1>
+</MSH.5>
+<MSH.6>
+<HD.1>SIEMENS</HD.1>
+</MSH.6>
+<MSH.7>
+<TS.1>20240705103420</TS.1>
+</MSH.7>
+<MSH.9>
+<MSG.1>OML</MSG.1>
+<MSG.2>O21</MSG.2>
+<MSG.3>OML_O21</MSG.3>
+</MSH.9>
+<MSH.10>ffaf3ca2-ab41-459e-87c8-32b493b5b892</MSH.10>
+<MSH.11>
+<PT.1>P</PT.1>
+</MSH.11>
+<MSH.12>
+<VID.1>2.5</VID.1>
+</MSH.12>
+</MSH>
+<OML_O21.PATIENT>
+<PID>
+<PID.3>
+<CX.1>BSUSML77M10A390M</CX.1>
+<CX.4>
+<HD.1>Ministero Finanze</HD.1>
+</CX.4>
+<CX.5>NNITA</CX.5>
+</PID.3>
+<PID.5>
+<XPN.1>
+<FN.1>TEST</FN.1>
+</XPN.1>
+<XPN.2>PROVA</XPN.2>
+</PID.5>
+            <PID.7>
+                <TS.1>19931210000000</TS.1>
+            </PID.7>
+<PID.8>M</PID.8>
+<PID.11>
+<XAD.3/>
+<XAD.4/>
+<XAD.7>BR</XAD.7>
+<XAD.9>054013</XAD.9>
+</PID.11>
+<PID.11>
+<XAD.1>
+<SAD.2>VIA DELLO SPORT 27</SAD.2>
+</XAD.1>
+<XAD.2/>
+<XAD.3/>
+<XAD.4/>
+<XAD.5>06010</XAD.5>
+<XAD.7>L</XAD.7>
+<XAD.9>054011</XAD.9>
+</PID.11>
+</PID>
+<PD1>
+<PD1.12>N</PD1.12>
+</PD1>
+<OML_O21.PATIENT_VISIT>
+<PV1>
+<PV1.2>PS</PV1.2>
+<PV1.3>
+<PL.1>SN_PS</PL.1>
+<PL.8/>
+<PL.9>PRONTO SOCCORSO LE SCOTTE</PL.9>
+</PV1.3>
+<PV1.19>
+<CX.1>2024000722</CX.1>
+<CX.5>PS</CX.5>
+</PV1.19>
+</PV1>
+</OML_O21.PATIENT_VISIT>
+</OML_O21.PATIENT>
+<OML_O21.ORDER>
+<ORC>
+<ORC.1>NW</ORC.1>
+<ORC.2>
+<EI.1>OS2024000349_1419</EI.1>
+</ORC.2>
+<ORC.3>
+<EI.1>OS2024000349_1419</EI.1>
+</ORC.3>
+<ORC.4>
+<EI.1>OS2024000349</EI.1>
+</ORC.4>
+<ORC.5>SC</ORC.5>
+<ORC.7>
+<TQ.4>
+<TS.1>20240628124511</TS.1>
+</TQ.4>
+</ORC.7>
+<ORC.9>
+<TS.1/>
+</ORC.9>
+<ORC.12>
+<XCN.1>BSUSML77M10A390M</XCN.1>
+<XCN.2>
+<FN.1>TEST</FN.1>
+</XCN.2>
+<XCN.3>PROVA</XCN.3>
+</ORC.12>
+<ORC.21>
+<XON.10/>
+</ORC.21>
+<ORC.28>
+<CWE.1>N</CWE.1>
+<CWE.2>TEST</CWE.2>
+</ORC.28>
+</ORC>
+<OML_O21.TIMING>
+<TQ1>
+<TQ1.9>
+<CWE.1>R</CWE.1>
+</TQ1.9>
+</TQ1>
+</OML_O21.TIMING>
+<OML_O21.OBSERVATION_REQUEST>
+<OBR>
+<OBR.1>1</OBR.1>
+<OBR.2>
+<EI.1>OS2024000349_1419</EI.1>
+</OBR.2>
+<OBR.3>
+<EI.1>OS2024000349_1419</EI.1>
+</OBR.3>
+<OBR.4>
+<CE.1>5577</CE.1>
+<CE.2>EMOCROMO PIU' FORMULA</CE.2>
+<CE.3>CODCATALOGO_1</CE.3>
+</OBR.4>
+<OBR.7>
+<TS.1>20240628124511</TS.1>
+</OBR.7>
+<OBR.13>prova lis</OBR.13>
+<OBR.16>
+<XCN.1/>
+<XCN.2/>
+<XCN.3/>
+</OBR.16>
+<OBR.19/>
+<OBR.22>
+<TS.1>20240628124511</TS.1>
+</OBR.22>
+<OBR.24>LAB</OBR.24>
+<OBR.28/>
+<OBR.46>
+<CE.1>DataPresc</CE.1>
+<CE.2>20240628</CE.2>
+</OBR.46>
+</OBR>
+</OML_O21.OBSERVATION_REQUEST>
+</OML_O21.ORDER>
+</OML_O21>
+
+
+2024-07-29 16:49:18 [http-nio-8091-exec-4] INFO  it.prometeo.Util.Util - Controllo i tag esterni al messaggio per capire se sono uguali al MessageTypeStructure del messaggio HL7
+2024-07-29 16:49:18 [http-nio-8091-exec-4] INFO  it.prometeo.Util.Util - NGH
+2024-07-29 16:49:18 [http-nio-8091-exec-4] INFO  it.prometeo.Util.Util - Salvo l'OML_O21 inviato dal PS e l'ORM_O01 generato da noi sul database locale
+2024-07-29 16:49:18 [http-nio-8091-exec-4] INFO  it.prometeo.Util.Util - Parametro ricevuto: oml
+2024-07-29 16:49:18 [http-nio-8091-exec-4] INFO  it.prometeo.Util.Util - Invio via socket il messaggio a TD
+2024-07-29 16:49:18 [http-nio-8091-exec-4] INFO  it.prometeo.Util.Util - Socket Client Pronto Soccorso attiva su porta 32000
+2024-07-29 16:49:18 [http-nio-8091-exec-4] INFO  it.prometeo.Util.Util - MSH|^~\&|LIS|SIEMENS|NGH|GPI|20240724164820||ORL^O22^ORL_O22|TD0000455757|P|2.5||||||||||MSA|AA|ffaf3ca2-ab41-459e-87c8-32b493b5b892|ERR|||0|I|PID|1||000000000000000000001^^^^PATNUMBER||||19870525000000|M||||||||||ORC|OK|OS2024000390_1419|OS2024000390_1419|OS2024000390|||^^^20240628124511|||||PNGH^BUSA|PROVA|TQ1|||||||||R|OBR|1|OS2024000390_1419|OS2024000390_1419|EL1^ELETTROFORESI/SIERO|||20240628124511||||||||||||||||||||^^^^^R|SPM|1|0010288737||001^P|||Giallo |||||||||||||||||||1|001^UNICA|
+2024-07-29 16:49:18 [http-nio-8091-exec-4] INFO  it.prometeo.Util.Util - 
+               <OML_O21
+    xmlns="urn:hl7-org:v2xml">
+<MSH>
+<MSH.1>|</MSH.1>
+<MSH.2>^~\&amp;</MSH.2>
+                      <MSH.3>
+                         <HD.1>NGH</HD.1>
+                      </MSH.3>
+<MSH.4>
+<HD.1>GPI</HD.1>
+</MSH.4>
+<MSH.5>
+<HD.1>LIS</HD.1>
+</MSH.5>
+<MSH.6>
+<HD.1>SIEMENS</HD.1>
+</MSH.6>
+<MSH.7>
+<TS.1>20240705103420</TS.1>
+</MSH.7>
+<MSH.9>
+<MSG.1>OML</MSG.1>
+<MSG.2>O21</MSG.2>
+<MSG.3>OML_O21</MSG.3>
+</MSH.9>
+<MSH.10>ffaf3ca2-ab41-459e-87c8-32b493b5b892</MSH.10>
+<MSH.11>
+<PT.1>P</PT.1>
+</MSH.11>
+<MSH.12>
+<VID.1>2.5</VID.1>
+</MSH.12>
+</MSH>
+<OML_O21.PATIENT>
+<PID>
+<PID.3>
+<CX.1>BSUSML77M10A390M</CX.1>
+<CX.4>
+<HD.1>Ministero Finanze</HD.1>
+</CX.4>
+<CX.5>NNITA</CX.5>
+</PID.3>
+<PID.5>
+<XPN.1>
+<FN.1>TEST</FN.1>
+</XPN.1>
+<XPN.2>PROVA</XPN.2>
+</PID.5>
+            <PID.7>
+                <TS.1>19931210000000</TS.1>
+            </PID.7>
+<PID.8>M</PID.8>
+<PID.11>
+<XAD.3/>
+<XAD.4/>
+<XAD.7>BR</XAD.7>
+<XAD.9>054013</XAD.9>
+</PID.11>
+<PID.11>
+<XAD.1>
+<SAD.2>VIA DELLO SPORT 27</SAD.2>
+</XAD.1>
+<XAD.2/>
+<XAD.3/>
+<XAD.4/>
+<XAD.5>06010</XAD.5>
+<XAD.7>L</XAD.7>
+<XAD.9>054011</XAD.9>
+</PID.11>
+</PID>
+<PD1>
+<PD1.12>N</PD1.12>
+</PD1>
+<OML_O21.PATIENT_VISIT>
+<PV1>
+<PV1.2>PS</PV1.2>
+<PV1.3>
+<PL.1>SN_PS</PL.1>
+<PL.8/>
+<PL.9>PRONTO SOCCORSO LE SCOTTE</PL.9>
+</PV1.3>
+<PV1.19>
+<CX.1>2024000722</CX.1>
+<CX.5>PS</CX.5>
+</PV1.19>
+</PV1>
+</OML_O21.PATIENT_VISIT>
+</OML_O21.PATIENT>
+<OML_O21.ORDER>
+<ORC>
+<ORC.1>NW</ORC.1>
+<ORC.2>
+<EI.1>OS2024000349_1419</EI.1>
+</ORC.2>
+<ORC.3>
+<EI.1>OS2024000349_1419</EI.1>
+</ORC.3>
+<ORC.4>
+<EI.1>OS2024000349</EI.1>
+</ORC.4>
+<ORC.5>SC</ORC.5>
+<ORC.7>
+<TQ.4>
+<TS.1>20240628124511</TS.1>
+</TQ.4>
+</ORC.7>
+<ORC.9>
+<TS.1/>
+</ORC.9>
+<ORC.12>
+<XCN.1>BSUSML77M10A390M</XCN.1>
+<XCN.2>
+<FN.1>TEST</FN.1>
+</XCN.2>
+<XCN.3>PROVA</XCN.3>
+</ORC.12>
+<ORC.21>
+<XON.10/>
+</ORC.21>
+<ORC.28>
+<CWE.1>N</CWE.1>
+<CWE.2>TEST</CWE.2>
+</ORC.28>
+</ORC>
+<OML_O21.TIMING>
+<TQ1>
+<TQ1.9>
+<CWE.1>R</CWE.1>
+</TQ1.9>
+</TQ1>
+</OML_O21.TIMING>
+<OML_O21.OBSERVATION_REQUEST>
+<OBR>
+<OBR.1>1</OBR.1>
+<OBR.2>
+<EI.1>OS2024000349_1419</EI.1>
+</OBR.2>
+<OBR.3>
+<EI.1>OS2024000349_1419</EI.1>
+</OBR.3>
+<OBR.4>
+<CE.1>5577</CE.1>
+<CE.2>EMOCROMO PIU' FORMULA</CE.2>
+<CE.3>CODCATALOGO_1</CE.3>
+</OBR.4>
+<OBR.7>
+<TS.1>20240628124511</TS.1>
+</OBR.7>
+<OBR.13>prova lis</OBR.13>
+<OBR.16>
+<XCN.1/>
+<XCN.2/>
+<XCN.3/>
+</OBR.16>
+<OBR.19/>
+<OBR.22>
+<TS.1>20240628124511</TS.1>
+</OBR.22>
+<OBR.24>LAB</OBR.24>
+<OBR.28/>
+<OBR.46>
+<CE.1>DataPresc</CE.1>
+<CE.2>20240628</CE.2>
+</OBR.46>
+</OBR>
+</OML_O21.OBSERVATION_REQUEST>
+</OML_O21.ORDER>
+</OML_O21>
+
+
+2024-07-29 16:49:18 [http-nio-8091-exec-4] INFO  it.prometeo.Util.Util - Genero la risposta ACK inviata da TD
+2024-07-29 16:49:18 [http-nio-8091-exec-4] INFO  ca.uhn.hl7v2.parser.XMLParser - XML-Encoding a GenericMessage is not covered by the specification. 
+2024-07-29 16:49:18 [http-nio-8091-exec-4] INFO  it.prometeo.Util.Util - Creo un oggetto acceptMessageResponse e rispondo al PS
+2024-07-29 16:49:18 [http-nio-8091-exec-4] INFO  it.prometeo.Util.Util - Setto il return
+2024-07-29 16:49:18 [http-nio-8091-exec-4] INFO  it.prometeo.Util.Util - <?xml version="1.0" encoding="UTF-8"?><ORL_O22 xmlns="urn:hl7-org:v2xml">
+    <MSH>
+        <MSH.1>|</MSH.1>
+        <MSH.2>^~\&amp;</MSH.2>
+        <MSH.3>
+            <HD.1>LIS</HD.1>
+        </MSH.3>
+        <MSH.4>
+            <HD.1>SIEMENS</HD.1>
+        </MSH.4>
+        <MSH.5>
+            <HD.1>NGH</HD.1>
+        </MSH.5>
+        <MSH.6>
+            <HD.1>GPI</HD.1>
+        </MSH.6>
+        <MSH.7>
+            <TS.1>20240724164820</TS.1>
+        </MSH.7>
+        <MSH.9>
+            <MSG.1>OML</MSG.1>
+            <MSG.2>O22</MSG.2>
+            <MSG.3>ORL_O22</MSG.3>
+        </MSH.9>
+        <MSH.10>TD0000455757</MSH.10>
+        <MSH.11>
+            <PT.1>P</PT.1>
+        </MSH.11>
+        <MSH.12>
+            <VID.1>2.5</VID.1>
+        </MSH.12>
+    </MSH>
+    <MSA>
+        <MSA.1>AA</MSA.1>
+        <MSA.2>TD0000455757</MSA.2>
+    </MSA>
+    <ORL_O22.RESPONSE>
+        <ORL_O22.PATIENT>
+            <PID/>
+            <ORL_O22.ORDER>
+                <ORC>
+                    <ORC.1>OK</ORC.1>
+                    <ORC.2>
+                        <EI.1>OS2024000390_1419</EI.1>
+                    </ORC.2>
+                    <ORC.3>
+                        <EI.1>OS2024000390_1419</EI.1>
+                    </ORC.3>
+                    <ORC.4>
+                        <EI.1>OS2024000390</EI.1>
+                    </ORC.4>
+                    <ORC.7>
+                        <TQ.4>
+                            <TS.1>20240628124511</TS.1>
+                        </TQ.4>
+                    </ORC.7>
+                    <ORC.12>
+                        <XCN.1>PNGH</XCN.1>
+                        <XCN.2>
+                            <FN.1>BUSA</FN.1>
+                        </XCN.2>
+                    </ORC.12>
+                </ORC>
+                <ORL_O22.OBSERVATION_REQUEST>
+                    <OBR>
+                        <OBR.1>1</OBR.1>
+                        <OBR.2>
+                            <EI.1>OS2024000390_1419</EI.1>
+                        </OBR.2>
+                        <OBR.3>
+                            <EI.1>OS2024000390_1419</EI.1>
+                        </OBR.3>
+                        <OBR.4>
+                            <CE.1>EL1</CE.1>
+                            <CE.2>ELETTROFORESI/SIERO</CE.2>
+                        </OBR.4>
+                        <OBR.7>
+                            <TS.1>20240628124511</TS.1>
+                        </OBR.7>
+                        <OBR.16>
+                            <XCN.1>PNGH</XCN.1>
+                            <XCN.2>
+                                <FN.1>BUSA</FN.1>
+                            </XCN.2>
+                        </OBR.16>
+                        <OBR.28>
+                            <XCN.1>PNGH</XCN.1>
+                            <XCN.2>
+                                <FN.1>BUSA</FN.1>
+                            </XCN.2>
+                        </OBR.28>
+                    </OBR>
+                </ORL_O22.OBSERVATION_REQUEST>
+            </ORL_O22.ORDER>
+        </ORL_O22.PATIENT>
+    </ORL_O22.RESPONSE>
+</ORL_O22>
+
+2024-07-29 16:49:18 [http-nio-8091-exec-4] INFO  it.prometeo.Util.Util - Flusso completato correttamente
