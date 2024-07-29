@@ -9,8 +9,9 @@ import jakarta.xml.ws.WebServiceFeature;
 import jakarta.xml.ws.Service;
 
 @WebServiceClient(name = "DefaultAcceptMessageService",
-        wsdlLocation = "file:C:/Prometeo/SoapPalm/src/main/resources/Mirth/Mirth.wsdl",
+        //wsdlLocation = "file:C:/Prometeo/SoapPalm/src/main/resources/Mirth/Mirth.wsdl",
         //wsdlLocation = "file:C:/Users/davide.cappiello/Desktop/SoapPalm/src/main/resources/Mirth/Mirth.wsdl",
+        wsdlLocation = "C:/Users/VGpc/Desktop/SoapPalm/src/main/resources/Mirth/Mirth.wsdl",
         targetNamespace = "http://ws.connectors.connect.mirth.com/")
 public class DefaultAcceptMessageService extends Service {
 
@@ -20,7 +21,7 @@ public class DefaultAcceptMessageService extends Service {
     static {
         URL url = null;
         try {
-            url = new URL("file:C:/Prometeo/SoapPalm/src/main/resources/Mirth/Mirth.wsdl");
+            url = new URL("C:/Users/VGpc/Desktop/SoapPalm/src/main/resources/Mirth/Mirth.wsdl");
         } catch (MalformedURLException e) {
             java.util.logging.Logger.getLogger(DefaultAcceptMessageService.class.getName())
                     .log(java.util.logging.Level.INFO,

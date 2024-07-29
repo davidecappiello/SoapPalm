@@ -1,0 +1,776 @@
+2024-07-24 14:39:53 [restartedMain] INFO  it.prometeo.SoapClientApplication - Starting SoapClientApplication using Java 21.0.3 with PID 21616 (C:\Users\davide.cappiello\Desktop\SoapPalm\target\classes started by davide.cappiello in C:\Users\davide.cappiello\Desktop\SoapPalm)
+2024-07-24 14:39:53 [restartedMain] INFO  it.prometeo.SoapClientApplication - No active profile set, falling back to 1 default profile: "default"
+2024-07-24 14:39:53 [restartedMain] INFO  o.s.b.d.restart.ChangeableUrls - The Class-Path manifest attribute in C:\Users\davide.cappiello\.m2\repository\com\sun\xml\ws\jaxws-rt\3.0.2\jaxws-rt-3.0.2.jar referenced one or more files that do not exist: file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/jakarta.annotation-api.jar,file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/jakarta.activation.jar,file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/jakarta.mail.jar,file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/jakarta.jws-api.jar,file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/jakarta.xml.bind-api.jar,file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/jakarta.xml.ws-api.jar,file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/jakarta.xml.soap-api.jar,file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/FastInfoset.jar,file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/gmbal-api-only.jar,file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/ha-api.jar,file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/jaxb-core.jar,file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/jaxb-impl.jar,file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/management-api.jar,file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/mimepull.jar,file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/saaj-impl.jar,file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/stax-ex.jar,file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/stax2-api.jar,file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/streambuffer.jar,file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/woodstox-core.jar
+2024-07-24 14:39:53 [restartedMain] INFO  o.s.b.d.restart.ChangeableUrls - The Class-Path manifest attribute in C:\Users\davide.cappiello\.m2\repository\org\glassfish\ha\ha-api\3.1.13\ha-api-3.1.13.jar referenced one or more files that do not exist: file:/C:/Users/davide.cappiello/.m2/repository/org/glassfish/ha/ha-api/3.1.13/hk2.jar,file:/C:/Users/davide.cappiello/.m2/repository/org/glassfish/ha/ha-api/3.1.13/hk2-core.jar,file:/C:/Users/davide.cappiello/.m2/repository/org/glassfish/ha/ha-api/3.1.13/class-model.jar,file:/C:/Users/davide.cappiello/.m2/repository/org/glassfish/ha/ha-api/3.1.13/config-api.jar,file:/C:/Users/davide.cappiello/.m2/repository/org/glassfish/ha/ha-api/3.1.13/tiger-types.jar,file:/C:/Users/davide.cappiello/.m2/repository/org/glassfish/ha/ha-api/3.1.13/bean-validator.jar,file:/C:/Users/davide.cappiello/.m2/repository/org/glassfish/ha/ha-api/3.1.13/jtype.jar,file:/C:/Users/davide.cappiello/.m2/repository/org/glassfish/ha/ha-api/3.1.13/auto-depends.jar,file:/C:/Users/davide.cappiello/.m2/repository/org/glassfish/ha/ha-api/3.1.13/jakarta.inject-api.jar,file:/C:/Users/davide.cappiello/.m2/repository/org/glassfish/ha/ha-api/3.1.13/asm-all-repackaged.jar,file:/C:/Users/davide.cappiello/.m2/repository/org/glassfish/ha/ha-api/3.1.13/hk2-api.jar,file:/C:/Users/davide.cappiello/.m2/repository/org/glassfish/ha/ha-api/3.1.13/osgi-resource-locator.jar
+2024-07-24 14:39:53 [restartedMain] INFO  o.s.b.d.restart.ChangeableUrls - The Class-Path manifest attribute in C:\Users\davide.cappiello\.m2\repository\com\sun\xml\bind\jaxb-core\2.3.0.1\jaxb-core-2.3.0.1.jar referenced one or more files that do not exist: file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/bind/jaxb-core/2.3.0.1/jaxb-api.jar
+2024-07-24 14:39:53 [restartedMain] INFO  o.s.b.d.restart.ChangeableUrls - The Class-Path manifest attribute in C:\Users\davide.cappiello\.m2\repository\com\oracle\database\jdbc\ojdbc8\19.8.0.0\ojdbc8-19.8.0.0.jar referenced one or more files that do not exist: file:/C:/Users/davide.cappiello/.m2/repository/com/oracle/database/jdbc/ojdbc8/19.8.0.0/oraclepki.jar
+2024-07-24 14:39:53 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-07-24 14:39:53 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-07-24 14:39:55 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-07-24 14:39:55 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2024-07-24 14:39:55 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface it.prometeo.Repository.MessageEventRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-07-24 14:39:55 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface it.prometeo.Repository.MessageSegmentRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-07-24 14:39:55 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 71 ms. Found 0 JDBC repository interfaces.
+2024-07-24 14:39:55 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-07-24 14:39:55 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-07-24 14:39:55 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 66 ms. Found 2 JPA repository interfaces.
+2024-07-24 14:39:57 [restartedMain] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'soapWebServiceConfig' of type [it.prometeo.SpringbootSoapServer.Config.SoapWebServiceConfig$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [annotationActionEndpointMapping]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2024-07-24 14:39:57 [restartedMain] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [annotationActionEndpointMapping] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2024-07-24 14:39:57 [restartedMain] INFO  o.s.w.s.a.s.AnnotationActionEndpointMapping - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2024-07-24 14:39:58 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8091 (http)
+2024-07-24 14:39:58 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8091"]
+2024-07-24 14:39:58 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-07-24 14:39:58 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.24]
+2024-07-24 14:39:58 [restartedMain] INFO  o.a.c.c.C.[.[localhost].[/hl7palm] - Initializing Spring embedded WebApplicationContext
+2024-07-24 14:39:58 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 4829 ms
+2024-07-24 14:39:59 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-07-24 14:39:59 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-07-24 14:39:59 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-07-24 14:40:00 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-07-24 14:40:00 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-07-24 14:40:01 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection ConnectionID:1 ClientConnectionId: 54cdcfa4-7584-4299-832e-7e64c1fc5539
+2024-07-24 14:40:01 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-07-24 14:40:03 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-07-24 14:40:17 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-07-24 14:40:18 [restartedMain] INFO  ca.uhn.hl7v2.util.Home - hapi.home is set to C:\Users\davide.cappiello\Desktop\SoapPalm\.
+2024-07-24 14:40:18 [restartedMain] INFO  ca.uhn.hl7v2.VersionLogger - HAPI version is: 2.5.1
+2024-07-24 14:40:18 [restartedMain] INFO  ca.uhn.hl7v2.VersionLogger - Default Structure libraries found for HL7 versions 2.4, 2.5, 
+2024-07-24 14:40:18 [restartedMain] INFO  o.s.d.j.r.query.QueryEnhancerFactory - JSqlParser is in classpath; If applicable, JSqlParser will be used
+2024-07-24 14:40:18 [restartedMain] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-07-24 14:40:20 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-07-24 14:40:20 [restartedMain] WARN  o.s.data.convert.CustomConversions - Registering converter from class microsoft.sql.DateTimeOffset to class java.time.OffsetDateTime as reading converter although it doesn't convert from a store-supported type; You might want to check your annotation setup at the converter implementation
+2024-07-24 14:40:21 [restartedMain] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 6e961047-8e8b-4fc2-8c4f-229afeb2c662
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2024-07-24 14:40:21 [restartedMain] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2024-07-24 14:40:21 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@33231682, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@549aa8d4, org.springframework.security.web.context.SecurityContextHolderFilter@51a1dfc9, org.springframework.security.web.header.HeaderWriterFilter@53d87301, org.springframework.web.filter.CorsFilter@188a30da, org.springframework.security.web.csrf.CsrfFilter@33f812c6, org.springframework.security.web.authentication.logout.LogoutFilter@6a1ce86b, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@6baf473c, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@6487b8bf, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@3cb08562, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@256846d4, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@384d45ac, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4236a105, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@170c1370, org.springframework.security.web.access.ExceptionTranslationFilter@2e17bbb0, org.springframework.security.web.access.intercept.AuthorizationFilter@7b247662]
+2024-07-24 14:40:21 [restartedMain] WARN  o.s.s.c.a.web.builders.WebSecurity - You are asking Spring Security to ignore Ant [pattern='/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-07-24 14:40:21 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will not secure Ant [pattern='/**']
+2024-07-24 14:40:21 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2024-07-24 14:40:21 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8091"]
+2024-07-24 14:40:21 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8091 (http) with context path '/hl7palm'
+2024-07-24 14:40:21 [restartedMain] INFO  it.prometeo.SoapClientApplication - Started SoapClientApplication in 28.643 seconds (process running for 30.448)
+2024-07-24 14:40:21 [restartedMain] INFO  it.prometeo.Util.Util - Nessun parametro fornito
+2024-07-24 14:40:21 [scheduling-1] ERROR o.s.s.s.TaskUtils$LoggingErrorHandler - Unexpected error occurred in scheduled task
+org.springframework.jdbc.UncategorizedSQLException: StatementCallback; uncategorized SQLException for SQL [SELECT * FROM PRO_TDQ2HL7 pth WHERE FLAG_INOLTRATO = 0 AND REPARTO = 'PNGH']; SQL state [S0002]; error code [208]; Il nome di oggetto 'PRO_TDQ2HL7' non è valido.
+	at org.springframework.jdbc.core.JdbcTemplate.translateException(JdbcTemplate.java:1549)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:408)
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:476)
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:486)
+	at it.prometeo.Poller.Poller.pollDatabase(Poller.java:70)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.runInternal(ScheduledMethodRunnable.java:130)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.lambda$run$2(ScheduledMethodRunnable.java:124)
+	at io.micrometer.observation.Observation.observe(Observation.java:499)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:124)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:358)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: com.microsoft.sqlserver.jdbc.SQLServerException: Il nome di oggetto 'PRO_TDQ2HL7' non è valido.
+	at com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDatabaseError(SQLServerException.java:262)
+	at com.microsoft.sqlserver.jdbc.SQLServerStatement.getNextResult(SQLServerStatement.java:1632)
+	at com.microsoft.sqlserver.jdbc.SQLServerStatement.doExecuteStatement(SQLServerStatement.java:872)
+	at com.microsoft.sqlserver.jdbc.SQLServerStatement$StmtExecCmd.doExecute(SQLServerStatement.java:767)
+	at com.microsoft.sqlserver.jdbc.TDSCommand.execute(IOBuffer.java:7418)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.executeCommand(SQLServerConnection.java:3272)
+	at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeCommand(SQLServerStatement.java:247)
+	at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeStatement(SQLServerStatement.java:222)
+	at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeQuery(SQLServerStatement.java:692)
+	at com.zaxxer.hikari.pool.ProxyStatement.executeQuery(ProxyStatement.java:110)
+	at com.zaxxer.hikari.pool.HikariProxyStatement.executeQuery(HikariProxyStatement.java)
+	at org.springframework.jdbc.core.JdbcTemplate$1QueryStatementCallback.doInStatement(JdbcTemplate.java:463)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:393)
+	... 16 common frames omitted
+2024-07-24 14:40:57 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-07-24 14:40:57 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-07-24 14:40:57 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-07-24 14:41:03 [restartedMain] INFO  it.prometeo.SoapClientApplication - Starting SoapClientApplication using Java 21.0.3 with PID 16096 (C:\Users\davide.cappiello\Desktop\SoapPalm\target\classes started by davide.cappiello in C:\Users\davide.cappiello\Desktop\SoapPalm)
+2024-07-24 14:41:03 [restartedMain] INFO  it.prometeo.SoapClientApplication - No active profile set, falling back to 1 default profile: "default"
+2024-07-24 14:41:03 [restartedMain] INFO  o.s.b.d.restart.ChangeableUrls - The Class-Path manifest attribute in C:\Users\davide.cappiello\.m2\repository\com\sun\xml\ws\jaxws-rt\3.0.2\jaxws-rt-3.0.2.jar referenced one or more files that do not exist: file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/jakarta.annotation-api.jar,file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/jakarta.activation.jar,file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/jakarta.mail.jar,file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/jakarta.jws-api.jar,file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/jakarta.xml.bind-api.jar,file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/jakarta.xml.ws-api.jar,file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/jakarta.xml.soap-api.jar,file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/FastInfoset.jar,file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/gmbal-api-only.jar,file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/ha-api.jar,file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/jaxb-core.jar,file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/jaxb-impl.jar,file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/management-api.jar,file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/mimepull.jar,file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/saaj-impl.jar,file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/stax-ex.jar,file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/stax2-api.jar,file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/streambuffer.jar,file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/ws/jaxws-rt/3.0.2/woodstox-core.jar
+2024-07-24 14:41:03 [restartedMain] INFO  o.s.b.d.restart.ChangeableUrls - The Class-Path manifest attribute in C:\Users\davide.cappiello\.m2\repository\org\glassfish\ha\ha-api\3.1.13\ha-api-3.1.13.jar referenced one or more files that do not exist: file:/C:/Users/davide.cappiello/.m2/repository/org/glassfish/ha/ha-api/3.1.13/hk2.jar,file:/C:/Users/davide.cappiello/.m2/repository/org/glassfish/ha/ha-api/3.1.13/hk2-core.jar,file:/C:/Users/davide.cappiello/.m2/repository/org/glassfish/ha/ha-api/3.1.13/class-model.jar,file:/C:/Users/davide.cappiello/.m2/repository/org/glassfish/ha/ha-api/3.1.13/config-api.jar,file:/C:/Users/davide.cappiello/.m2/repository/org/glassfish/ha/ha-api/3.1.13/tiger-types.jar,file:/C:/Users/davide.cappiello/.m2/repository/org/glassfish/ha/ha-api/3.1.13/bean-validator.jar,file:/C:/Users/davide.cappiello/.m2/repository/org/glassfish/ha/ha-api/3.1.13/jtype.jar,file:/C:/Users/davide.cappiello/.m2/repository/org/glassfish/ha/ha-api/3.1.13/auto-depends.jar,file:/C:/Users/davide.cappiello/.m2/repository/org/glassfish/ha/ha-api/3.1.13/jakarta.inject-api.jar,file:/C:/Users/davide.cappiello/.m2/repository/org/glassfish/ha/ha-api/3.1.13/asm-all-repackaged.jar,file:/C:/Users/davide.cappiello/.m2/repository/org/glassfish/ha/ha-api/3.1.13/hk2-api.jar,file:/C:/Users/davide.cappiello/.m2/repository/org/glassfish/ha/ha-api/3.1.13/osgi-resource-locator.jar
+2024-07-24 14:41:03 [restartedMain] INFO  o.s.b.d.restart.ChangeableUrls - The Class-Path manifest attribute in C:\Users\davide.cappiello\.m2\repository\com\sun\xml\bind\jaxb-core\2.3.0.1\jaxb-core-2.3.0.1.jar referenced one or more files that do not exist: file:/C:/Users/davide.cappiello/.m2/repository/com/sun/xml/bind/jaxb-core/2.3.0.1/jaxb-api.jar
+2024-07-24 14:41:03 [restartedMain] INFO  o.s.b.d.restart.ChangeableUrls - The Class-Path manifest attribute in C:\Users\davide.cappiello\.m2\repository\com\oracle\database\jdbc\ojdbc8\19.8.0.0\ojdbc8-19.8.0.0.jar referenced one or more files that do not exist: file:/C:/Users/davide.cappiello/.m2/repository/com/oracle/database/jdbc/ojdbc8/19.8.0.0/oraclepki.jar
+2024-07-24 14:41:03 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-07-24 14:41:03 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-07-24 14:41:05 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-07-24 14:41:05 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2024-07-24 14:41:05 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface it.prometeo.Repository.MessageEventRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-07-24 14:41:05 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface it.prometeo.Repository.MessageSegmentRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-07-24 14:41:05 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 127 ms. Found 0 JDBC repository interfaces.
+2024-07-24 14:41:05 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-07-24 14:41:05 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-07-24 14:41:05 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 114 ms. Found 2 JPA repository interfaces.
+2024-07-24 14:41:06 [restartedMain] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'soapWebServiceConfig' of type [it.prometeo.SpringbootSoapServer.Config.SoapWebServiceConfig$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [annotationActionEndpointMapping]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2024-07-24 14:41:06 [restartedMain] WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [annotationActionEndpointMapping] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2024-07-24 14:41:06 [restartedMain] INFO  o.s.w.s.a.s.AnnotationActionEndpointMapping - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2024-07-24 14:41:07 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8091 (http)
+2024-07-24 14:41:07 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8091"]
+2024-07-24 14:41:07 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-07-24 14:41:07 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.24]
+2024-07-24 14:41:07 [restartedMain] INFO  o.a.c.c.C.[.[localhost].[/hl7palm] - Initializing Spring embedded WebApplicationContext
+2024-07-24 14:41:07 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3559 ms
+2024-07-24 14:41:07 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-07-24 14:41:08 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-07-24 14:41:08 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-07-24 14:41:09 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-07-24 14:41:09 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-07-24 14:41:11 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection ConnectionID:1 ClientConnectionId: f8375e87-5d22-4455-a985-dde96b308be0
+2024-07-24 14:41:11 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-07-24 14:41:13 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-07-24 14:41:19 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-07-24 14:41:20 [restartedMain] INFO  o.s.d.j.r.query.QueryEnhancerFactory - JSqlParser is in classpath; If applicable, JSqlParser will be used
+2024-07-24 14:41:20 [restartedMain] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-07-24 14:41:22 [restartedMain] INFO  ca.uhn.hl7v2.VersionLogger - HAPI version is: 2.5.1
+2024-07-24 14:41:22 [restartedMain] INFO  ca.uhn.hl7v2.VersionLogger - Default Structure libraries found for HL7 versions 2.4, 2.5, 
+2024-07-24 14:41:22 [restartedMain] INFO  ca.uhn.hl7v2.util.Home - hapi.home is set to C:\Users\davide.cappiello\Desktop\SoapPalm\.
+2024-07-24 14:41:22 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-07-24 14:41:23 [restartedMain] WARN  o.s.data.convert.CustomConversions - Registering converter from class microsoft.sql.DateTimeOffset to class java.time.OffsetDateTime as reading converter although it doesn't convert from a store-supported type; You might want to check your annotation setup at the converter implementation
+2024-07-24 14:41:23 [restartedMain] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 9a3fff0b-e6f4-40f9-810d-1f3f02f36132
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2024-07-24 14:41:23 [restartedMain] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2024-07-24 14:41:24 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@c0c375b, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@650b4ed2, org.springframework.security.web.context.SecurityContextHolderFilter@7bb4b0b5, org.springframework.security.web.header.HeaderWriterFilter@5f156d0, org.springframework.web.filter.CorsFilter@287d99f7, org.springframework.security.web.csrf.CsrfFilter@49b38c49, org.springframework.security.web.authentication.logout.LogoutFilter@7d1931dd, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@7b0005f4, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@16134f2e, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@5523fcfc, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@3e5af68e, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@14cf21b5, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2eb40cdc, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3878bfec, org.springframework.security.web.access.ExceptionTranslationFilter@64df2e35, org.springframework.security.web.access.intercept.AuthorizationFilter@48b53179]
+2024-07-24 14:41:24 [restartedMain] WARN  o.s.s.c.a.web.builders.WebSecurity - You are asking Spring Security to ignore Ant [pattern='/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-07-24 14:41:24 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will not secure Ant [pattern='/**']
+2024-07-24 14:41:24 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2024-07-24 14:41:24 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8091"]
+2024-07-24 14:41:24 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8091 (http) with context path '/hl7palm'
+2024-07-24 14:41:24 [restartedMain] INFO  it.prometeo.SoapClientApplication - Started SoapClientApplication in 21.353 seconds (process running for 22.851)
+2024-07-24 14:41:24 [restartedMain] INFO  it.prometeo.Util.Util - Nessun parametro fornito
+2024-07-24 14:51:14 [http-nio-8091-exec-2] INFO  o.a.c.c.C.[.[localhost].[/hl7palm] - Initializing Spring MessageDispatcherServlet 'messageDispatcherServlet'
+2024-07-24 14:51:14 [http-nio-8091-exec-2] INFO  o.s.w.t.h.MessageDispatcherServlet - Initializing Servlet 'messageDispatcherServlet'
+2024-07-24 14:51:14 [http-nio-8091-exec-2] INFO  o.s.w.s.saaj.SaajSoapMessageFactory - Creating SAAJ 1.3 MessageFactory with SOAP 1.1 Protocol
+2024-07-24 14:51:14 [http-nio-8091-exec-2] INFO  o.s.w.t.h.MessageDispatcherServlet - Completed initialization in 86 ms
+2024-07-24 14:51:15 [http-nio-8091-exec-2] INFO  it.prometeo.Util.Util - Ricevo il messaggio OML_O21 dal PS
+2024-07-24 14:51:15 [http-nio-8091-exec-2] INFO  it.prometeo.Util.Util -
+               <QBP_Q11 xmlns="urn:hl7-org:v2xml">
+    <MSH>
+        <MSH.1>|</MSH.1>
+        <MSH.2>^~\&amp;</MSH.2>
+        <MSH.3>
+            <HD.1>NGH</HD.1>
+        </MSH.3>
+        <MSH.4>
+            <HD.1>GPI</HD.1>
+        </MSH.4>
+        <MSH.5>
+            <HD.1>LIS</HD.1>
+        </MSH.5>
+        <MSH.6>
+            <HD.1>SIEMENS</HD.1>
+        </MSH.6>
+        <MSH.7>
+            <TS.1>20240718164452</TS.1>
+        </MSH.7>
+        <MSH.9>
+            <MSG.1>QBP</MSG.1>
+            <MSG.2>PRO</MSG.2>
+            <MSG.3>QBP_Q11</MSG.3>
+        </MSH.9>
+        <MSH.10>07b33c57-49a1-4dd3-befa-336f214aea93</MSH.10>
+        <MSH.11>
+            <PT.1>P</PT.1>
+        </MSH.11>
+        <MSH.12>
+            <VID.1>2.5</VID.1>
+        </MSH.12>
+    </MSH>
+    <EVN>
+        <EVN.2>
+            <TS.1>20240718164452</TS.1>
+        </EVN.2>
+    </EVN>
+    <QPD>
+        <QPD.1>
+            <CE.1>PRO</CE.1>
+            <CE.2>Printable Report Order</CE.2>
+            <CE.3>HL7</CE.3>
+        </QPD.1>
+        <QPD.2/>
+        <QPD.3/>
+        <QPD.4/>
+    </QPD>
+    <RCP>
+        <RCP.1>I</RCP.1>
+    </RCP>
+</QBP_Q11>
+
+
+2024-07-24 14:51:15 [http-nio-8091-exec-2] INFO  it.prometeo.Util.Util - Controllo i tag esterni al messaggio per capire se sono uguali al MessageTypeStructure del messaggio HL7
+2024-07-24 14:51:15 [http-nio-8091-exec-2] INFO  it.prometeo.Util.Util - Creazione del RSP_K11 di prova per lo ZET
+2024-07-24 14:51:15 [http-nio-8091-exec-2] INFO  ca.uhn.hl7v2.parser.XMLParser - XML-Encoding a GenericMessage is not covered by the specification. 
+2024-07-24 14:51:15 [http-nio-8091-exec-2] INFO  it.prometeo.Util.Util - <?xml version="1.0" encoding="UTF-8"?><QBP_Q11 xmlns="urn:hl7-org:v2xml">
+    <MSH>
+        <MSH.1>|</MSH.1>
+        <MSH.2>^~\&amp;</MSH.2>
+        <MSH.3>
+            <HD.1>NGH</HD.1>
+        </MSH.3>
+        <MSH.4>
+            <HD.1>GPI</HD.1>
+        </MSH.4>
+        <MSH.5>
+            <HD.1>LIS</HD.1>
+        </MSH.5>
+        <MSH.6>
+            <HD.1>SIEMENS</HD.1>
+        </MSH.6>
+        <MSH.7>
+            <TS.1>20240718164452</TS.1>
+        </MSH.7>
+        <MSH.9>
+            <MSG.1>QBP</MSG.1>
+            <MSG.2>PRO</MSG.2>
+            <MSG.3>QBP_Q11</MSG.3>
+        </MSH.9>
+        <MSH.10>07b33c57-49a1-4dd3-befa-336f214aea93</MSH.10>
+        <MSH.11>
+            <PT.1>P</PT.1>
+        </MSH.11>
+        <MSH.12>
+            <VID.1>2.5</VID.1>
+        </MSH.12>
+    </MSH>
+    <QPD>
+        <QPD.1>
+            <CE.1>PRO</CE.1>
+            <CE.2>Printable Report Order</CE.2>
+            <CE.3>HL7</CE.3>
+        </QPD.1>
+    </QPD>
+    <RCP>
+        <RCP.1>I</RCP.1>
+    </RCP>
+    <EVN>
+        <EVN.2>
+            <TS.1>20240718164452</TS.1>
+        </EVN.2>
+    </EVN>
+</QBP_Q11>
+
+2024-07-24 14:51:15 [http-nio-8091-exec-2] ERROR c.m.p.S.Endpoint.MessageEndpoint - ca.uhn.hl7v2.HL7Exception: MSA does not exist in the group ca.uhn.hl7v2.model.v25.message.QBP_Q11
+	at ca.uhn.hl7v2.model.AbstractGroup.get(AbstractGroup.java:127)
+	at ca.uhn.hl7v2.model.AbstractGroup.get(AbstractGroup.java:102)
+	at it.prometeo.HL7Palm.SegmentFactory.SegmentFactoryRSPK11.createMSASegmentIntegrateRSPK11ToQBP(SegmentFactoryRSPK11.java:54)
+	at it.prometeo.HL7Palm.Message.RSPK11.createEncodedMessage(RSPK11.java:31)
+	at it.prometeo.Util.Util.handleQBP(Util.java:236)
+	at it.prometeo.SpringbootSoapServer.Endpoint.MessageEndpoint.acceptMessage(MessageEndpoint.java:94)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.ws.server.endpoint.MethodEndpoint.invoke(MethodEndpoint.java:133)
+	at org.springframework.ws.server.endpoint.adapter.DefaultMethodEndpointAdapter.invokeInternal(DefaultMethodEndpointAdapter.java:285)
+	at org.springframework.ws.server.endpoint.adapter.AbstractMethodEndpointAdapter.invoke(AbstractMethodEndpointAdapter.java:54)
+	at org.springframework.ws.server.MessageDispatcher.dispatch(MessageDispatcher.java:230)
+	at org.springframework.ws.server.MessageDispatcher.receive(MessageDispatcher.java:174)
+	at org.springframework.ws.transport.support.WebServiceMessageReceiverObjectSupport.handleConnection(WebServiceMessageReceiverObjectSupport.java:88)
+	at org.springframework.ws.transport.http.WebServiceMessageReceiverHandlerAdapter.handle(WebServiceMessageReceiverHandlerAdapter.java:60)
+	at org.springframework.ws.transport.http.MessageDispatcherServlet.doService(MessageDispatcherServlet.java:288)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:219)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:195)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:230)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:352)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:268)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:389)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+2024-07-24 14:51:15 [http-nio-8091-exec-2] INFO  it.prometeo.Util.Util - sw: ca.uhn.hl7v2.HL7Exception: MSA does not exist in the group ca.uhn.hl7v2.model.v25.message.QBP_Q11
+	at ca.uhn.hl7v2.model.AbstractGroup.get(AbstractGroup.java:127)
+	at ca.uhn.hl7v2.model.AbstractGroup.get(AbstractGroup.java:102)
+	at it.prometeo.HL7Palm.SegmentFactory.SegmentFactoryRSPK11.createMSASegmentIntegrateRSPK11ToQBP(SegmentFactoryRSPK11.java:54)
+	at it.prometeo.HL7Palm.Message.RSPK11.createEncodedMessage(RSPK11.java:31)
+	at it.prometeo.Util.Util.handleQBP(Util.java:236)
+	at it.prometeo.SpringbootSoapServer.Endpoint.MessageEndpoint.acceptMessage(MessageEndpoint.java:94)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.ws.server.endpoint.MethodEndpoint.invoke(MethodEndpoint.java:133)
+	at org.springframework.ws.server.endpoint.adapter.DefaultMethodEndpointAdapter.invokeInternal(DefaultMethodEndpointAdapter.java:285)
+	at org.springframework.ws.server.endpoint.adapter.AbstractMethodEndpointAdapter.invoke(AbstractMethodEndpointAdapter.java:54)
+	at org.springframework.ws.server.MessageDispatcher.dispatch(MessageDispatcher.java:230)
+	at org.springframework.ws.server.MessageDispatcher.receive(MessageDispatcher.java:174)
+	at org.springframework.ws.transport.support.WebServiceMessageReceiverObjectSupport.handleConnection(WebServiceMessageReceiverObjectSupport.java:88)
+	at org.springframework.ws.transport.http.WebServiceMessageReceiverHandlerAdapter.handle(WebServiceMessageReceiverHandlerAdapter.java:60)
+	at org.springframework.ws.transport.http.MessageDispatcherServlet.doService(MessageDispatcherServlet.java:288)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:219)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:195)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:230)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:352)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:268)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:389)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+2024-07-24 14:51:15 [http-nio-8091-exec-2] INFO  it.prometeo.Util.Util - Creo un oggetto acceptMessageResponse e rispondo al PS
+2024-07-24 14:53:10 [http-nio-8091-exec-5] INFO  it.prometeo.Util.Util - Ricevo il messaggio OML_O21 dal PS
+2024-07-24 14:53:10 [http-nio-8091-exec-5] INFO  it.prometeo.Util.Util -
+               <QBP_Q11 xmlns="urn:hl7-org:v2xml">
+    <MSH>
+        <MSH.1>|</MSH.1>
+        <MSH.2>^~\&amp;</MSH.2>
+        <MSH.3>
+            <HD.1>NGH</HD.1>
+        </MSH.3>
+        <MSH.4>
+            <HD.1>GPI</HD.1>
+        </MSH.4>
+        <MSH.5>
+            <HD.1>LIS</HD.1>
+        </MSH.5>
+        <MSH.6>
+            <HD.1>SIEMENS</HD.1>
+        </MSH.6>
+        <MSH.7>
+            <TS.1>20240718164452</TS.1>
+        </MSH.7>
+        <MSH.9>
+            <MSG.1>QBP</MSG.1>
+            <MSG.2>PRO</MSG.2>
+            <MSG.3>QBP_Q11</MSG.3>
+        </MSH.9>
+        <MSH.10>07b33c57-49a1-4dd3-befa-336f214aea93</MSH.10>
+        <MSH.11>
+            <PT.1>P</PT.1>
+        </MSH.11>
+        <MSH.12>
+            <VID.1>2.5</VID.1>
+        </MSH.12>
+    </MSH>
+    <EVN>
+        <EVN.2>
+            <TS.1>20240718164452</TS.1>
+        </EVN.2>
+    </EVN>
+    <QPD>
+        <QPD.1>
+            <CE.1>PRO</CE.1>
+            <CE.2>Printable Report Order</CE.2>
+            <CE.3>HL7</CE.3>
+        </QPD.1>
+        <QPD.2/>
+        <QPD.3/>
+        <QPD.4/>
+    </QPD>
+    <RCP>
+        <RCP.1>I</RCP.1>
+    </RCP>
+</QBP_Q11>
+
+
+2024-07-24 14:53:10 [http-nio-8091-exec-5] INFO  it.prometeo.Util.Util - Controllo i tag esterni al messaggio per capire se sono uguali al MessageTypeStructure del messaggio HL7
+2024-07-24 14:53:10 [http-nio-8091-exec-5] INFO  it.prometeo.Util.Util - Creazione del RSP_K11 di prova per lo ZET
+2024-07-24 14:53:10 [http-nio-8091-exec-5] INFO  ca.uhn.hl7v2.parser.XMLParser - XML-Encoding a GenericMessage is not covered by the specification. 
+2024-07-24 14:53:10 [http-nio-8091-exec-5] INFO  it.prometeo.Util.Util - <?xml version="1.0" encoding="UTF-8"?><QBP_Q11 xmlns="urn:hl7-org:v2xml">
+    <MSH>
+        <MSH.1>|</MSH.1>
+        <MSH.2>^~\&amp;</MSH.2>
+        <MSH.3>
+            <HD.1>NGH</HD.1>
+        </MSH.3>
+        <MSH.4>
+            <HD.1>GPI</HD.1>
+        </MSH.4>
+        <MSH.5>
+            <HD.1>LIS</HD.1>
+        </MSH.5>
+        <MSH.6>
+            <HD.1>SIEMENS</HD.1>
+        </MSH.6>
+        <MSH.7>
+            <TS.1>20240718164452</TS.1>
+        </MSH.7>
+        <MSH.9>
+            <MSG.1>QBP</MSG.1>
+            <MSG.2>PRO</MSG.2>
+            <MSG.3>QBP_Q11</MSG.3>
+        </MSH.9>
+        <MSH.10>07b33c57-49a1-4dd3-befa-336f214aea93</MSH.10>
+        <MSH.11>
+            <PT.1>P</PT.1>
+        </MSH.11>
+        <MSH.12>
+            <VID.1>2.5</VID.1>
+        </MSH.12>
+    </MSH>
+    <QPD>
+        <QPD.1>
+            <CE.1>PRO</CE.1>
+            <CE.2>Printable Report Order</CE.2>
+            <CE.3>HL7</CE.3>
+        </QPD.1>
+    </QPD>
+    <RCP>
+        <RCP.1>I</RCP.1>
+    </RCP>
+    <EVN>
+        <EVN.2>
+            <TS.1>20240718164452</TS.1>
+        </EVN.2>
+    </EVN>
+</QBP_Q11>
+
+2024-07-24 14:53:10 [http-nio-8091-exec-5] ERROR c.m.p.S.Endpoint.MessageEndpoint - ca.uhn.hl7v2.HL7Exception: MSA does not exist in the group ca.uhn.hl7v2.model.v25.message.QBP_Q11
+	at ca.uhn.hl7v2.model.AbstractGroup.get(AbstractGroup.java:127)
+	at ca.uhn.hl7v2.model.AbstractGroup.get(AbstractGroup.java:102)
+	at it.prometeo.HL7Palm.SegmentFactory.SegmentFactoryRSPK11.createMSASegmentIntegrateRSPK11ToQBP(SegmentFactoryRSPK11.java:54)
+	at it.prometeo.HL7Palm.Message.RSPK11.createEncodedMessage(RSPK11.java:31)
+	at it.prometeo.Util.Util.handleQBP(Util.java:236)
+	at it.prometeo.SpringbootSoapServer.Endpoint.MessageEndpoint.acceptMessage(MessageEndpoint.java:94)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.ws.server.endpoint.MethodEndpoint.invoke(MethodEndpoint.java:133)
+	at org.springframework.ws.server.endpoint.adapter.DefaultMethodEndpointAdapter.invokeInternal(DefaultMethodEndpointAdapter.java:285)
+	at org.springframework.ws.server.endpoint.adapter.AbstractMethodEndpointAdapter.invoke(AbstractMethodEndpointAdapter.java:54)
+	at org.springframework.ws.server.MessageDispatcher.dispatch(MessageDispatcher.java:230)
+	at org.springframework.ws.server.MessageDispatcher.receive(MessageDispatcher.java:174)
+	at org.springframework.ws.transport.support.WebServiceMessageReceiverObjectSupport.handleConnection(WebServiceMessageReceiverObjectSupport.java:88)
+	at org.springframework.ws.transport.http.WebServiceMessageReceiverHandlerAdapter.handle(WebServiceMessageReceiverHandlerAdapter.java:60)
+	at org.springframework.ws.transport.http.MessageDispatcherServlet.doService(MessageDispatcherServlet.java:288)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:219)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:195)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:230)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:352)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:268)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:389)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+ca.uhn.hl7v2.HL7Exception: MSA does not exist in the group ca.uhn.hl7v2.model.v25.message.QBP_Q11
+	at ca.uhn.hl7v2.model.AbstractGroup.get(AbstractGroup.java:127)
+	at ca.uhn.hl7v2.model.AbstractGroup.get(AbstractGroup.java:102)
+	at it.prometeo.HL7Palm.SegmentFactory.SegmentFactoryRSPK11.createMSASegmentIntegrateRSPK11ToQBP(SegmentFactoryRSPK11.java:54)
+	at it.prometeo.HL7Palm.Message.RSPK11.createEncodedMessage(RSPK11.java:31)
+	at it.prometeo.Util.Util.handleQBP(Util.java:236)
+	at it.prometeo.SpringbootSoapServer.Endpoint.MessageEndpoint.acceptMessage(MessageEndpoint.java:94)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.ws.server.endpoint.MethodEndpoint.invoke(MethodEndpoint.java:133)
+	at org.springframework.ws.server.endpoint.adapter.DefaultMethodEndpointAdapter.invokeInternal(DefaultMethodEndpointAdapter.java:285)
+	at org.springframework.ws.server.endpoint.adapter.AbstractMethodEndpointAdapter.invoke(AbstractMethodEndpointAdapter.java:54)
+	at org.springframework.ws.server.MessageDispatcher.dispatch(MessageDispatcher.java:230)
+	at org.springframework.ws.server.MessageDispatcher.receive(MessageDispatcher.java:174)
+	at org.springframework.ws.transport.support.WebServiceMessageReceiverObjectSupport.handleConnection(WebServiceMessageReceiverObjectSupport.java:88)
+	at org.springframework.ws.transport.http.WebServiceMessageReceiverHandlerAdapter.handle(WebServiceMessageReceiverHandlerAdapter.java:60)
+	at org.springframework.ws.transport.http.MessageDispatcherServlet.doService(MessageDispatcherServlet.java:288)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:219)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:195)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:230)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:352)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:268)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:389)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+2024-07-24 14:53:10 [http-nio-8091-exec-5] INFO  it.prometeo.Util.Util - sw: ca.uhn.hl7v2.HL7Exception: MSA does not exist in the group ca.uhn.hl7v2.model.v25.message.QBP_Q11
+	at ca.uhn.hl7v2.model.AbstractGroup.get(AbstractGroup.java:127)
+	at ca.uhn.hl7v2.model.AbstractGroup.get(AbstractGroup.java:102)
+	at it.prometeo.HL7Palm.SegmentFactory.SegmentFactoryRSPK11.createMSASegmentIntegrateRSPK11ToQBP(SegmentFactoryRSPK11.java:54)
+	at it.prometeo.HL7Palm.Message.RSPK11.createEncodedMessage(RSPK11.java:31)
+	at it.prometeo.Util.Util.handleQBP(Util.java:236)
+	at it.prometeo.SpringbootSoapServer.Endpoint.MessageEndpoint.acceptMessage(MessageEndpoint.java:94)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.ws.server.endpoint.MethodEndpoint.invoke(MethodEndpoint.java:133)
+	at org.springframework.ws.server.endpoint.adapter.DefaultMethodEndpointAdapter.invokeInternal(DefaultMethodEndpointAdapter.java:285)
+	at org.springframework.ws.server.endpoint.adapter.AbstractMethodEndpointAdapter.invoke(AbstractMethodEndpointAdapter.java:54)
+	at org.springframework.ws.server.MessageDispatcher.dispatch(MessageDispatcher.java:230)
+	at org.springframework.ws.server.MessageDispatcher.receive(MessageDispatcher.java:174)
+	at org.springframework.ws.transport.support.WebServiceMessageReceiverObjectSupport.handleConnection(WebServiceMessageReceiverObjectSupport.java:88)
+	at org.springframework.ws.transport.http.WebServiceMessageReceiverHandlerAdapter.handle(WebServiceMessageReceiverHandlerAdapter.java:60)
+	at org.springframework.ws.transport.http.MessageDispatcherServlet.doService(MessageDispatcherServlet.java:288)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:219)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:195)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:230)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:352)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:268)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:389)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+ca.uhn.hl7v2.HL7Exception: MSA does not exist in the group ca.uhn.hl7v2.model.v25.message.QBP_Q11
+	at ca.uhn.hl7v2.model.AbstractGroup.get(AbstractGroup.java:127)
+	at ca.uhn.hl7v2.model.AbstractGroup.get(AbstractGroup.java:102)
+	at it.prometeo.HL7Palm.SegmentFactory.SegmentFactoryRSPK11.createMSASegmentIntegrateRSPK11ToQBP(SegmentFactoryRSPK11.java:54)
+	at it.prometeo.HL7Palm.Message.RSPK11.createEncodedMessage(RSPK11.java:31)
+	at it.prometeo.Util.Util.handleQBP(Util.java:236)
+	at it.prometeo.SpringbootSoapServer.Endpoint.MessageEndpoint.acceptMessage(MessageEndpoint.java:94)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.ws.server.endpoint.MethodEndpoint.invoke(MethodEndpoint.java:133)
+	at org.springframework.ws.server.endpoint.adapter.DefaultMethodEndpointAdapter.invokeInternal(DefaultMethodEndpointAdapter.java:285)
+	at org.springframework.ws.server.endpoint.adapter.AbstractMethodEndpointAdapter.invoke(AbstractMethodEndpointAdapter.java:54)
+	at org.springframework.ws.server.MessageDispatcher.dispatch(MessageDispatcher.java:230)
+	at org.springframework.ws.server.MessageDispatcher.receive(MessageDispatcher.java:174)
+	at org.springframework.ws.transport.support.WebServiceMessageReceiverObjectSupport.handleConnection(WebServiceMessageReceiverObjectSupport.java:88)
+	at org.springframework.ws.transport.http.WebServiceMessageReceiverHandlerAdapter.handle(WebServiceMessageReceiverHandlerAdapter.java:60)
+	at org.springframework.ws.transport.http.MessageDispatcherServlet.doService(MessageDispatcherServlet.java:288)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:219)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:195)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:230)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:352)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:268)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:389)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+2024-07-24 14:53:10 [http-nio-8091-exec-5] INFO  it.prometeo.Util.Util - Creo un oggetto acceptMessageResponse e rispondo al PS

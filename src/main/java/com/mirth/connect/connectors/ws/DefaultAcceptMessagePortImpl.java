@@ -14,7 +14,8 @@ import jakarta.jws.WebService;
         portName = "DefaultAcceptMessagePort",
         targetNamespace = "http://ws.connectors.connect.mirth.com/",
         //wsdlLocation = "file:C:/Users/davide.cappiello/Desktop/SoapPalm/src/main/resources/Mirth/Mirth.wsdl",
-        wsdlLocation = "file:C:/Prometeo/SoapPalm/src/main/resources/Mirth/Mirth.wsdl",
+        wsdlLocation = "C:/Users/VGpc/Desktop/SoapPalm/src/main/resources/Mirth/Mirth.wsdl",
+        //wsdlLocation = "file:C:/Prometeo/SoapPalm/src/main/resources/Mirth/Mirth.wsdl",
         endpointInterface = "com.mirth.connect.connectors.ws.DefaultAcceptMessage")
 
 public class DefaultAcceptMessagePortImpl implements DefaultAcceptMessage {
