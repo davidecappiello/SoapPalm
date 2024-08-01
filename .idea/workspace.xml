@@ -5,7 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4481f517-9634-4a0f-aa4c-1e0dc6197495" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logger.log" beforeDir="false" afterPath="$PROJECT_DIR$/logger.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/it/prometeo/Poller/PollerDocument.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/prometeo/Poller/PollerDocument.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/it/prometeo/Repository/DocumentDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/prometeo/Repository/DocumentDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/it/prometeo/SpringbootSoapClient/SoapClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/prometeo/SpringbootSoapClient/SoapClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/it/prometeo/Configuration/HL7Config.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/it/prometeo/Configuration/HL7Config.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/it/prometeo/Entity/WXSDOCUMENT.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/it/prometeo/Entity/WXSDOCUMENT.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/it/prometeo/HL7Palm/Message/MDMT02evT02.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/it/prometeo/HL7Palm/Message/MDMT02evT02.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/it/prometeo/HL7Palm/SegmentFactory/SegmentFactoryMDMT02evT02.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/it/prometeo/HL7Palm/SegmentFactory/SegmentFactoryMDMT02evT02.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/it/prometeo/Poller/Poller_PROTDQ2HL7$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/it/prometeo/Poller/Poller_PROTDQ2HL7.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/it/prometeo/Poller/Poller_WXSDOCUMENT$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/it/prometeo/Poller/Poller_WXSDOCUMENT.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/it/prometeo/Repository/MessageEventDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/it/prometeo/Repository/MessageEventDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/it/prometeo/Repository/RSPDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/it/prometeo/Repository/RSPDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/it/prometeo/SpringbootSoapClient/SoapClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/it/prometeo/SpringbootSoapClient/SoapClient.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/it/prometeo/SpringbootSoapServer/Endpoint/MessageEndpoint.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/it/prometeo/SpringbootSoapServer/Endpoint/MessageEndpoint.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -28,9 +28,9 @@ public class DocumentDao {
             PreparedStatement statement = con.prepareStatement("SELECT * " +
                     "FROM PRO_DOCUMENT_EVENT " +
                     "WHERE ACCESSNUMBER = ? " +
-                    "AND FILE_NAME = ");
+                    "AND FILE_NAME = ? ");
             statement.setString(1, accessNumber);
-            statement.setString(1, fileName);
+            statement.setString(2, fileName);
             ResultSet results = statement.executeQuery();
 
 

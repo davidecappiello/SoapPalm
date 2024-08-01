@@ -6,7 +6,10 @@ import ca.uhn.hl7v2.model.v25.message.OML_O21;
 import ca.uhn.hl7v2.parser.DefaultXMLParser;
 import ca.uhn.hl7v2.parser.PipeParser;
 import ca.uhn.hl7v2.parser.XMLParser;
+import it.prometeo.Configuration.HL7Config;
 import it.prometeo.Entity.*;
+import it.prometeo.HL7Palm.Message.MDMT02evT02;
+import it.prometeo.HL7Palm.Message.MDMT02evT10;
 import it.prometeo.HL7Palm.Message.OMLO21;
 import it.prometeo.Repository.DocumentDao;
 import it.prometeo.Repository.MessageEventDao;
@@ -36,6 +39,8 @@ public class PollerDocument {
 
     @Autowired
     private JdbcTemplate jdbcTemplate;
+    @Autowired
+    private HL7Config hl7Config;
 
     @Autowired
     MessageEventDao messageEventDao;
@@ -47,8 +52,9 @@ public class PollerDocument {
     @Autowired
     private SoapClient soapClient;
 
-    public PollerDocument(JdbcTemplate jdbcTemplate) {
+    public PollerDocument(JdbcTemplate jdbcTemplate, HL7Config hl7Config) {
         this.jdbcTemplate = jdbcTemplate;
+        this.hl7Config = hl7Config;
     }
 
     private final String QUERY_TO_INSERT_DOCUMENT = "SELECT * FROM WXSDOCUMENT WHERE STATUS = 'P7M'";
@@ -58,7 +64,7 @@ public class PollerDocument {
 
 
     @Scheduled(fixedRate = 30000)
-    public void pollDatabase() throws HL7Exception, IOException, InterruptedException {
+    public void pollDatabase() throws HL7Exception, IOException, InterruptedException, SQLException {
 
         List<WXSDOCUMENT> wxsdocuments = jdbcTemplate.query(QUERY_TO_INSERT_DOCUMENT, new RowMapper<WXSDOCUMENT>() {
             @Override
@@ -101,7 +107,7 @@ public class PollerDocument {
 
         int result = jdbcTemplate.queryForObject(QUERY_TO_CHECK_COUNT_DATA, Integer.class);
 
-        System.out.println("result from checkin: " + result);
+        System.out.println("result from document: " + result);
 
         if (result > 0) {
             DocumentEvent trigger = jdbcTemplate.queryForObject(QUERY_TO_CHECK_CHANGES, new RowMapper<DocumentEvent>() {
@@ -121,7 +127,7 @@ public class PollerDocument {
             String placer = messageEventDao.findMessagePlacerGroupNumber(trigger.getACCESSNUMBER());
             System.out.println(placer);
 
-            documentDao.findDocument(trigger.getACCESSNUMBER(), trigger.getFILE_NAME());
+            WXSDOCUMENT entity = documentDao.findDocument(trigger.getACCESSNUMBER(), trigger.getFILE_NAME());
 
             MessageEvent message = messageEventDao.findMessageEventPlacerFromOML(placer);
 
@@ -135,9 +141,21 @@ public class PollerDocument {
             String body = messageBody.toString();
             OML_O21 oml_o21 = (OML_O21) pipeParser.parse(body);
 
-
-            //soapClient.sendMdmMessage(xmlParser.encode(mdm_t02));
-
+            String orc1 =  oml_o21.getORDER().getORC().getOrderControl().getValue();
+            String orc5 = oml_o21.getORDER().getORC().getOrderStatus().getValue();
+            if(orc1.equals(hl7Config.getOrc1New()) && orc5.equals(hl7Config.getOrc5Scheduled())) {
+                MDM_T02 mdmMessage = MDMT02evT02.generateMDMT02evT02(oml_o21, entity);
+                String mdmMessageFinal = MDMT02evT02.convertMDMT02ToXML(mdmMessage);
+                soapClient.sendMdmMessage(mdmMessageFinal);
+            } else if(orc1.equals(hl7Config.getOrcReplacement()) && orc5.equals(hl7Config.getOrcReplacement())) {
+                MDM_T02 mdmMessage = MDMT02evT10.generateMDMT02evT10(oml_o21, entity);
+                String mdmMessageFinal = MDMT02evT10.convertMDMT02ToXML(mdmMessage);
+                soapClient.sendMdmMessage(mdmMessageFinal);
+            } else if(orc1.equals(hl7Config.getOrcCancel()) && orc5.equals(hl7Config.getOrcCancel())) {
+                MDM_T02 mdmMessage = MDMT02evT10.generateMDMT02evT10(oml_o21, entity);
+                String mdmMessageFinal = MDMT02evT10.convertMDMT02ToXML(mdmMessage);
+                soapClient.sendMdmMessage(mdmMessageFinal);
+            }
             documentDao.updateDocumentEvent(trigger);
         }
     }
