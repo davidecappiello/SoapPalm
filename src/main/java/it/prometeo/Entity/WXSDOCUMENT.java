@@ -1,7 +1,5 @@
 package it.prometeo.Entity;
 
-import oracle.sql.BLOB;
-
 import java.sql.Blob;
 import java.util.Date;
 
@@ -30,7 +28,7 @@ public class WXSDOCUMENT {
     private String CATEGORY;
     private String FILE_NAME;
 
-    public WXSDOCUMENT(Integer ID, String REFID, Date DATA_ACC, Date DATA_REF, String MED, String REP, String NAME, String FIRSTNAME, String SITE, String LABO, String DIPA, String VAL, Integer LOCKID, Date LOCKDATE, String METAINFO, String METASIGN, String STATUS, BLOB DOCUMENT, Date LOADDATE, Date SIGNDATE, String CATEGORY, String FILE_NAME) {
+    public WXSDOCUMENT(Integer ID, String REFID, Date DATA_ACC, Date DATA_REF, String MED, String REP, String NAME, String FIRSTNAME, String SITE, String LABO, String DIPA, String VAL, Integer LOCKID, Date LOCKDATE, String METAINFO, String METASIGN, String STATUS, Blob DOCUMENT, Date LOADDATE, Date SIGNDATE, String CATEGORY, String FILE_NAME) {
         this.ID = ID;
         this.REFID = REFID;
         this.DATA_ACC = DATA_ACC;

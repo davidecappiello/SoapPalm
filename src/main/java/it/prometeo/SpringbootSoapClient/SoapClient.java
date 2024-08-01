@@ -1,6 +1,5 @@
 package it.prometeo.SpringbootSoapClient;
 
-import ca.uhn.hl7v2.model.v25.message.MDM_T02;
 import com.mirth.connect.connectors.ws.*;
 import org.springframework.stereotype.Service;
 import java.net.MalformedURLException;
@@ -15,7 +14,7 @@ public class SoapClient {
 
         DefaultAcceptMessageService defaultAcceptMessageService = new DefaultAcceptMessageService(new URL("http://desktop-7hnt1ju:8080/?WSDL"));
         //DefaultAcceptMessageService defaultAcceptMessageService = new DefaultAcceptMessageService(new URL("http://weplus206:8080/?WSDL"));
-        //DefaultAcceptMessageService defaultAcceptMessageService = new DefaultAcceptMessageService(new URL("http://weplus162:8080/?WSDL"));
+        DefaultAcceptMessageService defaultAcceptMessageService = new DefaultAcceptMessageService(new URL("http://weplus162:8080/?WSDL"));
         DefaultAcceptMessage defaultAcceptMessage = defaultAcceptMessageService.getDefaultAcceptMessagePort();
         String omlCorrected = removeXMLDeclaration(omlFinal);
         defaultAcceptMessage.acceptMessage(omlCorrected);

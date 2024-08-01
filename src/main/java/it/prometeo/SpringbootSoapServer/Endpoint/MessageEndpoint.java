@@ -1,7 +1,6 @@
 package it.prometeo.SpringbootSoapServer.Endpoint;
 
 import ca.uhn.hl7v2.HL7Exception;
-import ca.uhn.hl7v2.model.Message;
 import ca.uhn.hl7v2.model.v25.message.*;
 import it.prometeo.HL7Palm.Decoding.OMLDecoding;
 import it.prometeo.HL7Palm.Message.*;
@@ -58,7 +57,8 @@ public class MessageEndpoint implements CommandLineRunner {
 
     private final ObjectFactory factory;
     private static final Logger logger = LoggerFactory.getLogger(MessageEndpoint.class);
-    private static final Util util = new Util();
+    @Autowired
+    private Util util;
     private static ORMOO1 ormO01 = new ORMOO1();
     private static OMLO21 oml_o21 = new OMLO21();
     private static String hl7Response = null;
