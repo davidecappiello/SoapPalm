@@ -7,7 +7,6 @@ import ca.uhn.hl7v2.parser.DefaultXMLParser;
 import ca.uhn.hl7v2.parser.PipeParser;
 import ca.uhn.hl7v2.parser.XMLParser;
 import it.prometeo.Entity.*;
-import it.prometeo.HL7Palm.Message.MDMT2_T02;
 import it.prometeo.HL7Palm.Message.OMLO21;
 import it.prometeo.Repository.DocumentDao;
 import it.prometeo.Repository.MessageEventDao;
@@ -136,10 +135,8 @@ public class PollerDocument {
             String body = messageBody.toString();
             OML_O21 oml_o21 = (OML_O21) pipeParser.parse(body);
 
-            MDMT2_T02 mdmt2_t02 = new MDMT2_T02();
-            MDM_T02 mdm_t02 = mdmt2_t02.generateMDM_T02();
 
-            soapClient.sendAcceptMessageDocument(xmlParser.encode(mdm_t02));
+            //soapClient.sendMdmMessage(xmlParser.encode(mdm_t02));
 
             documentDao.updateDocumentEvent(trigger);
         }
