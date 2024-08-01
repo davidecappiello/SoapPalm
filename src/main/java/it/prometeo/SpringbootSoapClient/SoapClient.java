@@ -1,6 +1,5 @@
 package it.prometeo.SpringbootSoapClient;
 
-import ca.uhn.hl7v2.model.v25.message.MDM_T02;
 import com.mirth.connect.connectors.ws.*;
 import org.springframework.stereotype.Service;
 import java.net.MalformedURLException;
