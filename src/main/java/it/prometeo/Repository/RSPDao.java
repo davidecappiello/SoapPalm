@@ -63,7 +63,7 @@ public class RSPDao {
                 placer = parts[1];
             }
         }
-        MessageEvent event = eventDao.findMessageEventPlacerFromOML(placer);
+        MessageEvent event = eventDao.findMessageEventPlacerFromORL(placer);
 
         List<MessageSegment> segmentList = messageSegmentDao.findMessageSegment(event);
         StringBuilder messageBody = new StringBuilder();

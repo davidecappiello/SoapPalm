@@ -1,7 +1,6 @@
 package it.prometeo.Repository;
 
 import it.prometeo.Entity.MessageEvent;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.sql.DataSource;
@@ -18,7 +17,7 @@ public class MessageEventDao {
         this.dataSource = dataSource;
     }
 
-    public String findMessageEventPlacer(String accessNumber) {
+    public String findMessagePlacerGroupNumber(String accessNumber) {
 
         String result = null;
 
