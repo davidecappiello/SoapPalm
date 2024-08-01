@@ -12,18 +12,15 @@ public class MessageSegment {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(name = "code", nullable = false)
+    @Column(name = "CODE", nullable = false)
     private String code;
 
     @Lob
-    @Column(name = "body", nullable = false, columnDefinition = "CLOB")
+    @Column(name = "BODY", nullable = false, columnDefinition = "CLOB")
     private String body;
 
-    /*@Column(name = "body", nullable = false, columnDefinition = "TEXT")
-    private String body;*/
-
     @ManyToOne
-    @JoinColumn(name = "message_event_id", nullable = false)
+    @JoinColumn(name = "MESSAGE_EVENT_ID", nullable = false)
     private MessageEvent messageEventId;
 
     public Integer getId() {

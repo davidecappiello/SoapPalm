@@ -31,13 +31,16 @@ import it.prometeo.Socket.Service.HL7SocketClientServiceTransfusion;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.annotation.AccessType;
 import org.springframework.stereotype.Service;
 import org.xml.sax.SAXException;
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.PrintWriter;
 import java.io.StringWriter;
+import java.sql.Blob;
+import java.sql.SQLException;
+import java.util.Base64;
 import java.util.Date;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -65,6 +68,15 @@ public class Util {
     }
     public void insertLogRowInt(int log) { logger.info(String.valueOf(log));}
     public void insertLogRowDate(Date log) { logger.info(String.valueOf(log));}
+    public void insertLogRowBlob(Blob log) {
+        try {
+            InputStream inputStream = log.getBinaryStream();
+            byte[] blobContent = inputStream.readAllBytes();
+            String base64Content = Base64.getEncoder().encodeToString(blobContent);
+            logger.info(base64Content);
+        } catch (SQLException | IOException ignored) {
+        }
+    }
 
     public String checkAndUpdateMessageType(String finalMessage) {
         try {
@@ -96,12 +108,13 @@ public class Util {
     }
 
     public String extractMsg3Value(String message) throws Exception {
-        Pattern pattern = Pattern.compile("<MSG.3>(.*)</MSG.3>");
+        Pattern pattern = Pattern.compile("<MSG\\.3>\\s*(.*?)\\s*</MSG\\.3>", Pattern.DOTALL);
         Matcher matcher = pattern.matcher(message);
 
         if (matcher.find()) {
-            System.out.println(matcher.group(1));
-            return matcher.group(1);
+            String msg3Value = matcher.group(1).trim();
+            System.out.println(msg3Value);
+            return msg3Value;
         } else {
             Exception e = new Exception("MSG.3 value not found in MSH");
             e.printStackTrace(pw);
@@ -170,14 +183,12 @@ public class Util {
     }
 
     public String modifyPid7Format(String xmlMessage) throws Exception {
-        Pattern pattern = Pattern.compile(" {12}<PID.7>\n" +
-                " {16}<TS.1>(.*)</TS.1>\n" +
-                " {12}</PID.7>\n");
+        Pattern pattern = Pattern.compile("<PID\\.7>\\s*<TS\\.1>(.*?)</TS\\.1>\\s*</PID\\.7>", Pattern.DOTALL);
         Matcher matcher = pattern.matcher(xmlMessage);
 
         if (matcher.find()) {
-            System.out.println(matcher.group(1));
-            String dateOfBirth = matcher.group(1).substring(0, 8);
+            String dateOfBirthFull = matcher.group(1).trim();
+            String dateOfBirth = dateOfBirthFull.substring(0, 8);
             System.out.println(dateOfBirth);
             return dateOfBirth;
         } else {
@@ -218,10 +229,9 @@ public class Util {
     public void handleOMLPS(String updatedMessage, OML_O21 omlCreated, OMLO21 oml_o21, String hl7Response, AcceptMessageResponse response, String param,
                             MessageEventServiceOMLO21 messageEventServiceOMLO21, MessageSegmentServiceOMLO21 messageSegmentServiceOMLO21,
                             MessageEventServiceORLO22 messageEventServiceORLO22, MessageSegmentServiceORLO22 messageSegmentServiceORLO22,
-                            MessageEventRepository messageEventRepository, String msh3Value, Boolean routeError) throws HL7Exception, IOException, ParserConfigurationException, SAXException {
+                            MessageEventRepository messageEventRepository, String msh3Value) throws HL7Exception, IOException, ParserConfigurationException, SAXException {
 
         insertLogRow("Parametro ricevuto: " + param);
-        routeError = true;
         saveOMLO21Database(updatedMessage, messageEventServiceOMLO21, messageSegmentServiceOMLO21, msh3Value);
         omlCreated = OMLDecoding.decodeOML_XML(updatedMessage);
         OML_O21 omlForTD = omlObject.generateOML_021ForTDFromPS(omlCreated);
@@ -230,7 +240,7 @@ public class Util {
         hl7Response = HL7SocketClientService.sendHL7Message(finalMessagePIPE);
         insertLogRow(hl7Response);
 
-        if (controllMSA(hl7Response) == true) {
+        if (controllMSA(hl7Response)) {
             ORL_O22 orlFromTD = (ORL_O22) pipeParser.parse(hl7Response);
             saveORLO22OnDatabase(hl7Response, omlCreated, messageEventServiceORLO22, messageSegmentServiceORLO22);
             messageEventServiceOMLO21.updateLatestOMLO21RecordWithFillerOrderNumberAndStatusPS(orlFromTD);
@@ -268,7 +278,7 @@ public class Util {
         hl7Response = HL7SocketClientServiceTransfusion.sendHL7Message(finalMessagePIPE);
         insertLogRow(hl7Response);
 
-        if (controllMSA(hl7Response) == true) {
+        if (controllMSA(hl7Response)) {
             ORL_O22 orlFromTD = (ORL_O22) pipeParser.parse(hl7Response);
             saveORLO22OnDatabase(hl7Response, omlCreated, messageEventServiceORLO22, messageSegmentServiceORLO22);
             messageEventServiceOMLO21.updateLatestOMLO21RecordWithFillerOrderNumberAndStatusTransfusion(orlFromTD);

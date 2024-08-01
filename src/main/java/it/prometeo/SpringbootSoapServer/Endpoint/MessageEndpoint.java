@@ -67,7 +67,6 @@ public class MessageEndpoint implements CommandLineRunner {
     static StringWriter sw = new StringWriter();
     static PrintWriter pw = new PrintWriter(sw);
     private static final String NAMESPACE_URI = "http://ws.connectors.connect.mirth.com/";
-    private static Boolean routeError = false;
     private static ACKResponse ackObject = new ACKResponse();
     public MessageEndpoint() {
         factory = new ObjectFactory();
@@ -99,7 +98,7 @@ public class MessageEndpoint implements CommandLineRunner {
                         util.handleORM(updatedMessage, ormO01, hl7Response, response, date, param, messageEventServiceOMLO21, messageSegmentServiceOMLO21, messageEventServiceORMOO1, messageSegmentServiceORMOO1, messageEventServiceORLO22, messageSegmentServiceORLO22, msh3Value);
                     } else if (param.equals("oml") && msh3Value.equals("NGH")) {
                             omlCreated = OMLDecoding.decodeOML_XML(updatedMessage);
-                            util.handleOMLPS(updatedMessage, omlCreated, oml_o21, hl7Response, response, param, messageEventServiceOMLO21, messageSegmentServiceOMLO21, messageEventServiceORLO22, messageSegmentServiceORLO22, messageEventRepository, msh3Value, routeError);
+                            util.handleOMLPS(updatedMessage, omlCreated, oml_o21, hl7Response, response, param, messageEventServiceOMLO21, messageSegmentServiceOMLO21, messageEventServiceORLO22, messageSegmentServiceORLO22, messageEventRepository, msh3Value);
                     } else if (param.equals("oml") && msh3Value.equals("ONIX")) {
                         util.handleOMLTransfusion(updatedMessage, omlCreated, oml_o21, hl7Response, response, param, messageEventServiceOMLO21, messageSegmentServiceOMLO21, messageEventServiceORLO22, messageSegmentServiceORLO22, messageEventRepository, msh3Value);
                     }
@@ -126,13 +125,9 @@ public class MessageEndpoint implements CommandLineRunner {
                 }
             } finally {
                 if(exceptionCaught != null) {
-                    if(routeError) {
                         ACK ackMessage = ackObject.generateACKErrorOMLO21FromPSDecodingError(updatedMessage, exceptionCaught);
                         String ackResponseFinal = ackObject.transformACKIntoStringXML(ackMessage);
                         response.setReturn(ackResponseFinal);
-                    } else if(!routeError) {
-
-                    }
                 } else {
                     util.insertLogRow("Flusso completato correttamente");
                 }

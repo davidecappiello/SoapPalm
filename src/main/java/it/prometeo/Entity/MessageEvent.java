@@ -14,22 +14,22 @@ public class MessageEvent extends BaseObject {
     @Serial
     private static final long serialVersionUID = 1L;
 
-    @Column(name = "code", nullable = false)
+    @Column(name = "CODE", nullable = false)
     private String code;
 
-    @Column(name = "source", nullable = false)
+    @Column(name = "SOURCE", nullable = false)
     private String source;
 
-    @Column(name = "placer_group_number", nullable = true)
+    @Column(name = "PLACER_GROUP_NUMBER", nullable = true)
     private String placerGroupNumber;
 
-    @Column(name = "filler_order_number", nullable = true)
+    @Column(name = "FILLER_ORDER_NUMBER", nullable = true)
     private String fillerOrderNumber;
 
-    @Column(name = "status", nullable = true)
+    @Column(name = "STATUS", nullable = true)
     private String status;
 
-    @Column(name = "error_description", nullable = true)
+    @Column(name = "ERROR_DESCRIPTION", nullable = true)
     private String errorDescription;
 
     @OneToMany(mappedBy = "messageEventId", cascade = CascadeType.ALL, orphanRemoval = true)

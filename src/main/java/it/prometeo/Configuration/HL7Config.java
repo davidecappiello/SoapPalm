@@ -2,8 +2,9 @@ package it.prometeo.Configuration;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.stereotype.Service;
 
-@Configuration
+@Service
 public class HL7Config {
 
     @Value("${hl7.separator}")
@@ -159,9 +160,6 @@ public class HL7Config {
     @Value("${hl7.queryChanges}")
     private String queryChanges;
 
-    @Value("${hl7.pollingTime}")
-    private long pollingTime;
-
     @Value("${hl7.columnAccessNumber}")
     private String columnAccessNumber;
 
@@ -185,6 +183,157 @@ public class HL7Config {
 
     @Value("${hl7.columnDateCHK}")
     private String columnDateCHK;
+
+    @Value("${hl7.messageCodeMdm}")
+    private String messageCodeMdm;
+
+    @Value("${hl7.triggerEventT02}")
+    private String triggerEventT02;
+
+    @Value("${hl7.triggerEventT10}")
+    private String triggerEventT10;
+
+    @Value("${hl7.triggerEventT11}")
+    private String triggerEventT11;
+
+    @Value("${hl7.messageStructureMDMT02evT02}")
+    private String messageStructureMDMT02evT02;
+
+    @Value("${hl7.messageStructureMDMT02evT10}")
+    private String messageStructureMDMT02evT10;
+
+    @Value("${hl7.messageStructureMDMT01evT11}")
+    private String messageStructureMDMT01evT11;
+
+    @Value("${hl7.orderStatusMDMT02evT02}")
+    private String orderStatusMDMT02evT02;
+
+    @Value("${hl7.setIDTXA}")
+    private String setIDTXA;
+
+    @Value("${hl7.documentTypeTXA}")
+    private String documentTypeTXA;
+
+    @Value("${hl7.documentContentPresentation}")
+    private String documentContentPresentation;
+
+    @Value("${hl7.documentCompletionStatus}")
+    private String documentCompletionStatus;
+
+    @Value("${hl7.documentAvailabilityStatusPartial}")
+    private String documentAvailabilityStatusPartial;
+
+    @Value("${hl7.documentAvailabilityStatusComplete}")
+    private String documentAvailabilityStatusComplete;
+
+    @Value("${hl7.authenticationPersonTimeStampMF}")
+    private String authenticationPersonTimeStampMF;
+
+    @Value("${hl7.authenticationPersonTimeStampN}")
+    private String authenticationPersonTimeStampN;
+
+    @Value("${hl7.queryReports}")
+    private String queryReports;
+
+    @Value("${hl7.columnID}")
+    private String columnID;
+
+    @Value("${hl7.columnRefID}")
+    private String columnRefID;
+
+    @Value("${hl7.columnDataAcc}")
+    private String columnDataAcc;
+
+    @Value("${hl7.columnDataRef}")
+    private String columnDataRef;
+
+    @Value("${hl7.columnMed}")
+    private String columnMed;
+
+    @Value("${hl7.columnRep}")
+    private String columnRep;
+
+    @Value("${hl7.columnName}")
+    private String columnName;
+
+    @Value("${hl7.columnFirstName}")
+    private String columnFirstName;
+
+    @Value("${hl7.columnSite}")
+    private String columnSite;
+
+    @Value("${hl7.columnLabo}")
+    private String columnLabo;
+
+    @Value("${hl7.columnDipa}")
+    private String columnDipa;
+
+    @Value("${hl7.columnVal}")
+    private String columnVal;
+
+    @Value("${hl7.columnLockID}")
+    private String columnLockID;
+
+    @Value("${hl7.columnLockDate}")
+    private String columnLockDate;
+
+    @Value("${hl7.columnMetaInfo}")
+    private String columnMetaInfo;
+
+    @Value("${hl7.columnMetaSign}")
+    private String columnMetaSign;
+
+    @Value("${hl7.columnStatus}")
+    private String columnStatus;
+
+    @Value("${hl7.columnDocument}")
+    private String columnDocument;
+
+    @Value("${hl7.columnLoadDate}")
+    private String columnLoadDate;
+
+    @Value("${hl7.columnSignDate}")
+    private String columnSignDate;
+
+    @Value("${hl7.columnCategory}")
+    private String columnCategory;
+
+    @Value("${hl7.columnFileName}")
+    private String columnFileName;
+
+    @Value("${hl7.valueTypeOBX}")
+    private String valueTypeOBX;
+
+    @Value("${hl7.observationIdentifierCE1}")
+    private String observationIdentifierCE1;
+
+    @Value("${hl7.observationIdentifierCE4}")
+    private String observationIdentifierCE4;
+
+    @Value("${hl7.observationResultStatusUnique}")
+    private String observationResultStatusUnique;
+
+    @Value("${hl7.observationResultStatusSplitted}")
+    private String observationResultStatusSplitted;
+
+    @Value("${hl7.responsibleObserveHD1}")
+    private String responsibleObserveHD1;
+
+    @Value("${hl7.responsibleObserveHD2}")
+    private String responsibleObserveHD2;
+
+    @Value("${hl7.orc1New}")
+    private String orc1New;
+
+    @Value("${hl7.orc5Scheduled}")
+    private String orc5Scheduled;
+
+    @Value("${hl7.orcReplacement}")
+    private String orcReplacement;
+
+    @Value("${hl7.orcCancel}")
+    private String orcCancel;
+
 
     public String getSeparator() {
         return separator;
@@ -387,31 +536,237 @@ public class HL7Config {
     public String getQueryChanges() {
         return queryChanges;
     }
-    public long getPollingTime() {
-        return pollingTime;
-    }
+
     public String getColumnAccessNumber() {
         return columnAccessNumber;
     }
+
     public String getColumnTubeNumber() {
         return columnTubeNumber;
     }
+
     public String getColumnStato() {
         return columnStato;
     }
+
     public String getColumnFlagInoltrato() {
         return columnFlagInoltrato;
     }
+
     public String getColumnLogUserID() {
         return columnLogUserID;
     }
+
     public String getColumnHostOrderNumber() {
         return columnHostOrderNumber;
     }
+
     public String getColumnReparto() {
         return columnReparto;
     }
+
     public String getColumnDateCHK() {
         return columnDateCHK;
     }
+
+    public String getMessageCodeMdm() {
+        return messageCodeMdm;
+    }
+
+    public String getTriggerEventT02() {
+        return triggerEventT02;
+    }
+
+    public String getMessageStructureMDMT02evT02() {
+        return messageStructureMDMT02evT02;
+    }
+
+    public String getOrderStatusMDMT02evT02() {
+        return orderStatusMDMT02evT02;
+    }
+
+    public String getSetIDTXA() {
+        return setIDTXA;
+    }
+
+    public String getDocumentTypeTXA() {
+        return documentTypeTXA;
+    }
+
+    public String getDocumentContentPresentation() {
+        return documentContentPresentation;
+    }
+
+    public String getDocumentCompletionStatus() {
+        return documentCompletionStatus;
+    }
+
+    public String getDocumentAvailabilityStatusPartial() {
+        return documentAvailabilityStatusPartial;
+    }
+
+    public String getDocumentAvailabilityStatusComplete() {
+        return documentAvailabilityStatusComplete;
+    }
+
+    public String getAuthenticationPersonTimeStampMF() {
+        return authenticationPersonTimeStampMF;
+    }
+
+    public String getAuthenticationPersonTimeStampN() {
+        return authenticationPersonTimeStampN;
+    }
+
+    public String getQueryReports() {
+        return queryReports;
+    }
+
+    public String getColumnID() {
+        return columnID;
+    }
+
+    public String getColumnRefID() {
+        return columnRefID;
+    }
+
+    public String getColumnDataAcc() {
+        return columnDataAcc;
+    }
+
+    public String getColumnDataRef() {
+        return columnDataRef;
+    }
+
+    public String getColumnMed() {
+        return columnMed;
+    }
+
+    public String getColumnRep() {
+        return columnRep;
+    }
+
+    public String getColumnName() {
+        return columnName;
+    }
+
+    public String getColumnFirstName() {
+        return columnFirstName;
+    }
+
+    public String getColumnSite() {
+        return columnSite;
+    }
+
+    public String getColumnLabo() {
+        return columnLabo;
+    }
+
+    public String getColumnDipa() {
+        return columnDipa;
+    }
+
+    public String getColumnVal() {
+        return columnVal;
+    }
+
+    public String getColumnLockID() {
+        return columnLockID;
+    }
+
+    public String getColumnLockDate() {
+        return columnLockDate;
+    }
+
+    public String getColumnMetaInfo() {
+        return columnMetaInfo;
+    }
+
+    public String getColumnMetaSign() {
+        return columnMetaSign;
+    }
+
+    public String getColumnStatus() {
+        return columnStatus;
+    }
+
+    public String getColumnDocument() {
+        return columnDocument;
+    }
+
+    public String getColumnLoadDate() {
+        return columnLoadDate;
+    }
+
+    public String getColumnSignDate() {
+        return columnSignDate;
+    }
+
+    public String getColumnCategory() {
+        return columnCategory;
+    }
+
+    public String getColumnFileName() {
+        return columnFileName;
+    }
+
+    public String getValueTypeOBX() {
+        return valueTypeOBX;
+    }
+
+    public String getObservationIdentifierCE1() {
+        return observationIdentifierCE1;
+    }
+
+    public String getObservationIdentifierCE4() {
+        return observationIdentifierCE4;
+    }
+
+    public String getObservationResultStatusUnique() {
+        return observationResultStatusUnique;
+    }
+
+    public String getObservationResultStatusSplitted() {
+        return observationResultStatusSplitted;
+    }
+
+    public String getResponsibleObserveHD1() {
+        return responsibleObserveHD1;
+    }
+
+    public String getResponsibleObserveHD2() {
+        return responsibleObserveHD2;
+    }
+
+    public String getOrc1New() {
+        return orc1New;
+    }
+
+    public String getOrc5Scheduled() {
+        return orc5Scheduled;
+    }
+
+    public String getTriggerEventT10() {
+        return triggerEventT10;
+    }
+
+    public String getMessageStructureMDMT02evT10() {
+        return messageStructureMDMT02evT10;
+    }
+
+    public String getOrcReplacement() {
+        return orcReplacement;
+    }
+
+    public String getTriggerEventT11() {
+        return triggerEventT11;
+    }
+
+    public String getMessageStructureMDMT01evT11() {
+        return messageStructureMDMT01evT11;
+    }
+
+    public String getOrcCancel() {
+        return orcCancel;
+    }
 }
+

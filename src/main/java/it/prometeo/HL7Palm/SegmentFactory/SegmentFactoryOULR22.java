@@ -6,9 +6,10 @@ import ca.uhn.hl7v2.model.v25.message.OUL_R22;
 import ca.uhn.hl7v2.model.v25.segment.*;
 import it.prometeo.Configuration.HL7Config;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.util.Calendar;
-
+@Component
 public class SegmentFactoryOULR22 {
 
     private static HL7Config hl7Config = null;

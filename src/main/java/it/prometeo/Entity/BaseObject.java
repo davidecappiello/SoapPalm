@@ -14,10 +14,10 @@ public class BaseObject implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(name = "creation_date", nullable = false)
+    @Column(name = "CREATION_DATE", nullable = false)
     private LocalDateTime creationDate;
 
-    @Column(name = "update_date", nullable = false)
+    @Column(name = "UPDATE_DATE", nullable = false)
     private LocalDateTime updateDate;
 
     @PrePersist

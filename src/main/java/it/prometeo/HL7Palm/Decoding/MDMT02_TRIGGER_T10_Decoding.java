@@ -1,4 +1,4 @@
-package com.mirth.prometeo.HL7Palm.Decoding;
+package it.prometeo.HL7Palm.Decoding;
 
 import ca.uhn.hl7v2.HL7Exception;
 import ca.uhn.hl7v2.model.v25.message.MDM_T02;
