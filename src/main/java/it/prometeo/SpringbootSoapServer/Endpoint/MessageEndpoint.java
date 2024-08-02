@@ -33,7 +33,7 @@ import java.io.PrintWriter;
 import java.io.StringWriter;
 
 @Endpoint
-public class MessageEndpoint implements CommandLineRunner {
+public class MessageEndpoint {
 
     @Autowired
     private MessageEventServiceOMLO21 messageEventServiceOMLO21;
@@ -136,16 +136,6 @@ public class MessageEndpoint implements CommandLineRunner {
             response.setReturn("Received acceptMessage is null or its value is null.");
         }
         return factory.createAcceptMessageResponse(response);
-    }
-
-    @Override
-    public void run(String... args) throws Exception {
-        if (args.length > 0) {
-            String console = args[0];
-            param = console;
-        } else {
-            util.insertLogRow("Nessun parametro fornito");
-        }
     }
 
 }
