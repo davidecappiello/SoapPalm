@@ -12,9 +12,9 @@ public class SoapClient {
 
     public void sendAcceptMessage(String omlFinal) throws MalformedURLException {
 
-        DefaultAcceptMessageService defaultAcceptMessageService = new DefaultAcceptMessageService(new URL("http://desktop-7hnt1ju:8086/?WSDL"));
+        //DefaultAcceptMessageService defaultAcceptMessageService = new DefaultAcceptMessageService(new URL("http://desktop-7hnt1ju:8190/?WSDL"));
         //DefaultAcceptMessageService defaultAcceptMessageService = new DefaultAcceptMessageService(new URL("http://weplus206:8080/?WSDL"));
-        //DefaultAcceptMessageService defaultAcceptMessageService = new DefaultAcceptMessageService(new URL("http://weplus162:8080/?WSDL"));
+        DefaultAcceptMessageService defaultAcceptMessageService = new DefaultAcceptMessageService(new URL("http://weplus162:8190/?WSDL"));
         DefaultAcceptMessage defaultAcceptMessage = defaultAcceptMessageService.getDefaultAcceptMessagePort();
         String omlCorrected = removeXMLDeclaration(omlFinal);
         defaultAcceptMessage.acceptMessage(omlCorrected);
@@ -22,9 +22,9 @@ public class SoapClient {
 
     public void sendMdmMessage(String mdmFinal) throws MalformedURLException {
 
-        DefaultAcceptMessageService defaultAcceptMessageService = new DefaultAcceptMessageService(new URL("http://desktop-7hnt1ju:8180/?WSDL"));
+//        DefaultAcceptMessageService defaultAcceptMessageService = new DefaultAcceptMessageService(new URL("http://desktop-7hnt1ju:8290/?WSDL"));
         //DefaultAcceptMessageService defaultAcceptMessageService = new DefaultAcceptMessageService(new URL("http://weplus206:8080/?WSDL"));
-        //DefaultAcceptMessageService defaultAcceptMessageService = new DefaultAcceptMessageService(new URL("http://weplus162:8080/?WSDL"));
+        DefaultAcceptMessageService defaultAcceptMessageService = new DefaultAcceptMessageService(new URL("http://weplus162:8290/?WSDL"));
         DefaultAcceptMessage defaultAcceptMessage = defaultAcceptMessageService.getDefaultAcceptMessagePort();
         String mdmCorrected = removeXMLDeclaration(mdmFinal);
         defaultAcceptMessage.acceptMessage(mdmCorrected);

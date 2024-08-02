@@ -2,20 +2,17 @@ it\prometeo\Socket\Service\HL7SocketClientServiceTransfusion.class
 it\prometeo\Configuration\HL7Config.class
 it\prometeo\Entity\PRO_TDQ2HL7.class
 com\mirth\connect\connectors\ws\DefaultAcceptMessagePortImpl.class
-it\prometeo\ServiceMDMT02evT10\Segment\MessageSegmentServiceMDMT02evT10.class
 it\prometeo\SpringbootSoapClient\SoapClient.class
 com\mirth\connect\connectors\ws\DefaultAcceptMessageService.class
 it\prometeo\Entity\BaseObject.class
 it\prometeo\HL7Palm\SegmentFactory\SegmentFactoryRSPK11.class
 it\prometeo\Repository\DocumentDao.class
-it\prometeo\ServiceMDMT02evT02\Event\MessageEventServiceMDMT02evT02.class
 it\prometeo\HL7Palm\Segment\ZET.class
 it\prometeo\ServiceORUR01\Event\MessageEventServiceORUR01.class
 it\prometeo\ServletInitializer.class
 com\mirth\connect\connectors\ws\ObjectFactory.class
 it\prometeo\Entity\MessageSegment.class
 it\prometeo\Poller\PollerDocument$2.class
-it\prometeo\ServiceMDMT02evT02\Segment\MessageSegmentServiceMDMT02evT02.class
 it\prometeo\SoapClientApplication.class
 it\prometeo\HL7Palm\Message\ORMOO1.class
 it\prometeo\HL7Palm\SegmentFactory\SegmentFactoryOULR22.class
@@ -25,6 +22,7 @@ it\prometeo\SpringbootSoapServer\Endpoint\MessageEndpoint.class
 it\prometeo\HL7Palm\Message\ORLO22.class
 it\prometeo\Socket\Handler\PalmWebSocketHandler.class
 it\prometeo\HL7Palm\Message\MDMT01evT11.class
+Base64ToByteArray.class
 it\prometeo\HL7Palm\Message\Custom\RSP_K11.class
 it\prometeo\HL7Palm\SegmentFactory\SegmentFactoryACKResponseORU.class
 it\prometeo\HL7Palm\Decoding\MDMT02_Decoding.class
@@ -46,7 +44,6 @@ it\prometeo\Socket\Config\HL7ClientSocketConfigPS.class
 it\prometeo\Socket\Config\Hl7ServerSocketConfigPS.class
 it\prometeo\HL7Palm\Decoding\OMLDecoding.class
 it\prometeo\ServiceORMOO1\Segment\MessageSegmentServiceORMOO1.class
-it\prometeo\ServiceMDMT02evT10\Event\MessageEventServiceMDMT02evT10.class
 it\prometeo\ServiceORLO22\Event\MessageEventServiceORLO22.class
 it\prometeo\Repository\MessageSegmentDao.class
 it\prometeo\HL7Palm\Message\ORUR01.class

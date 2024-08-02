@@ -33,7 +33,7 @@ import java.io.PrintWriter;
 import java.io.StringWriter;
 
 @Endpoint
-public class MessageEndpoint implements CommandLineRunner {
+public class MessageEndpoint {
 
     @Autowired
     private MessageEventServiceOMLO21 messageEventServiceOMLO21;
@@ -94,13 +94,16 @@ public class MessageEndpoint implements CommandLineRunner {
                 if (msg3Value.equals("OML_O21")) {
                     util.insertLogRow("Salvo l'OML_O21 inviato dal PS e l'ORM_O01 generato da noi sul database locale");
                     String date = util.modifyPid7Format(finalMessage);
-                    /*(if (param.equals("orm")) {
-                        util.handleORM(updatedMessage, ormO01, hl7Response, response, date, param, messageEventServiceOMLO21, messageSegmentServiceOMLO21, messageEventServiceORMOO1, messageSegmentServiceORMOO1, messageEventServiceORLO22, messageSegmentServiceORLO22, msh3Value);
-                    } else if (param.equals("oml") && msh3Value.equals("NGH")) {
-                            omlCreated = OMLDecoding.decodeOML_XML(updatedMessage);
-                            util.handleOMLPS(updatedMessage, omlCreated, oml_o21, hl7Response, response, param, messageEventServiceOMLO21, messageSegmentServiceOMLO21, messageEventServiceORLO22, messageSegmentServiceORLO22, messageEventRepository, msh3Value);
-                    }*/
-                        util.handleOMLTransfusion(updatedMessage, omlCreated, oml_o21, hl7Response, response, param, messageEventServiceOMLO21, messageSegmentServiceOMLO21, messageEventServiceORLO22, messageSegmentServiceORLO22, messageEventRepository, msh3Value);
+//                    if (param.equals("orm")) {
+//                        util.handleORM(updatedMessage, ormO01, hl7Response, response, date, param, messageEventServiceOMLO21, messageSegmentServiceOMLO21, messageEventServiceORMOO1, messageSegmentServiceORMOO1, messageEventServiceORLO22, messageSegmentServiceORLO22, msh3Value);
+//                    } else if (param.equals("oml") && msh3Value.equals("NGH")) {
+//                            omlCreated = OMLDecoding.decodeOML_XML(updatedMessage);
+//                            util.handleOMLPS(updatedMessage, omlCreated, oml_o21, hl7Response, response, param, messageEventServiceOMLO21, messageSegmentServiceOMLO21, messageEventServiceORLO22, messageSegmentServiceORLO22, messageEventRepository, msh3Value);
+//                    } else if (param.equals("oml") && msh3Value.equals("ONIX")) {
+//                        util.handleOMLTransfusion(updatedMessage, omlCreated, oml_o21, hl7Response, response, param, messageEventServiceOMLO21, messageSegmentServiceOMLO21, messageEventServiceORLO22, messageSegmentServiceORLO22, messageEventRepository, msh3Value);
+//                    }
+                    omlCreated = OMLDecoding.decodeOML_XML(updatedMessage);
+                    util.handleOMLPS(updatedMessage, omlCreated, oml_o21, hl7Response, response, param, messageEventServiceOMLO21, messageSegmentServiceOMLO21, messageEventServiceORLO22, messageSegmentServiceORLO22, messageEventRepository, msh3Value);
                 } else if (msg3Value.equals("QBP_Q11")) {
                     util.handleQBP(updatedMessage, response, messageEventServiceQBPQ11, messageSegmentServiceQBPQ11);
                 }
@@ -138,14 +141,14 @@ public class MessageEndpoint implements CommandLineRunner {
         return factory.createAcceptMessageResponse(response);
     }
 
-    @Override
-    public void run(String... args) throws Exception {
-        if (args.length > 0) {
-            String console = args[0];
-            param = console;
-        } else {
-            util.insertLogRow("Nessun parametro fornito");
-        }
-    }
+//    @Override
+//    public void run(String... args) throws Exception {
+//        if (args.length > 0) {
+//            String console = args[0];
+//            param = console;
+//        } else {
+//            util.insertLogRow("Nessun parametro fornito");
+//        }
+//    }
 
 }

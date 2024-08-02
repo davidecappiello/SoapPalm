@@ -5,28 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4481f517-9634-4a0f-aa4c-1e0dc6197495" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/it/prometeo/ServiceMDMT02evT02/Event/MessageEventServiceMDMT02evT02.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/it/prometeo/ServiceMDMT02evT02/Segment/MessageSegmentServiceMDMT02evT02.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/it/prometeo/ServiceMDMT02evT10/Event/MessageEventServiceMDMT02evT10.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/it/prometeo/ServiceMDMT02evT10/Segment/MessageSegmentServiceMDMT02evT10.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/it/prometeo/ServletInitializer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logger-2024-07-25.log" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/logger.log" beforeDir="false" afterPath="$PROJECT_DIR$/logger.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Base64ToByteArray.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/mirth/connect/connectors/ws/AcceptMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mirth/connect/connectors/ws/AcceptMessage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/mirth/connect/connectors/ws/AcceptMessageResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mirth/connect/connectors/ws/AcceptMessageResponse.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/mirth/connect/connectors/ws/ObjectFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mirth/connect/connectors/ws/ObjectFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/mirth/connect/connectors/ws/package-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mirth/connect/connectors/ws/package-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/it/prometeo/Configuration/HL7Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/prometeo/Configuration/HL7Config.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/it/prometeo/Poller/PollerCheckIn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/prometeo/Poller/PollerCheckIn.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/it/prometeo/Poller/PollerDocument.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/prometeo/Poller/PollerDocument.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/it/prometeo/Poller/Poller_WXSDOCUMENT.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/it/prometeo/SoapClientApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/prometeo/SoapClientApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/it/prometeo/SpringbootSoapClient/SoapClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/prometeo/SpringbootSoapClient/SoapClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/it/prometeo/SpringbootSoapServer/Endpoint/MessageEndpoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/prometeo/SpringbootSoapServer/Endpoint/MessageEndpoint.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/it/prometeo/Util/Util.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/prometeo/Util/Util.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Base64ToByteArray.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Base64ToByteArray.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
@@ -68,7 +57,6 @@
       <change beforePath="$PROJECT_DIR$/target/classes/it/prometeo/Repository/MessageEventDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/it/prometeo/Repository/MessageEventDao.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/it/prometeo/Repository/MessageSegmentDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/it/prometeo/Repository/MessageSegmentDao.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/it/prometeo/Repository/RSPDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/it/prometeo/Repository/RSPDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/it/prometeo/SoapClientApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/it/prometeo/SoapClientApplication.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/it/prometeo/SpringbootSoapClient/SoapClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/it/prometeo/SpringbootSoapClient/SoapClient.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/it/prometeo/SpringbootSoapServer/Endpoint/MessageEndpoint.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/it/prometeo/SpringbootSoapServer/Endpoint/MessageEndpoint.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/it/prometeo/Util/Util.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/it/prometeo/Util/Util.class" afterDir="false" />
@@ -81,9 +69,15 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
       </list>
+    </option>
+  </component>
+  <component name="Git.Pull.Settings">
+    <option name="OPTIONS">
+      <set>
+        <option value="REBASE" />
+      </set>
     </option>
   </component>
   <component name="Git.Settings">
@@ -106,21 +100,30 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/VGpc/Desktop/Specialists-Network&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.31609195&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="ExtractSuperBase.RECENT_KEYS">
-      <recent name="it.prometeo" />
       <recent name="com.mirth.prometeo.Socket.Config" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="it.prometeo" />
       <recent name="" />
     </key>
   </component>
   <component name="RunManager">
-    <configuration name="Run" type="Application" factoryName="Application">
+    <configuration name="RUN" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="it.prometeo.SoapClientApplication" />
+      <module name="spring-boot-soap" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
       <module name="spring-boot-soap" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -165,6 +168,9 @@
       </map>
     </option>
   </component>
+  <component name="VcsManagerConfiguration">
+    <option name="LAST_COMMIT_MESSAGE" value="" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
@@ -185,5 +191,13 @@
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/SoapPalm$OML.ic" NAME="OML Coverage Results" MODIFIED="1722441221477" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/SoapClient$Run.ic" NAME="Run Coverage Results" MODIFIED="1720617306253" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>
