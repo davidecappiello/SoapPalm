@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<bindings version="3.0" xmlns="https://jakarta.ee/xml/ns/jaxb">
+  <!--
+
+Questo file è stato generato dall'Eclipse Implementation of JAXB, v3.0.0 
+Vedere https://eclipse-ee4j.github.io/jaxb-ri 
+Qualsiasi modifica a questo file andrà persa durante la ricompilazione dello schema di origine. 
+Generato il: 2024.08.02 alle 05:19:28 PM CEST 
+
+  -->
+  <bindings scd="x-schema::tns" xmlns:tns="http://ws.connectors.connect.mirth.com/">
+    <schemaBindings map="false">
+      <package name="com.mirth.connect.connectors.ws"/>
+    </schemaBindings>
+    <bindings scd="~tns:acceptMessage">
+      <class ref="com.mirth.connect.connectors.ws.AcceptMessage"/>
+    </bindings>
+    <bindings scd="~tns:acceptMessageResponse">
+      <class ref="com.mirth.connect.connectors.ws.AcceptMessageResponse"/>
+    </bindings>
+  </bindings>
+</bindings>
+

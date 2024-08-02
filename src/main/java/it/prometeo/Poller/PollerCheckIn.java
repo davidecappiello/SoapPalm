@@ -57,7 +57,6 @@ public class PollerCheckIn {
     //                             In caso di successo: 210 checkin
     //                             In caso di successo: 220 risultati
 
-    private final String QUERY_TO_CHECK_CHANGES = "SELECT * FROM PRO_TDQ2HL7 pth WHERE FLAG_INOLTRATO = 0 AND REPARTO = 'PNGH'";
     private final String QUERY_TO_CHECK_CHANGES_ONE_DATA = "SELECT * FROM PRO_TDQ2HL7 pth WHERE FLAG_INOLTRATO = 0 AND REPARTO = 'PNGH' AND ROWNUM = 1";
     private final String QUERY_TO_CHECK_COUNT_DATA = "SELECT COUNT(*) FROM PRO_TDQ2HL7 pth WHERE FLAG_INOLTRATO = 0 AND REPARTO = 'PNGH' AND ROWNUM = 1";
 

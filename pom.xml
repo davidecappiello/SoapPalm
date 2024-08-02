@@ -6,6 +6,7 @@
 	<groupId>com.mirth</groupId>
 	<artifactId>spring-boot-soap</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
 
 	<name>spring-boot-soap-server</name>
 	<description>Demo project for Spring Boot</description>
@@ -54,7 +55,6 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
-			<version>3.3.0</version>
 		</dependency>
 
 		<dependency>
@@ -257,8 +257,6 @@
 					<outputDirectory>${project.basedir}/src/main/java</outputDirectory>
 					<clearOutputDir>false</clearOutputDir>
 				</configuration>
-
-
 
 			</plugin>
 		</plugins>

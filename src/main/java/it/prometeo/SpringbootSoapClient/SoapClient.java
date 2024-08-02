@@ -12,7 +12,7 @@ public class SoapClient {
 
     public void sendAcceptMessage(String omlFinal) throws MalformedURLException {
 
-        DefaultAcceptMessageService defaultAcceptMessageService = new DefaultAcceptMessageService(new URL("http://desktop-7hnt1ju:8080/?WSDL"));
+        DefaultAcceptMessageService defaultAcceptMessageService = new DefaultAcceptMessageService(new URL("http://desktop-7hnt1ju:8086/?WSDL"));
         //DefaultAcceptMessageService defaultAcceptMessageService = new DefaultAcceptMessageService(new URL("http://weplus206:8080/?WSDL"));
         //DefaultAcceptMessageService defaultAcceptMessageService = new DefaultAcceptMessageService(new URL("http://weplus162:8080/?WSDL"));
         DefaultAcceptMessage defaultAcceptMessage = defaultAcceptMessageService.getDefaultAcceptMessagePort();

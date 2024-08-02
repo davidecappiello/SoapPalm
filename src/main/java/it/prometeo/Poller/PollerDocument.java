@@ -16,6 +16,7 @@ import it.prometeo.Repository.MessageEventDao;
 import it.prometeo.Repository.MessageSegmentDao;
 import it.prometeo.Repository.PRO_TDQ2HL7_Dao;
 import it.prometeo.SpringbootSoapClient.SoapClient;
+import it.prometeo.Util.Util;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
@@ -38,10 +39,11 @@ public class PollerDocument {
     private XMLParser xmlParser = new DefaultXMLParser();
 
     @Autowired
+    private Util util;
+    @Autowired
     private JdbcTemplate jdbcTemplate;
     @Autowired
     private HL7Config hl7Config;
-
     @Autowired
     MessageEventDao messageEventDao;
     @Autowired
@@ -49,65 +51,60 @@ public class PollerDocument {
     @Autowired
     DocumentDao documentDao;
 
-    @Autowired
-    private SoapClient soapClient;
-
     public PollerDocument(JdbcTemplate jdbcTemplate, HL7Config hl7Config) {
         this.jdbcTemplate = jdbcTemplate;
         this.hl7Config = hl7Config;
     }
 
-    private final String QUERY_TO_INSERT_DOCUMENT = "SELECT * FROM WXSDOCUMENT WHERE STATUS = 'P7M'";
-    private final String QUERY_TO_CHECK_CHANGES = "SELECT * FROM PRO_DOCUMENT_EVENT WHERE FLAG_INOLTRATO = 0 AND ROWNUM = 1";
-    private final String QUERY_TO_CHECK_COUNT_DATA = "SELECT COUNT(*) FROM PRO_DOCUMENT_EVENT WHERE FLAG_INOLTRATO = 0 AND ROWNUM = 1";
-
-
 
     @Scheduled(fixedRate = 30000)
     public void pollDatabase() throws HL7Exception, IOException, InterruptedException, SQLException {
+
+        final String QUERY_TO_INSERT_DOCUMENT = hl7Config.getQueryReports();
+        final String QUERY_TO_CHECK_CHANGES = hl7Config.getQueryChangesDocument();
+        final String QUERY_TO_CHECK_COUNT_DATA = hl7Config.getQueryCheckCountData();
 
         List<WXSDOCUMENT> wxsdocuments = jdbcTemplate.query(QUERY_TO_INSERT_DOCUMENT, new RowMapper<WXSDOCUMENT>() {
             @Override
             public WXSDOCUMENT mapRow(ResultSet rs, int rowNum) throws SQLException {
 
-                WXSDOCUMENT result = new WXSDOCUMENT(
-                        rs.getInt("ID"),
-                        rs.getString("REFID"),
-                        rs.getDate("DATA_ACC"),
-                        rs.getDate("DATA_REF"),
-                        rs.getString("MED"),
-                        rs.getString("REP"),
-                        rs.getString("NAME"),
-                        rs.getString("FIRSTNAME"),
-                        rs.getString("SITE"),
-                        rs.getString("LABO"),
-                        rs.getString("DIPA"),
-                        rs.getString("VAL"),
-                        rs.getInt("LOCKID"),
-                        rs.getDate("LOCKDATE"),
-                        rs.getString("METAINFO"),
-                        rs.getString("METASIGN"),
-                        rs.getString("STATUS"),
-                        rs.getBlob("DOCUMENT"),
-                        rs.getDate("LOADDATE"),
-                        rs.getDate("SIGNDATE"),
-                        rs.getString("CATEGORY"),
-                        rs.getString("FILE_NAME")
+                return new WXSDOCUMENT(
+                        rs.getInt(hl7Config.getColumnID()),
+                        rs.getString(hl7Config.getColumnRefID()),
+                        rs.getDate(hl7Config.getColumnDataAcc()),
+                        rs.getDate(hl7Config.getColumnDataRef()),
+                        rs.getString(hl7Config.getColumnMed()),
+                        rs.getString(hl7Config.getColumnRep()),
+                        rs.getString(hl7Config.getColumnName()),
+                        rs.getString(hl7Config.getColumnFirstName()),
+                        rs.getString(hl7Config.getColumnSite()),
+                        rs.getString(hl7Config.getColumnLabo()),
+                        rs.getString(hl7Config.getColumnDipa()),
+                        rs.getString(hl7Config.getColumnVal()),
+                        rs.getInt(hl7Config.getColumnLockID()),
+                        rs.getDate(hl7Config.getColumnLockDate()),
+                        rs.getString(hl7Config.getColumnMetaInfo()),
+                        rs.getString(hl7Config.getColumnMetaSign()),
+                        rs.getString(hl7Config.getColumnStatus()),
+                        rs.getBlob(hl7Config.getColumnDocument()),
+                        rs.getDate(hl7Config.getColumnLoadDate()),
+                        rs.getDate(hl7Config.getColumnSignDate()),
+                        rs.getString(hl7Config.getColumnCategory()),
+                        rs.getString(hl7Config.getColumnFileName())
                 );
-                return result;
             }
         });
-        for (int i = 0; i < wxsdocuments.size(); i++) {
-            DocumentEvent documentEvent = documentDao.findEvent(wxsdocuments.get(i).getREFID(), wxsdocuments.get(i).getFILE_NAME());
+        for (WXSDOCUMENT wxsdocument : wxsdocuments) {
+            DocumentEvent documentEvent = documentDao.findEvent(wxsdocument.getREFID(), wxsdocument.getFILE_NAME());
 
-            if(documentEvent == null){
-                documentDao.insertEvent(wxsdocuments.get(i).getREFID(), wxsdocuments.get(i).getFILE_NAME());
+            if (documentEvent == null) {
+                documentDao.insertEvent(wxsdocument.getREFID(), wxsdocument.getFILE_NAME());
             }
         }
 
         int result = jdbcTemplate.queryForObject(QUERY_TO_CHECK_COUNT_DATA, Integer.class);
 
-        System.out.println("result from document: " + result);
+        util.insertLogRow("result from document: " + result);
 
         if (result > 0) {
             DocumentEvent trigger = jdbcTemplate.queryForObject(QUERY_TO_CHECK_CHANGES, new RowMapper<DocumentEvent>() {
@@ -116,46 +113,29 @@ public class PollerDocument {
                 public DocumentEvent mapRow(ResultSet rs, int rowNum) throws SQLException {
 
                     DocumentEvent result = new DocumentEvent();
-                    result.setACCESSNUMBER(rs.getString("ACCESSNUMBER"));
-                    result.setFILE_NAME(rs.getString("FILE_NAME"));
-                    result.setFLAG_INOLTRATO(rs.getInt("FLAG_INOLTRATO"));
+                    result.setACCESSNUMBER(rs.getString(hl7Config.getColumnAccessNumber()));
+                    result.setFILE_NAME(rs.getString(hl7Config.getColumnFileName()));
+                    result.setFLAG_INOLTRATO(rs.getInt(hl7Config.getColumnFlagInoltrato()));
                     return result;
                 }
             });
 
 
             String placer = messageEventDao.findMessagePlacerGroupNumber(trigger.getACCESSNUMBER());
-            System.out.println(placer);
-
+            util.insertLogRow(placer);
             WXSDOCUMENT entity = documentDao.findDocument(trigger.getACCESSNUMBER(), trigger.getFILE_NAME());
-
             MessageEvent message = messageEventDao.findMessageEventPlacerFromOML(placer);
-
 
             List<MessageSegment> segmentList = messageSegmentDao.findMessageSegment(message);
             StringBuilder messageBody = new StringBuilder();
-            for(int j = 0; j < segmentList.size(); j++) {
-                messageBody.append(segmentList.get(j).getBody() + "\r");
-                System.out.println(segmentList.get(j).getBody());
+            for (MessageSegment messageSegment : segmentList) {
+                messageBody.append(messageSegment.getBody()).append("\r");
+                System.out.println(messageSegment.getBody());
             }
             String body = messageBody.toString();
             OML_O21 oml_o21 = (OML_O21) pipeParser.parse(body);
+            util.sendMDMMessages(oml_o21, entity);
 
-            String orc1 =  oml_o21.getORDER().getORC().getOrderControl().getValue();
-            String orc5 = oml_o21.getORDER().getORC().getOrderStatus().getValue();
-            if(orc1.equals(hl7Config.getOrc1New()) && orc5.equals(hl7Config.getOrc5Scheduled())) {
-                MDM_T02 mdmMessage = MDMT02evT02.generateMDMT02evT02(oml_o21, entity);
-                String mdmMessageFinal = MDMT02evT02.convertMDMT02ToXML(mdmMessage);
-                soapClient.sendMdmMessage(mdmMessageFinal);
-            } else if(orc1.equals(hl7Config.getOrcReplacement()) && orc5.equals(hl7Config.getOrcReplacement())) {
-                MDM_T02 mdmMessage = MDMT02evT10.generateMDMT02evT10(oml_o21, entity);
-                String mdmMessageFinal = MDMT02evT10.convertMDMT02ToXML(mdmMessage);
-                soapClient.sendMdmMessage(mdmMessageFinal);
-            } else if(orc1.equals(hl7Config.getOrcCancel()) && orc5.equals(hl7Config.getOrcCancel())) {
-                MDM_T02 mdmMessage = MDMT02evT10.generateMDMT02evT10(oml_o21, entity);
-                String mdmMessageFinal = MDMT02evT10.convertMDMT02ToXML(mdmMessage);
-                soapClient.sendMdmMessage(mdmMessageFinal);
-            }
             documentDao.updateDocumentEvent(trigger);
         }
     }

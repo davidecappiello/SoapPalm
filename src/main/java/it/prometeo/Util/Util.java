@@ -9,12 +9,18 @@ import ca.uhn.hl7v2.parser.PipeParser;
 import ca.uhn.hl7v2.parser.XMLParser;
 import com.mirth.connect.connectors.ws.AcceptMessageResponse;
 
+import it.prometeo.Configuration.HL7Config;
 import it.prometeo.Entity.MessageEvent;
+import it.prometeo.Entity.WXSDOCUMENT;
 import it.prometeo.HL7Palm.Decoding.OMLDecoding;
 import it.prometeo.HL7Palm.Decoding.ORLDecoding;
 import it.prometeo.HL7Palm.Decoding.QBPDecoding;
 import it.prometeo.HL7Palm.Message.*;
 import it.prometeo.HL7Palm.Message.Custom.RSP_K11;
+import it.prometeo.ServiceMDMT02evT10.Event.MessageEventServiceMDMT02evT10;
+import it.prometeo.ServiceMDMT02evT10.Segment.MessageSegmentServiceMDMT02evT10;
+import it.prometeo.ServiceMDMT02evT02.Event.MessageEventServiceMDMT02evT02;
+import it.prometeo.ServiceMDMT02evT02.Segment.MessageSegmentServiceMDMT02evT02;
 import it.prometeo.Repository.MessageEventRepository;
 import it.prometeo.ServiceOMLO21.Event.MessageEventServiceOMLO21;
 import it.prometeo.ServiceOMLO21.Segment.MessageSegmentServiceOMLO21;
@@ -28,6 +34,7 @@ import it.prometeo.ServiceQBPQ11.Event.MessageEventServiceQBPQ11;
 import it.prometeo.ServiceQBPQ11.Segment.MessageSegmentServiceQBPQ11;
 import it.prometeo.Socket.Service.HL7SocketClientService;
 import it.prometeo.Socket.Service.HL7SocketClientServiceTransfusion;
+import it.prometeo.SpringbootSoapClient.SoapClient;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -57,11 +64,23 @@ public class Util {
     private static ORLO22 orlObject = new ORLO22();
     private static ORM_O01 ormCreated = null;
     private static OMLO21 omlObject = new OMLO21();
-    @Autowired
-    private RSPK11 rspk11Object;
     private static String finalResponseToPSPIPE = null;
     private static String finalResponseToPSXML = null;
     private static OML_O21 omlMessage = null;
+    @Autowired
+    private RSPK11 rspk11Object;
+    @Autowired
+    private SoapClient soapClient;
+    @Autowired
+    private HL7Config hl7Config;
+    @Autowired
+    private MessageEventServiceMDMT02evT02 messageEventServiceMDMT02evT02;
+    @Autowired
+    private MessageSegmentServiceMDMT02evT02 messageSegmentServiceMDMT02evT02;
+    @Autowired
+    private MessageEventServiceMDMT02evT10 messageEventServiceMDMT02evT10;
+    @Autowired
+    private MessageSegmentServiceMDMT02evT10 messageSegmentServiceMDMT02evT10;
 
     public void insertLogRow(String log) {
         logger.info(log);
@@ -473,6 +492,52 @@ public class Util {
             return matcher.group(1);
         } else {
             return null;
+        }
+    }
+
+    public void sendMDMMessages(OML_O21 oml_o21, WXSDOCUMENT entity) throws HL7Exception, IOException, SQLException {
+        String orc1 =  oml_o21.getORDER().getORC().getOrderControl().getValue();
+        String orc5 = oml_o21.getORDER().getORC().getOrderStatus().getValue();
+        if(orc1.equals(hl7Config.getOrc1New()) && orc5.equals(hl7Config.getOrc5Scheduled())) {
+            MDM_T02 mdmMessage = MDMT02evT02.generateMDMT02evT02(oml_o21, entity);
+            String mdmMessageFinal = MDMT02evT02.convertMDMT02ToXML(mdmMessage);
+            insertLogRow("Salvo sul database locale il messaggio MDMT02ev02 generato");
+            saveMDMT02evT02Database(mdmMessage, oml_o21);
+            soapClient.sendMdmMessage(mdmMessageFinal);
+        } else if(orc1.equals(hl7Config.getOrcReplacement()) && orc5.equals(hl7Config.getOrcReplacement())) {
+            MDM_T02 mdmMessage = MDMT02evT10.generateMDMT02evT10(oml_o21, entity);
+            String mdmMessageFinal = MDMT02evT10.convertMDMT02ToXML(mdmMessage);
+            soapClient.sendMdmMessage(mdmMessageFinal);
+        } else if(orc1.equals(hl7Config.getOrcCancel()) && orc5.equals(hl7Config.getOrcCancel())) {
+            MDM_T02 mdmMessage = MDMT02evT10.generateMDMT02evT10(oml_o21, entity);
+            String mdmMessageFinal = MDMT02evT10.convertMDMT02ToXML(mdmMessage);
+            soapClient.sendMdmMessage(mdmMessageFinal);
+        }
+    }
+
+    public void saveMDMT02evT02Database(MDM_T02 mdmMessage, OML_O21 omlO21) {
+        try {
+            MessageEvent messageEvent = messageEventServiceMDMT02evT02.saveMDMT02evT02Message(mdmMessage, omlO21);
+            messageSegmentServiceMDMT02evT02.saveMSHMessageSegmentMDMT02evT02(mdmMessage, messageEvent);
+            messageSegmentServiceMDMT02evT02.saveEVNMessageSegmentMDMT02evT02(mdmMessage, messageEvent);
+            messageSegmentServiceMDMT02evT02.savePIDMessageSegmentMDMT02evT02(mdmMessage, messageEvent);
+            messageSegmentServiceMDMT02evT02.savePV1MessageSegmentMDMT02evT02(mdmMessage, messageEvent);
+            messageSegmentServiceMDMT02evT02.saveORDERBLOCKMessageMDMT02evT02(mdmMessage, messageEvent);
+        } catch (HL7Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void saveMDMT02evT10Database(MDM_T02 mdmMessage, OML_O21 omlO21) {
+        try {
+            MessageEvent messageEvent = messageEventServiceMDMT02evT10.saveMDMT02evT10Message(mdmMessage, omlO21);
+            messageSegmentServiceMDMT02evT10.saveMSHMessageSegmentMDMT02evT10(mdmMessage, messageEvent);
+            messageSegmentServiceMDMT02evT10.saveEVNMessageSegmentMDMT02evT10(mdmMessage, messageEvent);
+            messageSegmentServiceMDMT02evT10.savePIDMessageSegmentMDMT02evT10(mdmMessage, messageEvent);
+            messageSegmentServiceMDMT02evT10.savePV1MessageSegmentMDMT02evT10(mdmMessage, messageEvent);
+            messageSegmentServiceMDMT02evT10.saveORDERBLOCKMessageMDMT02evT10(mdmMessage, messageEvent);
+        } catch (HL7Exception e) {
+            e.printStackTrace();
         }
     }
 
