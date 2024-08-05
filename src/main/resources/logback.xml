@@ -1,12 +1,14 @@
 <configuration>
+    <property name="LOG_FILE_NAME" value="Palm_Log.txt"/>
+    <property name="LOG_FILE_PATH" value="C:\\Program Files\\Apache Software Foundation\\Tomcat 10.1\\logs\\Palm"/>
 
     <appender name="ROLLING_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>logger.log</file>
+        <file>${LOG_FILE_PATH}/${LOG_FILE_NAME}</file>
         <encoder>
             <pattern>%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n</pattern>
         </encoder>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>logger-%d{yyyy-MM-dd}.log</fileNamePattern>
+            <fileNamePattern>${LOG_FILE_PATH}/${LOG_FILE_NAME}-%d{yyyy-MM-dd}.log</fileNamePattern>
             <maxHistory>7</maxHistory>
         </rollingPolicy>
         <!-- <filter class="ch.qos.logback.classic.filter.LevelFilter">
