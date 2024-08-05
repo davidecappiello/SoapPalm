@@ -62,7 +62,7 @@ public class PollerDocument {
 
         final String QUERY_TO_INSERT_DOCUMENT = hl7Config.getQueryReports();
         final String QUERY_TO_CHECK_CHANGES = hl7Config.getQueryChangesDocument();
-        final String QUERY_TO_CHECK_COUNT_DATA = hl7Config.getQueryCheckCountData();
+        final String QUERY_TO_CHECK_COUNT_DATA = hl7Config.getQueryCheckCountDataDocument();
 
         List<WXSDOCUMENT> wxsdocuments = jdbcTemplate.query(QUERY_TO_INSERT_DOCUMENT, new RowMapper<WXSDOCUMENT>() {
             @Override

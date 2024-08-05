@@ -45,6 +45,33 @@ public class SegmentFactoryOMLO21FromORUR01 {
             mshSegmentIntegrate.getVersionID().getVersionID().setValue(mshSource.getVersionID().getVersionID().getValue());
     }
 
+    public static void createMSHSegmentIntegrateOMLO21FromORUR01Transfusion(MSH mshSegmentIntegrate, MSH mshSource) throws HL7Exception {
+
+        mshSegmentIntegrate.getFieldSeparator().setValue(hl7Config.getSeparator());
+        mshSegmentIntegrate.getEncodingCharacters().setValue(hl7Config.getEncodingCharacters());
+        if(mshSource.getSendingApplication().getNamespaceID().getValue() != null)
+            mshSegmentIntegrate.getSendingApplication().getNamespaceID().setValue(hl7Config.getSendingApplication());
+        if(mshSource.getSendingFacility().getNamespaceID().getValue() != null)
+            mshSegmentIntegrate.getSendingFacility().getNamespaceID().setValue(hl7Config.getSendingFacility());
+        if(mshSource.getReceivingApplication().getNamespaceID().getValue() != null)
+            mshSegmentIntegrate.getReceivingApplication().getNamespaceID().setValue(hl7Config.getSendingApplicationTransfusion());
+        mshSegmentIntegrate.getReceivingFacility().getNamespaceID().setValue(hl7Config.getSendingFacilityTransfusion());
+        if(mshSource.getDateTimeOfMessage().getTime().getValue() != null)
+            mshSegmentIntegrate.getDateTimeOfMessage().getTime().setValue(mshSource.getDateTimeOfMessage().getTime().getValue());
+        if(mshSource.getMessageType().getMessageCode().getValue() != null)
+            mshSegmentIntegrate.getMessageType().getMessageCode().setValue(hl7Config.getMessageCodeOml());
+        if(mshSource.getMessageType().getTriggerEvent().getValue() != null)
+            mshSegmentIntegrate.getMessageType().getTriggerEvent().setValue(hl7Config.getTriggerEventO21());
+        if(mshSource.getMessageType().getMessageStructure().getValue() != null)
+            mshSegmentIntegrate.getMessageType().getMessageStructure().setValue(hl7Config.getMessageStructureOMLO21());
+        if(mshSource.getMessageControlID().getValue() != null)
+            mshSegmentIntegrate.getMessageControlID().setValue(mshSource.getMessageControlID().getValue());
+        if(mshSource.getProcessingID().getProcessingID().getValue() != null)
+            mshSegmentIntegrate.getProcessingID().getProcessingID().setValue(mshSource.getProcessingID().getProcessingID().getValue());
+        if(mshSource.getVersionID().getVersionID().getValue() != null)
+            mshSegmentIntegrate.getVersionID().getVersionID().setValue(mshSource.getVersionID().getVersionID().getValue());
+    }
+
     public static void createPIDSegmentIntegrateOMLO21FromORUR01(PID pidSegmentIntegrate, PID pidSource) throws HL7Exception {
 
         ST targetIdentifierIDNumber = pidSegmentIntegrate.getPatientIdentifierList(0).getIDNumber();

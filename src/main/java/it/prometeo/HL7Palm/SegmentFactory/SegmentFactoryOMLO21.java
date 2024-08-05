@@ -58,20 +58,49 @@ public class SegmentFactoryOMLO21 {
         HD targetIdentifierAssigningAuthority = pidSegmentIntegrate.getPatientIdentifierList(0).getAssigningAuthority();
         ID targetIdentifierIdentifierTypeCode = pidSegmentIntegrate.getPatientIdentifierList(0).getIdentifierTypeCode();
 
+        boolean aurFound = false;
+        String aurValue = null;
+
         for (int i = 0; i < pidSource.getPatientIdentifierListReps(); i++) {
             CX sourceIdentifier = pidSource.getPatientIdentifierList(i);
 
-            if(targetIdentifierIDNumber.getValue() == null && targetIdentifierAssigningAuthority.getNamespaceID().getValue() == null && targetIdentifierIdentifierTypeCode.getValue() == null) {
-                targetIdentifierIDNumber.setValue(sourceIdentifier.getIDNumber().getValue());
-                targetIdentifierAssigningAuthority.getNamespaceID().setValue(sourceIdentifier.getAssigningAuthority().getNamespaceID().getValue());
-                targetIdentifierIdentifierTypeCode.setValue(sourceIdentifier.getIdentifierTypeCode().getValue());
+            if ("AUR".equals(sourceIdentifier.getIdentifierTypeCode().getValue())) {
+                aurValue = sourceIdentifier.getIDNumber().getValue();
+                aurFound = true;
+                break;
             }
         }
+
+            for (int j = 0; j < pidSource.getPatientIdentifierListReps(); j++) {
+                CX sourceIdentifier = pidSource.getPatientIdentifierList(j);
+
+                if (targetIdentifierIDNumber.getValue() == null &&
+                        targetIdentifierAssigningAuthority.getNamespaceID().getValue() == null &&
+                        targetIdentifierIdentifierTypeCode.getValue() == null && aurFound) {
+
+                    targetIdentifierIDNumber.setValue(aurValue);
+                    //targetIdentifierAssigningAuthority.getNamespaceID().setValue(sourceIdentifier.getAssigningAuthority().getNamespaceID().getValue());
+                    targetIdentifierAssigningAuthority.getNamespaceID().setValue("PATNUMBER");
+                    //targetIdentifierIdentifierTypeCode.setValue(sourceIdentifier.getIdentifierTypeCode().getValue());
+                    targetIdentifierIdentifierTypeCode.setValue("PI");
+                } else if(targetIdentifierIDNumber.getValue() == null &&
+                        targetIdentifierAssigningAuthority.getNamespaceID().getValue() == null &&
+                        targetIdentifierIdentifierTypeCode.getValue() == null && !aurFound) {
+
+                    targetIdentifierIDNumber.setValue(sourceIdentifier.getIDNumber().getValue());
+                    targetIdentifierAssigningAuthority.getNamespaceID().setValue(sourceIdentifier.getAssigningAuthority().getNamespaceID().getValue());
+                    targetIdentifierIdentifierTypeCode.setValue(sourceIdentifier.getIdentifierTypeCode().getValue());
+                }
+            }
+
 
         if(pidSource.getPatientName(0).getFamilyName().getSurname().getValue() != null)
             pidSegmentIntegrate.getPatientName(0).getFamilyName().getSurname().setValue(pidSource.getPatientName(0).getFamilyName().getSurname().getValue());
         if(pidSource.getPatientName(0).getGivenName().getValue() != null)
             pidSegmentIntegrate.getPatientName(0).getGivenName().setValue(pidSource.getPatientName(0).getGivenName().getValue());
+        pidSegmentIntegrate.getPatientName(0).getNameTypeCode().setValue("L");
+        pidSegmentIntegrate.getPatientName(0).getNameRepresentationCode().setValue(aurValue);
+        pidSegmentIntegrate.getPatientName(0).getProfessionalSuffix().setValue(pidSource.getAdministrativeSex().getValue());
         if(pidSource.getDateTimeOfBirth().getTime().getValue() != null) {
             String date = pidSource.getDateTimeOfBirth().getTime().getValue().substring(0, 8);
             pidSegmentIntegrate.getDateTimeOfBirth().getTime().setValue(date);

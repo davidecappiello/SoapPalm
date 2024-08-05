@@ -61,6 +61,48 @@ public class ORUR01 {
         return oml;
     }
 
+    public OML_O21 generateOMLO21FromORUR01TDForTransfusion(ORU_R01 oruMessage) throws HL7Exception {
+
+        OML_O21 oml = new OML_O21();
+
+        MSH mshSource = oruMessage.getMSH();
+        MSH mshSegmentIntegrate = oml.getMSH();
+        SegmentFactoryOMLO21FromORUR01.createMSHSegmentIntegrateOMLO21FromORUR01Transfusion(mshSegmentIntegrate, mshSource);
+
+        PID pidSource = oruMessage.getPATIENT_RESULT().getPATIENT().getPID();
+        PID pidSegmentIntegrate = oml.getPATIENT().getPID();
+        SegmentFactoryOMLO21FromORUR01.createPIDSegmentIntegrateOMLO21FromORUR01(pidSegmentIntegrate, pidSource);
+
+        PV1 pv1Source = oruMessage.getPATIENT_RESULT().getPATIENT().getVISIT().getPV1();
+        PV1 pv1SegmentIntegrate = oml.getPATIENT().getPATIENT_VISIT().getPV1();
+        SegmentFactoryOMLO21FromORUR01.createPV1SegmentIntegrateOMLO21FromORUR01(pv1SegmentIntegrate, pv1Source);
+
+        int orderReps = oruMessage.getPATIENT_RESULT().getORDER_OBSERVATIONReps();
+
+        for (int orderIndex = 0; orderIndex < orderReps; ++orderIndex) {
+
+            ORU_R01_ORDER_OBSERVATION oruOrder = oruMessage.getPATIENT_RESULT().getORDER_OBSERVATION(orderIndex);
+
+            ORC orcSource = oruOrder.getORC();
+            ORC orcSegmentIntegrate = oml.getORDER().getORC();
+            SegmentFactoryOMLO21FromORUR01.createORCSegmentIntegrateOMLO21FromORUR01(orcSegmentIntegrate, orcSource, orderIndex);
+
+            OBR obrSource = oruOrder.getOBR();
+            OBR obrSegmentIntegrate = oml.getORDER().getOBSERVATION_REQUEST().getOBR();
+            SegmentFactoryOMLO21FromORUR01.createOBRSegmentIntegrateOMLO21FromORUR01(obrSegmentIntegrate, obrSource, orcSource, orderIndex);
+
+            int observationReps = oruOrder.getOBSERVATIONReps();
+
+            for (int observationIndex = 0; observationIndex < observationReps; observationIndex++) {
+
+                OBX obxSource = oruOrder.getOBSERVATION(observationIndex).getOBX();
+                OBX obxSegmentIntegrate = oml.getORDER(orderIndex).getOBSERVATION_REQUEST().getOBSERVATION(observationIndex).getOBX();
+                SegmentFactoryOMLO21FromORUR01.createOBXSegmentIntegrateOMLO21FromORUR01(obxSegmentIntegrate, obxSource);
+            }
+        }
+        return oml;
+    }
+
     public String convertPIPEToXML(OML_O21 oml) throws HL7Exception, IOException, ParserConfigurationException, SAXException {
 
         return xmlParser.encode(oml);

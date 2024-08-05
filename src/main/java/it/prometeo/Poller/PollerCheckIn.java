@@ -5,6 +5,7 @@ import ca.uhn.hl7v2.model.v25.message.OML_O21;
 import ca.uhn.hl7v2.parser.DefaultXMLParser;
 import ca.uhn.hl7v2.parser.PipeParser;
 import ca.uhn.hl7v2.parser.XMLParser;
+import it.prometeo.Configuration.HL7Config;
 import it.prometeo.Entity.MessageEvent;
 import it.prometeo.Entity.MessageSegment;
 import it.prometeo.Entity.PRO_TDQ2HL7;
@@ -13,6 +14,7 @@ import it.prometeo.Repository.MessageEventDao;
 import it.prometeo.Repository.MessageSegmentDao;
 import it.prometeo.Repository.PRO_TDQ2HL7_Dao;
 import it.prometeo.SpringbootSoapClient.SoapClient;
+import it.prometeo.Util.Util;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
@@ -34,7 +36,11 @@ public class PollerCheckIn {
     private XMLParser xmlParser = new DefaultXMLParser();
 
     @Autowired
+    private Util util;
+    @Autowired
     private JdbcTemplate jdbcTemplate;
+    @Autowired
+    private HL7Config hl7Config;
     @Autowired
     private  DataSource dataSource;
 
@@ -56,11 +62,6 @@ public class PollerCheckIn {
     //                             In caso di errore del risultati: 520
     //                             In caso di successo: 210 checkin
     //                             In caso di successo: 220 risultati
-
-    private final String QUERY_TO_CHECK_CHANGES_ONE_DATA = "SELECT * FROM PRO_TDQ2HL7 pth WHERE FLAG_INOLTRATO = 0 AND REPARTO = 'PNGH' AND ROWNUM = 1";
-    private final String QUERY_TO_CHECK_COUNT_DATA = "SELECT COUNT(*) FROM PRO_TDQ2HL7 pth WHERE FLAG_INOLTRATO = 0 AND REPARTO = 'PNGH' AND ROWNUM = 1";
-
-
 
 
 // parametro in secondi ma che va messo nell'.app
@@ -207,10 +208,12 @@ public class PollerCheckIn {
     @Scheduled(fixedRate = 30000)
     public void pollDatabase() throws HL7Exception, IOException {
 
+         final String QUERY_TO_CHECK_CHANGES_ONE_DATA = hl7Config.getQueryChangesCheckIn();
+         final String QUERY_TO_CHECK_COUNT_DATA = hl7Config.getQueryCheckCountDataCheckIn();
 
         int result = jdbcTemplate.queryForObject(QUERY_TO_CHECK_COUNT_DATA, Integer.class);
 
-        System.out.println("result from checkin: " +result);
+        util.insertLogRow("result from checkin: " +result);
 
         if(result > 0){
             PRO_TDQ2HL7 proTdq2HL7 = jdbcTemplate.queryForObject(QUERY_TO_CHECK_CHANGES_ONE_DATA, new RowMapper<PRO_TDQ2HL7>() {
@@ -219,14 +222,14 @@ public class PollerCheckIn {
                 public PRO_TDQ2HL7 mapRow(ResultSet rs, int rowNum) throws SQLException {
 
                     PRO_TDQ2HL7 result = new PRO_TDQ2HL7(
-                            rs.getString("ACCESSNUMBER"),
-                            rs.getString("TUBENUMBER"),
-                            rs.getInt("STATO"),
-                            rs.getInt("FLAG_INOLTRATO"),
-                            rs.getString("LOGUSERID"),
-                            rs.getString("HOSTORDERNUMBER"),
-                            rs.getString("REPARTO"),
-                            rs.getDate("DATE_CHK")
+                            rs.getString(hl7Config.getColumnAccessNumber()),
+                            rs.getString(hl7Config.getColumnTubeNumber()),
+                            rs.getInt(hl7Config.getColumnStato()),
+                            rs.getInt(hl7Config.getColumnFlagInoltrato()),
+                            rs.getString(hl7Config.getColumnLogUserID()),
+                            rs.getString(hl7Config.getColumnHostOrderNumber()),
+                            rs.getString(hl7Config.getColumnReparto()),
+                            rs.getDate(hl7Config.getColumnDateCHK())
                     );
                     return result;
                 }

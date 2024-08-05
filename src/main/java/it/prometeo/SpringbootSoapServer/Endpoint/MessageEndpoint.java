@@ -91,17 +91,19 @@ public class MessageEndpoint {
 
         if (acceptMessage.getValue() != null && acceptMessage.getValue().getArg0() != null) {
             try {
-                if (msg3Value.equals("OML_O21")) {
-                    util.insertLogRow("Salvo l'OML_O21 inviato dal PS e l'ORM_O01 generato da noi sul database locale");
-                    String date = util.modifyPid7Format(finalMessage);
-                    /*(if (param.equals("orm")) {
-                        util.handleORM(updatedMessage, ormO01, hl7Response, response, date, param, messageEventServiceOMLO21, messageSegmentServiceOMLO21, messageEventServiceORMOO1, messageSegmentServiceORMOO1, messageEventServiceORLO22, messageSegmentServiceORLO22, msh3Value);
-                    } else if (param.equals("oml") && msh3Value.equals("NGH")) {
-                            omlCreated = OMLDecoding.decodeOML_XML(updatedMessage);
-                            util.handleOMLPS(updatedMessage, omlCreated, oml_o21, hl7Response, response, param, messageEventServiceOMLO21, messageSegmentServiceOMLO21, messageEventServiceORLO22, messageSegmentServiceORLO22, messageEventRepository, msh3Value);
-                    }*/
+                String date = util.modifyPid7Format(finalMessage);
+                if (msg3Value.equals("OML_O21") && msh3Value.equals("NGH")) {
+                    util.insertLogRow("Salvo l'OML_O21 inviato dal PS sul database locale");
+                    omlCreated = OMLDecoding.decodeOML_XML(updatedMessage);
+                    util.handleOMLPS(updatedMessage, omlCreated, oml_o21, hl7Response, response, param, messageEventServiceOMLO21, messageSegmentServiceOMLO21, messageEventServiceORLO22, messageSegmentServiceORLO22, messageEventRepository, msh3Value);
+                } else if (msg3Value.equals("ORM_O01") && msh3Value.equals("NGH")) {
+                        util.handleORMPS(updatedMessage, ormO01, hl7Response, response, date, param, messageEventServiceOMLO21, messageSegmentServiceOMLO21, messageEventServiceORMOO1, messageSegmentServiceORMOO1, messageEventServiceORLO22, messageSegmentServiceORLO22, msh3Value);
+                    } else if (msg3Value.equals("OML_O21") && msh3Value.equals("ONIX")) {
                         util.handleOMLTransfusion(updatedMessage, omlCreated, oml_o21, hl7Response, response, param, messageEventServiceOMLO21, messageSegmentServiceOMLO21, messageEventServiceORLO22, messageSegmentServiceORLO22, messageEventRepository, msh3Value);
-                } else if (msg3Value.equals("QBP_Q11")) {
+                    } else if (msg3Value.equals("ORM_O01") && msh3Value.equals("ONIX")) {
+
+                }
+                else if (msg3Value.equals("QBP_Q11")) {
                     util.handleQBP(updatedMessage, response, messageEventServiceQBPQ11, messageSegmentServiceQBPQ11);
                 }
             } catch (Exception e) {
@@ -137,5 +139,15 @@ public class MessageEndpoint {
         }
         return factory.createAcceptMessageResponse(response);
     }
+
+//    @Override
+//    public void run(String... args) throws Exception {
+//        if (args.length > 0) {
+//            String console = args[0];
+//            param = console;
+//        } else {
+//            util.insertLogRow("Nessun parametro fornito");
+//        }
+//    }
 
 }

@@ -1,14 +1,14 @@
 package it.prometeo.Socket.Service;
 
 import ca.uhn.hl7v2.model.v25.message.ACK;
+import ca.uhn.hl7v2.model.v25.message.OML_O21;
+import ca.uhn.hl7v2.model.v25.message.ORU_R01;
 import ca.uhn.hl7v2.parser.DefaultXMLParser;
+import ca.uhn.hl7v2.parser.Parser;
+import ca.uhn.hl7v2.parser.PipeParser;
 import ca.uhn.hl7v2.parser.XMLParser;
 import it.prometeo.HL7Palm.Message.ACKResponse;
 import it.prometeo.HL7Palm.Message.ORUR01;
-import ca.uhn.hl7v2.model.v25.message.OML_O21;
-import ca.uhn.hl7v2.model.v25.message.ORU_R01;
-import ca.uhn.hl7v2.parser.Parser;
-import ca.uhn.hl7v2.parser.PipeParser;
 import it.prometeo.ServiceOMLO21.Event.MessageEventServiceOMLO21;
 import it.prometeo.ServiceOMLO21.Segment.MessageSegmentServiceOMLO21;
 import it.prometeo.ServiceORUR01.Event.MessageEventServiceORUR01;
@@ -17,12 +17,15 @@ import it.prometeo.SpringbootSoapClient.SoapClient;
 import it.prometeo.Util.Util;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
 
 @Service
-public class HL7SocketServerService {
+public class Hl7SocketServerServiceTransfusion {
 
     private final Parser pipeParser = new PipeParser();
     private final XMLParser xmlParser = new DefaultXMLParser();
@@ -64,13 +67,13 @@ public class HL7SocketServerService {
                         } catch (Error e) {
                             e.printStackTrace();
                         }
-                        OML_O21 omlO21 = oruObject.generateOMLO21FromORUR01TD(parsedORU);
+                        OML_O21 omlO21 = oruObject.generateOMLO21FromORUR01TDForTransfusion(parsedORU);
                         util.insertLogRow("Salvo sul db locale l'OML_O21 generato, prima di inviarlo al PS");
                         util.saveOMLO21Database2(omlO21, messageEventServiceOMLO21, messageSegmentServiceOMLO21);
                         String omlFinal = String.valueOf(pipeParser.parse(String.valueOf(omlO21)));
                         String omlXML = oruObject.convertPIPEToXML(omlO21);
                         String responseMessage = processHL7Message(omlFinal);
-                        soapClient.sendAcceptMessage(omlXML);
+                        soapClient.sendAcceptMessagetransfusion(omlXML);
                         writeMessage(out, responseMessage);
                     } catch (Exception e) {
                         ACKResponse ackResponse = new ACKResponse();
@@ -124,5 +127,4 @@ public class HL7SocketServerService {
         out.print(messageWithDelimiters);
         out.flush();
     }
-
 }

@@ -1,7 +1,6 @@
 package it.prometeo.Configuration;
 
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -337,11 +336,17 @@ public class HL7Config {
     @Value("${queryChangesDocument}")
     private String queryChangesDocument;
 
-    @Value("${queryCheckCountData}")
-    private String queryCheckCountData;
+    @Value("${queryCheckCountDataDocument}")
+    private String queryCheckCountDataDocument;
+
+    @Value("${queryCheckCountDataCheckIn}")
+    private String queryCheckCountDataCheckIn;
 
     @Value("${segmentTxa}")
     private String segmentTxa;
+
+    @Value("${socketServerPortTransfusion}")
+    private int socketServerPortTransfusion;
 
 
     public String getSeparator() {
@@ -782,12 +787,20 @@ public class HL7Config {
         return queryChangesDocument;
     }
 
-    public String getQueryCheckCountData() {
-        return queryCheckCountData;
+    public String getQueryCheckCountDataDocument() {
+        return queryCheckCountDataDocument;
     }
 
     public String getSegmentTxa() {
         return segmentTxa;
+    }
+
+    public int getSocketServerPortTransfusion() {
+        return socketServerPortTransfusion;
+    }
+
+    public String getQueryCheckCountDataCheckIn() {
+        return queryCheckCountDataCheckIn;
     }
 }
 

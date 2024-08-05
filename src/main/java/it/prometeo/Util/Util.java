@@ -1,6 +1,7 @@
 package it.prometeo.Util;
 
 import ca.uhn.hl7v2.HL7Exception;
+import ca.uhn.hl7v2.model.DataTypeException;
 import ca.uhn.hl7v2.model.Message;
 import ca.uhn.hl7v2.model.v25.message.*;
 import ca.uhn.hl7v2.parser.DefaultXMLParser;
@@ -17,6 +18,8 @@ import it.prometeo.HL7Palm.Decoding.ORLDecoding;
 import it.prometeo.HL7Palm.Decoding.QBPDecoding;
 import it.prometeo.HL7Palm.Message.*;
 import it.prometeo.HL7Palm.Message.Custom.RSP_K11;
+import it.prometeo.ServiceMDMT01evT11.Event.MessageEventServiceMDMT01evT11;
+import it.prometeo.ServiceMDMT01evT11.Segment.MessageSegmentServiceMDMT01evT11;
 import it.prometeo.ServiceMDMT02evT10.Event.MessageEventServiceMDMT02evT10;
 import it.prometeo.ServiceMDMT02evT10.Segment.MessageSegmentServiceMDMT02evT10;
 import it.prometeo.ServiceMDMT02evT02.Event.MessageEventServiceMDMT02evT02;
@@ -81,6 +84,10 @@ public class Util {
     private MessageEventServiceMDMT02evT10 messageEventServiceMDMT02evT10;
     @Autowired
     private MessageSegmentServiceMDMT02evT10 messageSegmentServiceMDMT02evT10;
+    @Autowired
+    private MessageEventServiceMDMT01evT11 messageEventServiceMDMT01evT11;
+    @Autowired
+    private MessageSegmentServiceMDMT01evT11 messageSegmentServiceMDMT01evT11;
 
     public void insertLogRow(String log) {
         logger.info(log);
@@ -219,13 +226,12 @@ public class Util {
         }
     }
 
-    public void handleORM(String updatedMessage, ORMOO1 ormO01, String hl7Response, AcceptMessageResponse response,
+    public void handleORMPS(String updatedMessage, ORMOO1 ormO01, String hl7Response, AcceptMessageResponse response,
                           String date, String param, MessageEventServiceOMLO21 messageEventServiceOMLO21,
                           MessageSegmentServiceOMLO21 messageSegmentServiceOMLO21, MessageEventServiceORMOO1 messageEventServiceORMOO1,
                           MessageSegmentServiceORMOO1 messageSegmentServiceORMOO1, MessageEventServiceORLO22 messageEventServiceORLO22,
                           MessageSegmentServiceORLO22 messageSegmentServiceORLO22, String msh3Value) throws Exception {
 
-        insertLogRow("Parametro ricevuto: " + param);
         ORM_O01 ormCreated = saveOMLO21AndORMOO1OnDatabase(updatedMessage, ormO01, messageEventServiceOMLO21,  messageEventServiceORMOO1, messageSegmentServiceOMLO21, messageSegmentServiceORMOO1, msh3Value);
         String finalMessagePIPE = ormO01.convertXMLToPipeFormat(ormCreated);
         insertLogRow("Invio via socket il messaggio a TD");
@@ -250,7 +256,6 @@ public class Util {
                             MessageEventServiceORLO22 messageEventServiceORLO22, MessageSegmentServiceORLO22 messageSegmentServiceORLO22,
                             MessageEventRepository messageEventRepository, String msh3Value) throws HL7Exception, IOException, ParserConfigurationException, SAXException {
 
-        insertLogRow("Parametro ricevuto: " + param);
         saveOMLO21Database(updatedMessage, messageEventServiceOMLO21, messageSegmentServiceOMLO21, msh3Value);
         omlCreated = OMLDecoding.decodeOML_XML(updatedMessage);
         OML_O21 omlForTD = omlObject.generateOML_021ForTDFromPS(omlCreated);
@@ -288,7 +293,6 @@ public class Util {
                             MessageEventServiceORLO22 messageEventServiceORLO22, MessageSegmentServiceORLO22 messageSegmentServiceORLO22,
                             MessageEventRepository messageEventRepository, String msh3Value) throws Exception {
 
-        insertLogRow("Parametro ricevuto: " + param);
         saveOMLO21Database(updatedMessage, messageEventServiceOMLO21, messageSegmentServiceOMLO21, msh3Value);
         omlCreated = OMLDecoding.decodeOML_XML(updatedMessage);
         OML_O21 omlForTD = omlObject.generateOML_021ForTDFromTransfusion(omlCreated);
@@ -503,15 +507,15 @@ public class Util {
             String mdmMessageFinal = MDMT02evT02.convertMDMT02ToXML(mdmMessage);
             insertLogRow("Salvo sul database locale il messaggio MDMT02ev02 generato");
             saveMDMT02evT02Database(mdmMessage, oml_o21);
-            soapClient.sendMdmMessage(mdmMessageFinal);
+            soapClient.sendAcceptMessage(mdmMessageFinal);
         } else if(orc1.equals(hl7Config.getOrcReplacement()) && orc5.equals(hl7Config.getOrcReplacement())) {
             MDM_T02 mdmMessage = MDMT02evT10.generateMDMT02evT10(oml_o21, entity);
             String mdmMessageFinal = MDMT02evT10.convertMDMT02ToXML(mdmMessage);
-            soapClient.sendMdmMessage(mdmMessageFinal);
+            soapClient.sendAcceptMessage(mdmMessageFinal);
         } else if(orc1.equals(hl7Config.getOrcCancel()) && orc5.equals(hl7Config.getOrcCancel())) {
             MDM_T02 mdmMessage = MDMT02evT10.generateMDMT02evT10(oml_o21, entity);
             String mdmMessageFinal = MDMT02evT10.convertMDMT02ToXML(mdmMessage);
-            soapClient.sendMdmMessage(mdmMessageFinal);
+            soapClient.sendAcceptMessage(mdmMessageFinal);
         }
     }
 
@@ -538,6 +542,19 @@ public class Util {
             messageSegmentServiceMDMT02evT10.saveORDERBLOCKMessageMDMT02evT10(mdmMessage, messageEvent);
         } catch (HL7Exception e) {
             e.printStackTrace();
+        }
+    }
+
+    public void saveMDMT01evT11Database(MDM_T01 mdmMessage, OML_O21 omlO21) {
+        try {
+            MessageEvent messageEvent = messageEventServiceMDMT01evT11.saveMDMT01evT11Message(mdmMessage, omlO21);
+            messageSegmentServiceMDMT01evT11.saveMSHMessageSegmentMDMT01evT11(mdmMessage, messageEvent);
+            messageSegmentServiceMDMT01evT11.saveEVNMessageSegmentMDMT01evT11(mdmMessage, messageEvent);
+            messageSegmentServiceMDMT01evT11.savePIDMessageSegmentMDMT01evT11(mdmMessage, messageEvent);
+            messageSegmentServiceMDMT01evT11.savePV1MessageSegmentMDMT01evT11(mdmMessage, messageEvent);
+            messageSegmentServiceMDMT01evT11.saveTXAMessageSegmentMDMT01evT11(mdmMessage, messageEvent);
+        } catch (HL7Exception e) {
+            throw new RuntimeException(e);
         }
     }
 

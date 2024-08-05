@@ -12,22 +12,23 @@ public class SoapClient {
 
     public void sendAcceptMessage(String omlFinal) throws MalformedURLException {
 
-        DefaultAcceptMessageService defaultAcceptMessageService = new DefaultAcceptMessageService(new URL("http://desktop-7hnt1ju:8086/?WSDL"));
+        DefaultAcceptMessageService defaultAcceptMessageService = new DefaultAcceptMessageService(new URL("http://desktop-7hnt1ju:8357/?WSDL"));
         //DefaultAcceptMessageService defaultAcceptMessageService = new DefaultAcceptMessageService(new URL("http://weplus206:8080/?WSDL"));
-        //DefaultAcceptMessageService defaultAcceptMessageService = new DefaultAcceptMessageService(new URL("http://weplus162:8080/?WSDL"));
+        //DefaultAcceptMessageService defaultAcceptMessageService = new DefaultAcceptMessageService(new URL("http://weplus162:8092/?WSDL"));
         DefaultAcceptMessage defaultAcceptMessage = defaultAcceptMessageService.getDefaultAcceptMessagePort();
         String omlCorrected = removeXMLDeclaration(omlFinal);
         defaultAcceptMessage.acceptMessage(omlCorrected);
     }
 
-    public void sendMdmMessage(String mdmFinal) throws MalformedURLException {
+    public void sendAcceptMessagetransfusion(String omlFinal) throws MalformedURLException {
 
-        DefaultAcceptMessageService defaultAcceptMessageService = new DefaultAcceptMessageService(new URL("http://desktop-7hnt1ju:8180/?WSDL"));
+        //DefaultAcceptMessageService defaultAcceptMessageService = new DefaultAcceptMessageService(new URL("http://desktop-7hnt1ju:8190/?WSDL"));
         //DefaultAcceptMessageService defaultAcceptMessageService = new DefaultAcceptMessageService(new URL("http://weplus206:8080/?WSDL"));
-        //DefaultAcceptMessageService defaultAcceptMessageService = new DefaultAcceptMessageService(new URL("http://weplus162:8080/?WSDL"));
+        //DefaultAcceptMessageService defaultAcceptMessageService = new DefaultAcceptMessageService(new URL("http://weplus162:8190/?WSDL"));
+        DefaultAcceptMessageService defaultAcceptMessageService = new DefaultAcceptMessageService(new URL("http://desktop-7hnt1ju:8086/?WSDL"));
         DefaultAcceptMessage defaultAcceptMessage = defaultAcceptMessageService.getDefaultAcceptMessagePort();
-        String mdmCorrected = removeXMLDeclaration(mdmFinal);
-        defaultAcceptMessage.acceptMessage(mdmCorrected);
+        String omlCorrected = removeXMLDeclaration(omlFinal);
+        defaultAcceptMessage.acceptMessage(omlCorrected);
     }
 
     public static String removeXMLDeclaration(String xml) {

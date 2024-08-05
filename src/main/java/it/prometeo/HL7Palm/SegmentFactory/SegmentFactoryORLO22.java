@@ -353,13 +353,13 @@ public class SegmentFactoryORLO22 {
         mshSegmentIntegrate.getFieldSeparator().setValue(hl7Config.getSeparator());
         mshSegmentIntegrate.getEncodingCharacters().setValue(hl7Config.getEncodingCharacters());
         if(mshSource.getSendingApplication().getNamespaceID().getValue() != null)
-            mshSegmentIntegrate.getReceivingApplication().getNamespaceID().setValue(hl7Config.getSendingApplication());
+            mshSegmentIntegrate.getSendingApplication().getNamespaceID().setValue(hl7Config.getSendingApplication());
         if(mshSource.getSendingFacility().getNamespaceID().getValue() != null)
-            mshSegmentIntegrate.getReceivingFacility().getNamespaceID().setValue(hl7Config.getSendingFacility());
+            mshSegmentIntegrate.getSendingFacility().getNamespaceID().setValue(hl7Config.getSendingFacility());
         if(mshSource.getReceivingApplication().getNamespaceID().getValue() != null)
-            mshSegmentIntegrate.getSendingApplication().getNamespaceID().setValue(hl7Config.getSendingApplicationTransfusion());
+            mshSegmentIntegrate.getReceivingApplication().getNamespaceID().setValue(hl7Config.getSendingApplicationTransfusion());
         if(mshSource.getReceivingFacility().getNamespaceID().getValue() != null)
-            mshSegmentIntegrate.getSendingFacility().getNamespaceID().setValue(hl7Config.getSendingFacilityTransfusion());
+            mshSegmentIntegrate.getReceivingFacility().getNamespaceID().setValue(hl7Config.getSendingFacilityTransfusion());
         if(mshSource.getDateTimeOfMessage().getTime().getValue() != null)
             mshSegmentIntegrate.getDateTimeOfMessage().getTime().setValue(mshSource.getDateTimeOfMessage().getTime().getValue());
         if(mshSource.getMessageType().getMessageCode().getValue() != null)
