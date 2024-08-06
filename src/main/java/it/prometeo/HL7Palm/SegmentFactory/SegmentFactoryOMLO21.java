@@ -78,7 +78,7 @@ public class SegmentFactoryOMLO21 {
                         targetIdentifierAssigningAuthority.getNamespaceID().getValue() == null &&
                         targetIdentifierIdentifierTypeCode.getValue() == null && aurFound) {
 
-                    targetIdentifierIDNumber.setValue(aurValue);
+                    targetIdentifierIDNumber.setValue(sourceIdentifier.getIDNumber().getValue());
                     //targetIdentifierAssigningAuthority.getNamespaceID().setValue(sourceIdentifier.getAssigningAuthority().getNamespaceID().getValue());
                     targetIdentifierAssigningAuthority.getNamespaceID().setValue("PATNUMBER");
                     //targetIdentifierIdentifierTypeCode.setValue(sourceIdentifier.getIdentifierTypeCode().getValue());
@@ -100,7 +100,7 @@ public class SegmentFactoryOMLO21 {
             pidSegmentIntegrate.getPatientName(0).getGivenName().setValue(pidSource.getPatientName(0).getGivenName().getValue());
         pidSegmentIntegrate.getPatientName(0).getNameTypeCode().setValue("L");
         pidSegmentIntegrate.getPatientName(0).getNameRepresentationCode().setValue(aurValue);
-        pidSegmentIntegrate.getPatientName(0).getProfessionalSuffix().setValue(pidSource.getAdministrativeSex().getValue());
+        pidSegmentIntegrate.getPatientName(0).getProfessionalSuffix().setValue("M");
         if(pidSource.getDateTimeOfBirth().getTime().getValue() != null) {
             String date = pidSource.getDateTimeOfBirth().getTime().getValue().substring(0, 8);
             pidSegmentIntegrate.getDateTimeOfBirth().getTime().setValue(date);
