@@ -87,6 +87,9 @@ public class MessageEventDao {
             ResultSet results = statement.executeQuery();
 
             if (results.next()) {
+                return messageEvent;
+            }
+            else {
                 messageEvent = new MessageEvent();
                 messageEvent.setId(results.getInt("ID"));
                 messageEvent.setCode(results.getString("CODE"));
