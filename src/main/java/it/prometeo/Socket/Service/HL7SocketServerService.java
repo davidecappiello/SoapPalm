@@ -43,6 +43,7 @@ public class HL7SocketServerService {
 
     public void startServer(int socketServerPort) {
         try (ServerSocket serverSocket = new ServerSocket(socketServerPort)) {
+            util.insertLogRow("Connessione PS attiva sulla porta 35410");
 
             while (true) {
                 try (Socket clientSocket = serverSocket.accept()) {

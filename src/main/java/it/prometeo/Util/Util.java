@@ -50,6 +50,8 @@ import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.sql.Blob;
 import java.sql.SQLException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Base64;
 import java.util.Date;
 import java.util.regex.Matcher;
@@ -227,7 +229,7 @@ public class Util {
     }
 
     public void handleORMPS(String updatedMessage, ORMOO1 ormO01, String hl7Response, AcceptMessageResponse response,
-                          String date, String param, MessageEventServiceOMLO21 messageEventServiceOMLO21,
+                           String param, MessageEventServiceOMLO21 messageEventServiceOMLO21,
                           MessageSegmentServiceOMLO21 messageSegmentServiceOMLO21, MessageEventServiceORMOO1 messageEventServiceORMOO1,
                           MessageSegmentServiceORMOO1 messageSegmentServiceORMOO1, MessageEventServiceORLO22 messageEventServiceORLO22,
                           MessageSegmentServiceORLO22 messageSegmentServiceORLO22, String msh3Value) throws Exception {
@@ -259,6 +261,8 @@ public class Util {
         saveOMLO21Database(updatedMessage, messageEventServiceOMLO21, messageSegmentServiceOMLO21, msh3Value);
         omlCreated = OMLDecoding.decodeOML_XML(updatedMessage);
         OML_O21 omlForTD = omlObject.generateOML_021ForTDFromPS(omlCreated);
+        String birthDate = omlForTD.getPATIENT().getPID().getDateTimeOfBirth().getTime().getValue();
+        birthDate = birthDate.substring(0,8);
         String finalMessagePIPE = oml_o21.convertXMLToPipeFormat(omlForTD);
         insertLogRow("Invio via socket il messaggio a TD");
         hl7Response = HL7SocketClientService.sendHL7Message(finalMessagePIPE);

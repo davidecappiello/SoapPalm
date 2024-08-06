@@ -348,6 +348,12 @@ public class HL7Config {
     @Value("${socketServerPortTransfusion}")
     private int socketServerPortTransfusion;
 
+    @Value("${wsdlURLPS}")
+    private String wsdlURLPS;
+
+    @Value("${wsdlURLTransfusion}")
+    private String wsdlURLTransfusion;
+
 
     public String getSeparator() {
         return separator;
@@ -801,6 +807,13 @@ public class HL7Config {
 
     public String getQueryCheckCountDataCheckIn() {
         return queryCheckCountDataCheckIn;
+    }
+    public String getWsdlURLPS() {
+        return wsdlURLPS;
+    }
+
+    public String getWsdlURLTransfusion() {
+        return wsdlURLTransfusion;
     }
 }
 
